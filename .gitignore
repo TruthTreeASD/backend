@@ -17,5 +17,9 @@ target/
 *.tar
 *.rar
 
+#Ignore Maven specific files
+mvnw
+mvnw.cmd
+
 #Ignore log files
 *.log
