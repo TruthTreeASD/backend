@@ -23,3 +23,9 @@ mvnw.cmd
 
 #Ignore log files
 *.log
+
+#Ignore other files
+*.classpath
+*.project
+*.settings/
+*.springBeans
