@@ -1,13 +1,13 @@
-package com.example.truthtree;
+package edu.northeastern.truthtree;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DemoApplication {
+public class TruthTreeApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
+		SpringApplication.run(TruthTreeApplication.class, args);
 	}
 
 }
