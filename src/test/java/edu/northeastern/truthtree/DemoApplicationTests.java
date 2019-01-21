@@ -1,4 +1,4 @@
-package com.example.truthtree;
+package edu.northeastern.truthtree;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
