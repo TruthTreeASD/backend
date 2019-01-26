@@ -1,0 +1,257 @@
+[
+  {
+    "State_Code": 1,
+    "Name": "ALABAMA",
+    "Abbreviation": "AL"
+  },
+  {
+    "State_Code": 2,
+    "Name": "ALASKA",
+    "Abbreviation": "AK"
+  },
+  {
+    "State_Code": 3,
+    "Name": "ARIZONA",
+    "Abbreviation": "AZ"
+  },
+  {
+    "State_Code": 4,
+    "Name": "ARKANSAS",
+    "Abbreviation": "AR"
+  },
+  {
+    "State_Code": 5,
+    "Name": "CALIFORNIA",
+    "Abbreviation": "CA"
+  },
+  {
+    "State_Code": 6,
+    "Name": "COLORADO",
+    "Abbreviation": "CO"
+  },
+  {
+    "State_Code": 7,
+    "Name": "CONNECTICUT",
+    "Abbreviation": "CT"
+  },
+  {
+    "State_Code": 8,
+    "Name": "DELAWARE",
+    "Abbreviation": "DE"
+  },
+  {
+    "State_Code": 9,
+    "Name": "WASHINGTON DC",
+    "Abbreviation": "DC"
+  },
+  {
+    "State_Code": 10,
+    "Name": "FLORIDA",
+    "Abbreviation": "FL"
+  },
+  {
+    "State_Code": 11,
+    "Name": "GEORGIA",
+    "Abbreviation": "GA"
+  },
+  {
+    "State_Code": 12,
+    "Name": "HAWAII",
+    "Abbreviation": "HI"
+  },
+  {
+    "State_Code": 13,
+    "Name": "IDAHO",
+    "Abbreviation": "ID"
+  },
+  {
+    "State_Code": 14,
+    "Name": "ILLINOIS",
+    "Abbreviation": "IL"
+  },
+  {
+    "State_Code": 15,
+    "Name": "INDIANA",
+    "Abbreviation": "IN"
+  },
+  {
+    "State_Code": 16,
+    "Name": "IOWA",
+    "Abbreviation": "IA"
+  },
+  {
+    "State_Code": 17,
+    "Name": "KANSAS",
+    "Abbreviation": "KS"
+  },
+  {
+    "State_Code": 18,
+    "Name": "KENTUCKY",
+    "Abbreviation": "KY"
+  },
+  {
+    "State_Code": 19,
+    "Name": "LOUISIANA",
+    "Abbreviation": "LA"
+  },
+  {
+    "State_Code": 20,
+    "Name": "MAINE",
+    "Abbreviation": "ME"
+  },
+  {
+    "State_Code": 21,
+    "Name": "MARYLAND",
+    "Abbreviation": "MD"
+  },
+  {
+    "State_Code": 22,
+    "Name": "MASSACHUSETTS",
+    "Abbreviation": "MA"
+  },
+  {
+    "State_Code": 23,
+    "Name": "MICHIGAN",
+    "Abbreviation": "MI"
+  },
+  {
+    "State_Code": 24,
+    "Name": "MINNESOTA",
+    "Abbreviation": "MN"
+  },
+  {
+    "State_Code": 25,
+    "Name": "MISSISSIPPI",
+    "Abbreviation": "MS"
+  },
+  {
+    "State_Code": 26,
+    "Name": "MISSOURI",
+    "Abbreviation": "MO"
+  },
+  {
+    "State_Code": 27,
+    "Name": "MONTANA",
+    "Abbreviation": "MT"
+  },
+  {
+    "State_Code": 28,
+    "Name": "NEBRASKA",
+    "Abbreviation": "NE"
+  },
+  {
+    "State_Code": 29,
+    "Name": "NEVADA",
+    "Abbreviation": "NV"
+  },
+  {
+    "State_Code": 30,
+    "Name": "NEW HAMPSHIRE",
+    "Abbreviation": "NH"
+  },
+  {
+    "State_Code": 31,
+    "Name": "NEW JERSEY",
+    "Abbreviation": "NJ"
+  },
+  {
+    "State_Code": 32,
+    "Name": "NEW MEXICO",
+    "Abbreviation": "NM"
+  },
+  {
+    "State_Code": 33,
+    "Name": "NEW YORK",
+    "Abbreviation": "NY"
+  },
+  {
+    "State_Code": 34,
+    "Name": "NORTH CAROLINA",
+    "Abbreviation": "NC"
+  },
+  {
+    "State_Code": 35,
+    "Name": "NORTH DAKOTA",
+    "Abbreviation": "ND"
+  },
+  {
+    "State_Code": 36,
+    "Name": "OHIO",
+    "Abbreviation": "OH"
+  },
+  {
+    "State_Code": 37,
+    "Name": "OKLAHOMA",
+    "Abbreviation": "OK"
+  },
+  {
+    "State_Code": 38,
+    "Name": "OREGON",
+    "Abbreviation": "OR"
+  },
+  {
+    "State_Code": 39,
+    "Name": "PENNSYLVANIA",
+    "Abbreviation": "PA"
+  },
+  {
+    "State_Code": 40,
+    "Name": "RHODE ISLAND",
+    "Abbreviation": "RI"
+  },
+  {
+    "State_Code": 41,
+    "Name": "SOUTH CAROLINA",
+    "Abbreviation": "SC"
+  },
+  {
+    "State_Code": 42,
+    "Name": "SOUTH DAKOTA",
+    "Abbreviation": "SD"
+  },
+  {
+    "State_Code": 43,
+    "Name": "TENNESSEE",
+    "Abbreviation": "TN"
+  },
+  {
+    "State_Code": 44,
+    "Name": "TEXAS",
+    "Abbreviation": "TX"
+  },
+  {
+    "State_Code": 45,
+    "Name": "UTAH",
+    "Abbreviation": "UT"
+  },
+  {
+    "State_Code": 46,
+    "Name": "VERMONT",
+    "Abbreviation": "VT"
+  },
+  {
+    "State_Code": 47,
+    "Name": "VIRGINIA",
+    "Abbreviation": "VA"
+  },
+  {
+    "State_Code": 48,
+    "Name": "WASHINGTON",
+    "Abbreviation": "WA"
+  },
+  {
+    "State_Code": 49,
+    "Name": "WEST VIRGINIA",
+    "Abbreviation": "WV"
+  },
+  {
+    "State_Code": 50,
+    "Name": "WISCONSIN",
+    "Abbreviation": "WI"
+  },
+  {
+    "State_Code": 51,
+    "Name": "WYOMING",
+    "Abbreviation": "WY"
+  }
+]
