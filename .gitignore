@@ -1,0 +1,31 @@
+#Ignore OS specific files
+.DS_Store
+
+#Ignore IDE specific files
+*.idea
+*.iml
+
+#Ignore Code specific files
+*.class
+out/
+target/
+
+#Ignore Package specific files
+*.jar
+*.war
+*.zip
+*.tar
+*.rar
+
+#Ignore Maven specific files
+mvnw
+mvnw.cmd
+
+#Ignore log files
+*.log
+
+#Ignore other files
+*.classpath
+*.project
+*.settings/
+*.springBeans
