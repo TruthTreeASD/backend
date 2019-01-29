@@ -9,10 +9,7 @@ install:
   - wget -qO- https://toolbelt.heroku.com/install.sh | sh
   # login to heroku
   - echo "$HEROKU_PASSWORD" | docker login -u "$HEROKU_USERNAME" --password-stdin registry.heroku.com
-  - (
-      echo "$HEROKU_CREDENTIALS_EMAIL"
-      echo "$HEROKU_CREDENTIALS_PASSWORD"
-    ) | heroku login --interactive
+  - heroku auth:token $HEROKU_PASSWORD
 
 script:
   # build docker image
