@@ -11,7 +11,7 @@ install:
   - echo "$HEROKU_PASSWORD" | docker login -u "$HEROKU_USERNAME" --password-stdin registry.heroku.com
 
 script:
-  # build docker images
+  # build docker image
   - mvn clean install
   - docker build -t truthtree:test .
   - docker tag truthtree:test registry.heroku.com/truthtree/web
