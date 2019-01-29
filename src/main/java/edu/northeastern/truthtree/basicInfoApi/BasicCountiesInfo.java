@@ -19,7 +19,6 @@ public class BasicCountiesInfo {
 
     try {
       countiesList = (JSONArray) parser.parse(new FileReader("src/main/resources/Counties.json"));
-
     } catch (IOException | ParseException e) {
       e.printStackTrace();
     }
