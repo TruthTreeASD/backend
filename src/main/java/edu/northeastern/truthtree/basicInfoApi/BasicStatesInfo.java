@@ -14,7 +14,6 @@ public class BasicStatesInfo {
 
   @RequestMapping("/api/states")
   public String getResponse() {
-
     JSONParser parser = new JSONParser();
     JSONArray statesList = new JSONArray();
 
