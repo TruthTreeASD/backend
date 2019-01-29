@@ -12,6 +12,7 @@ install:
 
 script:
   # build docker images
+  - mvn clean install
   - docker build -t truthtree:test .
   - docker tag truthtree:test registry.heroku.com/truthtree/web
 
