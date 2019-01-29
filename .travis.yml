@@ -20,6 +20,6 @@ script:
   script:
     # push to heroku
     docker push registry.heroku.com/truthtree/web;
-    heroku container:release web --app=truthtree
+    heroku container:release web --app=truthtree;
   on:
     branch: feature/add_travisci_script
