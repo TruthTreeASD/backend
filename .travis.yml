@@ -4,19 +4,13 @@ language: java
 services:
   - docker
 
-before_install:
+install:
   # install heroku CLI
   - wget -qO- https://toolbelt.heroku.com/install.sh | sh
   # login to heroku
   - echo "$ HEROKU_PASSWORD" | docker login -u "$ HEROKU_USERNAME" --password-stdin registry.heroku.com
 
-install:
-  # install deps
-  - yarn install
-
 script:
-  - yarn test
-  - yarn build
   # build docker images
   - docker build -t truthtree:test .
   - tag truthtree:test registry.heroku.com/truthtree/web
