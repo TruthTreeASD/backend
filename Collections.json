@@ -1,0 +1,27 @@
+[
+    {
+      "name": "Alcohol",
+      "property": [
+        {
+          "name": "Tax",
+          "property_id": 00001
+        },
+        {
+          "name": "Expenditure",
+          "property_id": 00002       
+       }]
+    },
+    {
+      "name": "Food",
+      "property": [
+        {
+          "name": "Tax",
+          "property_id": 00001  
+        },
+        {
+          "name": "Expenditure",
+          "property_id": 00002  
+        }
+      ]
+    }
+  ]
