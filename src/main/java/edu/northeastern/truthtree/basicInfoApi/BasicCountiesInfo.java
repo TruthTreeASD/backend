@@ -18,8 +18,7 @@ public class BasicCountiesInfo {
     JSONArray countiesList = new JSONArray();
 
     try {
-      countiesList = (JSONArray) parser.parse(new FileReader("./Counties.json"));
-      
+      countiesList = (JSONArray) parser.parse(new FileReader("src/main/resources/Counties.json"));
     } catch (IOException | ParseException e) {
       e.printStackTrace();
     }
