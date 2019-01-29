@@ -13,7 +13,7 @@ install:
 script:
   # build docker images
   - docker build -t truthtree:test .
-  - tag truthtree:test registry.heroku.com/truthtree/web
+  - docker tag truthtree:test registry.heroku.com/truthtree/web
 
 deploy:
   provider: script
