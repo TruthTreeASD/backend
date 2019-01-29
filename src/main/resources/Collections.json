@@ -1,0 +1,45 @@
+[{
+		"name": "Alcohol",
+		"collection_id": 123,
+		"properties": [{
+				"name": "Tax",
+				"property_id": 00001
+			},
+			{
+				"name": "Expenditure",
+				"property_id": 00002
+			}
+		],
+		"attributes": [{
+				"name": "alcohol_tax",
+				"attribute_id": 00011
+			},
+			{
+				"name": "alcohol_expenditure",
+				"attribute_id": 00022
+			}
+		]
+	},
+	{
+		"name": "Food",
+		"collection_id": 345,
+		"properties": [{
+				"name": "Tax",
+				"property_id": 00001
+			},
+			{
+				"name": "Expenditure",
+				"property_id": 00002
+			}
+		],
+		"attributes": [{
+				"name": "food_tax",
+				"attribute_id": 00033
+			},
+			{
+				"name": "food_expenditure",
+				"attribute_id": 00044
+			}
+		]
+	}
+]
