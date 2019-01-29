@@ -8,3 +8,5 @@ docker tag truthtree:test registry.heroku.com/truthtree/web
 docker push registry.heroku.com/truthtree/web
 
 heroku container:release web --app=truthtree
+
+docker exec -it [container-id] bash

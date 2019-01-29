@@ -14,13 +14,11 @@ public class BasicStatesInfo {
 
   @RequestMapping("/api/states")
   public String getResponse() {
-
     JSONParser parser = new JSONParser();
     JSONArray statesList = new JSONArray();
 
     try {
-      statesList = (JSONArray) parser.parse(new FileReader("./States.json"));
-
+      statesList = (JSONArray) parser.parse(new FileReader("src/main/resources/States.json"));
     } catch (IOException | ParseException e) {
       e.printStackTrace();
     }

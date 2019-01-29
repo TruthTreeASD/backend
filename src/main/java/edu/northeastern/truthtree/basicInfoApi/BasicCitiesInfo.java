@@ -18,8 +18,7 @@ public class BasicCitiesInfo {
     JSONArray citiesList = new JSONArray();
 
     try {
-      citiesList = (JSONArray) parser.parse(new FileReader("./Cities.json"));
-
+        citiesList = (JSONArray) parser.parse(new FileReader("src/main/resources/Cities.json"));
     } catch (IOException | ParseException e) {
       e.printStackTrace();
     }
