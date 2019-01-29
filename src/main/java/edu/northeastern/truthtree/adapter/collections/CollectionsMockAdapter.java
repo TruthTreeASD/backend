@@ -14,7 +14,7 @@ public class CollectionsMockAdapter implements ICollectionAdapter {
 		JSONParser parser = new JSONParser();
 		JSONArray collections = new JSONArray();
 		try {
-			collections = (JSONArray) parser.parse(new FileReader("./Collections.json"));
+			collections = (JSONArray) parser.parse(new FileReader("src/main/resources/Collections.json"));
 
 		} catch (IOException | ParseException e) {
 			e.printStackTrace();
