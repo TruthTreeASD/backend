@@ -12,7 +12,7 @@ install:
   - (
       echo "$HEROKU_CREDENTIALS_EMAIL"
       echo "$HEROKU_CREDENTIALS_PASSWORD"
-    ) | heroku login
+    ) | heroku login --interactive
 
 script:
   # build docker image
