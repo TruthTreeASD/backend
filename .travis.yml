@@ -1,0 +1,25 @@
+sudo: required
+language: java
+
+services:
+  - docker
+
+before_install:
+  # install heroku CLI
+  - wget -qO- https://toolbelt.heroku.com/install.sh | sh
+  # login to heroku
+  - echo "$ HEROKU_PASSWORD" | docker login -u "$ HEROKU_USERNAME" --password-stdin registry.heroku.com
+
+script:
+  # build docker images
+  - docker build -t truthtree:test .
+  - tag truthtree:test registry.heroku.com/truthtree/web
+
+ deploy:
+  provider: script
+  script:
+    # push to heroku
+    docker push registry.heroku.com/truthtree/web;
+    heroku container:release web --app=truthtree
+  on:
+    branch: master
