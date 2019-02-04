@@ -16,6 +16,8 @@
 
 	<properties>
 		<java.version>1.8</java.version>
+		<jolt.version>0.1.0</jolt.version>
+		<json.version>1.1.1</json.version>
 	</properties>
 
 	<dependencies>
@@ -38,7 +40,20 @@
 		<dependency>
 			<groupId>com.googlecode.json-simple</groupId>
 			<artifactId>json-simple</artifactId>
-			<version>1.1.1</version>
+			<version>${json.version}</version>
+		</dependency>
+
+		<!--https://github.com/bazaarvoice/jolt/blob/master/gettingStarted.md-->
+
+		<dependency>
+			<groupId>com.bazaarvoice.jolt</groupId>
+			<artifactId>jolt-core</artifactId>
+			<version>${jolt.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.bazaarvoice.jolt</groupId>
+			<artifactId>json-utils</artifactId>
+			<version>${jolt.version}</version>
 		</dependency>
 
 	</dependencies>
