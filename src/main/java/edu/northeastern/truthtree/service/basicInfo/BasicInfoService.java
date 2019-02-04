@@ -1,30 +1,32 @@
 package edu.northeastern.truthtree.service.basicInfo;
 
 import org.json.simple.JSONArray;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-import edu.northeastern.truthtree.adapter.basicInfo.BasicInfoDBAdapter;
-import edu.northeastern.truthtree.adapter.basicInfo.BasicInfoMockAdapter;
 import edu.northeastern.truthtree.adapter.basicInfo.IBasicInfoAdapter;
-import edu.northeastern.truthtree.adapter.collections.CollectionsMockAdapter;
-import edu.northeastern.truthtree.adapter.collections.ICollectionAdapter;
 
+@Component
 public class BasicInfoService implements IBasicInfoService {
+	private IBasicInfoAdapter adapter;
+
+	@Autowired
+	public BasicInfoService(IBasicInfoAdapter adapter) {
+		this.adapter = adapter;
+	}
 
 	@Override
 	public JSONArray getBasicStatesInfo() {
-		IBasicInfoAdapter adapter = new BasicInfoMockAdapter();
-		return adapter.getBasicStatesInfo();
+		return this.adapter.getBasicStatesInfo();
 	}
 
 	@Override
 	public JSONArray getBasicCitiesInfo() {
-		IBasicInfoAdapter adapter = new BasicInfoMockAdapter();
-		return adapter.getBasicCitiesInfo();
+		return this.adapter.getBasicCitiesInfo();
 	}
 
 	@Override
 	public JSONArray getBasicCountiesInfo() {
-		IBasicInfoAdapter adapter = new BasicInfoMockAdapter();
-		return adapter.getBasicCountiesInfo();
+		return this.adapter.getBasicCountiesInfo();
 	}
 }
