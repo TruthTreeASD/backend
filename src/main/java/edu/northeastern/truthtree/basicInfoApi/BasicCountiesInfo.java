@@ -13,7 +13,8 @@ import java.io.IOException;
 public class BasicCountiesInfo {
 
   @RequestMapping("/api/counties")
-  public String getResponse() {
+  
+  public String getResponse(String test) {
     JSONParser parser = new JSONParser();
     JSONArray countiesList = new JSONArray();
 
