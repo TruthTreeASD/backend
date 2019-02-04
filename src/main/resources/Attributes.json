@@ -1,73 +1,93 @@
 [
   {
-    "State":[
+    "State": [
       {
-        "name":"WA",
-        "state_id":"1",
-        "collection":[
+        "name": "WA",
+        "state_id": "1",
+        "collections": [
           {
-            "name":"Alcohol",
-            "collection_id":"00001",
-            "property":[
+            "name": "Alcohol",
+            "Collection_id": "123",
+            "properties": [
               {
-                "name":"Tax",
-                "property_id":"00001",
-                "data":[
+                "name": "Tax",
+                "property_id": "00001"
+              },
+              {
+                "name": "Expenditure",
+                "property_id": "00002"
+              }
+            ],
+            "attributes": [
+              {
+                "name": "alcohol_tax",
+                "attribute_id": "00011",
+                "data": [
                   {
-                    "Year":2017,
-                    "Value":20
+                    "Year": 2017,
+                    "Value": 20
                   },
                   {
-                    "Year":2018,
-                    "Value":30
+                    "Year": 2018,
+                    "Value": 30
                   }
                 ]
               },
               {
-                "name":"Expenditure",
-                "property_id":"00002",
-                "data":[
+                "name": "alcohol_expenditure",
+                "attribute_id": "00022",
+                "data": [
                   {
-                    "Year":2017,
-                    "Value":20
+                    "Year": 2017,
+                    "Value": 20
                   },
                   {
-                    "Year":2018,
-                    "Value":30
+                    "Year": 2018,
+                    "Value": 30
                   }
                 ]
               }
             ]
           },
           {
-            "name":"Food",
-            "collection_id":"00002",
-            "property":[
+            "name": "Food",
+            "collection_id": "345",
+            "properties": [
               {
-                "name":"Tax",
-                "property_id":"00001",
-                "data":[
+                "name": "Tax",
+                "property_id": "00001"
+              },
+              {
+                "name": "Expenditure",
+                "property_id": "00002"
+              }
+            ],
+            "attributes": [
+              {
+                "name": "food_tax",
+                "attribute_id": "00033",
+                "data": [
                   {
-                    "Year":2017,
-                    "Value":20
+                    "Year": 2017,
+                    "Value": 20
                   },
                   {
-                    "Year":2018,
-                    "Value":30
+                    "Year": 2018,
+                    "Value": 30
                   }
                 ]
               },
               {
-                "name":"Expenditure",
-                "property_id":"00002",
-                "data":[
+                "name": "food_expenditure",
+                "attribute_id": "00044",
+                "data": [
                   {
-                    "Year":2017,
-                    "Value":20
+                    "Year": 2017,
+                    "Value": 20
                   },
                   {
-                    "Year":2018,
-                    "Value":30
+                    "Year": 2018,
+                    "Value": 30
                   }
                 ]
               }
@@ -76,72 +96,92 @@
         ]
       },
       {
-        "name":"CA",
-        "state_id":"2",
-        "collection":[
+        "name": "CA",
+        "state_id": "2",
+        "collections": [
           {
-            "name":"Alcohol",
-            "collection_id":"00001",
-            "property":[
+            "name": "Alcohol",
+            "Collection_id": "123",
+            "properties": [
               {
-                "name":"Tax",
-                "property_id":"00001",
-                "data":[
+                "name": "Tax",
+                "property_id": "00001"
+              },
+              {
+                "name": "Expenditure",
+                "property_id": "00002"
+              }
+            ],
+            "attributes": [
+              {
+                "name": "alcohol_tax",
+                "attribute_id": "00011",
+                "data": [
                   {
-                    "Year":2017,
-                    "Value":20
+                    "Year": 2017,
+                    "Value": 20
                   },
                   {
-                    "Year":2018,
-                    "Value":30
+                    "Year": 2018,
+                    "Value": 30
                   }
                 ]
               },
               {
-                "name":"Expenditure",
-                "property_id":"00002",
-                "data":[
+                "name": "alcohol_expenditure",
+                "attribute_id": "00022",
+                "data": [
                   {
-                    "Year":2017,
-                    "Value":20
+                    "Year": 2017,
+                    "Value": 20
                   },
                   {
-                    "Year":2018,
-                    "Value":30
+                    "Year": 2018,
+                    "Value": 30
                   }
                 ]
               }
             ]
           },
           {
-            "name":"Food",
-            "collection_id":"00002",
-            "property":[
+            "name": "Food",
+            "collection_id": "345",
+            "properties": [
               {
-                "name":"Tax",
-                "property_id":"00001",
-                "data":[
+                "name": "Tax",
+                "property_id": "00001"
+              },
+              {
+                "name": "Expenditure",
+                "property_id": "00002"
+              }
+            ],
+            "attributes": [
+              {
+                "name": "food_tax",
+                "attribute_id": "00033",
+                "data": [
                   {
-                    "Year":2017,
-                    "Value":20
+                    "Year": 2017,
+                    "Value": 20
                   },
                   {
-                    "Year":2018,
-                    "Value":30
+                    "Year": 2018,
+                    "Value": 30
                   }
                 ]
               },
               {
-                "name":"Expenditure",
-                "property_id":"00002",
-                "data":[
+                "name": "food_expenditure",
+                "attribute_id": "00044",
+                "data": [
                   {
-                    "Year":2017,
-                    "Value":20
+                    "Year": 2017,
+                    "Value": 20
                   },
                   {
-                    "Year":2018,
-                    "Value":30
+                    "Year": 2018,
+                    "Value": 30
                   }
                 ]
               }
