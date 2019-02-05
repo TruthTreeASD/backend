@@ -7,7 +7,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-public class CollectionsMockAdapter implements ICollectionAdapter {
+public class CollectionsMockAdapter extends CollectionsAbstractAdapter {
 
 	@Override
 	public JSONArray getCollections() {
