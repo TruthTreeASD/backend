@@ -8,7 +8,7 @@ import java.net.URLConnection;
 import org.json.simple.JSONArray;
 import org.json.simple.parser.JSONParser;
 
-public class CollectionsDBAdapter extends CollectionsAbstractAdapter {
+public class CollectionsDBAdapter implements ICollectionsAdapter {
 	private static final String COLLECTIONS_URL = "http://54.241.137.214:8080/api/collection/all";
 
 	@Override

@@ -1,0 +1,12 @@
+[
+  {
+    "operation": "shift",
+    "spec": {
+      "State": {
+        "*": {
+          "*": "States[&1].&"
+        }
+      }
+    }
+  }
+]
