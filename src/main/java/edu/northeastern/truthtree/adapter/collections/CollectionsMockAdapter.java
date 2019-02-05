@@ -9,12 +9,14 @@ import org.json.simple.parser.ParseException;
 
 public class CollectionsMockAdapter implements ICollectionsAdapter {
 
+	private static final String COLLECTIONS_FILE_PATH = "src/main/resources/Collections.json";
+
 	@Override
 	public JSONArray getCollections() {
 		JSONParser parser = new JSONParser();
 		JSONArray collections = new JSONArray();
 		try {
-			collections = (JSONArray) parser.parse(new FileReader("src/main/resources/Collections.json"));
+			collections = (JSONArray) parser.parse(new FileReader(COLLECTIONS_FILE_PATH));
 
 		} catch (IOException | ParseException e) {
 			e.printStackTrace();
