@@ -87,7 +87,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <h1>Truth Tree</h1>
+        <h1>TruthTree</h1>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
