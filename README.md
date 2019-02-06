@@ -1,6 +1,6 @@
 # Backend
 
-Backend code for truthTree
+Backend code for [truthTree](http://truthtree.herokuapp.com)
 
 ## Requirements
 
