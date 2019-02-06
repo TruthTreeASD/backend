@@ -180,7 +180,6 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-            <li><a href="swagger-ui.html" style="font-size: 16px;">Swagger</a></li>
             <li><a href="api/attributes" style="font-size: 16px;">Attributes</a></li>
             <li class="dropdown">
                 <a class="dropdown-toggle" style="font-size: 16px;">Basic Info <b
@@ -200,6 +199,7 @@
                 </ul>
             </li>
             <li><a href="api/collections" style="font-size: 16px;">Collections</a></li>
+            <li><a href="swagger-ui.html" style="font-size: 16px; border-right: 1px;">Swagger</a></li>
         </ul>
     </div>
 </nav>
