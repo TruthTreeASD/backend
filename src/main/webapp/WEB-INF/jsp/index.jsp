@@ -199,6 +199,7 @@
                 </ul>
             </li>
             <li><a href="api/collections" style="font-size: 16px;">Collections</a></li>
+            <li><a href="swagger-ui.html" style="font-size: 16px; border-right: 1px;">Swagger</a></li>
         </ul>
     </div>
 </nav>
