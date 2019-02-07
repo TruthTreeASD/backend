@@ -15,7 +15,7 @@ import edu.northeastern.truthtree.adapter.collections.ICollectionsAdapter;
 
 @Configuration
 public class ApplicationConfig {
-    private static Boolean RETURN_MOCK_DATA = true;
+    private static final Boolean RETURN_MOCK_DATA = true;
 
 	@Bean
 	public IAttributesAdapter getAttributeAdapter() {
