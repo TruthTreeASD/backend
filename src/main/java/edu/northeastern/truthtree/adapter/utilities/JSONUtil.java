@@ -7,8 +7,7 @@ import org.json.simple.parser.ParseException;
 import java.io.FileReader;
 import java.io.IOException;
 
-// TODO: Change class name to JSONUtil (then need to update all calls to the class).
-public class JSONFileReader {
+public class JSONUtil {
 
   /**
    * Loads and parses a JSON file into a JSON array.

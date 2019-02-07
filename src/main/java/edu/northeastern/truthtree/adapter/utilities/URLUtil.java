@@ -20,7 +20,7 @@ public class URLUtil {
 
     String jsonString = readURL(url);
 
-    return JSONFileReader.stringToJSONArray(jsonString);
+    return JSONUtil.stringToJSONArray(jsonString);
   }
 
   /**

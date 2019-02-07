@@ -1,12 +1,13 @@
 package edu.northeastern.truthtree.adapter.attributes;
 
-import edu.northeastern.truthtree.adapter.utilities.JoltUtil;
 import org.json.simple.JSONArray;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 import java.io.FileReader;
 import java.io.IOException;
+
+import edu.northeastern.truthtree.adapter.utilities.JoltUtil;
 
 public class AttributesMockAdapter implements IAttributesAdapter{
 

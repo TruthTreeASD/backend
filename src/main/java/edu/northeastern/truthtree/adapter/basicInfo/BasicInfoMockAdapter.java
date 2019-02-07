@@ -2,7 +2,7 @@ package edu.northeastern.truthtree.adapter.basicInfo;
 
 import org.json.simple.JSONArray;
 
-import edu.northeastern.truthtree.adapter.utilities.JSONFileReader;
+import edu.northeastern.truthtree.adapter.utilities.JSONUtil;
 
 public class BasicInfoMockAdapter implements IBasicInfoAdapter {
 	private static final String STATES_FILE_PATH = "src/main/resources/States.json";
@@ -17,7 +17,7 @@ public class BasicInfoMockAdapter implements IBasicInfoAdapter {
 	@Override
 	public JSONArray getBasicStatesInfo() {
 
-		return JSONFileReader.readJSONFile(STATES_FILE_PATH);
+		return JSONUtil.readJSONFile(STATES_FILE_PATH);
 	}
 
 	/**
@@ -28,7 +28,7 @@ public class BasicInfoMockAdapter implements IBasicInfoAdapter {
 	@Override
 	public JSONArray getBasicCitiesInfo() {
 
-		return JSONFileReader.readJSONFile(CITIES_FILE_PATH);
+		return JSONUtil.readJSONFile(CITIES_FILE_PATH);
 	}
 
 	/**
@@ -39,6 +39,6 @@ public class BasicInfoMockAdapter implements IBasicInfoAdapter {
 	@Override
 	public JSONArray getBasicCountiesInfo() {
 
-		return JSONFileReader.readJSONFile(COUNTIES_FILE_PATH);
+		return JSONUtil.readJSONFile(COUNTIES_FILE_PATH);
 	}
 }
