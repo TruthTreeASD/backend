@@ -18,7 +18,7 @@ public class AttributesMockAdapter implements IAttributesAdapter{
     public JSONArray getAttributes() {
 
         JSONArray attributesList = JSONUtil.readJSONFile(ATTRIBUTES_FILE_PATH);
-        
+
         return JoltUtil.joltTransform(attributesList, ATTRIBUTES_SPEC_PATH);
     }
 }

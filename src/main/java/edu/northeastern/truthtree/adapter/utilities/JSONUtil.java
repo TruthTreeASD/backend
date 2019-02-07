@@ -1,6 +1,7 @@
 package edu.northeastern.truthtree.adapter.utilities;
 
 import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
@@ -35,16 +36,40 @@ public class JSONUtil {
    * @param jsonString string to be converted into a JSONArray.
    * @return jsonString as a JSONArray
    */
-  public static JSONArray stringToJSONArray(String jsonString) {
+  static JSONArray stringToJSONArray(String jsonString) {
     JSONParser parser = new JSONParser();
     JSONArray jsonArray = null;
 
     try {
       jsonArray = (JSONArray) parser.parse(jsonString);
     } catch (ParseException e) {
+
       e.printStackTrace();
+    } catch (ClassCastException cce) {
+
+      jsonArray = new JSONArray();
+      jsonArray.add(stringToJSONObject(jsonString));
     }
 
     return jsonArray;
+  }
+
+  /**
+   * Converts jsonString into a JSONObject.
+   *
+   * @param jsonString string to be converted into a JSONArray.
+   * @return jsonString as a JSONObject
+   */
+  private static JSONObject stringToJSONObject(String jsonString) {
+    JSONParser parser = new JSONParser();
+    JSONObject jsonObject = null;
+
+    try {
+      jsonObject = (JSONObject) parser.parse(jsonString);
+    } catch (ParseException e) {
+      e.printStackTrace();
+    }
+
+    return jsonObject;
   }
 }
