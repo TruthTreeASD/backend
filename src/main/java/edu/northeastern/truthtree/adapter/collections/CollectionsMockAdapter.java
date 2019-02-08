@@ -1,13 +1,8 @@
 package edu.northeastern.truthtree.adapter.collections;
 
-import java.io.FileReader;
-import java.io.IOException;
-
 import org.json.simple.JSONArray;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 
-import edu.northeastern.truthtree.adapter.utilities.JSONFileReader;
+import edu.northeastern.truthtree.adapter.utilities.JSONUtil;
 
 public class CollectionsMockAdapter implements ICollectionsAdapter {
 
@@ -15,7 +10,7 @@ public class CollectionsMockAdapter implements ICollectionsAdapter {
 
 	@Override
 	public JSONArray getCollections() {
-		return JSONFileReader.readJSONFile(COLLECTIONS_FILE_PATH);
+		return JSONUtil.readJSONFile(COLLECTIONS_FILE_PATH);
 	}
 
 }

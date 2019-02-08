@@ -1,6 +1,5 @@
 package edu.northeastern.truthtree.adapter.attributes;
 
-import edu.northeastern.truthtree.adapter.utilities.JoltUtil;
 import org.json.simple.JSONArray;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -8,20 +7,18 @@ import org.json.simple.parser.ParseException;
 import java.io.FileReader;
 import java.io.IOException;
 
+import edu.northeastern.truthtree.adapter.utilities.JSONUtil;
+import edu.northeastern.truthtree.adapter.utilities.JoltUtil;
+
 public class AttributesMockAdapter implements IAttributesAdapter{
+    private static final String ATTRIBUTES_FILE_PATH = "src/main/resources/Attributes.json";
+    private static final String ATTRIBUTES_SPEC_PATH = "src/main/resources/AttributesSpec.json";
 
 
     public JSONArray getAttributes() {
-        String specPath = "src/main/resources/AttributesSpec.json";
 
-        JSONParser parser = new JSONParser();
-        JSONArray attributesList = new JSONArray();
-        try {
-            attributesList = (JSONArray) parser.parse(new FileReader("src/main/resources/Attributes.json"));
-        } catch (IOException | ParseException e) {
-            e.printStackTrace();
-        }
+        JSONArray attributesList = JSONUtil.readJSONFile(ATTRIBUTES_FILE_PATH);
 
-        return JoltUtil.joltTransform(attributesList, specPath);
+        return JoltUtil.joltTransform(attributesList, ATTRIBUTES_SPEC_PATH);
     }
 }

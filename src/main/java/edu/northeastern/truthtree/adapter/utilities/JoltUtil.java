@@ -2,6 +2,7 @@ package edu.northeastern.truthtree.adapter.utilities;
 
 import com.bazaarvoice.jolt.Chainr;
 import com.bazaarvoice.jolt.JsonUtils;
+
 import org.json.simple.JSONArray;
 
 import java.util.List;
