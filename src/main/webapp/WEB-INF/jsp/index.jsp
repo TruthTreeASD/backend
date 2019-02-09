@@ -341,22 +341,22 @@
     <pre class="prettyprint">/api/states
 <code class="language-json">[
     {
-        "State_Code": 1,
-        "Name": "ALABAMA",
-        "Abbreviation": "AL"
-        "Population": "4,887,871"
+        "state_code": 1,
+        "name": "ALABAMA",
+        "abbreviation": "AL"
+        "population": "4,887,871"
     },
     {
-        "State_Code": 2,
-        "Name": "ALASKA",
-        "Abbreviation": "AK"
-        "Population": "737,438"
+        "state_code": 2,
+        "name": "ALASKA",
+        "abbreviation": "AK"
+        "population": "737,438"
     },
     {
-        "State_Code": 3,
-        "Name": "ARIZONA",
-        "Abbreviation": "AZ"
-        "Population": "7,171,646"
+        "state_code": 3,
+        "name": "ARIZONA",
+        "abbreviation": "AZ"
+        "population": "7,171,646"
     }
 ]</code></pre>
 </div>
@@ -364,22 +364,22 @@
     <pre class="prettyprint">/api/states?populationRange[4000000,5000000]
 <code class="language-json">[
     {
-        "State_Code": 1,
-        "Name": "ALABAMA",
-        "Abbreviation": "AL"
-        "Population": "4,887,871"
+        "state_code": 1,
+        "name": "ALABAMA",
+        "abbreviation": "AL"
+        "population": "4,887,871"
     },
     {
-        "State_Code": 19,
-        "Name": "LOUISIANA",
-        "Abbreviation": "KY"
-        "Population": "4,659,978"
+        "state_code": 19,
+        "name": "LOUISIANA",
+        "abbreviation": "KY"
+        "population": "4,659,978"
     },
     {
-        "State_Code": 17,
-        "Name": "KENTUCKY",
-        "Abbreviation": "AZ"
-        "Population": "4,468,402"
+        "state_code": 17,
+        "name": "KENTUCKY",
+        "abbreviation": "AZ"
+        "population": "4,468,402"
     }
 ]</code></pre>
 </div>
@@ -387,19 +387,19 @@
     <pre class="prettyprint">/api/counties
 <code class="language-json">[
     {
-        "State_Code": 1,
-        "County": 2,
-        "Name": "BALDWIN COUNTY"
+        "state_code": 1,
+        "county": 2,
+        "name": "BALDWIN COUNTY"
     },
     {
-        "State_Code": 1,
-        "County": 5,
-        "Name": "BLOUNT COUNTY"
+        "state_code": 1,
+        "county": 5,
+        "name": "BLOUNT COUNTY"
     },
     {
-        "State_Code": 1,
-        "County": 8,
-        "Name": "CALHOUN COUNTY"
+        "state_code": 1,
+        "county": 8,
+        "name": "CALHOUN COUNTY"
     }
 ]</code></pre>
 </div>
@@ -407,22 +407,22 @@
     <pre class="prettyprint">/api/cities
 <code class="language-json">[
     {
-        "State_Code": 1,
-        "County": 1,
-        "ID": 12001003,
-        "Name": "PRATTVILLE CITY"
+        "state_code": 1,
+        "county": 1,
+        "id": 12001003,
+        "name": "PRATTVILLE CITY"
     },
     {
-        "State_Code": 1,
-        "County": 2,
-        "ID": 12002002,
-        "Name": "DAPHNE CITY"
+        "state_code": 1,
+        "county": 2,
+        "id": 12002002,
+        "name": "DAPHNE CITY"
     },
     {
-        "State_Code": 1,
-        "County": 2,
-        "ID": 12002004,
-        "Name": "FAIRHOPE CITY"
+        "state_code": 1,
+        "county": 2,
+        "id": 12002004,
+        "name": "FAIRHOPE CITY"
     }
 ]</code></pre>
 </div>
