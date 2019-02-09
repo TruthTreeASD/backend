@@ -1,5 +1,8 @@
 package edu.northeastern.truthtree;
 
+import edu.northeastern.truthtree.adapter.timerange.ITimeRangeAdapter;
+import edu.northeastern.truthtree.adapter.timerange.TimeRangeDBAdapter;
+import edu.northeastern.truthtree.adapter.timerange.TimeRangeMockAdapter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -18,6 +21,7 @@ public class ApplicationConfig {
     private static final Boolean RETURN_MOCK_DATA_ATTRIBUTES = true;
     private static final Boolean RETURN_MOCK_DATA_BASIC_INFO = true;
     private static final Boolean RETURN_MOCK_DATA_COLLECTIONS = true;
+    private static final Boolean RETURN_MOCK_DATA_TIME_RANGE = true;
 
 	@Bean
 	public IAttributesAdapter getAttributeAdapter() {
@@ -32,5 +36,10 @@ public class ApplicationConfig {
 	@Bean
 	public ICollectionsAdapter getCollectionsAdapter() {
 		return RETURN_MOCK_DATA_COLLECTIONS ? new CollectionsMockAdapter() : new CollectionsDBAdapter();
+	}
+
+	@Bean
+	public ITimeRangeAdapter getTimeRangeAdapter() {
+		return RETURN_MOCK_DATA_TIME_RANGE ? new TimeRangeMockAdapter() : new TimeRangeDBAdapter();
 	}
 }
