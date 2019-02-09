@@ -21,7 +21,7 @@
             crossorigin="anonymous"></script>
     <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <title>TruthTree</title>
+    <title>Truth Tree</title>
     <style>
         h1 {
             font-size: 23px;
@@ -175,7 +175,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <h1>TruthTree</h1>
+        <h1>Truth Tree</h1>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -199,6 +199,7 @@
                 </ul>
             </li>
             <li><a href="api/collections" style="font-size: 16px;">Collections</a></li>
+            <li><a href="api/time_range" style="font-size: 16px;">Time Range</a></li>
             <li><a href="swagger-ui.html" style="font-size: 16px; border-right: 1px;">Swagger</a></li>
         </ul>
     </div>
@@ -297,7 +298,7 @@
         "attributes": [
             {
                 "name": "food_tax",
-                "Attribute_id": "00011",
+                "attribute_id": "00011",
                 "startYear": 1955,
                 "endYear": 2005
             }]
@@ -502,7 +503,7 @@
             "collections": [
             {
                 "name":"Alcohol",
-                "Collection_id":"123",
+                "collection_id":"123",
                 "properties": [
                 {
                     "name":"Tax",
@@ -547,7 +548,7 @@
             "collections":[
             {
                 "name":"Alcohol",
-                "Collection_id":"123",
+                "collection_id":"123",
                 "properties": [
                 {
                     "name":"Tax",
