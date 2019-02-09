@@ -21,7 +21,7 @@
             crossorigin="anonymous"></script>
     <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <title>TruthTree</title>
+    <title>Truth Tree</title>
     <style>
         h1 {
             font-size: 23px;
@@ -136,7 +136,7 @@
 
         .codeBlock {
             max-height: 221px;
-            min-width: 365px;
+            width: 365px;
             overflow: auto;
             border-radius: 4px 4px 4px 4px;
         }
@@ -153,8 +153,14 @@
             display: inline-block;
         }
 
-        .basicInfoStatesCode, .basicInfoCitiesCode, .basicInfoCountiesCode {
+        .basicInfoStatesCode, .basicInfoCountiesCode {
             display: inline-block;
+            margin-left: 10px;
+            margin-right: 20px;
+        }
+
+        .basicInfoCitiesCode {
+            margin-top: 10px;
             margin-left: 10px;
             margin-right: 20px;
         }
@@ -175,7 +181,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <h1>TruthTree</h1>
+        <h1>Truth Tree</h1>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -199,6 +205,7 @@
                 </ul>
             </li>
             <li><a href="api/collections" style="font-size: 16px;">Collections</a></li>
+            <li><a href="api/time_range" style="font-size: 16px;">Time Range</a></li>
             <li><a href="swagger-ui.html" style="font-size: 16px; border-right: 1px;">Swagger</a></li>
         </ul>
     </div>
@@ -227,8 +234,7 @@
             class="language-http">/api/collections?level=city</code></pre>
 </div>
 <div class="collectionsCode codeBlock">
-    <pre class="prettyprint">
-        /api/collections?level=state
+    <pre class="prettyprint">/api/collections?level=state
 <code class="language-json">[
     {
         "name": "Alcohol",
@@ -297,7 +303,7 @@
         "attributes": [
             {
                 "name": "food_tax",
-                "Attribute_id": "00011",
+                "attribute_id": "00011",
                 "startYear": 1955,
                 "endYear": 2005
             }]
@@ -325,34 +331,60 @@
     <h5>Request URL:</h5>
     <pre class="prettyprint http"><code class="language-http">/api/states</code></pre>
     <br>
+    <pre class="prettyprint http"><code class="language-http">/api/states?populationRange[startValue, endValue]</code></pre>
+    <br>
     <pre class="prettyprint http"><code class="language-http">/api/counties</code></pre>
     <br>
     <pre class="prettyprint http"><code class="language-http">/api/cities</code></pre>
 </div>
 <div class="basicInfoStatesCode codeBlock">
-    <pre class="prettyprint">
-        /api/states
+    <pre class="prettyprint">/api/states
 <code class="language-json">[
     {
         "State_Code": 1,
         "Name": "ALABAMA",
         "Abbreviation": "AL"
+        "Population": "4,887,871"
     },
     {
         "State_Code": 2,
         "Name": "ALASKA",
         "Abbreviation": "AK"
+        "Population": "737,438"
     },
     {
         "State_Code": 3,
         "Name": "ARIZONA",
         "Abbreviation": "AZ"
+        "Population": "7,171,646"
+    }
+]</code></pre>
+</div>
+<div class="basicInfoStatesCode codeBlock">
+    <pre class="prettyprint">/api/states?populationRange[4000000,5000000]
+<code class="language-json">[
+    {
+        "State_Code": 1,
+        "Name": "ALABAMA",
+        "Abbreviation": "AL"
+        "Population": "4,887,871"
+    },
+    {
+        "State_Code": 19,
+        "Name": "LOUISIANA",
+        "Abbreviation": "KY"
+        "Population": "4,659,978"
+    },
+    {
+        "State_Code": 17,
+        "Name": "KENTUCKY",
+        "Abbreviation": "AZ"
+        "Population": "4,468,402"
     }
 ]</code></pre>
 </div>
 <div class="basicInfoCountiesCode codeBlock">
-    <pre class="prettyprint">
-        /api/counties
+    <pre class="prettyprint">/api/counties
 <code class="language-json">[
     {
         "State_Code": 1,
@@ -372,8 +404,7 @@
 ]</code></pre>
 </div>
 <div class="basicInfoCitiesCode codeBlock">
-    <pre class="prettyprint">
-        /api/cities
+    <pre class="prettyprint">/api/cities
 <code class="language-json">[
     {
         "State_Code": 1,
@@ -491,8 +522,7 @@
     </table>
 </div>
 <div class="attributesCode codeBlockLarge">
-    <pre class="prettyprint">
-        /api/attributes?level=state&value=[1,2]&collection=[123]&property=[00001,00002]&yearRange=[2017,2018]
+    <pre class="prettyprint">/api/attributes?level=state&value=[1,2]&collection=[123]&property=[00001,00002]&yearRange=[2017,2018]
 <code class="language-json">[
     {
         "States": [
@@ -502,7 +532,7 @@
             "collections": [
             {
                 "name":"Alcohol",
-                "Collection_id":"123",
+                "collection_id":"123",
                 "properties": [
                 {
                     "name":"Tax",
@@ -547,7 +577,7 @@
             "collections":[
             {
                 "name":"Alcohol",
-                "Collection_id":"123",
+                "collection_id":"123",
                 "properties": [
                 {
                     "name":"Tax",
