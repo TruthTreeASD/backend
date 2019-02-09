@@ -72,4 +72,24 @@ public class JSONUtil {
 
     return jsonObject;
   }
+
+  public static JSONArray filterJSON(JSONArray jsonArray, String JSONKey, int startValue,
+                                     int endValue) {
+
+    JSONArray filteredArray = new JSONArray();
+
+    for (int i = 0; i < jsonArray.size(); i++) {
+      JSONObject object = (JSONObject) jsonArray.get(i);
+
+      String valueString = (String) object.get(JSONKey);
+      valueString = valueString.replaceAll(",", "");
+      int valueInt = Integer.parseInt(valueString);
+
+      if (valueInt >= startValue && valueInt <= endValue) {
+        filteredArray.add(object);
+      }
+    }
+
+    return filteredArray;
+  }
 }

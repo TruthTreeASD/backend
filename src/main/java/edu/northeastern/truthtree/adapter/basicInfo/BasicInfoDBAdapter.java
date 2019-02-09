@@ -20,6 +20,20 @@ public class BasicInfoDBAdapter implements IBasicInfoAdapter {
     return URLUtil.readJSONFromURL(STATES_URL);
   }
 
+
+  /**
+   * Gets the basic states info from STATES_URL that have a population betwee startValue and
+   * endValue.
+   *
+   * @param startValue The value that all wanted values will be greater than or equal to.
+   * @param endValue   The value that all wanted values will be less than or equal to.
+   * @return JSONArray that contains states that are within the provided range.
+   */
+  @Override
+  public JSONArray getBasicStatesPopulationRange(int startValue, int endValue) {
+    return null;
+  }
+
   /**
    * Gets the basic states info from the CITIES_URL
    *
@@ -41,5 +55,4 @@ public class BasicInfoDBAdapter implements IBasicInfoAdapter {
 
     return URLUtil.readJSONFromURL(COUNTIES_URL);
   }
-
 }

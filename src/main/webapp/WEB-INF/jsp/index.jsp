@@ -331,7 +331,7 @@
     <h5>Request URL:</h5>
     <pre class="prettyprint http"><code class="language-http">/api/states</code></pre>
     <br>
-    <pre class="prettyprint http"><code class="language-http">/api/states?populationRange[startValue, endValue]</code></pre>
+    <pre class="prettyprint http"><code class="language-http">/api/states?populationRange=startValue,endValue</code></pre>
     <br>
     <pre class="prettyprint http"><code class="language-http">/api/counties</code></pre>
     <br>
@@ -361,25 +361,31 @@
 ]</code></pre>
 </div>
 <div class="basicInfoStatesCode codeBlock">
-    <pre class="prettyprint">/api/states?populationRange[4000000,5000000]
+    <pre class="prettyprint">/api/states?populationRange=4000000,5000000
 <code class="language-json">[
     {
-        "state_code": 1,
         "name": "ALABAMA",
+        "state_code": 1,
         "abbreviation": "AL"
         "population": "4,887,871"
     },
     {
-        "state_code": 19,
         "name": "LOUISIANA",
+        "state_code": 19,
         "abbreviation": "KY"
         "population": "4,659,978"
     },
     {
-        "state_code": 17,
         "name": "KENTUCKY",
+        "state_code": 17,
         "abbreviation": "AZ"
         "population": "4,468,402"
+    },
+    {
+        "name": "OREGON",
+        "state_code": 38,
+        "abbreviation": "OR",
+        "population": "4,190,713"
     }
 ]</code></pre>
 </div>
@@ -438,7 +444,6 @@
     parameters can be used to find desired result.
 </div>
 <div class="text-block text-body">
-    <h5>Request URL:</h5>
     <table class="table table-striped">
         <thead>
         <tr>
