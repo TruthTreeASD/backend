@@ -21,6 +21,11 @@ public class BasicInfoService implements IBasicInfoService {
 	}
 
 	@Override
+	public JSONArray getBasicStatesPopulationRange(int startValue, int endValue) {
+		return this.adapter.getBasicStatesPopulationRange(startValue, endValue);
+	}
+
+	@Override
 	public JSONArray getBasicCitiesInfo() {
 		return this.adapter.getBasicCitiesInfo();
 	}

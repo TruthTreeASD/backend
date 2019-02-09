@@ -1,8 +1,5 @@
 package edu.northeastern.truthtree;
 
-import edu.northeastern.truthtree.adapter.timerange.ITimeRangeAdapter;
-import edu.northeastern.truthtree.adapter.timerange.TimeRangeDBAdapter;
-import edu.northeastern.truthtree.adapter.timerange.TimeRangeMockAdapter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -15,6 +12,9 @@ import edu.northeastern.truthtree.adapter.basicInfo.IBasicInfoAdapter;
 import edu.northeastern.truthtree.adapter.collections.CollectionsDBAdapter;
 import edu.northeastern.truthtree.adapter.collections.CollectionsMockAdapter;
 import edu.northeastern.truthtree.adapter.collections.ICollectionsAdapter;
+import edu.northeastern.truthtree.adapter.timerange.ITimeRangeAdapter;
+import edu.northeastern.truthtree.adapter.timerange.TimeRangeDBAdapter;
+import edu.northeastern.truthtree.adapter.timerange.TimeRangeMockAdapter;
 
 @Configuration
 public class ApplicationConfig {

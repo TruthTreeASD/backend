@@ -8,6 +8,7 @@ public class BasicInfoMockAdapter implements IBasicInfoAdapter {
 	private static final String STATES_FILE_PATH = "src/main/resources/States.json";
 	private static final String CITIES_FILE_PATH = "src/main/resources/Cities.json";
 	private static final String COUNTIES_FILE_PATH = "src/main/resources/Counties.json";
+	private static final String POPULATION_KEY = "population";
 
 	/**
 	 * Reads a JSON file containing basic state information.
@@ -18,6 +19,13 @@ public class BasicInfoMockAdapter implements IBasicInfoAdapter {
 	public JSONArray getBasicStatesInfo() {
 
 		return JSONUtil.readJSONFile(STATES_FILE_PATH);
+	}
+
+	@Override
+	public JSONArray getBasicStatesPopulationRange(int startValue, int endValue) {
+		JSONArray jsonArray = JSONUtil.readJSONFile(STATES_FILE_PATH);
+
+		return JSONUtil.filterJSON(jsonArray, POPULATION_KEY, startValue, endValue);
 	}
 
 	/**
