@@ -136,7 +136,7 @@
 
         .codeBlock {
             max-height: 221px;
-            min-width: 365px;
+            width: 365px;
             overflow: auto;
             border-radius: 4px 4px 4px 4px;
         }
@@ -153,8 +153,14 @@
             display: inline-block;
         }
 
-        .basicInfoStatesCode, .basicInfoCitiesCode, .basicInfoCountiesCode {
+        .basicInfoStatesCode, .basicInfoCountiesCode {
             display: inline-block;
+            margin-left: 10px;
+            margin-right: 20px;
+        }
+
+        .basicInfoCitiesCode {
+            margin-top: 10px;
             margin-left: 10px;
             margin-right: 20px;
         }
@@ -228,8 +234,7 @@
             class="language-http">/api/collections?level=city</code></pre>
 </div>
 <div class="collectionsCode codeBlock">
-    <pre class="prettyprint">
-        /api/collections?level=state
+    <pre class="prettyprint">/api/collections?level=state
 <code class="language-json">[
     {
         "name": "Alcohol",
@@ -326,34 +331,60 @@
     <h5>Request URL:</h5>
     <pre class="prettyprint http"><code class="language-http">/api/states</code></pre>
     <br>
+    <pre class="prettyprint http"><code class="language-http">/api/states?populationRange[startValue, endValue]</code></pre>
+    <br>
     <pre class="prettyprint http"><code class="language-http">/api/counties</code></pre>
     <br>
     <pre class="prettyprint http"><code class="language-http">/api/cities</code></pre>
 </div>
 <div class="basicInfoStatesCode codeBlock">
-    <pre class="prettyprint">
-        /api/states
+    <pre class="prettyprint">/api/states
 <code class="language-json">[
     {
         "State_Code": 1,
         "Name": "ALABAMA",
         "Abbreviation": "AL"
+        "Population": "4,887,871"
     },
     {
         "State_Code": 2,
         "Name": "ALASKA",
         "Abbreviation": "AK"
+        "Population": "737,438"
     },
     {
         "State_Code": 3,
         "Name": "ARIZONA",
         "Abbreviation": "AZ"
+        "Population": "7,171,646"
+    }
+]</code></pre>
+</div>
+<div class="basicInfoStatesCode codeBlock">
+    <pre class="prettyprint">/api/states?populationRange[4000000,5000000]
+<code class="language-json">[
+    {
+        "State_Code": 1,
+        "Name": "ALABAMA",
+        "Abbreviation": "AL"
+        "Population": "4,887,871"
+    },
+    {
+        "State_Code": 19,
+        "Name": "LOUISIANA",
+        "Abbreviation": "KY"
+        "Population": "4,659,978"
+    },
+    {
+        "State_Code": 17,
+        "Name": "KENTUCKY",
+        "Abbreviation": "AZ"
+        "Population": "4,468,402"
     }
 ]</code></pre>
 </div>
 <div class="basicInfoCountiesCode codeBlock">
-    <pre class="prettyprint">
-        /api/counties
+    <pre class="prettyprint">/api/counties
 <code class="language-json">[
     {
         "State_Code": 1,
@@ -373,8 +404,7 @@
 ]</code></pre>
 </div>
 <div class="basicInfoCitiesCode codeBlock">
-    <pre class="prettyprint">
-        /api/cities
+    <pre class="prettyprint">/api/cities
 <code class="language-json">[
     {
         "State_Code": 1,
@@ -492,8 +522,7 @@
     </table>
 </div>
 <div class="attributesCode codeBlockLarge">
-    <pre class="prettyprint">
-        /api/attributes?level=state&value=[1,2]&collection=[123]&property=[00001,00002]&yearRange=[2017,2018]
+    <pre class="prettyprint">/api/attributes?level=state&value=[1,2]&collection=[123]&property=[00001,00002]&yearRange=[2017,2018]
 <code class="language-json">[
     {
         "States": [

@@ -1,257 +1,308 @@
 [
   {
-    "State_Code": 1,
-    "Name": "ALABAMA",
-    "Abbreviation": "AL"
+    "state_code": 1,
+    "name": "ALABAMA",
+    "abbreviation": "AL",
+    "population": "4,887,871"
   },
   {
-    "State_Code": 2,
-    "Name": "ALASKA",
-    "Abbreviation": "AK"
+    "state_code": 2,
+    "name": "ALASKA",
+    "abbreviation": "AK",
+    "population":  "737,438"
   },
   {
-    "State_Code": 3,
-    "Name": "ARIZONA",
-    "Abbreviation": "AZ"
+    "state_code": 3,
+    "name": "ARIZONA",
+    "abbreviation": "AZ",
+    "population":  "7,171,646"
   },
   {
-    "State_Code": 4,
-    "Name": "ARKANSAS",
-    "Abbreviation": "AR"
+    "state_code": 4,
+    "name": "ARKANSAS",
+    "abbreviation": "AR",
+    "population":  "3,013,825"
   },
   {
-    "State_Code": 5,
-    "Name": "CALIFORNIA",
-    "Abbreviation": "CA"
+    "state_code": 5,
+    "name": "CALIFORNIA",
+    "abbreviation": "CA",
+    "population":  "39,557,045"
   },
   {
-    "State_Code": 6,
-    "Name": "COLORADO",
-    "Abbreviation": "CO"
+    "state_code": 6,
+    "name": "COLORADO",
+    "abbreviation": "CO",
+    "population":  "5,695,564"
   },
   {
-    "State_Code": 7,
-    "Name": "CONNECTICUT",
-    "Abbreviation": "CT"
+    "state_code": 7,
+    "name": "CONNECTICUT",
+    "abbreviation": "CT",
+    "population":  "3,572,665"
   },
   {
-    "State_Code": 8,
-    "Name": "DELAWARE",
-    "Abbreviation": "DE"
+    "state_code": 8,
+    "name": "DELAWARE",
+    "abbreviation": "DE",
+    "population":  "967,171"
   },
   {
-    "State_Code": 9,
-    "Name": "WASHINGTON DC",
-    "Abbreviation": "DC"
+    "state_code": 9,
+    "name": "WASHINGTON DC",
+    "abbreviation": "DC",
+    "population":  "702,455"
   },
   {
-    "State_Code": 10,
-    "Name": "FLORIDA",
-    "Abbreviation": "FL"
+    "state_code": 10,
+    "name": "FLORIDA",
+    "abbreviation": "FL",
+    "population":  "21,299,325"
   },
   {
-    "State_Code": 11,
-    "Name": "GEORGIA",
-    "Abbreviation": "GA"
+    "state_code": 11,
+    "name": "GEORGIA",
+    "abbreviation": "GA",
+    "population":  "10,519,475"
   },
   {
-    "State_Code": 12,
-    "Name": "HAWAII",
-    "Abbreviation": "HI"
+    "state_code": 12,
+    "name": "HAWAII",
+    "abbreviation": "HI",
+    "population":  "1,420,491"
   },
   {
-    "State_Code": 13,
-    "Name": "IDAHO",
-    "Abbreviation": "ID"
+    "state_code": 13,
+    "name": "IDAHO",
+    "abbreviation": "ID",
+    "population":  "1,754,208"
   },
   {
-    "State_Code": 14,
-    "Name": "ILLINOIS",
-    "Abbreviation": "IL"
+    "state_code": 14,
+    "name": "ILLINOIS",
+    "abbreviation": "IL",
+    "population":  "12,741,080"
   },
   {
-    "State_Code": 15,
-    "Name": "INDIANA",
-    "Abbreviation": "IN"
+    "state_code": 15,
+    "name": "INDIANA",
+    "abbreviation": "IN",
+    "population":  "6,691,878"
   },
   {
-    "State_Code": 16,
-    "Name": "IOWA",
-    "Abbreviation": "IA"
+    "state_code": 16,
+    "name": "IOWA",
+    "abbreviation": "IA",
+    "population":  "3,156,145"
   },
   {
-    "State_Code": 17,
-    "Name": "KANSAS",
-    "Abbreviation": "KS"
+    "state_code": 17,
+    "name": "KANSAS",
+    "abbreviation": "KS",
+    "population":  "2,911,505"
   },
   {
-    "State_Code": 18,
-    "Name": "KENTUCKY",
-    "Abbreviation": "KY"
+    "state_code": 18,
+    "name": "KENTUCKY",
+    "abbreviation": "KY",
+    "population":  "4,468,402"
   },
   {
-    "State_Code": 19,
-    "Name": "LOUISIANA",
-    "Abbreviation": "LA"
+    "state_code": 19,
+    "name": "LOUISIANA",
+    "abbreviation": "LA",
+    "population":  "4,659,978"
   },
   {
-    "State_Code": 20,
-    "Name": "MAINE",
-    "Abbreviation": "ME"
+    "state_code": 20,
+    "name": "MAINE",
+    "abbreviation": "ME",
+    "population":  "1,338,404"
   },
   {
-    "State_Code": 21,
-    "Name": "MARYLAND",
-    "Abbreviation": "MD"
+    "state_code": 21,
+    "name": "MARYLAND",
+    "abbreviation": "MD",
+    "population":  "6,042,718"
   },
   {
-    "State_Code": 22,
-    "Name": "MASSACHUSETTS",
-    "Abbreviation": "MA"
+    "state_code": 22,
+    "name": "MASSACHUSETTS",
+    "abbreviation": "MA",
+    "population":  "6,902,149"
   },
   {
-    "State_Code": 23,
-    "Name": "MICHIGAN",
-    "Abbreviation": "MI"
+    "state_code": 23,
+    "name": "MICHIGAN",
+    "abbreviation": "MI",
+    "population":  "9,998,915"
   },
   {
-    "State_Code": 24,
-    "Name": "MINNESOTA",
-    "Abbreviation": "MN"
+    "state_code": 24,
+    "name": "MINNESOTA",
+    "abbreviation": "MN",
+    "population":  "5,611,179"
   },
   {
-    "State_Code": 25,
-    "Name": "MISSISSIPPI",
-    "Abbreviation": "MS"
+    "state_code": 25,
+    "name": "MISSISSIPPI",
+    "abbreviation": "MS",
+    "population":  "2,986,530"
   },
   {
-    "State_Code": 26,
-    "Name": "MISSOURI",
-    "Abbreviation": "MO"
+    "state_code": 26,
+    "name": "MISSOURI",
+    "abbreviation": "MO",
+    "population":  "6,126,452"
   },
   {
-    "State_Code": 27,
-    "Name": "MONTANA",
-    "Abbreviation": "MT"
+    "state_code": 27,
+    "name": "MONTANA",
+    "abbreviation": "MT",
+    "population":  "1,062,305"
   },
   {
-    "State_Code": 28,
-    "Name": "NEBRASKA",
-    "Abbreviation": "NE"
+    "state_code": 28,
+    "name": "NEBRASKA",
+    "abbreviation": "NE",
+    "population":  "1,929,268"
   },
   {
-    "State_Code": 29,
-    "Name": "NEVADA",
-    "Abbreviation": "NV"
+    "state_code": 29,
+    "name": "NEVADA",
+    "abbreviation": "NV",
+    "population":  "3,034,392"
   },
   {
-    "State_Code": 30,
-    "Name": "NEW HAMPSHIRE",
-    "Abbreviation": "NH"
+    "state_code": 30,
+    "name": "NEW HAMPSHIRE",
+    "abbreviation": "NH",
+    "population":  "1,356,458"
   },
   {
-    "State_Code": 31,
-    "Name": "NEW JERSEY",
-    "Abbreviation": "NJ"
+    "state_code": 31,
+    "name": "NEW JERSEY",
+    "abbreviation": "NJ",
+    "population":  "9,032,873"
   },
   {
-    "State_Code": 32,
-    "Name": "NEW MEXICO",
-    "Abbreviation": "NM"
+    "state_code": 32,
+    "name": "NEW MEXICO",
+    "abbreviation": "NM",
+    "population":  "2,095,428"
   },
   {
-    "State_Code": 33,
-    "Name": "NEW YORK",
-    "Abbreviation": "NY"
+    "state_code": 33,
+    "name": "NEW YORK",
+    "abbreviation": "NY",
+    "population":  "19,542,209"
   },
   {
-    "State_Code": 34,
-    "Name": "NORTH CAROLINA",
-    "Abbreviation": "NC"
+    "state_code": 34,
+    "name": "NORTH CAROLINA",
+    "abbreviation": "NC",
+    "population":  "10,383,620"
   },
   {
-    "State_Code": 35,
-    "Name": "NORTH DAKOTA",
-    "Abbreviation": "ND"
+    "state_code": 35,
+    "name": "NORTH DAKOTA",
+    "abbreviation": "ND",
+    "population":  "760,077"
   },
   {
-    "State_Code": 36,
-    "Name": "OHIO",
-    "Abbreviation": "OH"
+    "state_code": 36,
+    "name": "OHIO",
+    "abbreviation": "OH",
+    "population":  "11,689,442"
   },
   {
-    "State_Code": 37,
-    "Name": "OKLAHOMA",
-    "Abbreviation": "OK"
+    "state_code": 37,
+    "name": "OKLAHOMA",
+    "abbreviation": "OK",
+    "population":  "3,943,079"
   },
   {
-    "State_Code": 38,
-    "Name": "OREGON",
-    "Abbreviation": "OR"
+    "state_code": 38,
+    "name": "OREGON",
+    "abbreviation": "OR",
+    "population":  "4,190,713"
   },
   {
-    "State_Code": 39,
-    "Name": "PENNSYLVANIA",
-    "Abbreviation": "PA"
+    "state_code": 39,
+    "name": "PENNSYLVANIA",
+    "abbreviation": "PA",
+    "population":  "12,807,060"
   },
   {
-    "State_Code": 40,
-    "Name": "RHODE ISLAND",
-    "Abbreviation": "RI"
+    "state_code": 40,
+    "name": "RHODE ISLAND",
+    "abbreviation": "RI",
+    "population":  "1,057,315"
   },
   {
-    "State_Code": 41,
-    "Name": "SOUTH CAROLINA",
-    "Abbreviation": "SC"
+    "state_code": 41,
+    "name": "SOUTH CAROLINA",
+    "abbreviation": "SC",
+    "population":  "5,084,127"
   },
   {
-    "State_Code": 42,
-    "Name": "SOUTH DAKOTA",
-    "Abbreviation": "SD"
+    "state_code": 42,
+    "name": "SOUTH DAKOTA",
+    "abbreviation": "SD",
+    "population":  "882,235"
   },
   {
-    "State_Code": 43,
-    "Name": "TENNESSEE",
-    "Abbreviation": "TN"
+    "state_code": 43,
+    "name": "TENNESSEE",
+    "abbreviation": "TN",
+    "population":  "6,770,010"
   },
   {
-    "State_Code": 44,
-    "Name": "TEXAS",
-    "Abbreviation": "TX"
+    "state_code": 44,
+    "name": "TEXAS",
+    "abbreviation": "TX",
+    "population":  "28,701,845"
   },
   {
-    "State_Code": 45,
-    "Name": "UTAH",
-    "Abbreviation": "UT"
+    "state_code": 45,
+    "name": "UTAH",
+    "abbreviation": "UT",
+    "population":  "3,161,105"
   },
   {
-    "State_Code": 46,
-    "Name": "VERMONT",
-    "Abbreviation": "VT"
+    "state_code": 46,
+    "name": "VERMONT",
+    "abbreviation": "VT",
+    "population":  "626,299"
   },
   {
-    "State_Code": 47,
-    "Name": "VIRGINIA",
-    "Abbreviation": "VA"
+    "state_code": 47,
+    "name": "VIRGINIA",
+    "abbreviation": "VA",
+    "population":  "8,517,685"
   },
   {
-    "State_Code": 48,
-    "Name": "WASHINGTON",
-    "Abbreviation": "WA"
+    "state_code": 48,
+    "name": "WASHINGTON",
+    "abbreviation": "WA",
+    "population":  "7,535,591"
   },
   {
-    "State_Code": 49,
-    "Name": "WEST VIRGINIA",
-    "Abbreviation": "WV"
+    "state_code": 49,
+    "name": "WEST VIRGINIA",
+    "abbreviation": "WV",
+    "population":  "1,805,832"
   },
   {
-    "State_Code": 50,
-    "Name": "WISCONSIN",
-    "Abbreviation": "WI"
+    "state_code": 50,
+    "name": "WISCONSIN",
+    "abbreviation": "WI",
+    "population":  "5,813,568"
   },
   {
-    "State_Code": 51,
-    "Name": "WYOMING",
-    "Abbreviation": "WY"
+    "state_code": 51,
+    "name": "WYOMING",
+    "abbreviation": "WY",
+    "population":  "577,737"
   }
 ]
