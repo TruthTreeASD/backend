@@ -1,0 +1,23 @@
+[{
+    "name": "Alcohol",
+    "collection_id": "123",
+    "attributes": [
+      {
+        "name": "food_tax",
+        "Attribute_id": "00033",
+        "startYear": 1955,
+        "endYear": 2005
+      } ]
+  },
+  {
+    "name": "Food",
+    "collection_id": "345",
+    "attributes": [
+      {
+        "name": "food_expenditure",
+        "attribute_id": "00002",
+        "startYear": 1955,
+        "endYear": 2005
+      } ]
+    }
+]
