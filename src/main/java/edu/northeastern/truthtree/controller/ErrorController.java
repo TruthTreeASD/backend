@@ -7,12 +7,11 @@ import springfox.documentation.annotations.ApiIgnore;
 
 @Controller
 @ApiIgnore
-public class LandingController {
+public class ErrorController {
 
-  @GetMapping({"/", "/index"})
-  public String home() {
+  @GetMapping("/error")
+  public String error() {
 
-    return "index";
+    return "error";
   }
 }
-

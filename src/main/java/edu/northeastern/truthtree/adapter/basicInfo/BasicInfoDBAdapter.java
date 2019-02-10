@@ -20,7 +20,6 @@ public class BasicInfoDBAdapter implements IBasicInfoAdapter {
     return URLUtil.readJSONFromURL(STATES_URL);
   }
 
-
   /**
    * Gets the basic states info from STATES_URL that have a population betwee startValue and
    * endValue.
