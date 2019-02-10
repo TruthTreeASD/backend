@@ -331,7 +331,7 @@
     <h5>Request URL:</h5>
     <pre class="prettyprint http"><code class="language-http">/api/states</code></pre>
     <br>
-    <pre class="prettyprint http"><code class="language-http">/api/states?populationRange=startValue,endValue</code></pre>
+    <pre class="prettyprint http"><code class="language-http">/api/states?populationRange=minValue,maxValue</code></pre>
     <br>
     <pre class="prettyprint http"><code class="language-http">/api/counties</code></pre>
     <br>
