@@ -3,306 +3,306 @@
     "state_code": 1,
     "name": "ALABAMA",
     "abbreviation": "AL",
-    "population": "4,887,871"
+    "population": "4887871"
   },
   {
     "state_code": 2,
     "name": "ALASKA",
     "abbreviation": "AK",
-    "population":  "737,438"
+    "population":  "737438"
   },
   {
     "state_code": 3,
     "name": "ARIZONA",
     "abbreviation": "AZ",
-    "population":  "7,171,646"
+    "population":  "7171646"
   },
   {
     "state_code": 4,
     "name": "ARKANSAS",
     "abbreviation": "AR",
-    "population":  "3,013,825"
+    "population":  "3013825"
   },
   {
     "state_code": 5,
     "name": "CALIFORNIA",
     "abbreviation": "CA",
-    "population":  "39,557,045"
+    "population":  "39557045"
   },
   {
     "state_code": 6,
     "name": "COLORADO",
     "abbreviation": "CO",
-    "population":  "5,695,564"
+    "population":  "5695564"
   },
   {
     "state_code": 7,
     "name": "CONNECTICUT",
     "abbreviation": "CT",
-    "population":  "3,572,665"
+    "population":  "3572665"
   },
   {
     "state_code": 8,
     "name": "DELAWARE",
     "abbreviation": "DE",
-    "population":  "967,171"
+    "population":  "967171"
   },
   {
     "state_code": 9,
     "name": "WASHINGTON DC",
     "abbreviation": "DC",
-    "population":  "702,455"
+    "population":  "702455"
   },
   {
     "state_code": 10,
     "name": "FLORIDA",
     "abbreviation": "FL",
-    "population":  "21,299,325"
+    "population":  "21299325"
   },
   {
     "state_code": 11,
     "name": "GEORGIA",
     "abbreviation": "GA",
-    "population":  "10,519,475"
+    "population":  "10519475"
   },
   {
     "state_code": 12,
     "name": "HAWAII",
     "abbreviation": "HI",
-    "population":  "1,420,491"
+    "population":  "1420491"
   },
   {
     "state_code": 13,
     "name": "IDAHO",
     "abbreviation": "ID",
-    "population":  "1,754,208"
+    "population":  "1754208"
   },
   {
     "state_code": 14,
     "name": "ILLINOIS",
     "abbreviation": "IL",
-    "population":  "12,741,080"
+    "population":  "12741080"
   },
   {
     "state_code": 15,
     "name": "INDIANA",
     "abbreviation": "IN",
-    "population":  "6,691,878"
+    "population":  "6691878"
   },
   {
     "state_code": 16,
     "name": "IOWA",
     "abbreviation": "IA",
-    "population":  "3,156,145"
+    "population":  "3156145"
   },
   {
     "state_code": 17,
     "name": "KANSAS",
     "abbreviation": "KS",
-    "population":  "2,911,505"
+    "population":  "2911505"
   },
   {
     "state_code": 18,
     "name": "KENTUCKY",
     "abbreviation": "KY",
-    "population":  "4,468,402"
+    "population":  "4468402"
   },
   {
     "state_code": 19,
     "name": "LOUISIANA",
     "abbreviation": "LA",
-    "population":  "4,659,978"
+    "population":  "4659978"
   },
   {
     "state_code": 20,
     "name": "MAINE",
     "abbreviation": "ME",
-    "population":  "1,338,404"
+    "population":  "1338404"
   },
   {
     "state_code": 21,
     "name": "MARYLAND",
     "abbreviation": "MD",
-    "population":  "6,042,718"
+    "population":  "6042718"
   },
   {
     "state_code": 22,
     "name": "MASSACHUSETTS",
     "abbreviation": "MA",
-    "population":  "6,902,149"
+    "population":  "6902149"
   },
   {
     "state_code": 23,
     "name": "MICHIGAN",
     "abbreviation": "MI",
-    "population":  "9,998,915"
+    "population":  "9998915"
   },
   {
     "state_code": 24,
     "name": "MINNESOTA",
     "abbreviation": "MN",
-    "population":  "5,611,179"
+    "population":  "5611179"
   },
   {
     "state_code": 25,
     "name": "MISSISSIPPI",
     "abbreviation": "MS",
-    "population":  "2,986,530"
+    "population":  "2986530"
   },
   {
     "state_code": 26,
     "name": "MISSOURI",
     "abbreviation": "MO",
-    "population":  "6,126,452"
+    "population":  "6126452"
   },
   {
     "state_code": 27,
     "name": "MONTANA",
     "abbreviation": "MT",
-    "population":  "1,062,305"
+    "population":  "1062305"
   },
   {
     "state_code": 28,
     "name": "NEBRASKA",
     "abbreviation": "NE",
-    "population":  "1,929,268"
+    "population":  "1929268"
   },
   {
     "state_code": 29,
     "name": "NEVADA",
     "abbreviation": "NV",
-    "population":  "3,034,392"
+    "population":  "3034392"
   },
   {
     "state_code": 30,
     "name": "NEW HAMPSHIRE",
     "abbreviation": "NH",
-    "population":  "1,356,458"
+    "population":  "1356458"
   },
   {
     "state_code": 31,
     "name": "NEW JERSEY",
     "abbreviation": "NJ",
-    "population":  "9,032,873"
+    "population":  "9032873"
   },
   {
     "state_code": 32,
     "name": "NEW MEXICO",
     "abbreviation": "NM",
-    "population":  "2,095,428"
+    "population":  "2095428"
   },
   {
     "state_code": 33,
     "name": "NEW YORK",
     "abbreviation": "NY",
-    "population":  "19,542,209"
+    "population":  "19542209"
   },
   {
     "state_code": 34,
     "name": "NORTH CAROLINA",
     "abbreviation": "NC",
-    "population":  "10,383,620"
+    "population":  "10383620"
   },
   {
     "state_code": 35,
     "name": "NORTH DAKOTA",
     "abbreviation": "ND",
-    "population":  "760,077"
+    "population":  "760077"
   },
   {
     "state_code": 36,
     "name": "OHIO",
     "abbreviation": "OH",
-    "population":  "11,689,442"
+    "population":  "11689442"
   },
   {
     "state_code": 37,
     "name": "OKLAHOMA",
     "abbreviation": "OK",
-    "population":  "3,943,079"
+    "population":  "3943079"
   },
   {
     "state_code": 38,
     "name": "OREGON",
     "abbreviation": "OR",
-    "population":  "4,190,713"
+    "population":  "4190713"
   },
   {
     "state_code": 39,
     "name": "PENNSYLVANIA",
     "abbreviation": "PA",
-    "population":  "12,807,060"
+    "population":  "12807060"
   },
   {
     "state_code": 40,
     "name": "RHODE ISLAND",
     "abbreviation": "RI",
-    "population":  "1,057,315"
+    "population":  "1057315"
   },
   {
     "state_code": 41,
     "name": "SOUTH CAROLINA",
     "abbreviation": "SC",
-    "population":  "5,084,127"
+    "population":  "5084127"
   },
   {
     "state_code": 42,
     "name": "SOUTH DAKOTA",
     "abbreviation": "SD",
-    "population":  "882,235"
+    "population":  "882235"
   },
   {
     "state_code": 43,
     "name": "TENNESSEE",
     "abbreviation": "TN",
-    "population":  "6,770,010"
+    "population":  "6770010"
   },
   {
     "state_code": 44,
     "name": "TEXAS",
     "abbreviation": "TX",
-    "population":  "28,701,845"
+    "population":  "28701845"
   },
   {
     "state_code": 45,
     "name": "UTAH",
     "abbreviation": "UT",
-    "population":  "3,161,105"
+    "population":  "3161105"
   },
   {
     "state_code": 46,
     "name": "VERMONT",
     "abbreviation": "VT",
-    "population":  "626,299"
+    "population":  "626299"
   },
   {
     "state_code": 47,
     "name": "VIRGINIA",
     "abbreviation": "VA",
-    "population":  "8,517,685"
+    "population":  "8517685"
   },
   {
     "state_code": 48,
     "name": "WASHINGTON",
     "abbreviation": "WA",
-    "population":  "7,535,591"
+    "population":  "7535591"
   },
   {
     "state_code": 49,
     "name": "WEST VIRGINIA",
     "abbreviation": "WV",
-    "population":  "1,805,832"
+    "population":  "1805832"
   },
   {
     "state_code": 50,
     "name": "WISCONSIN",
     "abbreviation": "WI",
-    "population":  "5,813,568"
+    "population":  "5813568"
   },
   {
     "state_code": 51,
     "name": "WYOMING",
     "abbreviation": "WY",
-    "population":  "577,737"
+    "population":  "577737"
   }
 ]
