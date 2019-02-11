@@ -8,7 +8,6 @@ public class BasicInfoMockAdapter implements IBasicInfoAdapter {
 	private static final String STATES_FILE_PATH = "src/main/resources/States.json";
 	private static final String CITIES_FILE_PATH = "src/main/resources/Cities.json";
 	private static final String COUNTIES_FILE_PATH = "src/main/resources/Counties.json";
-	private static final String POPULATION_KEY = "population";
 
 	/**
 	 * Reads a JSON file containing basic state information.

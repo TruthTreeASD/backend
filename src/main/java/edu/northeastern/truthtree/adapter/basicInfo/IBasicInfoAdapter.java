@@ -3,6 +3,7 @@ package edu.northeastern.truthtree.adapter.basicInfo;
 import org.json.simple.JSONArray;
 
 public interface IBasicInfoAdapter {
+	static final String POPULATION_KEY = "population";
 
 	/**
 	 * Gets the basic States information.
