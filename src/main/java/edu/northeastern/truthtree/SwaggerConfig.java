@@ -1,5 +1,7 @@
 package edu.northeastern.truthtree;
 
+import com.google.common.base.Predicates;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -21,11 +23,12 @@ public class SwaggerConfig {
                 .select()
                 .apis(RequestHandlerSelectors.any())
                 .paths(PathSelectors.any())
+                .paths(Predicates.not(PathSelectors.regex("/error.*")))
                 .build();
     }
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("TruthTree backend APIs")
+                .title("Truth Tree backend APIs")
                 .version("1.0")
                 .build();
     }
