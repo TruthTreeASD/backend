@@ -1,13 +1,13 @@
 package edu.northeastern.truthtree.controller.attributes;
 
-import org.json.simple.JSONArray;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
 import edu.northeastern.truthtree.service.attributes.IAttributesService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @Component
@@ -20,10 +20,15 @@ public class Attributes implements IAttributes {
 		this.service = service;
 	}
 
-	@Override
-	@RequestMapping("/api/attributes")
-	public String getAttributes() {
-		JSONArray response = service.getAttributes();
-		return response.toJSONString();
-	}
+    @Override
+    @RequestMapping(value = "/api/attributes", method = RequestMethod.GET)
+    public ResponseEntity<Object> getAttributes(@RequestParam(value = "locations", required = false) List<Integer> locations,
+                                                    @RequestParam(value = "collection", required = false) List<Integer> collections,
+                                                    @RequestParam(value = "property", required = false) List<Integer> properties,
+                                                    @RequestParam(value = "attributes", required = false) List<Integer> attributes,
+                                                    @RequestParam(value = "yearRange", required = false) List<Integer> yearRange,
+                                                    @RequestParam(value = "yearList", required = false) List<Integer> yearList) {
+        Object response = service.getAttributes(locations, collections, properties, attributes, yearRange, yearList);
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
 }
