@@ -1,7 +1,5 @@
 package edu.northeastern.truthtree.controller.basicInfo;
 
-import static edu.northeastern.truthtree.ErrorMessages.POPULATION_ERROR;
-
 import org.json.simple.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -13,9 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import edu.northeastern.truthtree.service.basicInfo.IBasicInfoService;
 
+import static edu.northeastern.truthtree.ErrorMessages.POPULATION_ERROR;
+
+
 @RestController
 @Component
-@CrossOrigin(origins = "*", maxAge = 3600)
 public class BasicInfo implements IBasicInfo {
 	private IBasicInfoService service;
 
@@ -27,12 +27,11 @@ public class BasicInfo implements IBasicInfo {
 	}
 
 	/**
-	 * Gets basic States information for states that have a population within
-	 * startValue and endValue, inclusive.
+	 * Gets basic States information for states that have a population within startValue and
+	 * endValue, inclusive.
 	 *
-	 * @param range
-	 *            The start and end values that will be used to filter the states
-	 *            returned.
+	 * @param range The start and end values that will be used to filter the states
+	 *              returned.
 	 * @return JSONArray that contains states that are within the provided range.
 	 */
 	@Override
