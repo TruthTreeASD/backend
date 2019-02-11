@@ -1,5 +1,6 @@
 package edu.northeastern.truthtree.controller.basicInfo;
 
+import org.json.simple.JSONArray;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import static edu.northeastern.truthtree.controller.basicInfo.BasicInfo.POPULATION_RANGE;
@@ -11,7 +12,7 @@ public interface IBasicInfo {
 	 *
 	 * @return basic States information as a JSONArray string.
 	 */
-	String getBasicStatesInfo();
+	JSONArray getBasicStatesInfo();
 
 	/**
 	 * Gets basic States information for states that have a population within range, inclusive.
@@ -20,19 +21,19 @@ public interface IBasicInfo {
 	 *              the format =val1,val2
 	 * @return JSONArray that contains states that are within the provided range.
 	 */
-	String getBasicStatesPopulationRange(@RequestParam(POPULATION_RANGE) int[] range);
+	JSONArray getBasicStatesPopulationRange(@RequestParam(POPULATION_RANGE) int[] range);
 
 	/**
 	 * Gets basic Cities information.
 	 *
 	 * @return basic Cities information as a JSONArray string.
 	 */
-	String getBasicCitiesInfo();
+	JSONArray getBasicCitiesInfo();
 
 	/**
 	 * Gets basic Cities information.
 	 *
 	 * @return basic Cities information as a JSONArray string.
 	 */
-	String getBasicCountiesInfo();
+	JSONArray getBasicCountiesInfo();
 }

@@ -9,10 +9,9 @@ import springfox.documentation.annotations.ApiIgnore;
 @ApiIgnore
 public class LandingController {
 
-  @GetMapping({"/", "/index"})
-  public String home() {
-
-    return "index";
-  }
+    @GetMapping({"/", "/index"})
+    public String home() {
+        return "index";
+    }
 }
 

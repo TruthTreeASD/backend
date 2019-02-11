@@ -12,6 +12,7 @@ public class JoltUtil {
 
     /**
      * Do Jolt mapping for a single Json object.
+     *
      * @param inputJSON
      * @param mappingSpecPath
      * @return transformed Json object
@@ -23,6 +24,7 @@ public class JoltUtil {
 
     /**
      * Do Jolt mapping for Json array.
+     *
      * @param jsonArray
      * @param mappingSpecPath
      * @return transformed Json array
@@ -38,6 +40,7 @@ public class JoltUtil {
 
     /**
      * Returns Jolt mapping spec chainr.
+     *
      * @param mappingSpecPath
      * @return Jolt mapping spec chainr
      */

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import edu.northeastern.truthtree.adapter.utilities.JSONUtil;
 import edu.northeastern.truthtree.service.basicInfo.IBasicInfoService;
 
 @RestController
@@ -37,14 +38,14 @@ public class BasicInfo implements IBasicInfo {
 	 */
 	@Override
 	@RequestMapping(value = "/api/states", params = POPULATION_RANGE, method = RequestMethod.GET)
-	public String getBasicStatesPopulationRange(@RequestParam(POPULATION_RANGE) int[] range) {
+	public JSONArray getBasicStatesPopulationRange(@RequestParam(POPULATION_RANGE) int[] range) {
 
 		if (range.length == 2 && range[0] <= range[1]) {
 			JSONArray response = this.service.getBasicStatesPopulationRange(range[0], range[1]);
-			return response.toJSONString();
+			return response;
 		}
 
-		return POPULATION_ERROR;
+		return JSONUtil.createErrorMessage(POPULATION_ERROR);
 	}
 
 	/**
@@ -54,9 +55,9 @@ public class BasicInfo implements IBasicInfo {
 	 */
 	@Override
 	@RequestMapping(value = "/api/states", method = RequestMethod.GET)
-	public String getBasicStatesInfo() {
+	public JSONArray getBasicStatesInfo() {
 		JSONArray response = this.service.getBasicStatesInfo();
-		return response.toJSONString();
+		return response;
 	}
 
 	/**
@@ -66,9 +67,9 @@ public class BasicInfo implements IBasicInfo {
 	 */
 	@Override
 	@RequestMapping(value = "/api/cities", method = RequestMethod.GET)
-	public String getBasicCitiesInfo() {
+	public JSONArray getBasicCitiesInfo() {
 		JSONArray response = this.service.getBasicCitiesInfo();
-		return response.toJSONString();
+		return response;
 	}
 
 	/**
@@ -78,8 +79,8 @@ public class BasicInfo implements IBasicInfo {
 	 */
 	@Override
 	@RequestMapping(value = "/api/counties", method = RequestMethod.GET)
-	public String getBasicCountiesInfo() {
+	public JSONArray getBasicCountiesInfo() {
 		JSONArray response = this.service.getBasicCountiesInfo();
-		return response.toJSONString();
+		return response;
 	}
 }
