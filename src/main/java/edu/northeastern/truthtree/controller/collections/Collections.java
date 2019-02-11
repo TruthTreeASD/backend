@@ -2,12 +2,14 @@ package edu.northeastern.truthtree.controller.collections;
 
 import org.json.simple.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import edu.northeastern.truthtree.service.collections.ICollectionsService;
 
 @RestController
+@CrossOrigin(origins = "*", maxAge = 3600)
 public class Collections implements ICollections {
 	private ICollectionsService service;
 
