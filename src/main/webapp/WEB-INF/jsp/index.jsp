@@ -341,22 +341,25 @@
     <pre class="prettyprint">/api/states
 <code class="language-json">[
     {
-        "state_code": 1,
         "name": "ALABAMA",
+        "id": 10000000,
+        "state_code": 1,
         "abbreviation": "AL"
-        "population": "4,887,871"
+        "population": "4887871"
     },
     {
-        "state_code": 2,
         "name": "ALASKA",
+        "id": 20000000,
+        "state_code": 2,
         "abbreviation": "AK"
-        "population": "737,438"
+        "population": "737438"
     },
     {
-        "state_code": 3,
         "name": "ARIZONA",
+        "id": 30000000,
+        "state_code": 3,
         "abbreviation": "AZ"
-        "population": "7,171,646"
+        "population": "7171646"
     }
 ]</code></pre>
 </div>
@@ -365,24 +368,28 @@
 <code class="language-json">[
     {
         "name": "ALABAMA",
+        "id": 10000000,
         "state_code": 1,
         "abbreviation": "AL"
         "population": "4,887,871"
     },
     {
         "name": "LOUISIANA",
+        "id": 190000000,
         "state_code": 19,
         "abbreviation": "KY"
         "population": "4,659,978"
     },
     {
         "name": "KENTUCKY",
+        "id": 170000000,
         "state_code": 17,
         "abbreviation": "AZ"
         "population": "4,468,402"
     },
     {
         "name": "OREGON",
+        "id": 380000000,
         "state_code": 38,
         "abbreviation": "OR",
         "population": "4,190,713"
@@ -393,19 +400,22 @@
     <pre class="prettyprint">/api/counties
 <code class="language-json">[
     {
-        "state_code": 1,
         "county": 2,
-        "name": "BALDWIN COUNTY"
+        "name": "BALDWIN COUNTY",
+        "id": 11002002,
+        "state_code": 1,
     },
     {
-        "state_code": 1,
         "county": 5,
-        "name": "BLOUNT COUNTY"
+        "name": "BLOUNT COUNTY",
+        "id": 11005005,
+        "state_code": 1,
     },
     {
-        "state_code": 1,
         "county": 8,
-        "name": "CALHOUN COUNTY"
+        "name": "CALHOUN COUNTY",
+        "id": 11008008,
+        "state_code": 1,
     }
 ]</code></pre>
 </div>
@@ -413,22 +423,22 @@
     <pre class="prettyprint">/api/cities
 <code class="language-json">[
     {
-        "state_code": 1,
         "county": 1,
         "id": 12001003,
-        "name": "PRATTVILLE CITY"
+        "name": "PRATTVILLE CITY",
+        "state_code": 1
     },
     {
-        "state_code": 1,
         "county": 2,
         "id": 12002002,
-        "name": "DAPHNE CITY"
+        "name": "DAPHNE CITY",
+        "state_code": 1
     },
     {
-        "state_code": 1,
         "county": 2,
         "id": 12002004,
-        "name": "FAIRHOPE CITY"
+        "name": "FAIRHOPE CITY",
+        "state_code": 1,
     }
 ]</code></pre>
 </div>
