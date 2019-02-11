@@ -3,37 +3,28 @@ package edu.northeastern.truthtree.controller.basicInfo;
 import org.json.simple.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import edu.northeastern.truthtree.adapter.utilities.JSONUtil;
 import edu.northeastern.truthtree.service.basicInfo.IBasicInfoService;
+
+import static edu.northeastern.truthtree.ErrorMessages.POPULATION_ERROR;
 
 @RestController
 @Component
+@CrossOrigin(origins = "*", maxAge = 3600)
 public class BasicInfo implements IBasicInfo {
 	private IBasicInfoService service;
 
-	private static final String POPULATION_ERROR = "ERROR: The supplied parameters were incorrect. " +
-			"Please provide exactly two values in the format /api/states?populationRange=startValue," +
-			"endValue";
 	static final String POPULATION_RANGE = "populationRange";
 
 	@Autowired
 	public BasicInfo(IBasicInfoService service) {
 		this.service = service;
-	}
-
-	/**
-	 * Gets basic States information.
-	 *
-	 * @return basic States information as a JSONArray string.
-	 */
-	@Override
-	@RequestMapping("/api/states")
-	public String getBasicStatesInfo() {
-		JSONArray response = this.service.getBasicStatesInfo();
-		return response.toJSONString();
 	}
 
 	/**
@@ -44,15 +35,27 @@ public class BasicInfo implements IBasicInfo {
 	 * @return JSONArray that contains states that are within the provided range.
 	 */
 	@Override
-	@RequestMapping(value = "/api/states", params = POPULATION_RANGE)
-	public String getBasicStatesPopulationRange(@RequestParam(POPULATION_RANGE) int[] range) {
+	@RequestMapping(value = "/api/states", params = POPULATION_RANGE, method = RequestMethod.GET)
+	public JSONArray getBasicStatesPopulationRange(@RequestParam(POPULATION_RANGE) int[] range) {
 
-		if (range.length == 2) {
+		if (range.length == 2 && range[0] <= range[1]) {
 			JSONArray response = this.service.getBasicStatesPopulationRange(range[0], range[1]);
-			return response.toJSONString();
+			return response;
 		}
 
-		return POPULATION_ERROR;
+		return JSONUtil.createErrorMessage(POPULATION_ERROR);
+	}
+
+	/**
+	 * Gets basic States information.
+	 *
+	 * @return basic States information as a JSONArray string.
+	 */
+	@Override
+	@RequestMapping(value = "/api/states", method = RequestMethod.GET)
+	public JSONArray getBasicStatesInfo() {
+		JSONArray response = this.service.getBasicStatesInfo();
+		return response;
 	}
 
 	/**
@@ -61,10 +64,10 @@ public class BasicInfo implements IBasicInfo {
 	 * @return basic Cities information as a JSONArray string.
 	 */
 	@Override
-	@RequestMapping("/api/cities")
-	public String getBasicCitiesInfo() {
+	@RequestMapping(value = "/api/cities", method = RequestMethod.GET)
+	public JSONArray getBasicCitiesInfo() {
 		JSONArray response = this.service.getBasicCitiesInfo();
-		return response.toJSONString();
+		return response;
 	}
 
 	/**
@@ -73,9 +76,9 @@ public class BasicInfo implements IBasicInfo {
 	 * @return basic Cities information as a JSONArray string.
 	 */
 	@Override
-	@RequestMapping("/api/counties")
-	public String getBasicCountiesInfo() {
+	@RequestMapping(value = "/api/counties", method = RequestMethod.GET)
+	public JSONArray getBasicCountiesInfo() {
 		JSONArray response = this.service.getBasicCountiesInfo();
-		return response.toJSONString();
+		return response;
 	}
 }
