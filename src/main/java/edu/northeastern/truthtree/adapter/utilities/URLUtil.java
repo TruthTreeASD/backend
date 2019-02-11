@@ -31,7 +31,7 @@ public class URLUtil {
    */
   private static String readURL(String url) {
     String line;
-    URL urlObj = null;
+    URL urlObj;
     StringBuilder response = new StringBuilder();
 
     try {
@@ -52,6 +52,4 @@ public class URLUtil {
 
     return response.toString();
   }
-
-
 }
