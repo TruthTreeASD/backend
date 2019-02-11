@@ -13,7 +13,6 @@ import edu.northeastern.truthtree.service.basicInfo.IBasicInfoService;
 
 import static edu.northeastern.truthtree.ErrorMessages.POPULATION_ERROR;
 
-
 @RestController
 @Component
 public class BasicInfo implements IBasicInfo {
@@ -30,8 +29,7 @@ public class BasicInfo implements IBasicInfo {
 	 * Gets basic States information for states that have a population within startValue and
 	 * endValue, inclusive.
 	 *
-	 * @param range The start and end values that will be used to filter the states
-	 *              returned.
+	 * @param range The start and end values that will be used to filter the states returned.
 	 * @return JSONArray that contains states that are within the provided range.
 	 */
 	@Override
