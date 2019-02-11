@@ -22,10 +22,10 @@ public class Attributes implements IAttributes {
 
     @Override
     @RequestMapping(value = "/api/attributes", method = RequestMethod.GET)
-    public ResponseEntity<Object> getAttributes(@RequestParam(value = "locations", required = false) List<Integer> locations,
-                                                    @RequestParam(value = "collection", required = false) List<Integer> collections,
-                                                    @RequestParam(value = "property", required = false) List<Integer> properties,
-                                                    @RequestParam(value = "attributes", required = false) List<Integer> attributes,
+    public ResponseEntity<Object> getAttributes(@RequestParam(value = "locationIds", required = false) List<Integer> locations,
+                                                    @RequestParam(value = "collectionIds", required = false) List<Integer> collections,
+                                                    @RequestParam(value = "propertyIds", required = false) List<Integer> properties,
+                                                    @RequestParam(value = "attributeIds", required = false) List<Integer> attributes,
                                                     @RequestParam(value = "yearRange", required = false) List<Integer> yearRange,
                                                     @RequestParam(value = "yearList", required = false) List<Integer> yearList) {
         Object response = service.getAttributes(locations, collections, properties, attributes, yearRange, yearList);
