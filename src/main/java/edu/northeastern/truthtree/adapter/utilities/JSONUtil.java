@@ -90,11 +90,9 @@ public class JSONUtil {
     for (int i = 0; i < jsonArray.size(); i++) {
       JSONObject object = (JSONObject) jsonArray.get(i);
 
-      String valueString = (String) object.get(JSONKey);
-      valueString = valueString.replaceAll(",", "");
-      int valueInt = Integer.parseInt(valueString);
+      long value = (long) object.get(JSONKey);
 
-      if (valueInt >= startValue && valueInt <= endValue) {
+      if (value >= startValue && value <= endValue) {
         filteredArray.add(object);
       }
     }
