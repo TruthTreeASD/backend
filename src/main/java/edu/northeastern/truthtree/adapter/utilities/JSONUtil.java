@@ -36,7 +36,7 @@ public class JSONUtil {
    * @param jsonString string to be converted into a JSONArray.
    * @return jsonString as a JSONArray
    */
-  static JSONArray stringToJSONArray(String jsonString) {
+  public static JSONArray stringToJSONArray(String jsonString) {
     JSONParser parser = new JSONParser();
     JSONArray jsonArray = null;
 
@@ -116,5 +116,65 @@ public class JSONUtil {
     jsonArray.add(jsonObject);
 
     return jsonArray;
+  }
+
+  /**
+   * Takes in an array in the format:
+   * [
+   *  {
+   *    "key1": {
+   *      "subKey1": "subvalue1",
+   *      ... ,
+   *      "subKeyN": "subvalueN"
+   *    },
+   *    ...
+   *    {
+   *      "keyN": {
+   *        "subKey1": "subvalue1",
+   *        ... ,
+   *        "subKeyN": "subvalueN"
+   *      }
+   *    }
+   *  }
+   * ]
+   *
+   * Outputs array in the format:
+   * [{
+   *    "subKey1": "subvalue1",
+   *    ... ,
+   *    "subKeyN": "subvalueN"
+   *  },
+   *  {
+   *    "subKey1": "subvalue1",
+   *    ... ,
+   *    "subKeyN": "subvalueN"
+   *  }
+   * ]
+   *
+   *
+   * @param previousArray The array to be converted into the output format.
+   * @return JSONArray in the output format
+   */
+  public static JSONArray moveObjectsUpOneLevel(JSONArray previousArray) {
+    JSONParser parser = new JSONParser();
+    JSONArray newJSONArray = null;
+
+    JSONArray transformedArray = new JSONArray();
+    try {
+      newJSONArray = (JSONArray) parser.parse(previousArray.toJSONString());
+
+      JSONObject topObject = (JSONObject) newJSONArray.get(0);
+
+      for (Object innerObject : topObject.keySet()) {
+        JSONObject state = (JSONObject) topObject.get(innerObject);
+
+        transformedArray.add(state);
+      }
+
+    } catch (ParseException e) {
+      e.printStackTrace();
+    }
+
+    return transformedArray;
   }
 }

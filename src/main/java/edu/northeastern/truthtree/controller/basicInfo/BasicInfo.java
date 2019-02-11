@@ -9,10 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import edu.northeastern.truthtree.adapter.utilities.JSONUtil;
 import edu.northeastern.truthtree.service.basicInfo.IBasicInfoService;
-
-import static edu.northeastern.truthtree.ErrorMessages.POPULATION_ERROR;
 
 @RestController
 @Component
@@ -28,34 +25,19 @@ public class BasicInfo implements IBasicInfo {
 	}
 
 	/**
-	 * Gets basic States information for states that have a population within startValue and
-	 * endValue, inclusive.
+	 * Gets basic States information for states. If a population range is supplied, the results will
+	 * be filtered to those that have a population within startValue and endValue, inclusive.
 	 *
 	 * @param range The start and end values that will be used to filter the states returned.
 	 * @return JSONArray that contains states that are within the provided range.
 	 */
 	@Override
-	@RequestMapping(value = "/api/states", params = POPULATION_RANGE, method = RequestMethod.GET)
-	public JSONArray getBasicStatesPopulationRange(@RequestParam(POPULATION_RANGE) int[] range) {
-
-		if (range.length == 2 && range[0] <= range[1]) {
-			JSONArray response = this.service.getBasicStatesPopulationRange(range[0], range[1]);
-			return response;
-		}
-
-		return JSONUtil.createErrorMessage(POPULATION_ERROR);
-	}
-
-	/**
-	 * Gets basic States information.
-	 *
-	 * @return basic States information as a JSONArray string.
-	 */
-	@Override
 	@RequestMapping(value = "/api/states", method = RequestMethod.GET)
-	public JSONArray getBasicStatesInfo() {
-		JSONArray response = this.service.getBasicStatesInfo();
-		return response;
+	public JSONArray getBasicStatesInfo(@RequestParam
+																						(value = POPULATION_RANGE, required = false)
+																						int[] range) {
+
+		return this.service.getBasicStatesInfo(range);
 	}
 
 	/**

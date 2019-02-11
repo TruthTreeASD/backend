@@ -8,20 +8,15 @@ import static edu.northeastern.truthtree.controller.basicInfo.BasicInfo.POPULATI
 public interface IBasicInfo {
 
 	/**
-	 * Gets basic States information.
+	 * Gets basic States information for states. If a population range is supplied, the results will
+	 * be filtered to those that have a population within startValue and endValue, inclusive.
 	 *
-	 * @return basic States information as a JSONArray string.
-	 */
-	JSONArray getBasicStatesInfo();
-
-	/**
-	 * Gets basic States information for states that have a population within range, inclusive.
-	 *
-	 * @param range The population range that will be used to filter the states returned. Must be in
-	 *              the format =val1,val2
+	 * @param range The start and end values that will be used to filter the states returned.
 	 * @return JSONArray that contains states that are within the provided range.
 	 */
-	JSONArray getBasicStatesPopulationRange(@RequestParam(POPULATION_RANGE) int[] range);
+	JSONArray getBasicStatesInfo(@RequestParam
+																	 (value = POPULATION_RANGE, required = false)
+																	 int[] range);
 
 	/**
 	 * Gets basic Cities information.

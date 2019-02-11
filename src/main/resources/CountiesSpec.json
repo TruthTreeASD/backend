@@ -4,11 +4,10 @@
     "spec": {
       "data": {
         "*": {
-          "id": "[&1].id",
-          "fips_code_state": "[&1].state_code",
-          "name": "[&1].name",
-          "abbreviation": "[&1].abbreviation",
-          "population": "[&1].population"
+          "fips_code_state": "&1.state_code",
+          "fips_county": "&1.county",
+          "id": "&1.id",
+          "name": "&1.name"
         }
       }
     }

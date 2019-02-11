@@ -3,22 +3,15 @@ package edu.northeastern.truthtree.service.basicInfo;
 import org.json.simple.JSONArray;
 
 public interface IBasicInfoService {
-	/**
-	 * Gets the basic States information.
-	 *
-	 * @return basic States information as a JSONArray.
-	 */
-	JSONArray getBasicStatesInfo();
 
 	/**
-	 * Gets the basic States information for states that have a population within startValue and
-	 * endValue, inclusive.
+	 * Gets basic States information for states. If a population range is supplied, the results will
+	 * be filtered to those that have a population within startValue and endValue, inclusive.
 	 *
-	 * @param startValue The value that all wanted values will be greater than or equal to.
-	 * @param endValue   The value that all wanted values will be less than or equal to.
+	 * @param range The start and end values that will be used to filter the states returned.
 	 * @return JSONArray that contains states that are within the provided range.
 	 */
-	JSONArray getBasicStatesPopulationRange(int startValue, int endValue);
+	JSONArray getBasicStatesInfo(int[] range);
 
 	/**
 	 * Gets the basic Cities information.
