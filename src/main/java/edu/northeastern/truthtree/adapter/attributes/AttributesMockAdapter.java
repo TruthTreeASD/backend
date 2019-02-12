@@ -11,27 +11,33 @@ import static edu.northeastern.truthtree.adapter.utilities.JoltUtil.joltTransfor
 
 public class AttributesMockAdapter implements IAttributesAdapter{
 
+    @Override
     public JSONArray getAttributes() {
         JSONArray attributesList = readJSONFile(ATTRIBUTES_FILE_PATH);
         return joltTransform(attributesList, ATTRIBUTES_MOCK_SPEC_PATH);
     }
 
+    @Override
     public JSONArray getAttributes(List<Integer> dummy) {
         return null;
     }
 
+    @Override
     public JSONArray getAttributesWithLocations(List<Integer> attributes, List<Integer> locations) {
         return null;
     }
 
-    public JSONArray getAttributesWithLocationsYearList(List<Integer> attributes, List<Integer> locations, List<Integer> timeList) {
+    @Override
+    public JSONArray getAttributesWithLocationsYearList(List<Integer> attributes, List<Integer> locations, List<Integer> yearList) {
         return null;
     }
 
-    public JSONArray getAttributesWithLocationsYearRange(List<Integer> attributes, List<Integer> locations, List<Integer> timeRange) {
+    @Override
+    public JSONArray getAttributesWithLocationsYearRange(List<Integer> attributes, List<Integer> locations, List<Integer> yearRange) {
         return null;
     }
 
+    @Override
     public List<Integer> getAttributeIdWithCollectionProperty(List<Integer> collections, List<Integer> properties) {
         return null;
     }
