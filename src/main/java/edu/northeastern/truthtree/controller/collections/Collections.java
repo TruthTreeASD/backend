@@ -4,6 +4,7 @@ import org.json.simple.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import edu.northeastern.truthtree.service.collections.ICollectionsService;
@@ -20,8 +21,9 @@ public class Collections implements ICollections {
 
 	@Override
 	@RequestMapping("/api/collections")
-	public String getCollections() {
-		JSONArray response = service.getCollections();
+	public String getCollections(@RequestParam(name = "locationId", required = false) Integer locationId) {
+		JSONArray response = service.getCollections(locationId);
 		return response.toJSONString();
 	}
+
 }
