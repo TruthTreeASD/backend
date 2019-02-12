@@ -3,13 +3,14 @@ package edu.northeastern.truthtree;
 public class AppConst {
     //App Constants
     public static final String DATABASE_URL = "http://54.241.137.214:8080";
+    public static final String RESOURCES_PATH = "src/main/resources";
 
     //Attribute Adapter Constants
-    public static final String ATTRIBUTES_FILE_PATH = "src/main/resources/Attributes.json";
-    public static final String ATTRIBUTES_MOCK_SPEC_PATH = "src/main/resources/AttributesMockSpec.json";
+    public static final String ATTRIBUTES_FILE_PATH = RESOURCES_PATH + "/Attributes.json";
+    public static final String ATTRIBUTES_MOCK_SPEC_PATH = RESOURCES_PATH + "/AttributesMockSpec.json";
 
-    public static final String ATTRIBUTES_SPEC_PATH = "src/main/resources/AttributesSpec.json";
-    public static final String ATTRIBUTE_ID_SPEC_PATH = "src/main/resources/AttributeIdSpec.json";
+    public static final String ATTRIBUTES_SPEC_PATH = RESOURCES_PATH + "/AttributesSpec.json";
+    public static final String ATTRIBUTE_ID_SPEC_PATH = RESOURCES_PATH + "/AttributeIdSpec.json";
     public static final String Attributes_URL1 = DATABASE_URL + "/api/attributes/attributeIds";
     public static final String Attributes_URL2 = DATABASE_URL + "/api/attributes/attributeIds&states";
     public static final String Attributes_URL3 = DATABASE_URL + "/api/attributes/attributeIds&states&yearList";
