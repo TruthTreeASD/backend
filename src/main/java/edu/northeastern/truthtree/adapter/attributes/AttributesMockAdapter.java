@@ -31,4 +31,8 @@ public class AttributesMockAdapter implements IAttributesAdapter{
     public JSONArray getAttributesWithLocationsYearRange(List<Integer> attributes, List<Integer> locations, List<Integer> timeRange) {
         return null;
     }
+
+    public List<Integer> getAttributeIdWithCollectionProperty(List<Integer> collections, List<Integer> properties) {
+        return null;
+    }
 }

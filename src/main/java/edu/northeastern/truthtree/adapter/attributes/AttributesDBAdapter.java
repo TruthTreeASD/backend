@@ -11,10 +11,12 @@ import java.util.List;
 
 public class AttributesDBAdapter implements IAttributesAdapter {
     private static final String ATTRIBUTES_SPEC_PATH = "src/main/resources/AttributesSpec.json";
+    private static final String ATTRIBUTE_ID_SPEC_PATH = "src/main/resources/AttributeIdSpec.json";
     private static final String Attributes_URL1 = "http://54.241.137.214:8080/api/attributes/attributeIds";
     private static final String Attributes_URL2 = "http://54.241.137.214:8080/api/attributes/attributeIds&states";
     private static final String Attributes_URL3 = "http://54.241.137.214:8080/api/attributes/attributeIds&states&yearList";
     private static final String Attributes_URL4 = "http://54.241.137.214:8080/api/attributes/attributeIds&states&yearRange";
+    private static final String Attributes_URL5 = "http://54.241.137.214:8080/api/queryAttriIdByCombineation";
 
     @Override
     public JSONArray getAttributes() {
@@ -27,8 +29,8 @@ public class AttributesDBAdapter implements IAttributesAdapter {
         for (Integer attributeId : attributes) {
             builder.queryParam("attributes", attributeId);
         }
-        JSONArray result = URLUtil.readJSONFromURL(builder.toUriString());
-        return joltHelper(result);
+        JSONArray response = URLUtil.readJSONFromURL(builder.toUriString());
+        return joltHelper(response);
     }
 
     @Override
@@ -40,8 +42,8 @@ public class AttributesDBAdapter implements IAttributesAdapter {
         for (Integer locationId : locations) {
             builder.queryParam("state", locationId);
         }
-        JSONArray result = URLUtil.readJSONFromURL(builder.toUriString());
-        return joltHelper(result);
+        JSONArray response = URLUtil.readJSONFromURL(builder.toUriString());
+        return joltHelper(response);
     }
 
     @Override
@@ -56,8 +58,8 @@ public class AttributesDBAdapter implements IAttributesAdapter {
         for (Integer year : yearList) {
             builder.queryParam("yearList", year);
         }
-        JSONArray result = URLUtil.readJSONFromURL(builder.toUriString());
-        return joltHelper(result);
+        JSONArray response = URLUtil.readJSONFromURL(builder.toUriString());
+        return joltHelper(response);
     }
 
     @Override
@@ -72,8 +74,27 @@ public class AttributesDBAdapter implements IAttributesAdapter {
         for (Integer year : yearRange) {
             builder.queryParam("yearRange", year);
         }
-        JSONArray result = URLUtil.readJSONFromURL(builder.toUriString());
-        return joltHelper(result);
+        JSONArray response = URLUtil.readJSONFromURL(builder.toUriString());
+        return joltHelper(response);
+    }
+
+    @Override
+    public List<Integer> getAttributeIdWithCollectionProperty(List<Integer> collections, List<Integer> properties) {
+        UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(Attributes_URL5);
+        for (Integer collectionId : collections) {
+            builder.queryParam("collection_ids", collectionId);
+        }
+        for (Integer propertyId : properties) {
+            builder.queryParam("property_ids", propertyId);
+        }
+        JSONArray response = URLUtil.readJSONFromURL(builder.toUriString());
+        String transformed = JoltUtil.joltTransform(response.get(0), ATTRIBUTE_ID_SPEC_PATH).toString();
+        String arr =  transformed.split("[\\[\\]]")[1].trim();
+        List<Integer> result = new ArrayList<>();
+        for (String attributeId : arr.split(",")) {
+            result.add(Integer.parseInt(attributeId.trim()));
+        }
+        return result;
     }
 
     private Object joltHelper(JSONArray input) {

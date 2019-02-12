@@ -13,21 +13,21 @@ import java.util.List;
 @Component
 @CrossOrigin(origins = "*", maxAge = 3600)
 public class Attributes implements IAttributes {
-	private IAttributesService service;
+    private IAttributesService service;
 
-	@Autowired
-	public Attributes(IAttributesService service) {
-		this.service = service;
-	}
+    @Autowired
+    public Attributes(IAttributesService service) {
+        this.service = service;
+    }
 
     @Override
     @RequestMapping(value = "/api/attributes", method = RequestMethod.GET)
     public ResponseEntity<Object> getAttributes(@RequestParam(value = "locationIds", required = false) List<Integer> locations,
-                                                    @RequestParam(value = "collectionIds", required = false) List<Integer> collections,
-                                                    @RequestParam(value = "propertyIds", required = false) List<Integer> properties,
-                                                    @RequestParam(value = "attributeIds", required = false) List<Integer> attributes,
-                                                    @RequestParam(value = "yearRange", required = false) List<Integer> yearRange,
-                                                    @RequestParam(value = "yearList", required = false) List<Integer> yearList) {
+                                                @RequestParam(value = "collectionIds", required = false) List<Integer> collections,
+                                                @RequestParam(value = "propertyIds", required = false) List<Integer> properties,
+                                                @RequestParam(value = "attributeIds", required = false) List<Integer> attributes,
+                                                @RequestParam(value = "yearRange", required = false) List<Integer> yearRange,
+                                                @RequestParam(value = "yearList", required = false) List<Integer> yearList) {
         Object response = service.getAttributes(locations, collections, properties, attributes, yearRange, yearList);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }

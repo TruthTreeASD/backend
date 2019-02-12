@@ -1,6 +1,7 @@
 package edu.northeastern.truthtree.service.attributes;
 
 import edu.northeastern.truthtree.adapter.attributes.IAttributesAdapter;
+import edu.northeastern.truthtree.controller.attributes.Attributes;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -30,6 +31,7 @@ public class AttributesService implements IAttributesService {
         } else if (attributes != null) {
             return adapter.getAttributes(attributes);
         }
-        return null;
+        attributes = adapter.getAttributeIdWithCollectionProperty(collections, properties);
+        return getAttributes(locations, collections, properties, attributes, yearRange, yearList);
     }
 }
