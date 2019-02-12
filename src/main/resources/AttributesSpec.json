@@ -2,9 +2,76 @@
   {
     "operation": "shift",
     "spec": {
-      "State": {
+      "data": {
         "*": {
-          "*": "States[&1].&"
+          "*": "data[&1].&",
+          "lookUpPK": {
+            "*": "data[&2].&"
+          }
+        }
+      }
+    }
+  },
+  {
+    "operation": "shift",
+    "spec": {
+      "data": {
+        "*": {
+          "location_id": {
+            "*": {
+              "@2": "&[]"
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "operation": "shift",
+    "spec": {
+      "*": {
+        "0": {
+          "location_id": "[#3].location_id",
+          "*": "[#3].data[&1].&"
+        },
+        "*": {
+          "location_id": null,
+          "*": "[#3].data[&1].&"
+        }
+      }
+    }
+  },
+  {
+    "operation": "shift",
+    "spec": {
+      "*": {
+        "*": "[#2].&",
+        "data": {
+          "*": "[#3].attributes.@attributeName[]"
+        }
+      }
+    }
+  },
+  {
+    "operation": "shift",
+    "spec": {
+      "*": {
+        "*": "[#2].&",
+        "attributes": {
+          "*": {
+            "0": {
+              "attributeName": "[&4].attributes[#3].name",
+              "attributeId": "[&4].attributes[#3].attribute_id",
+              "propertyId": "[&4].attributes[#3].property_id",
+              "collectionId": "[&4].attributes[#3].collection_id",
+              "value": "[&4].attributes[#3].data[&1].value",
+              "year": "[&4].attributes[#3].data[&1].year"
+            },
+            "*": {
+              "value": "[&4].attributes[#3].data[&1].value",
+              "year": "[&4].attributes[#3].data[&1].year"
+            }
+          }
         }
       }
     }

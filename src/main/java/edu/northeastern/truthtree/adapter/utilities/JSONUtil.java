@@ -45,7 +45,7 @@ public class JSONUtil {
     } catch (ParseException e) {
 
       e.printStackTrace();
-    } catch (ClassCastException cce) {
+    } catch (ClassCastException cce) {   // jsonString is in JSONObject format
 
       jsonArray = new JSONArray();
       jsonArray.add(stringToJSONObject(jsonString));
@@ -73,6 +73,15 @@ public class JSONUtil {
     return jsonObject;
   }
 
+  /**
+   * Filters the given JSONArray into values that are within startValue and endValue for JSONKey.
+   *
+   * @param jsonArray  The given array that will be filtered.
+   * @param JSONKey    The key that jsonArray will be filtered by.
+   * @param startValue The minimum value that will appear in the filtered JSONArray.
+   * @param endValue   The maximum value that will appear in the filtered JSONArray.
+   * @return JSONArray that only contains objects in which startValue <= JSONKey <= endValue
+   */
   public static JSONArray filterJSON(JSONArray jsonArray, String JSONKey, int startValue,
                                      int endValue) {
 
@@ -91,5 +100,21 @@ public class JSONUtil {
     }
 
     return filteredArray;
+  }
+
+  /**
+   * Given an errorMessage will return a JSONArray with Error as the key and errorMessage as the
+   * value.
+   *
+   * @param errorMessage Message that will be added to a JSONArray
+   * @return JSONArray where the key is Error and the value is errorMessage
+   */
+  public static JSONArray createErrorMessage(String errorMessage) {
+    JSONArray jsonArray = new JSONArray();
+    JSONObject jsonObject = new JSONObject();
+    jsonObject.put("Error", errorMessage);
+    jsonArray.add(jsonObject);
+
+    return jsonArray;
   }
 }
