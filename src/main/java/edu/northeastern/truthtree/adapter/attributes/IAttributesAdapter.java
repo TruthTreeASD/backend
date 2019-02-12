@@ -14,4 +14,6 @@ public interface IAttributesAdapter {
     Object getAttributesWithLocationsYearList(List<Integer> attributes, List<Integer> locations, List<Integer> timeList);
 
     Object getAttributesWithLocationsYearRange(List<Integer> attributes, List<Integer> locations, List<Integer> timeRange);
+
+    List<Integer> getAttributeIdWithCollectionProperty(List<Integer> collections, List<Integer> properties);
 }

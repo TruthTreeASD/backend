@@ -1,0 +1,12 @@
+[
+  {
+    "operation": "shift",
+    "spec": {
+      "data": {
+        "*": {
+          "id": "ids[]"
+        }
+      }
+    }
+  }
+]
