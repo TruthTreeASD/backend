@@ -13,4 +13,10 @@ public class CollectionsMockAdapter implements ICollectionsAdapter {
 		return JSONUtil.readJSONFile(COLLECTIONS_FILE_PATH);
 	}
 
+	@Override
+	public JSONArray getCollectionsByLocationId(Integer locationId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

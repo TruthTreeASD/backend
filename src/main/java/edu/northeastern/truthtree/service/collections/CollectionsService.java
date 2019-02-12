@@ -16,7 +16,10 @@ public class CollectionsService implements ICollectionsService {
 	}
 
 	@Override
-	public JSONArray getCollections() {
+	public JSONArray getCollections(Integer locationId) {
+		if (locationId != null) {
+			return adapter.getCollectionsByLocationId(locationId);
+		}
 		return adapter.getCollections();
 	}
 
