@@ -31,6 +31,4 @@ public class Attributes implements IAttributes {
         Object response = service.getAttributes(locations, collections, properties, attributes, yearRange, yearList);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
-
-
 }
