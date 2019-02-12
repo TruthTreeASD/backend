@@ -2,6 +2,9 @@ package edu.northeastern.truthtree.service.basicInfo;
 
 import org.json.simple.JSONArray;
 
+/**
+ * Represents the Basic Info Service interface.
+ */
 public interface IBasicInfoService {
 
 	/**

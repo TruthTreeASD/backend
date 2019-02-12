@@ -13,8 +13,8 @@ public class JoltUtil {
     /**
      * Do Jolt mapping for a single Json object.
      *
-     * @param inputJSON
-     * @param mappingSpecPath
+     * @param inputJSON       The JSONObject that will be transformed.
+     * @param mappingSpecPath The path to the file that contains the mapping specs
      * @return transformed Json object
      */
     public static Object joltTransform(Object inputJSON, String mappingSpecPath) {
@@ -25,8 +25,8 @@ public class JoltUtil {
     /**
      * Do Jolt mapping for Json array.
      *
-     * @param jsonArray
-     * @param mappingSpecPath
+     * @param jsonArray       The JSONArray that will be transformed.
+     * @param mappingSpecPath The path to the file that contains the mapping specs.
      * @return transformed Json array
      */
     public static JSONArray joltTransform(JSONArray jsonArray, String mappingSpecPath) {
@@ -41,7 +41,7 @@ public class JoltUtil {
     /**
      * Returns Jolt mapping spec chainr.
      *
-     * @param mappingSpecPath
+     * @param mappingSpecPath The path to the file that contains the mapping specs.
      * @return Jolt mapping spec chainr
      */
     private static Chainr getSpecChainr(String mappingSpecPath) {

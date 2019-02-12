@@ -1,5 +1,8 @@
 package edu.northeastern.truthtree;
 
+/**
+ * Represents the constants used throughout the application.
+ */
 public class AppConst {
     //App Constants
     public static final String DATABASE_URL = "http://54.241.137.214:8080";

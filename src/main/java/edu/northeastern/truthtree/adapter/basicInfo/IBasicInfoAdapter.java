@@ -2,6 +2,9 @@ package edu.northeastern.truthtree.adapter.basicInfo;
 
 import org.json.simple.JSONArray;
 
+/**
+ * Represents the interface for the Basic Info Adapter.
+ */
 public interface IBasicInfoAdapter {
 	static final String POPULATION_KEY = "population";
 

@@ -8,6 +8,9 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 
+/**
+ * Represents the methods needed to read JSON from a URL API.
+ */
 public class URLUtil {
 
   /**

@@ -4,6 +4,10 @@ import org.json.simple.JSONArray;
 
 import edu.northeastern.truthtree.adapter.utilities.JSONUtil;
 
+/**
+ * Represents the Basic Info Adapter used to read mock data created to simulate the data that is
+ * received from the database.
+ */
 public class BasicInfoMockAdapter implements IBasicInfoAdapter {
 	private static final String STATES_FILE_PATH = "src/main/resources/States.json";
 	private static final String CITIES_FILE_PATH = "src/main/resources/Cities.json";

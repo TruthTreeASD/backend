@@ -9,10 +9,17 @@ import edu.northeastern.truthtree.adapter.utilities.JSONUtil;
 
 import static edu.northeastern.truthtree.ErrorMessages.POPULATION_ERROR;
 
+/**
+ * Represents the Basic Info Service.
+ */
 @Component
 public class BasicInfoService implements IBasicInfoService {
 	private IBasicInfoAdapter adapter;
 
+	/**
+	 * Creates a new instance of BasicInfoService when given an IBasicInfoAdapter.
+	 * @param adapter the instance adapter.
+	 */
 	@Autowired
 	public BasicInfoService(IBasicInfoAdapter adapter) {
 		this.adapter = adapter;
