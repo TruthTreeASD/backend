@@ -431,21 +431,21 @@
         "name": "ALABAMA",
         "id": 10000000,
         "state_code": 1,
-        "abbreviation": "AL"
+        "abbreviation": "AL",
         "population": "4887871"
     },
     {
         "name": "ALASKA",
         "id": 20000000,
         "state_code": 2,
-        "abbreviation": "AK"
+        "abbreviation": "AK",
         "population": "737438"
     },
     {
         "name": "ARIZONA",
         "id": 30000000,
         "state_code": 3,
-        "abbreviation": "AZ"
+        "abbreviation": "AZ",
         "population": "7171646"
     }
 ]</code></pre>
@@ -457,29 +457,29 @@
         "name": "ALABAMA",
         "id": 10000000,
         "state_code": 1,
-        "abbreviation": "AL"
-        "population": "4,887,871"
+        "abbreviation": "AL",
+        "population": "4887871"
     },
     {
         "name": "LOUISIANA",
         "id": 190000000,
         "state_code": 19,
-        "abbreviation": "KY"
-        "population": "4,659,978"
+        "abbreviation": "KY",
+        "population": "4659978"
     },
     {
         "name": "KENTUCKY",
         "id": 170000000,
         "state_code": 17,
-        "abbreviation": "AZ"
-        "population": "4,468,402"
+        "abbreviation": "AZ",
+        "population": "4468402"
     },
     {
         "name": "OREGON",
         "id": 380000000,
         "state_code": 38,
         "abbreviation": "OR",
-        "population": "4,190,713"
+        "population": "4190713"
     }
 ]</code></pre>
 </div>
@@ -490,19 +490,19 @@
         "county": 2,
         "name": "BALDWIN COUNTY",
         "id": 11002002,
-        "state_code": 1,
+        "state_code": 1
     },
     {
         "county": 5,
         "name": "BLOUNT COUNTY",
         "id": 11005005,
-        "state_code": 1,
+        "state_code": 1
     },
     {
         "county": 8,
         "name": "CALHOUN COUNTY",
         "id": 11008008,
-        "state_code": 1,
+        "state_code": 1
     }
 ]</code></pre>
 </div>
@@ -525,7 +525,7 @@
         "county": 2,
         "id": 12002004,
         "name": "FAIRHOPE CITY",
-        "state_code": 1,
+        "state_code": 1
     }
 ]</code></pre>
 </div>
