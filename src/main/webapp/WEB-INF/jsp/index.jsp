@@ -9,6 +9,9 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/highlightJS/github.css" rel="stylesheet">
+    <script src="../../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad()</script>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
             integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -136,10 +139,11 @@
 
         .codeBlock {
             max-height: 221px;
-            width: 365px;
+            width: 390px;
             overflow: auto;
             border-radius: 4px 4px 4px 4px;
         }
+
         .codeBlockLarge {
             max-height: 500px;
             width: 100%;
@@ -156,17 +160,26 @@
         .basicInfoStatesCode, .basicInfoCountiesCode {
             display: inline-block;
             margin-left: 10px;
-            margin-right: 20px;
+            margin-right: -1px;
         }
 
         .basicInfoCitiesCode {
             margin-top: 10px;
             margin-left: 10px;
-            margin-right: 20px;
+            margin-right: -1px;
         }
 
         .attributesRequestURL {
             min-width: 780px;
+        }
+
+        pre.http {
+            display: inline-block;
+            padding:0px;
+        }
+
+        .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+            padding:4px;
         }
 
     </style>
@@ -206,7 +219,8 @@
             </li>
             <li><a href="api/collections" style="font-size: 16px;">Collections</a></li>
             <li><a href="api/time_range" style="font-size: 16px;">Time Range</a></li>
-            <li><a href="swagger-ui.html" style="font-size: 16px; border-right: 1px;">Swagger</a></li>
+            <li><a href="swagger-ui.html" style="font-size: 16px; border-right: 1px;">Swagger</a>
+            </li>
         </ul>
     </div>
 </nav>
@@ -218,69 +232,142 @@
 </div>
 <div class="text-block text-body collections-text">
 
-    A collection is a logical grouping of two or more attributes. This query will return which
-    collections are available for all States, Counties, or Cities. <br>
-    A sample responses for level=state is shown to the right. Counties and cities will have the same
-    structure but the output will have different property and collection values.
+    A collection is a logical grouping of two or more attributes. When a user wants to know what
+    collections are available for a location, the locationId parameter can be provided. If
+    locationId is not requested, all the collections containing attributes and properties will
+    be returned.
 
     <h5>Request URL:</h5>
-    <pre class="prettyprint http"><code
-            class="language-http">/api/collections?level=state</code></pre>
+    <pre class="http"><code>/api/collections</code></pre>
     <br>
-    <pre class="prettyprint http"><code
-            class="language-http">/api/collections?level=county</code></pre>
-    <br>
-    <pre class="prettyprint http"><code
-            class="language-http">/api/collections?level=city</code></pre>
+    <pre class="http"><code>/api/collections?locationId=420000000</code></pre>
 </div>
 <div class="collectionsCode codeBlock">
-    <pre class="prettyprint">/api/collections?level=state
-<code class="language-json">[
-    {
-        "name": "Alcohol",
-        "collection_id": "123",
-        "properties": [
-            {
-                "name": "Tax",
-                "property_id": "00001"
-            },
-            {
-                "name": "Expenditure",
-                "property_id": "00002"
-            }],
-        "attributes": [
-            {
-                "name": "alcohol_tax",
-                "attribute_id": "00011"
-            },
-            {
-                "name": "alcohol_expenditure",
-                "attribute_id": "00022"
-            }]
-    },
-    {
-        "name": "Food",
-        "collection_id": "345",
-        "properties": [
-            {
-                "name": "Tax",
-                "property_id": "00001"
-            },
-            {
-                "name": "Expenditure",
-                "property_id": "00002"
-            }
-        ],
-        "attributes": [
-            {
-                "name": "food_tax",
-                "attribute_id": "00033"
-            },
-            {
-                "name": "food_expenditure",
-                "attribute_id": "00044"
-            }]
-    }
+    <pre>/api/collections?locationId=420000000
+<code class="json">[
+   {
+      "collection_id":0,
+      "name":"All Other Non-insurance Funds",
+      "attributes":[
+         {
+            "attribute_id":579,
+            "name":"Oth_Nonin_Fd_Cash___Sec"
+         }
+      ],
+      "properties":[
+         {
+            "name":"Oth Nonin Fd Cash Sec",
+            "property_id":164
+         }
+      ]
+   },
+   {
+      "collection_id":1,
+      "name":"Long Term Debt Outstanding",
+      "attributes":[
+         {
+            "attribute_id":527,
+            "name":"Total_LTD_Out"
+         },
+         {
+            "attribute_id":528,
+            "name":"LTD_Out_Private_Purp"
+         },
+         {
+            "attribute_id":529,
+            "name":"LTD_Out_All_Other"
+         },
+         {
+            "attribute_id":535,
+            "name":"LTD_Out_General"
+         },
+         {
+            "attribute_id":537,
+            "name":"LTD_Out_Gen_Other_Educ"
+         },
+         {
+            "attribute_id":538,
+            "name":"LTD_Out_Gen_Other_NEC"
+         }
+      ],
+      "properties":[
+         {
+            "name":"All Other",
+            "property_id":91
+         },
+         {
+            "name":"General",
+            "property_id":119
+         },
+         {
+            "name":"Private Purp",
+            "property_id":131
+         },
+         {
+            "name":"Gen Other NEC",
+            "property_id":159
+         },
+         {
+            "name":"Gen Other Educ",
+            "property_id":163
+         },
+         {
+            "name":"Total",
+            "property_id":180
+         }
+      ]
+   },
+
+   ...
+
+   {
+      "collection_id":84,
+      "name":"Unemployment Revenue",
+      "attributes":[
+         {
+            "attribute_id":126,
+            "name":"Total_Unemp_Rev"
+         },
+         {
+            "attribute_id":127,
+            "name":"Unemp_Payroll_Tax"
+         },
+         {
+            "attribute_id":128,
+            "name":"Unemp_Int_Revenue"
+         },
+         {
+            "attribute_id":129,
+            "name":"Unemp_Federal_Advances"
+         },
+         {
+            "attribute_id":130,
+            "name":"Total_Expenditure"
+         }
+      ],
+      "properties":[
+         {
+            "name":"Int Revenue",
+            "property_id":50
+         },
+         {
+            "name":"Payroll Tax",
+            "property_id":78
+         },
+         {
+            "name":"Federal Advances",
+            "property_id":166
+         },
+         {
+            "name":"Expenditure",
+            "property_id":170
+         },
+         {
+            "name":"Total",
+            "property_id":180
+         }
+      ]
+   }
 ]</code></pre>
 </div>
 <div style="clear: both;"></div>
@@ -292,11 +379,11 @@
     State, County, or City level.
 
     <h5>Request URL:</h5>
-    <pre class="prettyprint http"><code class="language-http">/api/time_range?level=state&value=[1]&attributes=[00011,00022]</code></pre>
+    <pre class="http"><code>/api/time_range?level=state&value=[1]&attributes=[00011,00022]</code></pre>
 </div>
 <div class="timeRangeCode codeBlock">
-    <pre class="prettyprint">
-<code class="language-json">[
+    <pre>
+<code class="json">[
     {
         "name": "Alcohol",
         "collection_id": "123",
@@ -329,17 +416,17 @@
     A basic information query will return a list of all States, Counties, or Cities.
 
     <h5>Request URL:</h5>
-    <pre class="prettyprint http"><code class="language-http">/api/states</code></pre>
+    <pre class="http"><code class="http">/api/states</code></pre>
     <br>
-    <pre class="prettyprint http"><code class="language-http">/api/states?populationRange=minValue,maxValue</code></pre>
+    <pre class="http"><code class="http">/api/states?populationRange=minValue,maxValue</code></pre>
     <br>
-    <pre class="prettyprint http"><code class="language-http">/api/counties</code></pre>
+    <pre class="http"><code class="http">/api/counties</code></pre>
     <br>
-    <pre class="prettyprint http"><code class="language-http">/api/cities</code></pre>
+    <pre class="http"><code class="http">/api/cities</code></pre>
 </div>
 <div class="basicInfoStatesCode codeBlock">
-    <pre class="prettyprint">/api/states
-<code class="language-json">[
+    <pre>/api/states
+<code class="json">[
     {
         "name": "ALABAMA",
         "id": 10000000,
@@ -364,8 +451,8 @@
 ]</code></pre>
 </div>
 <div class="basicInfoStatesCode codeBlock">
-    <pre class="prettyprint">/api/states?populationRange=4000000,5000000
-<code class="language-json">[
+    <pre>/api/states?populationRange=4000000,5000000
+<code class="json">[
     {
         "name": "ALABAMA",
         "id": 10000000,
@@ -397,8 +484,8 @@
 ]</code></pre>
 </div>
 <div class="basicInfoCountiesCode codeBlock">
-    <pre class="prettyprint">/api/counties
-<code class="language-json">[
+    <pre>/api/counties
+<code class="json">[
     {
         "county": 2,
         "name": "BALDWIN COUNTY",
@@ -420,8 +507,8 @@
 ]</code></pre>
 </div>
 <div class="basicInfoCitiesCode codeBlock">
-    <pre class="prettyprint">/api/cities
-<code class="language-json">[
+    <pre>/api/cities
+<code class="json">[
     {
         "county": 1,
         "id": 12001003,
@@ -464,7 +551,7 @@
         <tbody>
         <tr>
             <td class="attributesRequestURL">
-                <pre class="prettyprint http "><code class="language-http">/api/attributes?level=state</code></pre>
+                <pre class="http "><code class="http">/api/attributes?level=state</code></pre>
             </td>
             <td>
                 All attributes for all states.
@@ -472,7 +559,7 @@
         </tr>
         <tr>
             <td class="attributesRequestURL">
-                <pre class="prettyprint http"><code class="language-http">/api/attributes?level=state&value=[1,2,3]</code></pre>
+                <pre class="http"><code class="http">/api/attributes?level=state&value=[1,2,3]</code></pre>
             </td>
             <td>
                 All attributes for States with IDs 1, 2, and 3.
@@ -480,7 +567,7 @@
         </tr>
         <tr>
             <td class="attributesRequestURL">
-                <pre class="prettyprint http"><code class="language-http">/api/attributes?level=state&value=[1,2,3]&collection=[123]</code></pre>
+                <pre class="http"><code class="http">/api/attributes?level=state&value=[1,2,3]&collection=[123]</code></pre>
             </td>
             <td>
                 Attribute data for the collection with ID 123 for States with
@@ -489,7 +576,7 @@
         </tr>
         <tr>
             <td class="attributesRequestURL">
-                <pre class="prettyprint http"><code class="language-http">/api/attributes?level=state&value=[1,2,3]&collection=[123]&property=[00001]</code></pre>
+                <pre class="http"><code class="http">/api/attributes?level=state&value=[1,2,3]&collection=[123]&property=[00001]</code></pre>
             </td>
             <td>
                 Attribute data for the collection with ID 123 and the property
@@ -498,7 +585,7 @@
         </tr>
         <tr>
             <td class="attributesRequestURL">
-                <pre class="prettyprint http"><code class="language-http">/api/attributes?level=state&value=[1,2,3]&collection=[123, 345]&property=[00001,0002]</code></pre>
+                <pre class="http"><code class="http">/api/attributes?level=state&value=[1,2,3]&collection=[123, 345]&property=[00001,0002]</code></pre>
             </td>
             <td>
                 Attribute data for the collection with IDs 123 and 345 and the
@@ -508,7 +595,7 @@
         </tr>
         <tr>
             <td class="attributesRequestURL">
-                <pre class="prettyprint http"><code class="language-http">/api/attributes?level=state&value=[1,2,3]&attributes=[00022,00033]</code></pre>
+                <pre class="http"><code class="http">/api/attributes?level=state&value=[1,2,3]&attributes=[00022,00033]</code></pre>
             </td>
             <td>
                 Attribute data for the attributes with IDs 00022 and 00033 for
@@ -517,7 +604,7 @@
         </tr>
         <tr>
             <td class="attributesRequestURL">
-                <pre class="prettyprint http"><code class="language-http">/api/attributes?level=state&value=[1,2,3]&attributes=[00022, 00033]&yearRange=[startYear,endYear]</code></pre>
+                <pre class="http"><code class="http">/api/attributes?level=state&value=[1,2,3]&attributes=[00022, 00033]&yearRange=[startYear,endYear]</code></pre>
             </td>
             <td>
                 Attribute data for the attributes with IDs 00022 and 00033
@@ -526,7 +613,7 @@
         </tr>
         <tr>
             <td class="attributesRequestURL">
-                <pre class="prettyprint http"><code class="language-http">/api/attributes?level=state&value=[1,2,3]&attributes=[00022, 00033]&years=[listSpecificYears]</code></pre>
+                <pre class="http"><code class="http">/api/attributes?level=state&value=[1,2,3]&attributes=[00022, 00033]&years=[listSpecificYears]</code></pre>
             </td>
             <td>
                 Attribute data for the attributes with IDs 00022 and 00033 for
@@ -537,8 +624,8 @@
     </table>
 </div>
 <div class="attributesCode codeBlockLarge">
-    <pre class="prettyprint">/api/attributes?level=state&value=[1,2]&collection=[123]&property=[00001,00002]&yearRange=[2017,2018]
-<code class="language-json">[
+    <pre>/api/attributes?level=state&value=[1,2]&collection=[123]&property=[00001,00002]&yearRange=[2017,2018]
+<code class="json">[
     {
         "States": [
         {
