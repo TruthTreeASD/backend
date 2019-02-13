@@ -10,6 +10,9 @@ import edu.northeastern.truthtree.adapter.utilities.JSONUtil;
 import edu.northeastern.truthtree.adapter.utilities.JoltUtil;
 import edu.northeastern.truthtree.adapter.utilities.URLUtil;
 
+/**
+ * Represents the Basic Info Adapter used to communicate with the database API.
+ */
 public class BasicInfoDBAdapter implements IBasicInfoAdapter {
   private static final String STATES_URL = "http://54.241.137.214:8080/api/location/state";
   private static final String STATES_SPEC_FILE_PATH = "src/main/resources/StatesSpec.json";

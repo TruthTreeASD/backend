@@ -8,6 +8,9 @@ import org.json.simple.parser.ParseException;
 import java.io.FileReader;
 import java.io.IOException;
 
+/**
+ * Represents the methods used to manipulate JSON.
+ */
 public class JSONUtil {
 
   /**
@@ -80,7 +83,8 @@ public class JSONUtil {
    * @param JSONKey    The key that jsonArray will be filtered by.
    * @param startValue The minimum value that will appear in the filtered JSONArray.
    * @param endValue   The maximum value that will appear in the filtered JSONArray.
-   * @return JSONArray that only contains objects in which startValue <= JSONKey <= endValue
+   * @return JSONArray that only contains objects in which startValue is less than JSONKey and
+   *         greater than endValue
    */
   public static JSONArray filterJSON(JSONArray jsonArray, String JSONKey, int startValue,
                                      int endValue) {

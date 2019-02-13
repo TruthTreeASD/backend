@@ -5,6 +5,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import static edu.northeastern.truthtree.controller.basicInfo.BasicInfo.POPULATION_RANGE;
 
+/**
+ * Represents the Basic Info interface used to implement the REST controller.
+ */
 public interface IBasicInfo {
 
 	/**

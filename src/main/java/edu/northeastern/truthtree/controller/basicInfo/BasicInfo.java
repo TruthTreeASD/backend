@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import edu.northeastern.truthtree.service.basicInfo.IBasicInfoService;
 
+/**
+ * Represents the Basic Info methods used create a REST controller.
+ */
 @RestController
 @Component
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -19,6 +22,10 @@ public class BasicInfo implements IBasicInfo {
 
 	static final String POPULATION_RANGE = "populationRange";
 
+	/**
+	 * Creates a new instance of BasicInfo when given an IBasicInfoService.
+	 * @param service the instance service.
+	 */
 	@Autowired
 	public BasicInfo(IBasicInfoService service) {
 		this.service = service;

@@ -199,7 +199,7 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-            <li><a href="api/attributes" style="font-size: 16px;">Attributes</a></li>
+            <li><a href="api/attributes?attributeIds=4" style="font-size: 16px;">Attributes</a></li>
             <li class="dropdown">
                 <a class="dropdown-toggle" style="font-size: 16px;">Basic Info <b
                         class="caret"></b></a>
