@@ -1,9 +1,7 @@
 package edu.northeastern.truthtree.adapter.collections;
 
-import org.json.simple.JSONArray;
-
 public interface ICollectionsAdapter {
-	public JSONArray getCollections();
+	public Object getCollections();
 
-	public JSONArray getCollectionsByLocationId(Integer locationId);
+	public Object getCollectionsByLocationId(Integer locationId);
 }

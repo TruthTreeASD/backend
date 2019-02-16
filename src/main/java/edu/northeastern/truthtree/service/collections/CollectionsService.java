@@ -1,6 +1,5 @@
 package edu.northeastern.truthtree.service.collections;
 
-import org.json.simple.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -16,7 +15,7 @@ public class CollectionsService implements ICollectionsService {
 	}
 
 	@Override
-	public JSONArray getCollections(Integer locationId) {
+	public Object getCollections(Integer locationId) {
 		if (locationId != null) {
 			return adapter.getCollectionsByLocationId(locationId);
 		}
