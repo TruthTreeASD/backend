@@ -12,8 +12,8 @@ public class CollectionsDBAdapter implements ICollectionsAdapter {
 	@Override
 	public Object getCollections() {
 		JSONArray response = URLUtil.readJSONFromURL(COLLECTIONS_URL);
-		Object collectionsResponse = (Object) response.get(0);
-		return (Object) collectionsResponse;
+		org.json.simple.JSONObject collectionsResponse = (org.json.simple.JSONObject) response.get(0);
+		return (Object) collectionsResponse.get("data");
 	}
 
 	@Override
@@ -21,8 +21,8 @@ public class CollectionsDBAdapter implements ICollectionsAdapter {
 		UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(COLLECTIONS_URL);
 		builder.queryParam("id", locationId);
 		JSONArray response = URLUtil.readJSONFromURL(builder.toUriString());
-		Object collectionsResponse = (Object) response.get(0);
-		return collectionsResponse;
+		org.json.simple.JSONObject collectionsResponse = (org.json.simple.JSONObject) response.get(0);
+		return (Object) collectionsResponse.get("data");
 	}
 
 }

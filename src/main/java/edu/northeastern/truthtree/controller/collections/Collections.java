@@ -38,7 +38,6 @@ public class Collections implements ICollections {
 	 * @param locationId
 	 *            which represents unique identifier for a location.
 	 * 
-	 * @author nehashukla
 	 *
 	 */
 	@Override
