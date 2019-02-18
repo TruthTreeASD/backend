@@ -2,9 +2,10 @@ package edu.northeastern.truthtree.adapter.collections;
 
 import edu.northeastern.truthtree.adapter.utilities.JSONUtil;
 
+import static edu.northeastern.truthtree.AppConst.COLLECTIONS_FILE_PATH;
+
 public class CollectionsMockAdapter implements ICollectionsAdapter {
 
-	private static final String COLLECTIONS_FILE_PATH = "src/main/resources/Collections.json";
 
 	@Override
 	public Object getCollections() {

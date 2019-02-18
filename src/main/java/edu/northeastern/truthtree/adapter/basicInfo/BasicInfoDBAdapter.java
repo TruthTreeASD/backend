@@ -10,16 +10,18 @@ import edu.northeastern.truthtree.adapter.utilities.JSONUtil;
 import edu.northeastern.truthtree.adapter.utilities.JoltUtil;
 import edu.northeastern.truthtree.adapter.utilities.URLUtil;
 
+import static edu.northeastern.truthtree.AppConst.CITIES_SPEC_FILE_PATH;
+import static edu.northeastern.truthtree.AppConst.CITIES_URL;
+import static edu.northeastern.truthtree.AppConst.COUNTIES_SPEC_FILE_PATH;
+import static edu.northeastern.truthtree.AppConst.COUNTIES_URL;
+import static edu.northeastern.truthtree.AppConst.POPULATION_KEY;
+import static edu.northeastern.truthtree.AppConst.STATES_SPEC_FILE_PATH;
+import static edu.northeastern.truthtree.AppConst.STATES_URL;
+
 /**
  * Represents the Basic Info Adapter used to communicate with the database API.
  */
 public class BasicInfoDBAdapter implements IBasicInfoAdapter {
-  private static final String STATES_URL = "http://54.241.137.214:8080/api/location/state";
-  private static final String STATES_SPEC_FILE_PATH = "src/main/resources/StatesSpec.json";
-  private static final String COUNTIES_URL = "http://54.241.137.214:8080/api/location/county";
-  private static final String COUNTIES_SPEC_FILE_PATH = "src/main/resources/CountiesSpec.json";
-  private static final String CITIES_URL = "http://54.241.137.214:8080/api/location/city";
-  private static final String CITIES_SPEC_FILE_PATH = "src/main/resources/CitiesSpec.json";
 
 
   /**

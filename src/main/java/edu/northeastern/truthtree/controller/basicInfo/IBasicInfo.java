@@ -3,7 +3,7 @@ package edu.northeastern.truthtree.controller.basicInfo;
 import org.json.simple.JSONArray;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import static edu.northeastern.truthtree.controller.basicInfo.BasicInfo.POPULATION_RANGE;
+import static edu.northeastern.truthtree.AppConst.POPULATION_RANGE;
 
 /**
  * Represents the Basic Info interface used to implement the REST controller.

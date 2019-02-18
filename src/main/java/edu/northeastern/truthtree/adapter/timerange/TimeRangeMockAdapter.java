@@ -3,9 +3,10 @@ package edu.northeastern.truthtree.adapter.timerange;
 import edu.northeastern.truthtree.adapter.utilities.JSONUtil;
 import org.json.simple.JSONArray;
 
+import static edu.northeastern.truthtree.AppConst.TIME_RANGE_FILE_PATH;
+
 public class TimeRangeMockAdapter implements ITimeRangeAdapter {
 
-    private static final String TIME_RANGE_FILE_PATH = "src/main/resources/TimeRange.json";
 
     @Override
     public JSONArray getTimeRange() {
