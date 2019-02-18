@@ -2,7 +2,7 @@ package edu.northeastern.truthtree.adapter.population;
 
 public interface IPopulationAdapter {
     /**
-     * Get attributes with location id list and year.
+     * Get population with location id and year.
      * @param locationId Integer
      * @param year Integer
      * @return attributes
