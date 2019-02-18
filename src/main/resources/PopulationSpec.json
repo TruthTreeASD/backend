@@ -1,0 +1,18 @@
+[
+  {
+    "operation": "shift",
+    "spec": {
+      "0": {
+        "attributes": {
+          "0": {
+            "data": {
+              "0": {
+                "value": "population"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+]

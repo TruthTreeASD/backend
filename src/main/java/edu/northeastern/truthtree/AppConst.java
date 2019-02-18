@@ -23,4 +23,7 @@ public class AppConst {
 	// Collections Adapter Constants
 	public static final String COLLECTIONS_URL = DATABASE_URL + "/api/collections";
 
+	// Population Adapter Constants
+	public static final String POPULATION_SPEC_PATH = RESOURCES_PATH + "//PopulationSpec.json";
+
 }
