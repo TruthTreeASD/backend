@@ -15,6 +15,9 @@ import edu.northeastern.truthtree.adapter.collections.ICollectionsAdapter;
 import edu.northeastern.truthtree.adapter.timerange.ITimeRangeAdapter;
 import edu.northeastern.truthtree.adapter.timerange.TimeRangeDBAdapter;
 import edu.northeastern.truthtree.adapter.timerange.TimeRangeMockAdapter;
+import edu.northeastern.truthtree.adapter.population.IPopulationAdapter;
+import edu.northeastern.truthtree.adapter.population.PopulationDBAdapter;
+import edu.northeastern.truthtree.adapter.population.PopulationMockAdapter;
 
 /**
  * Represents the instances that will be created when the API is queried.
@@ -25,6 +28,7 @@ public class ApplicationConfig {
 	private static final Boolean RETURN_MOCK_DATA_BASIC_INFO = true;
 	private static final Boolean RETURN_MOCK_DATA_COLLECTIONS = false;
 	private static final Boolean RETURN_MOCK_DATA_TIME_RANGE = true;
+	private static final Boolean RETURN_MOCK_DATA_POPULATION = false;
 
 	/**
 	 * Gets the adapter instance for attributes.
@@ -34,6 +38,16 @@ public class ApplicationConfig {
 	@Bean
 	public IAttributesAdapter getAttributeAdapter() {
 		return RETURN_MOCK_DATA_ATTRIBUTES ? new AttributesMockAdapter() : new AttributesDBAdapter();
+	}
+
+	/**
+	 * Gets the adapter instance for population.
+	 * @return if RETURN_MOCK_DATA_POPULATION is true, the mock population adapter, database
+	 * 				 population adapter otherwise.
+	 */
+	@Bean
+	public IPopulationAdapter getPopulationAdapter() {
+		return RETURN_MOCK_DATA_POPULATION ? new PopulationMockAdapter() : new PopulationDBAdapter();
 	}
 
 	/**

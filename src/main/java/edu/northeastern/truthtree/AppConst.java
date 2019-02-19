@@ -51,4 +51,7 @@ public class AppConst {
 
         public static final String TIME_RANGE_FILE_PATH = RESOURCES_PATH + "/TimeRange.json";
 
+	// Population Adapter Constants
+	public static final String POPULATION_SPEC_PATH = RESOURCES_PATH + "/PopulationSpec.json";
+
 }
