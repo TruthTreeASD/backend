@@ -1,0 +1,19 @@
+[
+  {
+    "operation": "shift",
+    "spec": {
+      "data": {
+        "*": {
+          "name": "[&1].name",
+          "collection_id": "[&1].collection_id",
+          "properties": "[&1].attributes",
+          "attributes": {
+            "*": {
+              "attribute_id": "[&3].attributes.[&1].attribute_id"
+            }
+          }
+        }
+      }
+    }
+  }
+]
