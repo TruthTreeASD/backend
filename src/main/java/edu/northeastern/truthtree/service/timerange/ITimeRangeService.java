@@ -1,9 +1,9 @@
 package edu.northeastern.truthtree.service.timerange;
 
-import org.json.simple.JSONArray;
+import java.util.List;
 
 public interface ITimeRangeService {
 
-    JSONArray getTimeRange();
+    Object getTimeRange(String level, List<Integer> attributes);
 
 }

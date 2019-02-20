@@ -4,6 +4,7 @@ package edu.northeastern.truthtree;
  * Represents the constants used throughout the application.
  */
 public class AppConst {
+
         //App Constants
         private static final String DATABASE_URL = "http://54.153.74.217:8080";
         private static final String RESOURCES_PATH = "src/main/resources";
@@ -51,7 +52,7 @@ public class AppConst {
 
         public static final String TIME_RANGE_FILE_PATH = RESOURCES_PATH + "/TimeRange.json";
 
-	// Population Adapter Constants
-	public static final String POPULATION_SPEC_PATH = RESOURCES_PATH + "/PopulationSpec.json";
+	    // Population Adapter Constants
+	    public static final String POPULATION_SPEC_PATH = RESOURCES_PATH + "/PopulationSpec.json";
 
 }
