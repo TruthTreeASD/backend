@@ -1,5 +1,6 @@
 package edu.northeastern.truthtree.adapter.timerange;
 
+import edu.northeastern.truthtree.adapter.utilities.JSONUtil;
 import edu.northeastern.truthtree.adapter.utilities.URLUtil;
 import org.json.simple.JSONArray;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -12,7 +13,7 @@ public class TimeRangeDBAdapter implements ITimeRangeAdapter {
 
     @Override
     public Object getTimeRange() {
-        return URLUtil.readJSONFromURL(TIME_RANGE_FILE_PATH);
+        return JSONUtil.readJSONFile(TIME_RANGE_FILE_PATH);
     }
 
     @Override
