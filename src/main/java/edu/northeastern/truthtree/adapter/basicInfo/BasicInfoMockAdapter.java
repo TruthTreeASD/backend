@@ -4,14 +4,16 @@ import org.json.simple.JSONArray;
 
 import edu.northeastern.truthtree.adapter.utilities.JSONUtil;
 
+import static edu.northeastern.truthtree.AppConst.CITIES_FILE_PATH;
+import static edu.northeastern.truthtree.AppConst.COUNTIES_FILE_PATH;
+import static edu.northeastern.truthtree.AppConst.POPULATION_KEY;
+import static edu.northeastern.truthtree.AppConst.STATES_FILE_PATH;
+
 /**
  * Represents the Basic Info Adapter used to read mock data created to simulate the data that is
  * received from the database.
  */
 public class BasicInfoMockAdapter implements IBasicInfoAdapter {
-	private static final String STATES_FILE_PATH = "src/main/resources/States.json";
-	private static final String CITIES_FILE_PATH = "src/main/resources/Cities.json";
-	private static final String COUNTIES_FILE_PATH = "src/main/resources/Counties.json";
 
 	/**
 	 * Reads a JSON file containing basic state information.

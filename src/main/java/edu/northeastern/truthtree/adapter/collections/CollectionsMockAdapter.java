@@ -1,20 +1,19 @@
 package edu.northeastern.truthtree.adapter.collections;
 
-import org.json.simple.JSONArray;
-
 import edu.northeastern.truthtree.adapter.utilities.JSONUtil;
+
+import static edu.northeastern.truthtree.AppConst.COLLECTIONS_FILE_PATH;
 
 public class CollectionsMockAdapter implements ICollectionsAdapter {
 
-	private static final String COLLECTIONS_FILE_PATH = "src/main/resources/Collections.json";
 
 	@Override
-	public JSONArray getCollections() {
+	public Object getCollections() {
 		return JSONUtil.readJSONFile(COLLECTIONS_FILE_PATH);
 	}
 
 	@Override
-	public JSONArray getCollectionsByLocationId(Integer locationId) {
+	public Object getCollectionsByLocationId(Integer locationId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
