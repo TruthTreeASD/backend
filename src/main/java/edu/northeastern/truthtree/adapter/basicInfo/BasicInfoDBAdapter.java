@@ -9,14 +9,19 @@ import java.util.Map;
 import edu.northeastern.truthtree.adapter.utilities.JSONUtil;
 import edu.northeastern.truthtree.adapter.utilities.JoltUtil;
 import edu.northeastern.truthtree.adapter.utilities.URLUtil;
+import org.springframework.web.util.UriComponentsBuilder;
 
+import static edu.northeastern.truthtree.AppConst.Attributes_URL3;
 import static edu.northeastern.truthtree.AppConst.CITIES_SPEC_FILE_PATH;
 import static edu.northeastern.truthtree.AppConst.CITIES_URL;
 import static edu.northeastern.truthtree.AppConst.COUNTIES_SPEC_FILE_PATH;
 import static edu.northeastern.truthtree.AppConst.COUNTIES_URL;
 import static edu.northeastern.truthtree.AppConst.POPULATION_KEY;
+import static edu.northeastern.truthtree.AppConst.POPULATION_SPEC_PATH;
 import static edu.northeastern.truthtree.AppConst.STATES_SPEC_FILE_PATH;
 import static edu.northeastern.truthtree.AppConst.STATES_URL;
+import static edu.northeastern.truthtree.adapter.utilities.JoltUtil.joltTransform;
+import static edu.northeastern.truthtree.adapter.utilities.URLUtil.readJSONFromURL;
 
 /**
  * Represents the Basic Info Adapter used to communicate with the database API.
@@ -27,10 +32,11 @@ public class BasicInfoDBAdapter implements IBasicInfoAdapter {
   /**
    * Transforms the JSON retrieved from STATES_URL into the desired output.
    *
+   * @param year The year you want the population details for.
    * @return JSONArray representing the data on STATES_URL
    */
   @Override
-  public JSONArray getBasicStatesInfo() {
+  public JSONArray getBasicStatesInfo(int year) {
     JSONArray jsonArray = URLUtil.readJSONFromURL(STATES_URL);
 
     jsonArray = JoltUtil.joltTransform(jsonArray, STATES_SPEC_FILE_PATH);
@@ -45,15 +51,24 @@ public class BasicInfoDBAdapter implements IBasicInfoAdapter {
    * endValue.
    *
    * @param startValue The value that all wanted values will be greater than or equal to.
-   * @param endValue   The value that all wanted values will be less than or equal to.
+   * @param endValue The value that all wanted values will be less than or equal to.
+   * @param year The year you want the population details for.
    * @return JSONArray that contains states that are within the provided range.
    */
   @Override
-  public JSONArray getBasicStatesInfo(int startValue, int endValue) {
+  public JSONArray getBasicStatesInfo(int startValue, int endValue, int year) {
 
     JSONArray jsonArray = URLUtil.readJSONFromURL(STATES_URL);
+    UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(Attributes_URL3);
 
-    jsonArray = JoltUtil.joltTransform(jsonArray, STATES_SPEC_FILE_PATH);
+    int POPULATION_ATTRIBUTE_NUMBER = 1;
+    builder.queryParam("attributes", POPULATION_ATTRIBUTE_NUMBER);
+    builder.queryParam("yearList", year);
+
+    JSONArray populationResponse = readJSONFromURL(builder.toUriString());
+   // return joltTransform(populationResponse.get(0), POPULATION_SPEC_PATH);
+
+    jsonArray = JoltUtil.joltTransform(jsonArray, POPULATION_SPEC_PATH);
 
     JSONArray transformed = JSONUtil.moveObjectsUpOneLevel(jsonArray);
 
@@ -64,10 +79,11 @@ public class BasicInfoDBAdapter implements IBasicInfoAdapter {
   /**
    * Gets the basic states info from the CITIES_URL
    *
+   * @param year The year you want the population details for.
    * @return JSONArray representing the data on CITIES_URL
    */
   @Override
-  public JSONArray getBasicCitiesInfo() {
+  public JSONArray getBasicCitiesInfo(int year) {
     JSONArray jsonArray = URLUtil.readJSONFromURL(CITIES_URL);
 
     jsonArray = JoltUtil.joltTransform(jsonArray, CITIES_SPEC_FILE_PATH);
@@ -76,12 +92,35 @@ public class BasicInfoDBAdapter implements IBasicInfoAdapter {
   }
 
   /**
+   * Gets the basic cities info from CITIES_URL that have a population between startValue and
+   * endValue.
+   *
+   * @param startValue The value that all wanted values will be greater than or equal to.
+   * @param endValue The value that all wanted values will be less than or equal to.
+   * @param year The year you want the population details for.
+   * @return JSONArray that contains states that are within the provided range.
+   */
+  @Override
+  public JSONArray getBasicCitiesInfo(int startValue, int endValue, int year) {
+
+    JSONArray jsonArray = URLUtil.readJSONFromURL(CITIES_URL);
+
+    jsonArray = JoltUtil.joltTransform(jsonArray, CITIES_SPEC_FILE_PATH);
+
+    JSONArray transformed = JSONUtil.moveObjectsUpOneLevel(jsonArray);
+
+    return JSONUtil.filterJSON(transformed, POPULATION_KEY, startValue, endValue);
+
+  }
+
+  /**
    * Gets the basic states info from the COUNTIES_URL
    *
+   * @param year The year you want the population details for.
    * @return JSONArray representing the data on COUNTIES_URL
    */
   @Override
-  public JSONArray getBasicCountiesInfo() {
+  public JSONArray getBasicCountiesInfo(int year) {
 
     JSONArray jsonArray = URLUtil.readJSONFromURL(COUNTIES_URL);
 
@@ -95,12 +134,55 @@ public class BasicInfoDBAdapter implements IBasicInfoAdapter {
   }
 
   /**
+   * Gets the basic cities info from CITIES_URL that have a population between startValue and
+   * endValue.
+   *
+   * @param startValue The value that all wanted values will be greater than or equal to.
+   * @param endValue The value that all wanted values will be less than or equal to.
+   * @param year The year you want the population details for.
+   * @return JSONArray that contains states that are within the provided range.
+   */
+  @Override
+  public JSONArray getBasicCountiesInfo(int startValue, int endValue, int year) {
+
+    JSONArray jsonArray = URLUtil.readJSONFromURL(COUNTIES_URL);
+
+    jsonArray = JoltUtil.joltTransform(jsonArray, COUNTIES_SPEC_FILE_PATH);
+
+    JSONArray transformed = JSONUtil.moveObjectsUpOneLevel(jsonArray);
+
+    return JSONUtil.filterJSON(transformed, POPULATION_KEY, startValue, endValue);
+
+  }
+
+  /**
    * Adds each states abbreviation to the given JSONArray.
    *
    * @param withoutAbvs The JSONArray that will have abbreviations added to it.
    * @return Copy of withoutAbvs that now includes the states abbreviation
    */
   private JSONArray addAbbreviations(JSONArray withoutAbvs) {
+    JSONArray withAbvs = new JSONArray();
+    Map<String, String> statesMap = this.getStatesMap();
+
+    for (Object state : withoutAbvs) {
+      JSONObject currentState = (JSONObject) state;
+      if (statesMap.containsKey(currentState.get("name").toString())) {
+        currentState.put("abbreviation", statesMap.get(currentState.get("name").toString()));
+        withAbvs.add(currentState);
+      }
+    }
+
+    return withAbvs;
+  }
+
+  /**
+   * Adds each locations population to the given JSONArray.
+   *
+   * @param year The year you want the population for.
+   * @return Copy of withoutAbvs that now includes the states abbreviation
+   */
+  private JSONArray addPopulation(JSONArray withoutAbvs) {
     JSONArray withAbvs = new JSONArray();
     Map<String, String> statesMap = this.getStatesMap();
 

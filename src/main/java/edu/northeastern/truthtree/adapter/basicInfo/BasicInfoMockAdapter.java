@@ -15,51 +15,85 @@ import static edu.northeastern.truthtree.AppConst.STATES_FILE_PATH;
  */
 public class BasicInfoMockAdapter implements IBasicInfoAdapter {
 
-	/**
-	 * Reads a JSON file containing basic state information.
-	 *
-	 * @return JSON array that was parsed from the states JSON file.
-	 */
-	@Override
-	public JSONArray getBasicStatesInfo() {
+  /**
+   * Reads a JSON file containing basic state information.
+   *
+   * @param year The year you want the population details for.
+   * @return JSON array that was parsed from the states JSON file.
+   */
+  @Override
+  public JSONArray getBasicStatesInfo(int year) {
 
-		return JSONUtil.readJSONFile(STATES_FILE_PATH);
-	}
+    return JSONUtil.readJSONFile(STATES_FILE_PATH);
+  }
 
-	/**
-	 * Gets the basic states info from STATES_FILE_PATH that have a population between startValue and
-	 * endValue.
-	 *
-	 * @param startValue The value that all wanted values will be greater than or equal to.
-	 * @param endValue   The value that all wanted values will be less than or equal to.
-	 * @return JSONArray that contains states that are within the provided range.
-	 */
-	@Override
-	public JSONArray getBasicStatesInfo(int startValue, int endValue) {
-		JSONArray jsonArray = JSONUtil.readJSONFile(STATES_FILE_PATH);
+  /**
+   * Gets the basic states info from STATES_FILE_PATH that have a population between startValue and
+   * endValue.
+   *
+   * @param startValue The value that all wanted values will be greater than or equal to.
+   * @param endValue The value that all wanted values will be less than or equal to.
+   * @param year The year you want the population details for.
+   * @return JSONArray that contains states that are within the provided range.
+   */
+  @Override
+  public JSONArray getBasicStatesInfo(int startValue, int endValue, int year) {
+    JSONArray jsonArray = JSONUtil.readJSONFile(STATES_FILE_PATH);
 
-		return JSONUtil.filterJSON(jsonArray, POPULATION_KEY, startValue, endValue);
-	}
+    return JSONUtil.filterJSON(jsonArray, POPULATION_KEY, startValue, endValue);
+  }
 
-	/**
-	 * Reads a JSON file containing basic city information.
-	 *
-	 * @return JSON array that was parsed from the cities JSON file.
-	 */
-	@Override
-	public JSONArray getBasicCitiesInfo() {
+  /**
+   * Reads a JSON file containing basic city information.
+   *
+   * @param year The year you want the population details for.
+   * @return JSON array that was parsed from the cities JSON file.
+   */
+  @Override
+  public JSONArray getBasicCitiesInfo(int year) {
 
-		return JSONUtil.readJSONFile(CITIES_FILE_PATH);
-	}
+    return JSONUtil.readJSONFile(CITIES_FILE_PATH);
+  }
 
-	/**
-	 * Reads a JSON file containing basic counties information.
-	 *
-	 * @return JSON array that was parsed from the counties JSON file.
-	 */
-	@Override
-	public JSONArray getBasicCountiesInfo() {
+  /**
+   * Gets the basic cities info from CITIES_FILE_PATH that have a population between startValue and
+   * endValue.
+   *
+   * @param startValue The value that all wanted values will be greater than or equal to.
+   * @param endValue The value that all wanted values will be less than or equal to.
+   * @param year The year you want the population details for.
+   * @return JSONArray that contains states that are within the provided range.
+   */
+  @Override
+  public JSONArray getBasicCitiesInfo(int startValue, int endValue, int year) {
+    JSONArray jsonArray = JSONUtil.readJSONFile(CITIES_FILE_PATH);
+    return JSONUtil.filterJSON(jsonArray, POPULATION_KEY, startValue, endValue);
+  }
 
-		return JSONUtil.readJSONFile(COUNTIES_FILE_PATH);
-	}
+  /**
+   * Reads a JSON file containing basic counties information.
+   *
+   * @param year The year you want the population details for.
+   * @return JSON array that was parsed from the counties JSON file.
+   */
+  @Override
+  public JSONArray getBasicCountiesInfo(int year) {
+
+    return JSONUtil.readJSONFile(COUNTIES_FILE_PATH);
+  }
+
+  /**
+   * Gets the basic counties info from COUNTIES_FILE_PATH that have a population between startValue
+   * and endValue.
+   *
+   * @param startValue The value that all wanted values will be greater than or equal to.
+   * @param endValue The value that all wanted values will be less than or equal to.
+   * @param year The year you want the population details for.
+   * @return JSONArray that contains states that are within the provided range.
+   */
+  @Override
+  public JSONArray getBasicCountiesInfo(int startValue, int endValue, int year) {
+    JSONArray jsonArray = JSONUtil.readJSONFile(COUNTIES_FILE_PATH);
+    return JSONUtil.filterJSON(jsonArray, POPULATION_KEY, startValue, endValue);
+  }
 }
