@@ -136,7 +136,6 @@
             float: left;
         }
 
-
         .codeBlock {
             max-height: 221px;
             width: 390px;
@@ -175,11 +174,11 @@
 
         pre.http {
             display: inline-block;
-            padding:0px;
+            padding: 0px;
         }
 
-        .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
-            padding:4px;
+        .table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
+            padding: 4px;
         }
 
     </style>
@@ -559,7 +558,8 @@
         </tr>
         <tr>
             <td class="attributesRequestURL">
-                <pre class="http"><code class="http">/api/attributes?level=state&value=[1,2,3]</code></pre>
+                <pre class="http"><code
+                        class="http">/api/attributes?level=state&value=[1,2,3]</code></pre>
             </td>
             <td>
                 All attributes for States with IDs 1, 2, and 3.

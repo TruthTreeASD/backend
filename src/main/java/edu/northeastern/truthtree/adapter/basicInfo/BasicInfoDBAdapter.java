@@ -1,15 +1,5 @@
 package edu.northeastern.truthtree.adapter.basicInfo;
 
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-
-import java.util.HashMap;
-import java.util.Map;
-
-import edu.northeastern.truthtree.adapter.utilities.JSONUtil;
-import edu.northeastern.truthtree.adapter.utilities.JoltUtil;
-import edu.northeastern.truthtree.adapter.utilities.URLUtil;
-
 import static edu.northeastern.truthtree.AppConst.CITIES_SPEC_FILE_PATH;
 import static edu.northeastern.truthtree.AppConst.CITIES_URL;
 import static edu.northeastern.truthtree.AppConst.COUNTIES_SPEC_FILE_PATH;
@@ -17,6 +7,14 @@ import static edu.northeastern.truthtree.AppConst.COUNTIES_URL;
 import static edu.northeastern.truthtree.AppConst.POPULATION_KEY;
 import static edu.northeastern.truthtree.AppConst.STATES_SPEC_FILE_PATH;
 import static edu.northeastern.truthtree.AppConst.STATES_URL;
+
+import edu.northeastern.truthtree.adapter.utilities.JSONUtil;
+import edu.northeastern.truthtree.adapter.utilities.JoltUtil;
+import edu.northeastern.truthtree.adapter.utilities.URLUtil;
+import java.util.HashMap;
+import java.util.Map;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 
 /**
  * Represents the Basic Info Adapter used to communicate with the database API.
@@ -45,7 +43,7 @@ public class BasicInfoDBAdapter implements IBasicInfoAdapter {
    * endValue.
    *
    * @param startValue The value that all wanted values will be greater than or equal to.
-   * @param endValue   The value that all wanted values will be less than or equal to.
+   * @param endValue The value that all wanted values will be less than or equal to.
    * @return JSONArray that contains states that are within the provided range.
    */
   @Override
@@ -118,7 +116,7 @@ public class BasicInfoDBAdapter implements IBasicInfoAdapter {
   /**
    * Creates a HashMap that contains each states (key) and its abbreviation (value).
    *
-   * @return HashMap<String   ,       String></> of states (key) and their abbreviations (value)
+   * @return HashMap<String       ,               String></> of states (key) and their abbreviations (value)
    */
   private Map<String, String> getStatesMap() {
     Map<String, String> statesMap = new HashMap<>();
