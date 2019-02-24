@@ -34,11 +34,12 @@ public class BasicInfoDBAdapter extends BaseAdapter implements IBasicInfoAdapter
             .get("data");
 
     List<Map> populationsByYear = (List) response.get("data");
-    Collections.sort(populationsByYear,
-            (data1, data2) ->
-                    ((Integer) data2.get("year")) - ((Integer) data2.get("year")));
 
     if (year == null) {
+      Collections.sort(populationsByYear,
+              (data1, data2) ->
+                      ((Integer) data2.get("year")) - ((Integer) data1.get("year")));
+
       // Return the most recent data point can find for population if year not specified
       return populationsByYear
               .stream()
