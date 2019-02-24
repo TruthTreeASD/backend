@@ -52,20 +52,20 @@ public class BasicInfoService implements IBasicInfoService {
   /**
    * {@inheritDoc}
    */
-	@Override
-	public Optional<Map> getStateDetails(String stateId, String year) {
-		return this.adapter.getStateDetails(stateId, year);
-	}
+  @Override
+  public Optional<Map> getStateDetails(String stateId, String year) {
+    return this.adapter.getStateDetails(stateId, year);
+  }
 
-	/**
-	 * Gets the basic Cities information.
-	 *
-	 * @return basic Cities information as a JSONArray.
-	 */
-	@Override
-	public JSONArray getBasicCitiesInfo() {
-		return this.adapter.getBasicCitiesInfo();
-	}
+  /**
+   * Gets the basic Cities information.
+   *
+   * @return basic Cities information as a JSONArray.
+   */
+  @Override
+  public JSONArray getBasicCitiesInfo() {
+    return this.adapter.getBasicCitiesInfo();
+  }
 
   /**
    *  {@inheritDoc}

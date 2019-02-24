@@ -56,6 +56,50 @@ public class BasicInfo implements IBasicInfo {
   }
 
   /**
+   * Gets a state information
+   *
+   * @param stateId the state's Id.
+   * @return the state's info in JSON object format with 200 status code, 404 if not found.
+   */
+  @GetMapping(value = "/api/states/{stateId}")
+  public ResponseEntity<Map> getStateDetails(
+          @PathVariable String stateId,
+          @RequestParam(value = "year", required = false) String year) {
+    Optional<Map> stateDetailsOptional = this.service.getStateDetails(stateId, year);
+    return stateDetailsOptional
+            .map(stateDetails -> new ResponseEntity<>(stateDetails, HttpStatus.OK))
+            .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+  }
+
+  /**
+   * Gets basic Cities information.
+   *
+   * @return basic Cities information as a JSONArray string.
+   */
+  @Override
+  @RequestMapping(value = "/api/counties", method = RequestMethod.GET)
+  public JSONArray getBasicCountiesInfo() {
+    JSONArray response = this.service.getBasicCountiesInfo();
+    return response;
+  }
+
+  /**
+   * Gets a county information
+   *
+   * @param countyId the state's Id.
+   * @return the state's info in JSON object format with 200 status code, 404 if not found.
+   */
+  @GetMapping(value = "/api/counties/{countyId}")
+  public ResponseEntity<Map> getCountyDetails(
+          @PathVariable String countyId,
+          @RequestParam(value = "year", required = false) String year) {
+    Optional<Map> stateDetailsOptional = this.service.getCountyDetails(countyId, year);
+    return stateDetailsOptional
+            .map(countyDetails -> new ResponseEntity<>(countyDetails, HttpStatus.OK))
+            .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+  }
+
+  /**
    * Gets basic Cities information.
    *
    * @return basic Cities information as a JSONArray string.
@@ -67,65 +111,21 @@ public class BasicInfo implements IBasicInfo {
     return response;
   }
 
-	/**
-	 * Gets a state information
+  /**
+   * Gets a city information
    *
-	 * @param stateId the state's Id.
-	 * @return the state's info in JSON object format with 200 status code, 404 if not found.
-	 */
-	@GetMapping(value = "/api/states/{stateId}")
-	public ResponseEntity<Map> getStateDetails(
-					@PathVariable String stateId,
-					@RequestParam(value = "year", required = false) String year) {
-		Optional<Map> stateDetailsOptional = this.service.getStateDetails(stateId, year);
-		return stateDetailsOptional
-						.map(stateDetails -> new ResponseEntity<>(stateDetails, HttpStatus.OK))
-						.orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
-	}
+   * @param cityId the state's Id.
+   * @param year the year for population data
+   * @return the state's info in JSON object format with 200 status code, 404 if not found.
+   */
+  @GetMapping(value = "/api/cities/{cityId}")
+  public ResponseEntity<Map> getCityDetails(
+          @PathVariable String cityId,
+          @RequestParam(value = "year", required = false) String year) {
 
-	/**
-	 * Gets basic Cities information.
-	 *
-	 * @return basic Cities information as a JSONArray string.
-	 */
-	@Override
-	@RequestMapping(value = "/api/counties", method = RequestMethod.GET)
-	public JSONArray getBasicCountiesInfo() {
-		JSONArray response = this.service.getBasicCountiesInfo();
-		return response;
-	}
-
-	/**
-	 * Gets a county information
-	 *
-	 * @param countyId the state's Id.
-	 * @return the state's info in JSON object format with 200 status code, 404 if not found.
-	 */
-	@GetMapping(value = "/api/counties/{countyId}")
-	public ResponseEntity<Map> getCountyDetails(
-					@PathVariable String countyId,
-					@RequestParam(value = "year", required = false) String year) {
-		Optional<Map> stateDetailsOptional = this.service.getCountyDetails(countyId, year);
-		return stateDetailsOptional
-						.map(countyDetails -> new ResponseEntity<>(countyDetails, HttpStatus.OK))
-						.orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
-	}
-
-	/**
-	 * Gets a city information
-	 *
-	 * @param cityId the state's Id.
-	 * @param year the year for population data
-	 * @return the state's info in JSON object format with 200 status code, 404 if not found.
-	 */
-	@GetMapping(value = "/api/cities/{cityId}")
-	public ResponseEntity<Map> getCityDetails(
-					@PathVariable String cityId,
-					@RequestParam(value = "year", required = false) String year) {
-
-		Optional<Map> cityDetailsOptional = this.service.getCityDetails(cityId, year);
-		return cityDetailsOptional
-						.map(cityDetails -> new ResponseEntity<>(cityDetails, HttpStatus.OK))
-						.orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
-	}
+    Optional<Map> cityDetailsOptional = this.service.getCityDetails(cityId, year);
+    return cityDetailsOptional
+            .map(cityDetails -> new ResponseEntity<>(cityDetails, HttpStatus.OK))
+            .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+  }
 }
