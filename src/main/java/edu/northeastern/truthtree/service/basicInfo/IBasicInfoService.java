@@ -19,44 +19,44 @@ public interface IBasicInfoService {
    */
   JSONArray getBasicStatesInfo(int[] range);
 
-	/**
-	 * Gets a state information.
-	 *
-	 * @param stateId the state's Id
-	 * @param year the year for population data
-	 * @return a Map optional that contains the state's info if found, otherwise empty optional
-	 */
-	Optional<Map> getStateDetails(String stateId, String year);
+  /**
+   * Gets a state information.
+   *
+   * @param stateId the state's Id
+   * @param year the year for population data
+   * @return a Map optional that contains the state's info if found, otherwise empty optional
+   */
+  Optional<Map> getStateDetails(String stateId, String year);
 
-	/**
-	 * Gets the basic Cities information.
-	 *
-	 * @return basic Cities information as a JSONArray.
-	 */
-	JSONArray getBasicCitiesInfo();
+  /**
+   * Gets the basic Cities information.
+   *
+   * @return basic Cities information as a JSONArray.
+   */
+  JSONArray getBasicCitiesInfo();
 
-	/**
-	 * Gets a state information.
-	 *
-	 * @param cityId the city's Id
-	 * @param year the year for population data
-	 * @return a Map optional that contains the state's info if found, otherwise empty optional
-	 */
-	Optional<Map> getCityDetails(String cityId, String year);
+  /**
+   * Gets a state information.
+   *
+   * @param cityId the city's Id
+   * @param year the year for population data
+   * @return a Map optional that contains the state's info if found, otherwise empty optional
+   */
+  Optional<Map> getCityDetails(String cityId, String year);
 
-	/**
-	 * Gets the basic Cities information.
-	 *
-	 * @return basic Cities information as a JSONArray.
-	 */
-	JSONArray getBasicCountiesInfo();
+  /**
+   * Gets the basic Cities information.
+   *
+   * @return basic Cities information as a JSONArray.
+   */
+  JSONArray getBasicCountiesInfo();
 
-	/**
-	 * Gets a state information.
-	 *
-	 * @param countyId the county's Id
-	 * @param year the year for population data
-	 * @return a Map optional that contains the state's info if found, otherwise empty optional
-	 */
-	Optional<Map> getCountyDetails(String countyId, String year);
+  /**
+   * Gets a state information.
+   *
+   * @param countyId the county's Id
+   * @param year the year for population data
+   * @return a Map optional that contains the state's info if found, otherwise empty optional
+   */
+  Optional<Map> getCountyDetails(String countyId, String year);
 }
