@@ -25,6 +25,7 @@ import edu.northeastern.truthtree.adapter.timerange.TimeRangeMockAdapter;
  */
 @Configuration
 public class ApplicationConfig {
+
   private static final Boolean RETURN_MOCK_DATA_ATTRIBUTES = false;
   private static final Boolean RETURN_MOCK_DATA_BASIC_INFO = false;
   private static final Boolean RETURN_MOCK_DATA_COLLECTIONS = false;
