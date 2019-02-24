@@ -1,12 +1,15 @@
 package edu.northeastern.truthtree.service.basicInfo;
 
-import static edu.northeastern.truthtree.ErrorMessages.POPULATION_ERROR;
-
-import edu.northeastern.truthtree.adapter.basicInfo.IBasicInfoAdapter;
-import edu.northeastern.truthtree.adapter.utilities.JSONUtil;
 import org.json.simple.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import static edu.northeastern.truthtree.ErrorMessages.POPULATION_ERROR;
+
+import java.util.Map;
+import java.util.Optional;
+
+import edu.northeastern.truthtree.adapter.basicInfo.IBasicInfoAdapter;
+import edu.northeastern.truthtree.adapter.utilities.JSONUtil;
 
 /**
  * Represents the Basic Info Service.
@@ -47,6 +50,14 @@ public class BasicInfoService implements IBasicInfoService {
   }
 
   /**
+   * {@inheritDoc}
+   */
+  @Override
+  public Optional<Map> getStateDetails(String stateId, String year) {
+    return this.adapter.getStateDetails(stateId, year);
+  }
+
+  /**
    * Gets the basic Cities information.
    *
    * @return basic Cities information as a JSONArray.
@@ -57,6 +68,15 @@ public class BasicInfoService implements IBasicInfoService {
   }
 
   /**
+   *  {@inheritDoc}
+   */
+  @Override
+  public Optional<Map> getCityDetails(String cityId, String year) {
+    return this.adapter.getCityDetails(cityId, year);
+  }
+
+
+  /**
    * Gets the basic Cities information.
    *
    * @return basic Cities information as a JSONArray.
@@ -64,5 +84,13 @@ public class BasicInfoService implements IBasicInfoService {
   @Override
   public JSONArray getBasicCountiesInfo() {
     return this.adapter.getBasicCountiesInfo();
+  }
+
+  /**
+   *  {@inheritDoc}
+   */
+  @Override
+  public Optional<Map> getCountyDetails(String countyId, String year) {
+    return this.adapter.getCountyDetails(countyId, year);
   }
 }
