@@ -1,7 +1,6 @@
 package edu.northeastern.truthtree.adapter.basicInfo;
 
 import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
 
 import java.util.Map;
 import java.util.Optional;
@@ -12,12 +11,12 @@ import java.util.Optional;
 public interface IBasicInfoAdapter {
 
 
-	/**
-	 * Gets the basic States information.
-	 *
-	 * @return basic States information as a JSONArray.
-	 */
-	JSONArray getBasicStatesInfo();
+  /**
+   * Gets the basic States information.
+   *
+   * @return basic States information as a JSONArray.
+   */
+  JSONArray getBasicStatesInfo();
 
 	/**
 	 * Gets a state's details.
@@ -50,17 +49,17 @@ public interface IBasicInfoAdapter {
 	 */
 	JSONArray getBasicStatesInfo (int startValue, int endValue);
 
-	/**
-	 * Gets the basic Cities information.
-	 *
-	 * @return basic Cities information as a JSONArray.
-	 */
-	JSONArray getBasicCitiesInfo();
+  /**
+   * Gets the basic Cities information.
+   *
+   * @return basic Cities information as a JSONArray.
+   */
+  JSONArray getBasicCitiesInfo();
 
-	/**
-	 * Gets the basic Cities information.
-	 *
-	 * @return basic Cities information as a JSONArray.
-	 */
-	JSONArray getBasicCountiesInfo();
+  /**
+   * Gets the basic Cities information.
+   *
+   * @return basic Cities information as a JSONArray.
+   */
+  JSONArray getBasicCountiesInfo();
 }

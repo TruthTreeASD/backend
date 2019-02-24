@@ -1,12 +1,10 @@
 package edu.northeastern.truthtree.adapter.basicInfo;
 
 import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
 
 import java.util.Map;
 import java.util.Optional;
 
-import javax.swing.text.html.Option;
 
 import edu.northeastern.truthtree.adapter.utilities.JSONUtil;
 
@@ -21,16 +19,16 @@ import static edu.northeastern.truthtree.AppConst.STATES_FILE_PATH;
  */
 public class BasicInfoMockAdapter implements IBasicInfoAdapter {
 
-	/**
-	 * Reads a JSON file containing basic state information.
-	 *
-	 * @return JSON array that was parsed from the states JSON file.
-	 */
-	@Override
-	public JSONArray getBasicStatesInfo() {
+  /**
+   * Reads a JSON file containing basic state information.
+   *
+   * @return JSON array that was parsed from the states JSON file.
+   */
+  @Override
+  public JSONArray getBasicStatesInfo() {
 
-		return JSONUtil.readJSONFile(STATES_FILE_PATH);
-	}
+    return JSONUtil.readJSONFile(STATES_FILE_PATH);
+  }
 
 	@Override
 	public Optional<Map> getStateDetails(String stateId, String year) {
@@ -57,30 +55,30 @@ public class BasicInfoMockAdapter implements IBasicInfoAdapter {
 	 */
 	@Override
 	public JSONArray getBasicStatesInfo(int startValue, int endValue) {
-		JSONArray jsonArray = JSONUtil.readJSONFile(STATES_FILE_PATH);
+    JSONArray jsonArray = JSONUtil.readJSONFile(STATES_FILE_PATH);
 
-		return JSONUtil.filterJSON(jsonArray, POPULATION_KEY, startValue, endValue);
-	}
+    return JSONUtil.filterJSON(jsonArray, POPULATION_KEY, startValue, endValue);
+  }
 
-	/**
-	 * Reads a JSON file containing basic city information.
-	 *
-	 * @return JSON array that was parsed from the cities JSON file.
-	 */
-	@Override
-	public JSONArray getBasicCitiesInfo() {
+  /**
+   * Reads a JSON file containing basic city information.
+   *
+   * @return JSON array that was parsed from the cities JSON file.
+   */
+  @Override
+  public JSONArray getBasicCitiesInfo() {
 
-		return JSONUtil.readJSONFile(CITIES_FILE_PATH);
-	}
+    return JSONUtil.readJSONFile(CITIES_FILE_PATH);
+  }
 
-	/**
-	 * Reads a JSON file containing basic counties information.
-	 *
-	 * @return JSON array that was parsed from the counties JSON file.
-	 */
-	@Override
-	public JSONArray getBasicCountiesInfo() {
+  /**
+   * Reads a JSON file containing basic counties information.
+   *
+   * @return JSON array that was parsed from the counties JSON file.
+   */
+  @Override
+  public JSONArray getBasicCountiesInfo() {
 
-		return JSONUtil.readJSONFile(COUNTIES_FILE_PATH);
-	}
+    return JSONUtil.readJSONFile(COUNTIES_FILE_PATH);
+  }
 }

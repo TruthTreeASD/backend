@@ -8,9 +8,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-import java.util.stream.Stream;
-
-import javax.sound.midi.Soundbank;
 
 import edu.northeastern.truthtree.adapter.BaseAdapter;
 import edu.northeastern.truthtree.adapter.utilities.JSONUtil;
@@ -110,7 +107,7 @@ public class BasicInfoDBAdapter extends BaseAdapter implements IBasicInfoAdapter
    * endValue.
    *
    * @param startValue The value that all wanted values will be greater than or equal to.
-   * @param endValue   The value that all wanted values will be less than or equal to.
+   * @param endValue The value that all wanted values will be less than or equal to.
    * @return JSONArray that contains states that are within the provided range.
    */
   @Override
@@ -213,7 +210,7 @@ public class BasicInfoDBAdapter extends BaseAdapter implements IBasicInfoAdapter
   /**
    * Creates a HashMap that contains each states (key) and its abbreviation (value).
    *
-   * @return HashMap<String   ,       String></> of states (key) and their abbreviations (value)
+   * @return HashMap<String       ,               String></> of states (key) and their abbreviations (value)
    */
   private Map<String, String> getStatesMap() {
     Map<String, String> statesMap = new HashMap<>();
