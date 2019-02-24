@@ -32,7 +32,7 @@
 
 .hljs-attribute {
   color: #0E9A00;
-}    
+}
 
 .hljs-function {
   color: #99069A;
@@ -71,7 +71,6 @@
   color: #BC6060;
 }
 
-
 /* Language color: hue: 90; */
 
 .hljs-literal {
@@ -85,7 +84,6 @@
   color: #0C9A9A;
 }
 
-
 /* Meta color: hue: 200 */
 
 .hljs-meta {
@@ -95,7 +93,6 @@
 .hljs-meta-string {
   color: #4d99bf;
 }
-
 
 /* Misc effects */
 
