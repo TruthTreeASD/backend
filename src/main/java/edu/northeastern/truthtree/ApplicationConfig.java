@@ -2,6 +2,7 @@ package edu.northeastern.truthtree;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.client.RestTemplate;
 
 import edu.northeastern.truthtree.adapter.attributes.AttributesDBAdapter;
 import edu.northeastern.truthtree.adapter.attributes.AttributesMockAdapter;
@@ -25,7 +26,7 @@ import edu.northeastern.truthtree.adapter.population.PopulationMockAdapter;
 @Configuration
 public class ApplicationConfig {
 	private static final Boolean RETURN_MOCK_DATA_ATTRIBUTES = false;
-	private static final Boolean RETURN_MOCK_DATA_BASIC_INFO = true;
+	private static final Boolean RETURN_MOCK_DATA_BASIC_INFO = false;
 	private static final Boolean RETURN_MOCK_DATA_COLLECTIONS = false;
 	private static final Boolean RETURN_MOCK_DATA_TIME_RANGE = true;
 	private static final Boolean RETURN_MOCK_DATA_POPULATION = false;
@@ -78,5 +79,10 @@ public class ApplicationConfig {
 	@Bean
 	public ITimeRangeAdapter getTimeRangeAdapter() {
 		return RETURN_MOCK_DATA_TIME_RANGE ? new TimeRangeMockAdapter() : new TimeRangeDBAdapter();
+	}
+
+	@Bean
+	public RestTemplate restTemplate() {
+		return new RestTemplate();
 	}
 }
