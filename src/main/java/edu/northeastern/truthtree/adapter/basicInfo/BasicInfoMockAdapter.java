@@ -1,6 +1,12 @@
 package edu.northeastern.truthtree.adapter.basicInfo;
 
 import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+
+import java.util.Map;
+import java.util.Optional;
+
+import javax.swing.text.html.Option;
 
 import edu.northeastern.truthtree.adapter.utilities.JSONUtil;
 
@@ -24,6 +30,21 @@ public class BasicInfoMockAdapter implements IBasicInfoAdapter {
 	public JSONArray getBasicStatesInfo() {
 
 		return JSONUtil.readJSONFile(STATES_FILE_PATH);
+	}
+
+	@Override
+	public Optional<Map> getStateDetails(String stateId, String year) {
+		return null;
+	}
+
+	@Override
+	public Optional<Map> getCountyDetails(String countyId, String year) {
+		return null;
+	}
+
+	@Override
+	public Optional<Map> getCityDetails(String countyId, String year) {
+		return null;
 	}
 
 	/**
