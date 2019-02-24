@@ -14,12 +14,15 @@ import edu.northeastern.truthtree.adapter.utilities.JSONUtil;
 import edu.northeastern.truthtree.adapter.utilities.JoltUtil;
 import edu.northeastern.truthtree.adapter.utilities.URLUtil;
 
+import static edu.northeastern.truthtree.AppConst.CITIES_FILE_PATH;
 import static edu.northeastern.truthtree.AppConst.CITIES_SPEC_FILE_PATH;
 import static edu.northeastern.truthtree.AppConst.CITIES_URL;
+import static edu.northeastern.truthtree.AppConst.COUNTIES_FILE_PATH;
 import static edu.northeastern.truthtree.AppConst.COUNTIES_SPEC_FILE_PATH;
 import static edu.northeastern.truthtree.AppConst.COUNTIES_URL;
 import static edu.northeastern.truthtree.AppConst.POPULATION_KEY;
 import static edu.northeastern.truthtree.AppConst.POPULATION_URL;
+import static edu.northeastern.truthtree.AppConst.STATES_FILE_PATH;
 import static edu.northeastern.truthtree.AppConst.STATES_SPEC_FILE_PATH;
 import static edu.northeastern.truthtree.AppConst.STATES_URL;
 
@@ -70,21 +73,15 @@ public class BasicInfoDBAdapter extends BaseAdapter implements IBasicInfoAdapter
   }
 
   private List getAllStates() {
-    List<Map> data = (List) this.restTemplate
-            .getForObject(STATES_URL, Map.class).get("data");
-    return data;
+    return JSONUtil.readJSONFile(STATES_FILE_PATH);
   }
 
   private List getAllCounties() {
-    List<Map> data = (List) this.restTemplate
-            .getForObject(COUNTIES_URL, Map.class).get("data");
-    return data;
+    return JSONUtil.readJSONFile(COUNTIES_FILE_PATH);
   }
 
-    private List getAllCities() {
-    List<Map> data = (List) this.restTemplate
-            .getForObject(CITIES_URL, Map.class).get("data");
-    return data;
+  private List getAllCities() {
+    return JSONUtil.readJSONFile(CITIES_FILE_PATH);
   }
 
   /**
@@ -94,13 +91,7 @@ public class BasicInfoDBAdapter extends BaseAdapter implements IBasicInfoAdapter
    */
   @Override
   public JSONArray getBasicStatesInfo() {
-    JSONArray jsonArray = URLUtil.readJSONFromURL(STATES_URL);
-
-    jsonArray = JoltUtil.joltTransform(jsonArray, STATES_SPEC_FILE_PATH);
-
-    JSONArray transformed = JSONUtil.moveObjectsUpOneLevel(jsonArray);
-
-    return addAbbreviations(transformed);
+    return JSONUtil.readJSONFile(STATES_FILE_PATH);
   }
 
   /**
@@ -113,15 +104,8 @@ public class BasicInfoDBAdapter extends BaseAdapter implements IBasicInfoAdapter
    */
   @Override
   public JSONArray getBasicStatesInfo(int startValue, int endValue) {
-
-    JSONArray jsonArray = URLUtil.readJSONFromURL(STATES_URL);
-
-    jsonArray = JoltUtil.joltTransform(jsonArray, STATES_SPEC_FILE_PATH);
-
-    JSONArray transformed = JSONUtil.moveObjectsUpOneLevel(jsonArray);
-
-    return JSONUtil.filterJSON(transformed, POPULATION_KEY, startValue, endValue);
-
+    JSONArray jsonArray = JSONUtil.readJSONFile(STATES_FILE_PATH);
+    return JSONUtil.filterJSON(jsonArray, POPULATION_KEY, startValue, endValue);
   }
 
   /**
@@ -143,11 +127,7 @@ public class BasicInfoDBAdapter extends BaseAdapter implements IBasicInfoAdapter
    */
   @Override
   public JSONArray getBasicCitiesInfo() {
-    JSONArray jsonArray = URLUtil.readJSONFromURL(CITIES_URL);
-
-    jsonArray = JoltUtil.joltTransform(jsonArray, CITIES_SPEC_FILE_PATH);
-
-    return JSONUtil.moveObjectsUpOneLevel(jsonArray);
+    return JSONUtil.readJSONFile(CITIES_FILE_PATH);
   }
 
   /**
@@ -166,16 +146,7 @@ public class BasicInfoDBAdapter extends BaseAdapter implements IBasicInfoAdapter
    */
   @Override
   public JSONArray getBasicCountiesInfo() {
-
-    JSONArray jsonArray = URLUtil.readJSONFromURL(COUNTIES_URL);
-
-    jsonArray = JoltUtil.joltTransform(jsonArray, COUNTIES_SPEC_FILE_PATH);
-
-    try {
-      return JSONUtil.moveObjectsUpOneLevel(jsonArray);
-    } catch (NullPointerException e) {
-      return new JSONArray();
-    }
+    return JSONUtil.readJSONFile(COUNTIES_FILE_PATH);
   }
 
   /**
