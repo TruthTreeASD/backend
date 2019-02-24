@@ -5,7 +5,6 @@ import org.json.simple.JSONArray;
 import java.util.Map;
 import java.util.Optional;
 
-
 import edu.northeastern.truthtree.adapter.utilities.JSONUtil;
 
 import static edu.northeastern.truthtree.AppConst.CITIES_FILE_PATH;
