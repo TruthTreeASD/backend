@@ -25,7 +25,7 @@ public interface IBasicInfoAdapter {
    * @param endValue   The value that all wanted values will be less than or equal to.
    * @return JSONArray that contains states that are within the provided range.
    */
-  JSONArray getBasicStatesInfo (int startValue, int endValue);
+  JSONArray getBasicStatesInfo(int startValue, int endValue);
 
   /**
    * Gets a state's details.
