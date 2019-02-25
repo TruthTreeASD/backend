@@ -1,167 +1,170 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>edu.northeastern</groupId>
-		<artifactId>truthtree</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+  <parent>
+    <groupId>edu.northeastern</groupId>
+    <artifactId>truthtree</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
     <relativePath>../../pom.xml</relativePath>
-	</parent>
+  </parent>
 
-	<artifactId>application</artifactId>
-	<packaging>jar</packaging>
+  <artifactId>application</artifactId>
+  <packaging>jar</packaging>
 
-	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-		</dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+    </dependency>
 
-		<!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
-		<dependency>
-			<groupId>com.googlecode.json-simple</groupId>
-			<artifactId>json-simple</artifactId>
-		</dependency>
+    <!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
+    <dependency>
+      <groupId>com.googlecode.json-simple</groupId>
+      <artifactId>json-simple</artifactId>
+    </dependency>
 
-		<!--https://github.com/bazaarvoice/jolt/blob/master/gettingStarted.md-->
+    <!--https://github.com/bazaarvoice/jolt/blob/master/gettingStarted.md-->
 
-		<dependency>
-			<groupId>com.bazaarvoice.jolt</groupId>
-			<artifactId>jolt-core</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.bazaarvoice.jolt</groupId>
-			<artifactId>json-utils</artifactId>
-		</dependency>
+    <dependency>
+      <groupId>com.bazaarvoice.jolt</groupId>
+      <artifactId>jolt-core</artifactId>
+    </dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-tomcat</artifactId>
-		</dependency>
+    <dependency>
+      <groupId>com.bazaarvoice.jolt</groupId>
+      <artifactId>json-utils</artifactId>
+    </dependency>
 
-		<dependency>
-			<groupId>org.apache.tomcat.embed</groupId>
-			<artifactId>tomcat-embed-jasper</artifactId>
-		</dependency>
+    <!--<dependency>-->
+    <!--<groupId>org.springframework.boot</groupId>-->
+    <!--<artifactId>spring-boot-starter-tomcat</artifactId>-->
+    <!--</dependency>-->
 
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jstl</artifactId>
-		</dependency>
+    <!--<dependency>-->
+    <!--<groupId>org.apache.tomcat.embed</groupId>-->
+    <!--<artifactId>tomcat-embed-jasper</artifactId>-->
+    <!--</dependency>-->
 
-		<dependency>
-			<groupId>io.springfox</groupId>
-			<artifactId>springfox-swagger2</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>io.springfox</groupId>
-			<artifactId>springfox-swagger-ui</artifactId>
-		</dependency>
+    <!--<dependency>-->
+    <!--<groupId>javax.servlet</groupId>-->
+    <!--<artifactId>jstl</artifactId>-->
+    <!--</dependency>-->
 
-		<!-- https://mvnrepository.com/artifact/org.apache.taglibs/taglibs-standard-impl -->
-		<dependency>
-			<groupId>org.apache.taglibs</groupId>
-			<artifactId>taglibs-standard-impl</artifactId>
-		</dependency>
+    <dependency>
+      <groupId>io.springfox</groupId>
+      <artifactId>springfox-swagger2</artifactId>
+    </dependency>
 
-		<!-- https://mvnrepository.com/artifact/org.apache.taglibs/taglibs-standard-spec -->
-		<dependency>
-			<groupId>org.apache.taglibs</groupId>
-			<artifactId>taglibs-standard-spec</artifactId>
-		</dependency>
+    <dependency>
+      <groupId>io.springfox</groupId>
+      <artifactId>springfox-swagger-ui</artifactId>
+    </dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-		</dependency>
-	</dependencies>
+    <!--&lt;!&ndash; https://mvnrepository.com/artifact/org.apache.taglibs/taglibs-standard-impl &ndash;&gt;-->
+    <!--<dependency>-->
+    <!--<groupId>org.apache.taglibs</groupId>-->
+    <!--<artifactId>taglibs-standard-impl</artifactId>-->
+    <!--</dependency>-->
 
-	<reporting>
-		<plugins>
-			<plugin>
-				<groupId>org.jacoco</groupId>
-				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>0.7.6.201602180812</version>
-			</plugin>
+    <!--&lt;!&ndash; https://mvnrepository.com/artifact/org.apache.taglibs/taglibs-standard-spec &ndash;&gt;-->
+    <!--<dependency>-->
+    <!--<groupId>org.apache.taglibs</groupId>-->
+    <!--<artifactId>taglibs-standard-spec</artifactId>-->
+    <!--</dependency>-->
 
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jxr-plugin</artifactId>
-				<version>2.5</version>
-			</plugin>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-devtools</artifactId>
+    </dependency>
+  </dependencies>
 
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-checkstyle-plugin</artifactId>
-				<version>2.17</version>
-				<configuration>
-					<configLocation>google_checks.xml</configLocation>
-				</configuration>
-				<reportSets>
-					<reportSet>
-						<reports>
-							<report>checkstyle</report>
-						</reports>
-					</reportSet>
-				</reportSets>
-			</plugin>
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <version>0.7.6.201602180812</version>
+      </plugin>
 
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>findbugs-maven-plugin</artifactId>
-				<version>3.0.1</version>
-				<configuration>
-					<xmlOutput>true</xmlOutput>
-					<!-- Optional directory to put findbugs xdoc xml report -->
-					<xmlOutputDirectory>target/site</xmlOutputDirectory>
-				</configuration>
-			</plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jxr-plugin</artifactId>
+        <version>2.5</version>
+      </plugin>
 
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>2.10.3</version>
-				<configuration>
-					<show>package</show>
-					<sourceFileExcludes>
-						<exclude>**/*Test.java</exclude>
-					</sourceFileExcludes>
-				</configuration>
-			</plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <version>2.17</version>
+        <configuration>
+          <configLocation>google_checks.xml</configLocation>
+        </configuration>
+        <reportSets>
+          <reportSet>
+            <reports>
+              <report>checkstyle</report>
+            </reports>
+          </reportSet>
+        </reportSets>
+      </plugin>
 
-			<plugin>
-				<artifactId>maven-pmd-plugin</artifactId>
-				<version>3.6</version>
-				<configuration>
-					<skipEmptyReport>false</skipEmptyReport>
-					<rulesets>
-						<ruleset>https://raw.githubusercontent.com/therapon/cs5004/master/rules.xml</ruleset>
-					</rulesets>
-				</configuration>
-				<reportSets>
-					<reportSet>
-						<reports>
-							<report>pmd</report>
-							<!--<report>cpd</report>-->
-						</reports>
-					</reportSet>
-				</reportSets>
-			</plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>findbugs-maven-plugin</artifactId>
+        <version>3.0.1</version>
+        <configuration>
+          <xmlOutput>true</xmlOutput>
+          <!-- Optional directory to put findbugs xdoc xml report -->
+          <xmlOutputDirectory>target/site</xmlOutputDirectory>
+        </configuration>
+      </plugin>
 
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-project-info-reports-plugin</artifactId>
-				<version>2.9</version>
-			</plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>2.10.3</version>
+        <configuration>
+          <show>package</show>
+          <sourceFileExcludes>
+            <exclude>**/*Test.java</exclude>
+          </sourceFileExcludes>
+        </configuration>
+      </plugin>
 
-		</plugins>
-	</reporting>
+      <plugin>
+        <artifactId>maven-pmd-plugin</artifactId>
+        <version>3.6</version>
+        <configuration>
+          <skipEmptyReport>false</skipEmptyReport>
+          <rulesets>
+            <ruleset>https://raw.githubusercontent.com/therapon/cs5004/master/rules.xml</ruleset>
+          </rulesets>
+        </configuration>
+        <reportSets>
+          <reportSet>
+            <reports>
+              <report>pmd</report>
+              <!--<report>cpd</report>-->
+            </reports>
+          </reportSet>
+        </reportSets>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-project-info-reports-plugin</artifactId>
+        <version>2.9</version>
+      </plugin>
+
+    </plugins>
+  </reporting>
 
 </project>
