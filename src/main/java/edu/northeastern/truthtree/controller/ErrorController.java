@@ -2,7 +2,6 @@ package edu.northeastern.truthtree.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-
 import springfox.documentation.annotations.ApiIgnore;
 
 /**
@@ -14,6 +13,7 @@ public class ErrorController {
 
   /**
    * Forwards the URL to /error.jsp
+   *
    * @return error.jsp web page.
    */
   @GetMapping("/error")
