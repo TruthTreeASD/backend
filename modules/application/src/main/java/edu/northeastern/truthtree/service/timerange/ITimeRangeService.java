@@ -4,6 +4,6 @@ import org.json.simple.JSONArray;
 
 public interface ITimeRangeService {
 
-    JSONArray getTimeRange();
+  JSONArray getTimeRange();
 
 }

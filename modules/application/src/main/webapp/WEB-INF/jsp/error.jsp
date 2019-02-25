@@ -18,14 +18,14 @@
 </head>
 <body>
 <div class="centered">
-<iframe src="https://giphy.com/embed/wSSooF0fJM97W"
-        width="480"
-        height="397"
-        align="middle"
-        frameBorder="0"
-        class="giphy-embed"
-        allowFullScreen>
-</iframe>
+    <iframe src="https://giphy.com/embed/wSSooF0fJM97W"
+            width="480"
+            height="397"
+            align="middle"
+            frameBorder="0"
+            class="giphy-embed"
+            allowFullScreen>
+    </iframe>
 </div>
 </body>
 </html>
