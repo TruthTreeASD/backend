@@ -9,12 +9,14 @@ import java.util.Map;
 import edu.northeastern.truthtree.AppConst;
 
 
-public abstract class AbstractNormalizationStrategy implements INormalizationStrategy{
+public abstract class AbstractNormalizationStrategy implements INormalizationStrategy {
 
   protected Map<Long, Map<Long, Double>> parameterMap;
-  AbstractNormalizationStrategy(){
+
+  AbstractNormalizationStrategy() {
     this.parameterMap = new HashMap<>();
   }
+
   @Override
   public List normalize(List result, List normalizationParameters) {
     this.setParameterMap(normalizationParameters);
@@ -22,9 +24,10 @@ public abstract class AbstractNormalizationStrategy implements INormalizationStr
   }
 
   protected abstract void setParameterMap(List normalizationParameters);
+
   protected abstract List apply(List result);
 
-  protected void updateParameterMap(List normalizationParameters, String type){
+  protected void updateParameterMap(List normalizationParameters, String type) {
     for (Object normalizationData : normalizationParameters) {
       LinkedHashMap map = (LinkedHashMap) normalizationData;
       List attributesList = (ArrayList) map.get(AppConst.ATTRIBUTES);
@@ -47,7 +50,7 @@ public abstract class AbstractNormalizationStrategy implements INormalizationStr
     }
   }
 
-  protected List updateNormalizationValues(List result, String type){
+  protected List updateNormalizationValues(List result, String type) {
     for (int i = 0; i < result.size(); i++) {
       LinkedHashMap map = (LinkedHashMap) result.get(i);
       List attributesList = (ArrayList) map.get(AppConst.ATTRIBUTES);

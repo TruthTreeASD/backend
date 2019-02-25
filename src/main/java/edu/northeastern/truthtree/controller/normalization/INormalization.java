@@ -4,8 +4,8 @@ import org.springframework.http.ResponseEntity;
 
 /**
  * Returns type of normalization supported by Truthtree application. It can be - Gross, Per-capita,
- * by total revenue.
+ * by total revenue. For more details, see {@link edu.northeastern.truthtree.enums.NormalizationType}
  */
 public interface INormalization {
-  public ResponseEntity<Object> getNormalizationTypes();
+  ResponseEntity<Object> getNormalizationTypes();
 }

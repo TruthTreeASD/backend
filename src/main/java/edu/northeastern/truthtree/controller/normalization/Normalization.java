@@ -7,11 +7,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import edu.northeastern.truthtree.enums.NormalizationType;
 import edu.northeastern.truthtree.service.normalization.INormalizationService;
 
 @RestController
-public class Normalization implements INormalization{
+public class Normalization implements INormalization {
 
   private INormalizationService service;
 

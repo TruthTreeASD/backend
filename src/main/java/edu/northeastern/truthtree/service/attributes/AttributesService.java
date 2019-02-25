@@ -3,12 +3,10 @@ package edu.northeastern.truthtree.service.attributes;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import edu.northeastern.truthtree.AppConst;
-
-
 import java.util.ArrayList;
 import java.util.List;
 
+import edu.northeastern.truthtree.AppConst;
 import edu.northeastern.truthtree.adapter.attributes.IAttributesAdapter;
 import edu.northeastern.truthtree.common.normalizationStrategy.INormalizationStrategy;
 import edu.northeastern.truthtree.common.normalizationStrategy.NormalizationStrategyFactory;
@@ -27,41 +25,48 @@ public class AttributesService implements IAttributesService {
 
   }
 
+  /**
+   * This method supports querying attribute values (normalized or gross) with different location
+   * ids, attribute ids, years as request parameters. If normalization type is mentioned, It will
+   * initialize normalization parameters (population or total revenue as attribute) by querying
+   * required values from the database, and then calls corresponding normalization strategy class
+   * (see {@link INormalizationStrategy}) to apply normalization logic.
+   *
+   * @param locations          location id list
+   * @param collections        collection id list
+   * @param properties         property id list
+   * @param attributes         attribute id list
+   * @param yearRange          year range
+   * @param yearList           year list
+   * @param normalizationTypes containing types of normalization requested as list
+   * @return result containing attribute values.
+   */
   @Override
   public Object getAttributes(List<Integer> locations, List<Integer> collections, List<Integer> properties,
                               List<Integer> attributes, List<Integer> yearRange, List<Integer> yearList,
                               List<NormalizationType> normalizationTypes) {
     List result = null;
-    if(locations == null){
-      return new ArrayList<>();
-    }
     List normalizationParameters = getNormalizationParameters(locations, yearRange, yearList, normalizationTypes);
     initializeNormalizationStrategies(normalizationTypes);
     if (attributes != null) {
-      if (yearList != null) {
-        result = (ArrayList) adapter.getAttributesWithLocationsYearList(attributes, locations, yearList);
-      } else if (yearRange != null) {
-        result = (ArrayList) adapter.getAttributesWithLocationsYearRange(attributes, locations, yearRange);
-      } else {
-        result = (ArrayList) adapter.getAttributesWithLocations(attributes, locations);
-      }
+      result = findAttributesValues(locations, attributes, yearRange, yearList);
     } else {
       attributes = adapter.getAttributeIdWithCollectionProperty(collections, properties);
       result = (ArrayList) adapter.getAttributes(attributes);
     }
-    for(INormalizationStrategy strategy: normalizationStrategies){
+    for (INormalizationStrategy strategy : normalizationStrategies) {
       result = strategy.normalize(result, normalizationParameters);
     }
-
     return result;
   }
 
   /**
-   * This method calls database service adapter to fetch normalization parameters - Total Revenue or Population or both.
-   * It also determines normalization strategies which will be called in the end of the calling method.
-   * @param locations list containing location ids
-   * @param yearRange list containing start and end year for the year range
-   * @param yearList list containing years for which values need to be fetched
+   * This method calls database service adapter to fetch normalization parameters - Total Revenue or
+   * Population or both.
+   *
+   * @param locations          list containing location ids
+   * @param yearRange          list containing start and end year for the year range
+   * @param yearList           list containing years for which values need to be fetched
    * @param normalizationTypes type of normalization requested
    * @return list containing values for normalization for given locations and years
    */
@@ -78,22 +83,43 @@ public class AttributesService implements IAttributesService {
           attributeList.add(AppConst.POPULATION_ID);
         }
       }
-      if (yearList != null) {
-        result = (ArrayList) adapter.getAttributesWithLocationsYearList(attributeList, locations, yearList);
-      } else if (yearRange != null) {
-        result = (ArrayList) adapter.getAttributesWithLocationsYearRange(attributeList, locations, yearRange);
-      } else{
-        result = (ArrayList)adapter.getAttributesWithLocations(attributeList, locations);
-      }
-
+      result = findAttributesValues(locations, attributeList, yearRange, yearList);
     }
     return result;
   }
 
-  private void initializeNormalizationStrategies(List<NormalizationType> normalizationTypes){
-    for(NormalizationType type: normalizationTypes){
+  /**
+   * Calls {@link NormalizationStrategyFactory} to instantiate requested normalization strategies.
+   *
+   * @param normalizationTypes list of type {@link NormalizationType}
+   */
+  private void initializeNormalizationStrategies(List<NormalizationType> normalizationTypes) {
+    for (NormalizationType type : normalizationTypes) {
       this.normalizationStrategies.add(NormalizationStrategyFactory.getInstance(type));
     }
+  }
+
+  /**
+   * Calls adapter to find attribute values for given locations, attributes, yearRange or yearList
+   * combination.
+   *
+   * @param locations     containing list of location ids
+   * @param attributeList containing list of attribute ids
+   * @param yearRange     containing start and end year
+   * @param yearList      containing list of years for which attributes need to be fetched
+   * @return result list containing attribute values
+   */
+  private List findAttributesValues(List<Integer> locations, List<Integer> attributeList,
+                                    List<Integer> yearRange, List<Integer> yearList) {
+    List result = null;
+    if (yearList != null) {
+      result = (ArrayList) adapter.getAttributesWithLocationsYearList(attributeList, locations, yearList);
+    } else if (yearRange != null) {
+      result = (ArrayList) adapter.getAttributesWithLocationsYearRange(attributeList, locations, yearRange);
+    } else {
+      result = (ArrayList) adapter.getAttributesWithLocations(attributeList, locations);
+    }
+    return result;
   }
 
 }
