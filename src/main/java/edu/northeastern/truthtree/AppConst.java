@@ -56,4 +56,19 @@ public class AppConst {
   // Population
   public static final String POPULATION_SPEC_PATH = RESOURCES_PATH + "/PopulationSpec.json";
 
+
+  //Attribute, Normalization constants
+  public static final int TOTAL_REVENUE_ID = 4;
+  public static final int POPULATION_ID = 1;
+  public static final String ATTRIBUTES="attributes";
+  public static final String DATA="data";
+  public static final String LOCATION_ID="location_id";
+  public static final String VALUE="value";
+  public static final String YEAR="year";
+  public static final String NAME="name";
+  public static final String POPULATION_PARAMETER="Population";
+  public static final String TOTAL_REVENUE_PARAMETER="Total_Revenue";
+  public static final String BY_REVENUE="by_revenue";
+  public static final String PER_CAPITA="per_capita";
+
 }

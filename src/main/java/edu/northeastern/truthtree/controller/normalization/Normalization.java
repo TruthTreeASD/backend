@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import edu.northeastern.truthtree.enums.NormalizationType;
-import edu.northeastern.truthtree.service.collections.ICollectionsService;
 import edu.northeastern.truthtree.service.normalization.INormalizationService;
 
 @RestController
@@ -24,7 +23,7 @@ public class Normalization implements INormalization{
   @Override
   @RequestMapping(value = "/api/normalization_types", method = RequestMethod.GET)
   public ResponseEntity<Object> getNormalizationTypes() {
-    NormalizationType[] response = service.getNormalizationTypes();
+    Object response = service.getNormalizationTypes();
     return new ResponseEntity<>(response, HttpStatus.OK);
   }
 }

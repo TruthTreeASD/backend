@@ -4,5 +4,5 @@ import edu.northeastern.truthtree.controller.normalization.Normalization;
 import edu.northeastern.truthtree.enums.NormalizationType;
 
 public interface INormalizationService {
-  public NormalizationType[] getNormalizationTypes();
+  public Object getNormalizationTypes();
 }

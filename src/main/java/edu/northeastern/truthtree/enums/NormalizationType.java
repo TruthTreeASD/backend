@@ -5,7 +5,7 @@ package edu.northeastern.truthtree.enums;
  * understanding of comparing values
  */
 public enum NormalizationType {
-  GROSS("GROSS"), PER_CAPITA("PER-CAPITA"), BY_REVENUE("BY REVENUE");
+  GROSS("Gross"), PER_CAPITA("Per Capita"), BY_REVENUE("By Revenue");
   String value;
 
   /**
@@ -15,6 +15,10 @@ public enum NormalizationType {
    */
   NormalizationType(String value) {
     this.value = value;
+  }
+
+  public String getValue(){
+    return this.value;
   }
 
 }
