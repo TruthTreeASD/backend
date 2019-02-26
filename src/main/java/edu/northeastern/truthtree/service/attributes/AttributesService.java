@@ -94,9 +94,12 @@ public class AttributesService implements IAttributesService {
    * @param normalizationTypes list of type {@link NormalizationType}
    */
   private void initializeNormalizationStrategies(List<NormalizationType> normalizationTypes) {
-    for (NormalizationType type : normalizationTypes) {
-      this.normalizationStrategies.add(NormalizationStrategyFactory.getInstance(type));
+    if(normalizationTypes!=null){
+      for (NormalizationType type : normalizationTypes) {
+        this.normalizationStrategies.add(NormalizationStrategyFactory.getInstance(type));
+      }
     }
+
   }
 
   /**
