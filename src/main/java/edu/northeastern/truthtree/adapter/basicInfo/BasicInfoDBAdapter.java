@@ -3,26 +3,86 @@ package edu.northeastern.truthtree.adapter.basicInfo;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
+import edu.northeastern.truthtree.adapter.BaseAdapter;
 import edu.northeastern.truthtree.adapter.utilities.JSONUtil;
 import edu.northeastern.truthtree.adapter.utilities.JoltUtil;
 import edu.northeastern.truthtree.adapter.utilities.URLUtil;
 
+import static edu.northeastern.truthtree.AppConst.CITIES_FILE_PATH;
 import static edu.northeastern.truthtree.AppConst.CITIES_SPEC_FILE_PATH;
 import static edu.northeastern.truthtree.AppConst.CITIES_URL;
+import static edu.northeastern.truthtree.AppConst.COUNTIES_FILE_PATH;
 import static edu.northeastern.truthtree.AppConst.COUNTIES_SPEC_FILE_PATH;
 import static edu.northeastern.truthtree.AppConst.COUNTIES_URL;
 import static edu.northeastern.truthtree.AppConst.POPULATION_KEY;
+import static edu.northeastern.truthtree.AppConst.POPULATION_URL;
+import static edu.northeastern.truthtree.AppConst.STATES_FILE_PATH;
 import static edu.northeastern.truthtree.AppConst.STATES_SPEC_FILE_PATH;
 import static edu.northeastern.truthtree.AppConst.STATES_URL;
 
 /**
  * Represents the Basic Info Adapter used to communicate with the database API.
  */
-public class BasicInfoDBAdapter implements IBasicInfoAdapter {
+public class BasicInfoDBAdapter extends BaseAdapter implements IBasicInfoAdapter {
 
+  private Long getLocationPopulation(String locationId, String year) {
+    Map response = (Map) this.restTemplate
+            .getForObject(String.format(POPULATION_URL, locationId), Map.class)
+            .get("data");
+
+    List<Map> populationsByYear = (List) response.get("data");
+
+    if (year == null) {
+      Collections.sort(populationsByYear,
+              (data1, data2) ->
+                      ((Integer) data2.get("year")) - ((Integer) data1.get("year")));
+
+      // Return the most recent data point can find for population if year not specified
+      return populationsByYear
+              .stream()
+              .findFirst()
+              .map(data -> ((Double) data.get("value")).longValue())
+              // Defaults to 0 if no data point found
+              .orElse(0L);
+    }
+
+    return populationsByYear
+            .stream()
+            .filter(data -> data.get("year").toString().equals(year))
+            .findAny()
+            .map(data -> ((Double) data.get("value")).longValue())
+            // Defaults to 0 if no data point found
+            .orElse(0L);
+  }
+
+
+  private Optional<Map> getLocationById(List<Map> locations, String id, String year) {
+    return locations.stream()
+            .filter(location -> location.get("id").toString().equals(id))
+            .findAny()
+            .map(location -> {
+              location.put("population", getLocationPopulation(id, year));
+              return location;
+            });
+  }
+
+  private List getAllStates() {
+    return JSONUtil.readJSONFile(STATES_FILE_PATH);
+  }
+
+  private List getAllCounties() {
+    return JSONUtil.readJSONFile(COUNTIES_FILE_PATH);
+  }
+
+  private List getAllCities() {
+    return JSONUtil.readJSONFile(CITIES_FILE_PATH);
+  }
 
   /**
    * Transforms the JSON retrieved from STATES_URL into the desired output.
@@ -31,13 +91,7 @@ public class BasicInfoDBAdapter implements IBasicInfoAdapter {
    */
   @Override
   public JSONArray getBasicStatesInfo() {
-    JSONArray jsonArray = URLUtil.readJSONFromURL(STATES_URL);
-
-    jsonArray = JoltUtil.joltTransform(jsonArray, STATES_SPEC_FILE_PATH);
-
-    JSONArray transformed = JSONUtil.moveObjectsUpOneLevel(jsonArray);
-
-    return addAbbreviations(transformed);
+    return JSONUtil.readJSONFile(STATES_FILE_PATH);
   }
 
   /**
@@ -45,20 +99,25 @@ public class BasicInfoDBAdapter implements IBasicInfoAdapter {
    * endValue.
    *
    * @param startValue The value that all wanted values will be greater than or equal to.
-   * @param endValue   The value that all wanted values will be less than or equal to.
+   * @param endValue The value that all wanted values will be less than or equal to.
    * @return JSONArray that contains states that are within the provided range.
    */
   @Override
   public JSONArray getBasicStatesInfo(int startValue, int endValue) {
+    JSONArray jsonArray = JSONUtil.readJSONFile(STATES_FILE_PATH);
+    return JSONUtil.filterJSON(jsonArray, POPULATION_KEY, startValue, endValue);
+  }
 
-    JSONArray jsonArray = URLUtil.readJSONFromURL(STATES_URL);
-
-    jsonArray = JoltUtil.joltTransform(jsonArray, STATES_SPEC_FILE_PATH);
-
-    JSONArray transformed = JSONUtil.moveObjectsUpOneLevel(jsonArray);
-
-    return JSONUtil.filterJSON(transformed, POPULATION_KEY, startValue, endValue);
-
+  /**
+   * {@inheritDoc}
+   */
+  @Override
+  public Optional<Map> getStateDetails(String stateId, String year) {
+    Optional<Map> stateDetailOptional = getLocationById(getAllStates(), stateId, year);
+    return stateDetailOptional.map(stateDetail -> {
+      stateDetail.put("abbreviation", getStatesMap().get(stateDetail.get("name")));
+      return stateDetail;
+    });
   }
 
   /**
@@ -68,11 +127,16 @@ public class BasicInfoDBAdapter implements IBasicInfoAdapter {
    */
   @Override
   public JSONArray getBasicCitiesInfo() {
-    JSONArray jsonArray = URLUtil.readJSONFromURL(CITIES_URL);
+    return JSONUtil.readJSONFile(CITIES_FILE_PATH);
+  }
 
-    jsonArray = JoltUtil.joltTransform(jsonArray, CITIES_SPEC_FILE_PATH);
-
-    return JSONUtil.moveObjectsUpOneLevel(jsonArray);
+  /**
+   * {@inheritDoc}
+   */
+  @Override
+  public Optional<Map> getCityDetails(String cityId, String year) {
+    Optional<Map> cityDetailOptional = getLocationById(getAllCities(), cityId, year);
+    return cityDetailOptional;
   }
 
   /**
@@ -82,16 +146,16 @@ public class BasicInfoDBAdapter implements IBasicInfoAdapter {
    */
   @Override
   public JSONArray getBasicCountiesInfo() {
+    return JSONUtil.readJSONFile(COUNTIES_FILE_PATH);
+  }
 
-    JSONArray jsonArray = URLUtil.readJSONFromURL(COUNTIES_URL);
-
-    jsonArray = JoltUtil.joltTransform(jsonArray, COUNTIES_SPEC_FILE_PATH);
-
-    try {
-      return JSONUtil.moveObjectsUpOneLevel(jsonArray);
-    } catch (NullPointerException e) {
-      return new JSONArray();
-    }
+  /**
+   * {@inheritDoc}
+   */
+  @Override
+  public Optional<Map> getCountyDetails(String countyId, String year) {
+    Optional<Map> countyDetailOptional = getLocationById(getAllCounties(), countyId, year);
+    return countyDetailOptional;
   }
 
   /**
@@ -118,7 +182,7 @@ public class BasicInfoDBAdapter implements IBasicInfoAdapter {
   /**
    * Creates a HashMap that contains each states (key) and its abbreviation (value).
    *
-   * @return HashMap<String   ,       String></> of states (key) and their abbreviations (value)
+   * @return HashMap<String       ,               String></> of states (key) and their abbreviations (value)
    */
   private Map<String, String> getStatesMap() {
     Map<String, String> statesMap = new HashMap<>();

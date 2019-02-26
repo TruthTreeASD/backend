@@ -1,4 +1,5 @@
-[{
+[
+  {
     "name": "Alcohol",
     "collection_id": "123",
     "attributes": [
@@ -7,7 +8,8 @@
         "Attribute_id": "00033",
         "startYear": 1955,
         "endYear": 2005
-      } ]
+      }
+    ]
   },
   {
     "name": "Food",
@@ -18,6 +20,7 @@
         "attribute_id": "00002",
         "startYear": 1955,
         "endYear": 2005
-      } ]
-    }
+      }
+    ]
+  }
 ]

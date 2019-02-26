@@ -1,45 +1,85 @@
-[{
-		"name": "Alcohol",
-		"collection_id": 123,
-		"properties": [{
-				"name": "Tax",
-				"property_id": 00001
-			},
-			{
-				"name": "Expenditure",
-				"property_id": 00002
-			}
-		],
-		"attributes": [{
-				"name": "alcohol_tax",
-				"attribute_id": 00011
-			},
-			{
-				"name": "alcohol_expenditure",
-				"attribute_id": 00022
-			}
-		]
-	},
-	{
-		"name": "Food",
-		"collection_id": 345,
-		"properties": [{
-				"name": "Tax",
-				"property_id": 00001
-			},
-			{
-				"name": "Expenditure",
-				"property_id": 00002
-			}
-		],
-		"attributes": [{
-				"name": "food_tax",
-				"attribute_id": 00033
-			},
-			{
-				"name": "food_expenditure",
-				"attribute_id": 00044
-			}
-		]
-	}
+[
+  {
+    "name": "All Other Non-insurance Funds Cash and Securities",
+    "collection_id": 0,
+    "attributes": [
+      {
+        "attribute_id": 579,
+        "name": "Oth Nonin Fd Cash Sec",
+        "property_id": 164
+      }
+    ]
+  },
+  {
+    "name": "Long Term Debt Outstanding",
+    "collection_id": 1,
+    "attributes": [
+      {
+        "attribute_id": 529,
+        "name": "All Other",
+        "property_id": 91
+      },
+      {
+        "attribute_id": 538,
+        "name": "Gen Other NEC",
+        "property_id": 159
+      },
+      {
+        "attribute_id": 528,
+        "name": "Private Purp",
+        "property_id": 131
+      },
+      {
+        "attribute_id": 537,
+        "name": "Gen Other Educ",
+        "property_id": 163
+      },
+      {
+        "attribute_id": 527,
+        "name": "Total",
+        "property_id": 180
+      },
+      {
+        "attribute_id": 535,
+        "name": "General",
+        "property_id": 119
+      }
+    ]
+  },
+  {
+    "name": "Intergovernmental Revenue Local",
+    "collection_id": 2,
+    "attributes": [
+      {
+        "attribute_id": 70,
+        "name": "Hospitals",
+        "property_id": 177
+      },
+      {
+        "attribute_id": 66,
+        "name": "Total",
+        "property_id": 180
+      },
+      {
+        "attribute_id": 74,
+        "name": "Public Welf",
+        "property_id": 99
+      },
+      {
+        "attribute_id": 76,
+        "name": "Other",
+        "property_id": 29
+      },
+      {
+        "attribute_id": 71,
+        "name": "Highways",
+        "property_id": 127
+      },
+      {
+        "attribute_id": 68,
+        "name": "Other Education",
+        "property_id": 120
+      }
+    ]
+  }
 ]

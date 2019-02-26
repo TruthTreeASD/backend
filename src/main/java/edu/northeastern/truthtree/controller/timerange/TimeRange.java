@@ -2,12 +2,11 @@ package edu.northeastern.truthtree.controller.timerange;
 
 import edu.northeastern.truthtree.controller.attributes.IAttributes;
 import edu.northeastern.truthtree.controller.collections.ICollections;
+import edu.northeastern.truthtree.service.timerange.ITimeRangeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import edu.northeastern.truthtree.service.timerange.ITimeRangeService;
 
 import java.util.List;
 
@@ -24,31 +23,32 @@ import java.util.List;
 @RestController
 @CrossOrigin(origins = "*", maxAge = 3600)
 public class TimeRange implements ITimeRange {
-	private ITimeRangeService service;
 
-	@Autowired
-	public TimeRange(ITimeRangeService service) {
-		this.service = service;
-	}
+  private ITimeRangeService service;
 
-    /**
-     * Represents TimeRange interface. With required query parameters of
-     * level and attributes
-     *
-     * @param level
-     *            which represents unique level i.e. state, city or county.
-     * @param attributes
-     *            which represents a list of attribute ids.
-     *
-     * @author amitmangotra
-     *
-     */
-	@Override
-	@RequestMapping(value = "/api/time_range", method = RequestMethod.GET)
-	public ResponseEntity<Object> getTimeRange(@RequestParam(name = "level", required = true) String level,
-											   @RequestParam(name = "attributes", required = true)
-													   List<Integer> attributes) {
-		Object response = service.getTimeRange(level, attributes);
-		return new ResponseEntity<>(response, HttpStatus.OK);
-	}
+  @Autowired
+  public TimeRange(ITimeRangeService service) {
+    this.service = service;
+  }
+
+  /**
+   * Represents TimeRange interface. With required query parameters of
+   * level and attributes
+   *
+   * @param level
+   *            which represents unique level i.e. state, city or county.
+   * @param attributes
+   *            which represents a list of attribute ids.
+   *
+   * @author amitmangotra
+   *
+   */
+  @Override
+  @RequestMapping(value = "/api/time_range", method = RequestMethod.GET)
+  public ResponseEntity<Object> getTimeRange(@RequestParam(name = "level", required = true) String level,
+                                             @RequestParam(name = "attributes", required = true)
+                                                     List<Integer> attributes) {
+      Object response = service.getTimeRange(level, attributes);
+      return new ResponseEntity<>(response, HttpStatus.OK);
+  }
 }

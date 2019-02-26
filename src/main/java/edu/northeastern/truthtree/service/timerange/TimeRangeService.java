@@ -8,15 +8,16 @@ import java.util.List;
 
 @Component
 public class TimeRangeService implements ITimeRangeService {
-    private ITimeRangeAdapter adapter;
 
-    @Autowired
-    public TimeRangeService(ITimeRangeAdapter adapter) {
-        this.adapter = adapter;
-    }
+  private ITimeRangeAdapter adapter;
 
-    @Override
-    public Object getTimeRange(String level, List<Integer> attributes) {
-        return adapter.getTimeRange(level, attributes);
-    }
+  @Autowired
+  public TimeRangeService(ITimeRangeAdapter adapter) {
+    this.adapter = adapter;
+  }
+
+  @Override
+  public Object getTimeRange(String level, List<Integer> attributes) {
+      return adapter.getTimeRange(level, attributes);
+  }
 }

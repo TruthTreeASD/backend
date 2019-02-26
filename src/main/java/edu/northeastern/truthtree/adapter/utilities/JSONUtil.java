@@ -1,12 +1,11 @@
 package edu.northeastern.truthtree.adapter.utilities;
 
+import java.io.FileReader;
+import java.io.IOException;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-
-import java.io.FileReader;
-import java.io.IOException;
 
 /**
  * Represents the methods used to manipulate JSON.
@@ -79,15 +78,15 @@ public class JSONUtil {
   /**
    * Filters the given JSONArray into values that are within startValue and endValue for JSONKey.
    *
-   * @param jsonArray  The given array that will be filtered.
-   * @param JSONKey    The key that jsonArray will be filtered by.
+   * @param jsonArray The given array that will be filtered.
+   * @param JSONKey The key that jsonArray will be filtered by.
    * @param startValue The minimum value that will appear in the filtered JSONArray.
-   * @param endValue   The maximum value that will appear in the filtered JSONArray.
+   * @param endValue The maximum value that will appear in the filtered JSONArray.
    * @return JSONArray that only contains objects in which startValue is less than JSONKey and
-   *         greater than endValue
+   * greater than endValue
    */
   public static JSONArray filterJSON(JSONArray jsonArray, String JSONKey, int startValue,
-                                     int endValue) {
+      int endValue) {
 
     JSONArray filteredArray = new JSONArray();
 
@@ -121,38 +120,11 @@ public class JSONUtil {
   }
 
   /**
-   * Takes in an array in the format:
-   * [
-   *  {
-   *    "key1": {
-   *      "subKey1": "subvalue1",
-   *      ... ,
-   *      "subKeyN": "subvalueN"
-   *    },
-   *    ...
-   *    {
-   *      "keyN": {
-   *        "subKey1": "subvalue1",
-   *        ... ,
-   *        "subKeyN": "subvalueN"
-   *      }
-   *    }
-   *  }
-   * ]
+   * Takes in an array in the format: [ { "key1": { "subKey1": "subvalue1", ... , "subKeyN":
+   * "subvalueN" }, ... { "keyN": { "subKey1": "subvalue1", ... , "subKeyN": "subvalueN" } } } ]
    *
-   * Outputs array in the format:
-   * [{
-   *    "subKey1": "subvalue1",
-   *    ... ,
-   *    "subKeyN": "subvalueN"
-   *  },
-   *  {
-   *    "subKey1": "subvalue1",
-   *    ... ,
-   *    "subKeyN": "subvalueN"
-   *  }
-   * ]
-   *
+   * Outputs array in the format: [{ "subKey1": "subvalue1", ... , "subKeyN": "subvalueN" }, {
+   * "subKey1": "subvalue1", ... , "subKeyN": "subvalueN" } ]
    *
    * @param previousArray The array to be converted into the output format.
    * @return JSONArray in the output format

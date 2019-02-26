@@ -1,12 +1,11 @@
 package edu.northeastern.truthtree.adapter.utilities;
 
-import org.json.simple.JSONArray;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
+import org.json.simple.JSONArray;
 
 /**
  * Represents the methods needed to read JSON from a URL API.
