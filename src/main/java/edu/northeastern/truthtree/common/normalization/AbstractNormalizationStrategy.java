@@ -1,4 +1,4 @@
-package edu.northeastern.truthtree.common.normalizationStrategy;
+package edu.northeastern.truthtree.common.normalization;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -8,25 +8,59 @@ import java.util.Map;
 
 import edu.northeastern.truthtree.AppConst;
 
-
+/**
+ * Represents abstract class for handling Normalization implementation common between different
+ * types of normalization.
+ */
 public abstract class AbstractNormalizationStrategy implements INormalizationStrategy {
 
+  /**
+   * Stores Location Id as key and normalization parameters in the map for the given year.
+   */
   protected Map<Long, Map<Long, Double>> parameterMap;
 
   AbstractNormalizationStrategy() {
     this.parameterMap = new HashMap<>();
   }
 
+  /**
+   * This method accepts result containing attribute values and normalization parameters which
+   * contains population or total revenue value for the respective locations. It first arranges
+   * normalization parameters in the parameterMap and then apply normalization for each attributes
+   * in the result list.
+   */
   @Override
   public List normalize(List result, List normalizationParameters) {
     this.setParameterMap(normalizationParameters);
     return this.apply(result);
   }
 
+  /**
+   * Sets values in the parameterMap for the given normalization type and therefore has been
+   * abstracted at this level.
+   *
+   * @param normalizationParameters represents a list containing values required for normalizing
+   *                                actual values.
+   */
   protected abstract void setParameterMap(List normalizationParameters);
 
+  /**
+   * When the parameterMap is ready, it applies normalization in the result depending upon its type
+   * and therefore has been abstracted at this level.
+   *
+   * @param result represents a list containing values to be normalized.
+   * @return List containing final normalized values.
+   */
   protected abstract List apply(List result);
 
+  /**
+   * This helper method iterates over normalizationParameters to update parameterMap for the given
+   * type.
+   *
+   * @param normalizationParameters represents a list containing values required for normalizing
+   *                                actual values.
+   * @param type                    Type of normalization in String
+   */
   protected void updateParameterMap(List normalizationParameters, String type) {
     for (Object normalizationData : normalizationParameters) {
       LinkedHashMap map = (LinkedHashMap) normalizationData;
@@ -50,6 +84,15 @@ public abstract class AbstractNormalizationStrategy implements INormalizationStr
     }
   }
 
+  /**
+   * This helper method updates the result list after computing normalized values using
+   * parameterMap. Depending upon which type is requested, it calculates and adds the final value,
+   * rounded off upto 3 decimal places in the result list.
+   *
+   * @param result list containing values to be normalized
+   * @param type   String representing type of normalization
+   * @return list containing normalized values.
+   */
   protected List updateNormalizationValues(List result, String type) {
     for (int i = 0; i < result.size(); i++) {
       LinkedHashMap map = (LinkedHashMap) result.get(i);

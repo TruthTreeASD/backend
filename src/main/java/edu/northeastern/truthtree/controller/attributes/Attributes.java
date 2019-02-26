@@ -1,8 +1,6 @@
 package edu.northeastern.truthtree.controller.attributes;
 
 
-import edu.northeastern.truthtree.service.attributes.IAttributesService;
-import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,9 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-
 import java.util.List;
-
 
 import edu.northeastern.truthtree.enums.NormalizationType;
 import edu.northeastern.truthtree.service.attributes.IAttributesService;
@@ -25,6 +21,7 @@ import edu.northeastern.truthtree.service.attributes.IAttributesService;
 @CrossOrigin(origins = "*", maxAge = 3600)
 public class Attributes implements IAttributes {
   private IAttributesService service;
+
   @Autowired
   public Attributes(IAttributesService service) {
     this.service = service;

@@ -8,8 +8,8 @@ import java.util.List;
 
 import edu.northeastern.truthtree.AppConst;
 import edu.northeastern.truthtree.adapter.attributes.IAttributesAdapter;
-import edu.northeastern.truthtree.common.normalizationStrategy.INormalizationStrategy;
-import edu.northeastern.truthtree.common.normalizationStrategy.NormalizationStrategyFactory;
+import edu.northeastern.truthtree.common.normalization.INormalizationStrategy;
+import edu.northeastern.truthtree.common.normalization.NormalizationStrategyFactory;
 import edu.northeastern.truthtree.enums.NormalizationType;
 
 @Component

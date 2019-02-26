@@ -1,4 +1,4 @@
-package edu.northeastern.truthtree.common.normalizationStrategy;
+package edu.northeastern.truthtree.common.normalization;
 
 import java.util.List;
 
