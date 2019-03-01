@@ -10,3 +10,9 @@ docker push registry.heroku.com/truthtree/web
 heroku container:release web --app=truthtree
 
 docker exec -it [container-id] bash
+
+docker stop $(docker ps -aq)
+
+docker rm $(docker ps -aq)
+
+docker rmi -f $(docker images -a -q)

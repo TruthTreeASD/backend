@@ -1,0 +1,19 @@
+[
+  {
+    "attributes": [
+      {
+        "name": "Total_Revenue",
+        "attribute_id": 4,
+        "property_id": 51,
+        "collection_id": 74,
+        "data": [
+          {
+            "value": 1.0570408E7,
+            "year": 2000
+          }
+        ]
+      }
+    ],
+    "location_id": 320000000
+  }
+]
