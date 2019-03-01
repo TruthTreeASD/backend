@@ -7,7 +7,7 @@ public class AppConst {
 
   //App Constants
   private static final String DATABASE_URL = "http://54.153.74.217:8080";
-  private static final String RESOURCES_PATH = "modules/application/src/main/resources";
+  private static final String RESOURCES_PATH = "src/main/resources";
 
   //Attribute Adapter Constants
   public static final String ATTRIBUTES_FILE_PATH = RESOURCES_PATH + "/Attributes.json";
