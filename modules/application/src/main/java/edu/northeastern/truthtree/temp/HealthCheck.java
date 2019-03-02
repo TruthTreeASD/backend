@@ -8,7 +8,7 @@ import springfox.documentation.annotations.ApiIgnore;
 @ApiIgnore
 public class HealthCheck {
 
-  private static final String response = "Hello! Health check ok!";
+  private static final String response = "Hello! Health check ok!!!";
 
   @RequestMapping("/health")
   public String healthCheck() {
