@@ -14,7 +14,6 @@ public class CollectionsMockAdapter implements ICollectionsAdapter {
 
   @Override
   public Object getCollectionsByLocationId(Integer locationId) {
-    // TODO Auto-generated method stub
     return null;
   }
 
