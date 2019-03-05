@@ -1,14 +1,16 @@
 package edu.northeastern.truthtree.adapter;
 
 
-import static org.junit.Assert.assertEquals;
-
-import edu.northeastern.truthtree.adapter.attributes.AttributesDBAdapter;
-import java.util.Arrays;
-import java.util.List;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
+
+import java.util.Arrays;
+import java.util.List;
+
+import edu.northeastern.truthtree.adapter.attributes.AttributesDBAdapter;
+
+import static org.junit.Assert.assertEquals;
 
 public class AttributesDBAdapterTest {
 
@@ -26,6 +28,6 @@ public class AttributesDBAdapterTest {
     List<Integer> collections = Arrays.asList(74);
     List<Integer> expectedOutput = Arrays.asList(1, 2);
     assertEquals(expectedOutput,
-        attributesDBAdapter.getAttributeIdWithCollectionProperty(collections, properties));
+            attributesDBAdapter.getAttributeIdWithCollectionProperty(collections, properties));
   }
 }

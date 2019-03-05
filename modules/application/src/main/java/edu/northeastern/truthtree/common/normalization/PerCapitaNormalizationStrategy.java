@@ -22,8 +22,8 @@ public class PerCapitaNormalizationStrategy extends AbstractNormalizationStrateg
 
   /**
    * Applies normalization with on the result and given type.
+   *
    * @param result represents a list containing values to be normalized.
-   * @return
    */
   @Override
   protected List apply(List result) {

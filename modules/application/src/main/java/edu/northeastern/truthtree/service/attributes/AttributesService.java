@@ -16,13 +16,10 @@ import edu.northeastern.truthtree.enums.NormalizationType;
 public class AttributesService implements IAttributesService {
 
   private IAttributesAdapter adapter;
-  private List<INormalizationStrategy> normalizationStrategies = new ArrayList<>();
 
   @Autowired
   public AttributesService(IAttributesAdapter adapter) {
     this.adapter = adapter;
-//    this.normalizationStrategies = new ArrayList<>();
-
   }
 
   /**
@@ -46,17 +43,18 @@ public class AttributesService implements IAttributesService {
                               List<Integer> attributes, List<Integer> yearRange, List<Integer> yearList,
                               List<NormalizationType> normalizationTypes) {
     List result = null;
-    List normalizationParameters = getNormalizationParameters(locations, yearRange, yearList, normalizationTypes);
-//    initializeNormalizationStrategies(normalizationTypes);
     if (attributes != null) {
       result = findAttributesValues(locations, attributes, yearRange, yearList);
     } else {
       attributes = adapter.getAttributeIdWithCollectionProperty(collections, properties);
       result = (ArrayList) adapter.getAttributes(attributes);
     }
-    for (NormalizationType type : normalizationTypes) {
-      INormalizationStrategy strategy = NormalizationStrategyFactory.getInstance(type);
-      result = strategy.normalize(result, normalizationParameters);
+    if (normalizationTypes != null) {
+      List normalizationParameters = getNormalizationParameters(locations, yearRange, yearList, normalizationTypes);
+      for (NormalizationType type : normalizationTypes) {
+        INormalizationStrategy strategy = NormalizationStrategyFactory.getInstance(type);
+        result = strategy.normalize(result, normalizationParameters);
+      }
     }
     return result;
   }
@@ -90,20 +88,6 @@ public class AttributesService implements IAttributesService {
   }
 
   /**
-   * Calls {@link NormalizationStrategyFactory} to instantiate requested normalization strategies.
-   *
-   * @param normalizationTypes list of type {@link NormalizationType}
-   */
-  private void initializeNormalizationStrategies(List<NormalizationType> normalizationTypes) {
-    if(normalizationTypes!=null){
-      for (NormalizationType type : normalizationTypes) {
-        this.normalizationStrategies.add(NormalizationStrategyFactory.getInstance(type));
-      }
-    }
-
-  }
-
-  /**
    * Calls adapter to find attribute values for given locations, attributes, yearRange or yearList
    * combination.
    *
@@ -126,5 +110,5 @@ public class AttributesService implements IAttributesService {
     return result;
   }
 
-  }
+}
 

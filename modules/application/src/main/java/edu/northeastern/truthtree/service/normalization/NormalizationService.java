@@ -14,6 +14,7 @@ public class NormalizationService implements INormalizationService {
 
   /**
    * Returns supported normalization types in name-display value format.
+   *
    * @return Object containing list of normalization types.
    */
   @Override
