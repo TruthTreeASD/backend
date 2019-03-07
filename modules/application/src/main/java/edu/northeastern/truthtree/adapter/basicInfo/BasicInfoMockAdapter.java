@@ -49,7 +49,7 @@ public class BasicInfoMockAdapter implements IBasicInfoAdapter {
    * endValue.
    *
    * @param startValue The value that all wanted values will be greater than or equal to.
-   * @param endValue The value that all wanted values will be less than or equal to.
+   * @param endValue   The value that all wanted values will be less than or equal to.
    * @return JSONArray that contains states that are within the provided range.
    */
   @Override
@@ -65,14 +65,9 @@ public class BasicInfoMockAdapter implements IBasicInfoAdapter {
    * @return JSON array that was parsed from the cities JSON file.
    */
   @Override
-  public Object[] getBasicCitiesInfo() {
+  public JSONArray getBasicCitiesInfo() {
 
-    return JSONUtil.readJSONFile(CITIES_FILE_PATH).toArray();
-  }
-
-  @Override
-  public Object[] getBasicCitiesInfo(int startValue, int endValue) {
-    return JSONUtil.readJSONFile(CITIES_FILE_PATH).toArray();
+    return JSONUtil.readJSONFile(CITIES_FILE_PATH);
   }
 
   /**
@@ -81,13 +76,8 @@ public class BasicInfoMockAdapter implements IBasicInfoAdapter {
    * @return JSON array that was parsed from the counties JSON file.
    */
   @Override
-  public Object[] getBasicCountiesInfo() {
+  public JSONArray getBasicCountiesInfo() {
 
-    return JSONUtil.readJSONFile(COUNTIES_FILE_PATH).toArray();
-  }
-
-  @Override
-  public Object[] getBasicCountiesInfo(int startValue, int endValue) {
-    return JSONUtil.readJSONFile(COUNTIES_FILE_PATH).toArray();
+    return JSONUtil.readJSONFile(COUNTIES_FILE_PATH);
   }
 }

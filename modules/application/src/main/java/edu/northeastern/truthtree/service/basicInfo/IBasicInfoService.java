@@ -31,9 +31,9 @@ public interface IBasicInfoService {
   /**
    * Gets the basic Cities information.
    *
-   * @return basic Cities information as a Array.
+   * @return basic Cities information as a JSONArray.
    */
-  Object[] getBasicCitiesInfo(int[] range);
+  JSONArray getBasicCitiesInfo();
 
   /**
    * Gets a state information.
@@ -47,9 +47,9 @@ public interface IBasicInfoService {
   /**
    * Gets the basic Cities information.
    *
-   * @return basic Cities information as a Array.
+   * @return basic Cities information as a JSONArray.
    */
-  Object[] getBasicCountiesInfo(int[] range);
+  JSONArray getBasicCountiesInfo();
 
   /**
    * Gets a state information.

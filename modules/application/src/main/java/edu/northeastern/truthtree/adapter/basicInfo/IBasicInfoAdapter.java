@@ -22,7 +22,7 @@ public interface IBasicInfoAdapter {
    * endValue, inclusive.
    *
    * @param startValue The value that all wanted values will be greater than or equal to.
-   * @param endValue The value that all wanted values will be less than or equal to.
+   * @param endValue   The value that all wanted values will be less than or equal to.
    * @return JSONArray that contains states that are within the provided range.
    */
   JSONArray getBasicStatesInfo(int startValue, int endValue);
@@ -39,17 +39,7 @@ public interface IBasicInfoAdapter {
    *
    * @return basic Cities information as a JSONArray.
    */
-  Object[] getBasicCountiesInfo();
-
-  /**
-   * Gets the basic Counties information for states that have a population within startValue and
-   * endValue, inclusive.
-   *
-   * @param startValue The value that all wanted values will be greater than or equal to.
-   * @param endValue The value that all wanted values will be less than or equal to.
-   * @return Object[] that contains states that are within the provided range.
-   */
-  Object[] getBasicCountiesInfo(int startValue, int endValue);
+  JSONArray getBasicCountiesInfo();
 
   /**
    * Gets a county's details.
@@ -65,18 +55,7 @@ public interface IBasicInfoAdapter {
    *
    * @return basic Cities information as a JSONArray.
    */
-  Object[] getBasicCitiesInfo();
-
-  /**
-   * Gets the basic Cities information for states that have a population within startValue and
-   * endValue, inclusive.
-   *
-   * @param startValue The value that all wanted values will be greater than or equal to.
-   * @param endValue The value that all wanted values will be less than or equal to.
-   * @return Object[] that contains states that are within the provided range.
-   */
-  Object[] getBasicCitiesInfo(int startValue, int endValue);
-
+  JSONArray getBasicCitiesInfo();
 
   /**
    * Gets a city's details.
