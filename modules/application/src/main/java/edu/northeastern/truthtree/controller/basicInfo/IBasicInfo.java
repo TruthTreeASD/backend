@@ -26,12 +26,16 @@ public interface IBasicInfo {
    *
    * @return basic Cities information as a JSONArray string.
    */
-  JSONArray getBasicCitiesInfo();
+  Object[] getBasicCitiesInfo(@RequestParam
+      (value = POPULATION_RANGE, required = false)
+      int[] range);
 
   /**
    * Gets basic Cities information.
    *
    * @return basic Cities information as a JSONArray string.
    */
-  JSONArray getBasicCountiesInfo();
+  Object[] getBasicCountiesInfo(@RequestParam
+      (value = POPULATION_RANGE, required = false)
+      int[] range);
 }
