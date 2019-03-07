@@ -1,5 +1,6 @@
 package edu.northeastern.truthtree.adapter.basicInfo;
 
+import java.util.stream.Stream;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
@@ -11,20 +12,12 @@ import java.util.Optional;
 
 import edu.northeastern.truthtree.adapter.BaseAdapter;
 import edu.northeastern.truthtree.adapter.utilities.JSONUtil;
-import edu.northeastern.truthtree.adapter.utilities.JoltUtil;
-import edu.northeastern.truthtree.adapter.utilities.URLUtil;
 
 import static edu.northeastern.truthtree.AppConst.CITIES_FILE_PATH;
-import static edu.northeastern.truthtree.AppConst.CITIES_SPEC_FILE_PATH;
-import static edu.northeastern.truthtree.AppConst.CITIES_URL;
 import static edu.northeastern.truthtree.AppConst.COUNTIES_FILE_PATH;
-import static edu.northeastern.truthtree.AppConst.COUNTIES_SPEC_FILE_PATH;
-import static edu.northeastern.truthtree.AppConst.COUNTIES_URL;
 import static edu.northeastern.truthtree.AppConst.POPULATION_KEY;
 import static edu.northeastern.truthtree.AppConst.POPULATION_URL;
 import static edu.northeastern.truthtree.AppConst.STATES_FILE_PATH;
-import static edu.northeastern.truthtree.AppConst.STATES_SPEC_FILE_PATH;
-import static edu.northeastern.truthtree.AppConst.STATES_URL;
 
 /**
  * Represents the Basic Info Adapter used to communicate with the database API.
@@ -33,43 +26,43 @@ public class BasicInfoDBAdapter extends BaseAdapter implements IBasicInfoAdapter
 
   private Long getLocationPopulation(String locationId, String year) {
     Map response = (Map) this.restTemplate
-            .getForObject(String.format(POPULATION_URL, locationId), Map.class)
-            .get("data");
+        .getForObject(String.format(POPULATION_URL, locationId), Map.class)
+        .get("data");
 
     List<Map> populationsByYear = (List) response.get("data");
 
     if (year == null) {
       Collections.sort(populationsByYear,
-              (data1, data2) ->
-                      ((Integer) data2.get("year")) - ((Integer) data1.get("year")));
+          (data1, data2) ->
+              ((Integer) data2.get("year")) - ((Integer) data1.get("year")));
 
       // Return the most recent data point can find for population if year not specified
       return populationsByYear
-              .stream()
-              .findFirst()
-              .map(data -> ((Double) data.get("value")).longValue())
-              // Defaults to 0 if no data point found
-              .orElse(0L);
+          .stream()
+          .findFirst()
+          .map(data -> ((Double) data.get("value")).longValue())
+          // Defaults to 0 if no data point found
+          .orElse(0L);
     }
 
     return populationsByYear
-            .stream()
-            .filter(data -> data.get("year").toString().equals(year))
-            .findAny()
-            .map(data -> ((Double) data.get("value")).longValue())
-            // Defaults to 0 if no data point found
-            .orElse(0L);
+        .stream()
+        .filter(data -> data.get("year").toString().equals(year))
+        .findAny()
+        .map(data -> ((Double) data.get("value")).longValue())
+        // Defaults to 0 if no data point found
+        .orElse(0L);
   }
 
 
   private Optional<Map> getLocationById(List<Map> locations, String id, String year) {
     return locations.stream()
-            .filter(location -> location.get("id").toString().equals(id))
-            .findAny()
-            .map(location -> {
-              location.put("population", getLocationPopulation(id, year));
-              return location;
-            });
+        .filter(location -> location.get("id").toString().equals(id))
+        .findAny()
+        .map(location -> {
+          location.put("population", getLocationPopulation(id, year));
+          return location;
+        });
   }
 
   private List getAllStates() {
@@ -126,8 +119,38 @@ public class BasicInfoDBAdapter extends BaseAdapter implements IBasicInfoAdapter
    * @return JSONArray representing the data on CITIES_URL
    */
   @Override
-  public JSONArray getBasicCitiesInfo() {
-    return JSONUtil.readJSONFile(CITIES_FILE_PATH);
+  public Object[] getBasicCitiesInfo() {
+    List<Map> cities = getAllCities();
+    Stream<Map> mapStream = cities.stream()
+        .map(location -> {
+          location.put("population", getLocationPopulation(location.get("id").toString(), null));
+          return location;
+        });
+    return mapStream.toArray();
+  }
+
+  /**
+   * Gets the basic cities info from CITIES_URL that have a population between startValue and
+   * endValue.
+   *
+   * @param startValue The value that all wanted values will be greater than or equal to.
+   * @param endValue The value that all wanted values will be less than or equal to.
+   * @return JSONArray that contains states that are within the provided range.
+   */
+  @Override
+  public Object[] getBasicCitiesInfo(int startValue, int endValue) {
+    List<Map> cities = getAllCities();
+    Stream<Map> mapStream = cities.stream()
+        .map(location -> {
+          location.put("population", getLocationPopulation(location.get("id").toString(), null));
+          return location;
+        })
+        .filter(location -> {
+          int population = Integer.parseInt(location.get("population").toString());
+          return (population >= startValue && population <= endValue);
+        });
+
+    return mapStream.toArray();
   }
 
   /**
@@ -145,8 +168,29 @@ public class BasicInfoDBAdapter extends BaseAdapter implements IBasicInfoAdapter
    * @return JSONArray representing the data on COUNTIES_URL
    */
   @Override
-  public JSONArray getBasicCountiesInfo() {
-    return JSONUtil.readJSONFile(COUNTIES_FILE_PATH);
+  public Object[] getBasicCountiesInfo() {
+    List<Map> counties = getAllCounties();
+    Stream<Map> mapStream = counties.stream()
+        .map(location -> {
+          location.put("population", getLocationPopulation(location.get("id").toString(), null));
+          return location;
+        });
+    return mapStream.toArray();
+  }
+
+  @Override
+  public Object[] getBasicCountiesInfo(int startValue, int endValue) {
+    List<Map> counties = getAllCounties();
+    Stream<Map> mapStream = counties.stream()
+        .map(location -> {
+          location.put("population", getLocationPopulation(location.get("id").toString(), null));
+          return location;
+        })
+        .filter(location -> {
+          int population = Integer.parseInt(location.get("population").toString());
+          return population >= startValue && population <= endValue;
+        });
+    return mapStream.toArray();
   }
 
   /**
@@ -182,7 +226,8 @@ public class BasicInfoDBAdapter extends BaseAdapter implements IBasicInfoAdapter
   /**
    * Creates a HashMap that contains each states (key) and its abbreviation (value).
    *
-   * @return HashMap<String       ,               String></> of states (key) and their abbreviations (value)
+   * @return HashMap<String       ,               String></> of states (key) and their abbreviations
+   * (value)
    */
   private Map<String, String> getStatesMap() {
     Map<String, String> statesMap = new HashMap<>();
