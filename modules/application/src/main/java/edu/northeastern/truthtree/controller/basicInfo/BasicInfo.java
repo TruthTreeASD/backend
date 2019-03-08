@@ -1,8 +1,5 @@
 package edu.northeastern.truthtree.controller.basicInfo;
 
-import static edu.northeastern.truthtree.AppConst.POPULATION_RANGE;
-
-import edu.northeastern.truthtree.service.basicInfo.IBasicInfoService;
 import org.json.simple.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,6 +15,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Map;
 import java.util.Optional;
+
+import edu.northeastern.truthtree.service.basicInfo.IBasicInfoService;
+
+import static edu.northeastern.truthtree.AppConst.POPULATION_RANGE;
 
 /**
  * Represents the Basic Info methods used create a REST controller.
@@ -49,10 +50,10 @@ public class BasicInfo implements IBasicInfo {
   @Override
   @RequestMapping(value = "/api/states", method = RequestMethod.GET)
   public JSONArray getBasicStatesInfo(@RequestParam
-      (value = POPULATION_RANGE, required = false)
-      int[] range) {
+                                              (value = POPULATION_RANGE, required = false)
+                                              int[] range, @RequestParam(value = "year", required = false) Integer year) {
 
-    return this.service.getBasicStatesInfo(range);
+    return this.service.getBasicStatesInfo(range, year);
   }
 
   /**
@@ -79,9 +80,9 @@ public class BasicInfo implements IBasicInfo {
   @Override
   @RequestMapping(value = "/api/counties", method = RequestMethod.GET)
   public JSONArray getBasicCountiesInfo(@RequestParam
-                                                  (value = POPULATION_RANGE, required = false)
-                                                  int[] range) {
-    JSONArray response = this.service.getBasicCountiesInfo(range);
+                                                (value = POPULATION_RANGE, required = false)
+                                                int[] range, @RequestParam(value = "year", required = false) Integer year) {
+    JSONArray response = this.service.getBasicCountiesInfo(range, year);
     return response;
   }
 
@@ -109,9 +110,9 @@ public class BasicInfo implements IBasicInfo {
   @Override
   @RequestMapping(value = "/api/cities", method = RequestMethod.GET)
   public JSONArray getBasicCitiesInfo(@RequestParam
-                                                (value = POPULATION_RANGE, required = false)
-                                                int[] range) {
-    JSONArray response = this.service.getBasicCitiesInfo(range);
+                                              (value = POPULATION_RANGE, required = false)
+                                              int[] range, @RequestParam(value = "year", required = false) Integer year) {
+    JSONArray response = this.service.getBasicCitiesInfo(range, year);
     return response;
   }
 
@@ -119,7 +120,7 @@ public class BasicInfo implements IBasicInfo {
    * Gets a city information
    *
    * @param cityId the state's Id.
-   * @param year the year for population data
+   * @param year   the year for population data
    * @return the state's info in JSON object format with 200 status code, 404 if not found.
    */
   @GetMapping(value = "/api/cities/{cityId}")

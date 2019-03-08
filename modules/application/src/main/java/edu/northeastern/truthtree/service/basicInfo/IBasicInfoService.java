@@ -17,7 +17,7 @@ public interface IBasicInfoService {
    * @param range The start and end values that will be used to filter the states returned.
    * @return JSONArray that contains states that are within the provided range.
    */
-  JSONArray getBasicStatesInfo(int[] range);
+  JSONArray getBasicStatesInfo(int[] range, Integer year);
 
   /**
    * Gets a state information.
@@ -33,7 +33,7 @@ public interface IBasicInfoService {
    *
    * @return basic Cities information as a JSONArray.
    */
-  JSONArray getBasicCitiesInfo(int[] range);
+  JSONArray getBasicCitiesInfo(int[] range, Integer year);
 
   /**
    * Gets a state information.
@@ -49,7 +49,7 @@ public interface IBasicInfoService {
    *
    * @return basic Cities information as a JSONArray.
    */
-  JSONArray getBasicCountiesInfo(int[] range);
+  JSONArray getBasicCountiesInfo(int[] range, Integer year);
 
   /**
    * Gets a state information.

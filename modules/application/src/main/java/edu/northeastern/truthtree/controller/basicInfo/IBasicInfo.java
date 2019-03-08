@@ -19,7 +19,7 @@ public interface IBasicInfo {
    */
   JSONArray getBasicStatesInfo(@RequestParam
       (value = POPULATION_RANGE, required = false)
-      int[] range);
+      int[] range, @RequestParam(value = "year", required = false) Integer year);
 
   /**
    * Gets basic Cities information.
@@ -28,7 +28,7 @@ public interface IBasicInfo {
    */
   JSONArray getBasicCitiesInfo(@RequestParam
                                        (value = POPULATION_RANGE, required = false)
-                                       int[] range);
+                                       int[] range, @RequestParam(value = "year", required = false)Integer year);
 
   /**
    * Gets basic Cities information.
@@ -37,5 +37,5 @@ public interface IBasicInfo {
    */
   JSONArray getBasicCountiesInfo(@RequestParam
                                          (value = POPULATION_RANGE, required = false)
-                                         int[] range);
+                                         int[] range, @RequestParam(value = "year", required = false)Integer year);
 }

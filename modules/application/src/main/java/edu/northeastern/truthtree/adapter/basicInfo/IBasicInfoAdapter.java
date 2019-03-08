@@ -25,7 +25,7 @@ public interface IBasicInfoAdapter {
    * @param endValue   The value that all wanted values will be less than or equal to.
    * @return JSONArray that contains states that are within the provided range.
    */
-  JSONArray getBasicStatesInfo(int startValue, int endValue);
+  JSONArray getBasicStatesInfo(int startValue, int endValue, int year);
 
   /**
    * Gets a state's details.
@@ -40,7 +40,7 @@ public interface IBasicInfoAdapter {
    * @return basic Cities information as a JSONArray.
    */
   JSONArray getBasicCountiesInfo();
-  JSONArray getBasicCountiesInfo(int startValue, int endValue);
+  JSONArray getBasicCountiesInfo(int startValue, int endValue, int year);
 
   /**
    * Gets a county's details.
@@ -58,7 +58,7 @@ public interface IBasicInfoAdapter {
    */
   JSONArray getBasicCitiesInfo();
 
-  JSONArray getBasicCitiesInfo(int startValue, int endValue);
+  JSONArray getBasicCitiesInfo(int startValue, int endValue, int year);
 
   /**
    * Gets a city's details.

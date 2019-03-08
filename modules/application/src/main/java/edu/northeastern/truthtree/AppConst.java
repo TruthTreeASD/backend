@@ -72,6 +72,7 @@ public class AppConst {
   public static final String TOTAL_REVENUE_PARAMETER = "Total_Revenue";
   public static final String BY_REVENUE = "by_revenue";
   public static final String PER_CAPITA = "per_capita";
+  public static final int DEFAULT_YEAR = 2016;
 
 
 }

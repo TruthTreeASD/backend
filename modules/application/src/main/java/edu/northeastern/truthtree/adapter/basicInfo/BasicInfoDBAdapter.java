@@ -119,8 +119,8 @@ public class BasicInfoDBAdapter extends BaseAdapter implements IBasicInfoAdapter
    * @return JSONArray that contains states that are within the provided range.
    */
   @Override
-  public JSONArray getBasicStatesInfo(int startValue, int endValue) {
-    JSONArray response = getPopulationData(startValue, endValue, 0);
+  public JSONArray getBasicStatesInfo(int startValue, int endValue, int year) {
+    JSONArray response = getPopulationData(startValue, endValue, 0, year);
     return addPopulationToBasicInfo(stateData, response);
   }
 
@@ -133,8 +133,8 @@ public class BasicInfoDBAdapter extends BaseAdapter implements IBasicInfoAdapter
    * @return JSONArray that contains states that are within the provided range.
    */
   @Override
-  public JSONArray getBasicCitiesInfo(int startValue, int endValue) {
-    JSONArray response = getPopulationData(startValue, endValue, 2);
+  public JSONArray getBasicCitiesInfo(int startValue, int endValue, int year) {
+    JSONArray response = getPopulationData(startValue, endValue, 2, year);
     return addPopulationToBasicInfo(citiesData, response);
 
   }
@@ -148,15 +148,15 @@ public class BasicInfoDBAdapter extends BaseAdapter implements IBasicInfoAdapter
    * @return JSONArray that contains states that are within the provided range.
    */
   @Override
-  public JSONArray getBasicCountiesInfo(int startValue, int endValue) {
-    JSONArray response = getPopulationData(startValue, endValue, 1);
+  public JSONArray getBasicCountiesInfo(int startValue, int endValue, int year) {
+    JSONArray response = getPopulationData(startValue, endValue, 1, year);
     return addPopulationToBasicInfo(countiesData, response);
   }
 
-  private JSONArray getPopulationData(int startValue, int endValue, int typeCode) {
+  private JSONArray getPopulationData(int startValue, int endValue, int typeCode, int year) {
     UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(POPULATION_RANGE_URL);
     builder.queryParam("attributeId", POPULATION_ID);
-    builder.queryParam("year", 2016);
+    builder.queryParam("year", year);
     builder.queryParam("from", startValue);
     builder.queryParam("to", endValue);
     builder.queryParam("typeCode", typeCode);

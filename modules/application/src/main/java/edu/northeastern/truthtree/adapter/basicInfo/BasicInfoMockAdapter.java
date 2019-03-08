@@ -53,7 +53,7 @@ public class BasicInfoMockAdapter implements IBasicInfoAdapter {
    * @return JSONArray that contains states that are within the provided range.
    */
   @Override
-  public JSONArray getBasicStatesInfo(int startValue, int endValue) {
+  public JSONArray getBasicStatesInfo(int startValue, int endValue, int year) {
     JSONArray jsonArray = JSONUtil.readJSONFile(STATES_FILE_PATH);
 
     return JSONUtil.filterJSON(jsonArray, POPULATION_KEY, startValue, endValue);
@@ -71,7 +71,7 @@ public class BasicInfoMockAdapter implements IBasicInfoAdapter {
   }
 
   @Override
-  public JSONArray getBasicCitiesInfo(int startValue, int endValue) {
+  public JSONArray getBasicCitiesInfo(int startValue, int endValue, int year) {
     return null;
   }
 
@@ -87,7 +87,7 @@ public class BasicInfoMockAdapter implements IBasicInfoAdapter {
   }
 
   @Override
-  public JSONArray getBasicCountiesInfo(int startValue, int endValue) {
+  public JSONArray getBasicCountiesInfo(int startValue, int endValue, int year) {
     return null;
   }
 }
