@@ -87,7 +87,9 @@ public abstract class AbstractNormalizationStrategy implements INormalizationStr
   /**
    * This helper method updates the result list after computing normalized values using
    * parameterMap. Depending upon which type is requested, it calculates and adds the final value,
-   * rounded off upto 3 decimal places in the result list.
+   * rounded off upto 3 decimal places in the result list. If there is no value present in the
+   * parameters map, for e.g, if any particular location doesn't have population value for
+   * normalization, percapita value would be returned as 0.
    *
    * @param result list containing values to be normalized
    * @param type   String representing type of normalization
@@ -105,7 +107,10 @@ public abstract class AbstractNormalizationStrategy implements INormalizationStr
           LinkedHashMap dataMap = (LinkedHashMap) dataList.get(k);
           Long year = (Long) dataMap.get(AppConst.YEAR);
           Double value = (Double) dataMap.get(AppConst.VALUE);
-          Double val = value / this.parameterMap.get(locationId).get(year);
+          Double val = 0.0;
+          if (this.parameterMap.get(locationId) != null && this.parameterMap.get(locationId).get(year) != null) {
+            val = value / this.parameterMap.get(locationId).get(year);
+          }
           val = (double) Math.round(val * 1000) / 1000;
           dataMap.put(type, val);
           dataList.set(k, dataMap);
