@@ -51,9 +51,13 @@ public class AttributesService implements IAttributesService {
     }
     if (normalizationTypes != null) {
       List normalizationParameters = getNormalizationParameters(locations, yearRange, yearList, normalizationTypes);
-      for (NormalizationType type : normalizationTypes) {
-        INormalizationStrategy strategy = NormalizationStrategyFactory.getInstance(type);
-        result = strategy.normalize(result, normalizationParameters);
+      if (normalizationParameters != null) {
+        for (NormalizationType type : normalizationTypes) {
+          if (!type.equals(NormalizationType.GROSS)) {
+            INormalizationStrategy strategy = NormalizationStrategyFactory.getInstance(type);
+            result = strategy.normalize(result, normalizationParameters);
+          }
+        }
       }
     }
     return result;
