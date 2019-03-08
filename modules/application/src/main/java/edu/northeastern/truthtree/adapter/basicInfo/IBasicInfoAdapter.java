@@ -40,6 +40,7 @@ public interface IBasicInfoAdapter {
    * @return basic Cities information as a JSONArray.
    */
   JSONArray getBasicCountiesInfo();
+  JSONArray getBasicCountiesInfo(int startValue, int endValue);
 
   /**
    * Gets a county's details.
@@ -56,6 +57,8 @@ public interface IBasicInfoAdapter {
    * @return basic Cities information as a JSONArray.
    */
   JSONArray getBasicCitiesInfo();
+
+  JSONArray getBasicCitiesInfo(int startValue, int endValue);
 
   /**
    * Gets a city's details.

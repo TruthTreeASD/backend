@@ -78,8 +78,10 @@ public class BasicInfo implements IBasicInfo {
    */
   @Override
   @RequestMapping(value = "/api/counties", method = RequestMethod.GET)
-  public JSONArray getBasicCountiesInfo() {
-    JSONArray response = this.service.getBasicCountiesInfo();
+  public JSONArray getBasicCountiesInfo(@RequestParam
+                                                  (value = POPULATION_RANGE, required = false)
+                                                  int[] range) {
+    JSONArray response = this.service.getBasicCountiesInfo(range);
     return response;
   }
 
@@ -106,8 +108,10 @@ public class BasicInfo implements IBasicInfo {
    */
   @Override
   @RequestMapping(value = "/api/cities", method = RequestMethod.GET)
-  public JSONArray getBasicCitiesInfo() {
-    JSONArray response = this.service.getBasicCitiesInfo();
+  public JSONArray getBasicCitiesInfo(@RequestParam
+                                                (value = POPULATION_RANGE, required = false)
+                                                int[] range) {
+    JSONArray response = this.service.getBasicCitiesInfo(range);
     return response;
   }
 

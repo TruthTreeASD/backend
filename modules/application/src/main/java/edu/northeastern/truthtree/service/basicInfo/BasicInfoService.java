@@ -63,7 +63,15 @@ public class BasicInfoService implements IBasicInfoService {
    * @return basic Cities information as a JSONArray.
    */
   @Override
-  public JSONArray getBasicCitiesInfo() {
+  public JSONArray getBasicCitiesInfo(int[] range) {
+//    return this.adapter.getBasicCitiesInfo();
+    if (range != null) {
+      if (range.length == 2 && range[0] <= range[1]) {
+        return this.adapter.getBasicCitiesInfo(range[0], range[1]);
+      }
+      return JSONUtil.createErrorMessage(POPULATION_ERROR);
+    }
+
     return this.adapter.getBasicCitiesInfo();
   }
 
@@ -82,7 +90,14 @@ public class BasicInfoService implements IBasicInfoService {
    * @return basic Cities information as a JSONArray.
    */
   @Override
-  public JSONArray getBasicCountiesInfo() {
+  public JSONArray getBasicCountiesInfo(int[] range) {
+    if (range != null) {
+      if (range.length == 2 && range[0] <= range[1]) {
+        return this.adapter.getBasicCountiesInfo(range[0], range[1]);
+      }
+      return JSONUtil.createErrorMessage(POPULATION_ERROR);
+    }
+
     return this.adapter.getBasicCountiesInfo();
   }
 

@@ -70,6 +70,11 @@ public class BasicInfoMockAdapter implements IBasicInfoAdapter {
     return JSONUtil.readJSONFile(CITIES_FILE_PATH);
   }
 
+  @Override
+  public JSONArray getBasicCitiesInfo(int startValue, int endValue) {
+    return null;
+  }
+
   /**
    * Reads a JSON file containing basic counties information.
    *
@@ -79,5 +84,10 @@ public class BasicInfoMockAdapter implements IBasicInfoAdapter {
   public JSONArray getBasicCountiesInfo() {
 
     return JSONUtil.readJSONFile(COUNTIES_FILE_PATH);
+  }
+
+  @Override
+  public JSONArray getBasicCountiesInfo(int startValue, int endValue) {
+    return null;
   }
 }

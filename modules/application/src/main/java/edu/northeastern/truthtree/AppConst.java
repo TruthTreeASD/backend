@@ -43,7 +43,8 @@ public class AppConst {
   public static final String POPULATION_KEY = "population";
   public static final String POPULATION_URL = DATABASE_URL
           + "/api/findValue?attributeId=1&locationId=%s";
-
+  public static final String POPULATION_RANGE_URL = DATABASE_URL
+          + "/api/findValue";
 
   // Collections
   public static final String COLLECTIONS_URL = DATABASE_URL + "/api/collections";

@@ -1,9 +1,8 @@
 package edu.northeastern.truthtree.adapter.basicInfo;
 
 import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
+import org.springframework.web.util.UriComponentsBuilder;
 
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -11,25 +10,45 @@ import java.util.Optional;
 
 import edu.northeastern.truthtree.adapter.BaseAdapter;
 import edu.northeastern.truthtree.adapter.utilities.JSONUtil;
-import edu.northeastern.truthtree.adapter.utilities.JoltUtil;
-import edu.northeastern.truthtree.adapter.utilities.URLUtil;
 
 import static edu.northeastern.truthtree.AppConst.CITIES_FILE_PATH;
-import static edu.northeastern.truthtree.AppConst.CITIES_SPEC_FILE_PATH;
-import static edu.northeastern.truthtree.AppConst.CITIES_URL;
 import static edu.northeastern.truthtree.AppConst.COUNTIES_FILE_PATH;
-import static edu.northeastern.truthtree.AppConst.COUNTIES_SPEC_FILE_PATH;
-import static edu.northeastern.truthtree.AppConst.COUNTIES_URL;
-import static edu.northeastern.truthtree.AppConst.POPULATION_KEY;
+import static edu.northeastern.truthtree.AppConst.POPULATION_ID;
+import static edu.northeastern.truthtree.AppConst.POPULATION_RANGE_URL;
 import static edu.northeastern.truthtree.AppConst.POPULATION_URL;
 import static edu.northeastern.truthtree.AppConst.STATES_FILE_PATH;
-import static edu.northeastern.truthtree.AppConst.STATES_SPEC_FILE_PATH;
-import static edu.northeastern.truthtree.AppConst.STATES_URL;
+import static edu.northeastern.truthtree.adapter.utilities.URLUtil.readJSONFromURL;
 
 /**
  * Represents the Basic Info Adapter used to communicate with the database API.
  */
 public class BasicInfoDBAdapter extends BaseAdapter implements IBasicInfoAdapter {
+  private static Map<Long, Object> stateData = new HashMap<>();
+  private static Map<Long, Object> citiesData = new HashMap<>();
+  private static Map<Long, Object> countiesData = new HashMap<>();
+
+  static {
+    List stData = JSONUtil.readJSONFile(STATES_FILE_PATH);
+    for (Object val : stData) {
+      Map map = (HashMap) val;
+      Long id = (Long) map.get("id");
+      stateData.put(id, val);
+    }
+
+    List coData = JSONUtil.readJSONFile(COUNTIES_FILE_PATH);
+    for (Object val : coData) {
+      Map map = (HashMap) val;
+      Long id = (Long) map.get("id");
+      countiesData.put(id, val);
+    }
+
+    List ciData = JSONUtil.readJSONFile(CITIES_FILE_PATH);
+    for (Object val : ciData) {
+      Map map = (HashMap) val;
+      Long id = (Long) map.get("id");
+      citiesData.put(id, val);
+    }
+  }
 
   private Long getLocationPopulation(String locationId, String year) {
     Map response = (Map) this.restTemplate
@@ -39,9 +58,6 @@ public class BasicInfoDBAdapter extends BaseAdapter implements IBasicInfoAdapter
     List<Map> populationsByYear = (List) response.get("data");
 
     if (year == null) {
-      Collections.sort(populationsByYear,
-              (data1, data2) ->
-                      ((Integer) data2.get("year")) - ((Integer) data1.get("year")));
 
       // Return the most recent data point can find for population if year not specified
       return populationsByYear
@@ -99,13 +115,69 @@ public class BasicInfoDBAdapter extends BaseAdapter implements IBasicInfoAdapter
    * endValue.
    *
    * @param startValue The value that all wanted values will be greater than or equal to.
-   * @param endValue The value that all wanted values will be less than or equal to.
+   * @param endValue   The value that all wanted values will be less than or equal to.
    * @return JSONArray that contains states that are within the provided range.
    */
   @Override
   public JSONArray getBasicStatesInfo(int startValue, int endValue) {
-    JSONArray jsonArray = JSONUtil.readJSONFile(STATES_FILE_PATH);
-    return JSONUtil.filterJSON(jsonArray, POPULATION_KEY, startValue, endValue);
+    JSONArray response = getPopulationData(startValue, endValue, 0);
+    return addPopulationToBasicInfo(stateData, response);
+  }
+
+  /**
+   * Gets the basic states info from STATES_URL that have a population between startValue and
+   * endValue.
+   *
+   * @param startValue The value that all wanted values will be greater than or equal to.
+   * @param endValue   The value that all wanted values will be less than or equal to.
+   * @return JSONArray that contains states that are within the provided range.
+   */
+  @Override
+  public JSONArray getBasicCitiesInfo(int startValue, int endValue) {
+    JSONArray response = getPopulationData(startValue, endValue, 2);
+    return addPopulationToBasicInfo(citiesData, response);
+
+  }
+
+  /**
+   * Gets the basic states info from STATES_URL that have a population between startValue and
+   * endValue.
+   *
+   * @param startValue The value that all wanted values will be greater than or equal to.
+   * @param endValue   The value that all wanted values will be less than or equal to.
+   * @return JSONArray that contains states that are within the provided range.
+   */
+  @Override
+  public JSONArray getBasicCountiesInfo(int startValue, int endValue) {
+    JSONArray response = getPopulationData(startValue, endValue, 1);
+    return addPopulationToBasicInfo(countiesData, response);
+  }
+
+  private JSONArray getPopulationData(int startValue, int endValue, int typeCode) {
+    UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(POPULATION_RANGE_URL);
+    builder.queryParam("attributeId", POPULATION_ID);
+    builder.queryParam("year", 2016);
+    builder.queryParam("from", startValue);
+    builder.queryParam("to", endValue);
+    builder.queryParam("typeCode", typeCode);
+    String url = builder.toUriString();
+    JSONArray response = readJSONFromURL(url);
+    return response;
+  }
+
+  private JSONArray addPopulationToBasicInfo(Map basicInfoData, JSONArray response) {
+    JSONArray respArray = new JSONArray();
+    Map object = (HashMap) response.get(0);
+    Map dataMap = (HashMap) object.get("data");
+    JSONArray valueMap = (JSONArray) dataMap.get("data");
+    for (Object val : valueMap) {
+      Map data = (HashMap) val;
+      Long key = (Long) data.get("location_id");
+      Map countiesInfo = (HashMap) basicInfoData.get(key);
+      countiesInfo.put("population", data.get("value"));
+      respArray.add(countiesInfo);
+    }
+    return respArray;
   }
 
   /**
@@ -158,31 +230,12 @@ public class BasicInfoDBAdapter extends BaseAdapter implements IBasicInfoAdapter
     return countyDetailOptional;
   }
 
-  /**
-   * Adds each states abbreviation to the given JSONArray.
-   *
-   * @param withoutAbvs The JSONArray that will have abbreviations added to it.
-   * @return Copy of withoutAbvs that now includes the states abbreviation
-   */
-  private JSONArray addAbbreviations(JSONArray withoutAbvs) {
-    JSONArray withAbvs = new JSONArray();
-    Map<String, String> statesMap = this.getStatesMap();
-
-    for (Object state : withoutAbvs) {
-      JSONObject currentState = (JSONObject) state;
-      if (statesMap.containsKey(currentState.get("name").toString())) {
-        currentState.put("abbreviation", statesMap.get(currentState.get("name").toString()));
-        withAbvs.add(currentState);
-      }
-    }
-
-    return withAbvs;
-  }
 
   /**
    * Creates a HashMap that contains each states (key) and its abbreviation (value).
    *
-   * @return HashMap<String       ,               String></> of states (key) and their abbreviations (value)
+   * @return HashMap<String                                                                                                                               ,
+               *       String></> of states (key) and their abbreviations (value)
    */
   private Map<String, String> getStatesMap() {
     Map<String, String> statesMap = new HashMap<>();
