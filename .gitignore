@@ -10,6 +10,9 @@
 out/
 target/
 
+#Ignore Test output files
+test-output/
+
 #Ignore Package specific files
 *.jar
 *.war

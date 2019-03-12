@@ -1,0 +1,90 @@
+[{
+    "attributes": [
+      {
+        "name": "Total_Rev_Own_Sources",
+        "attribute_id": 5,
+        "property_id": 64,
+        "collection_id": 74,
+        "data": [
+          {
+            "value": 25143.0,
+            "year": 2016
+          },
+          {
+            "value": 21222.0,
+            "year": 2015
+          },
+          {
+            "value": 23268.0,
+            "year": 2014
+          },
+          {
+            "value": 22043.0,
+            "year": 2013
+          },
+          {
+            "value": 24324.0,
+            "year": 2012
+          },
+          {
+            "value": 24565.0,
+            "year": 2011
+          },
+          {
+            "value": 23334.0,
+            "year": 2010
+          },
+          {
+            "value": 24972.0,
+            "year": 2009
+          },
+          {
+            "value": 16617.0,
+            "year": 2008
+          },
+          {
+            "value": 14797.0,
+            "year": 2007
+          },
+          {
+            "value": 19329.0,
+            "year": 2006
+          },
+          {
+            "value": 20831.0,
+            "year": 2005
+          },
+          {
+            "value": 22565.0,
+            "year": 2004
+          },
+          {
+            "value": 25500.0,
+            "year": 2002
+          },
+          {
+            "value": 17469.0,
+            "year": 2000
+          },
+          {
+            "value": 17827.0,
+            "year": 1999
+          },
+          {
+            "value": 17364.0,
+            "year": 1998
+          },
+          {
+            "value": 15904.0,
+            "year": 1997
+          },
+          {
+            "value": 14348.0,
+            "year": 1996
+          }
+        ]
+      }
+    ],
+    "location_id": 182056011
+  }
+]

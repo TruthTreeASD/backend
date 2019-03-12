@@ -1,9 +1,9 @@
 FROM openjdk:8-jre
 
-COPY ./target/*SNAPSHOT.jar ./truthtree/
+COPY ./modules/application/target/*SNAPSHOT.jar /truthtree/
 
-COPY src/main/resources/*.json ./src/main/resources/
+COPY ./modules/application/src/main/resources/ /modules/application/src/main/resources/
 
-COPY src/main/webapp/ ./src/main/webapp/
+COPY public /public
 
-CMD java -jar ./truthtree/*SNAPSHOT.jar
+CMD java -jar /truthtree/*SNAPSHOT.jar
