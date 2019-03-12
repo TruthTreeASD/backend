@@ -1,0 +1,21 @@
+[{
+  "respCode": "0",
+  "data": [
+    {
+      "name": "FunctionCode",
+      "collection_id": 74,
+      "attributes": [
+        {
+          "attribute_name": "Local_IGR_Public_Welf",
+          "attribute_id": 74,
+          "startYear": "1967",
+          "endYear": "2016",
+          "property_name": "Public Welf",
+          "property_id": 99
+        }
+      ]
+    }
+  ],
+  "ok": true,
+  "message": ""
+}]

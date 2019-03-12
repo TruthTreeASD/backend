@@ -1,8 +1,15 @@
 package edu.northeastern.truthtree.adapter.timerange;
 
-import org.json.simple.JSONArray;
+import java.util.List;
 
 public interface ITimeRangeAdapter {
 
-  public JSONArray getTimeRange();
+  /**
+   * Returns the time-range response value
+   * using
+   * @param level and
+   * @param attributes
+   * @return TimeRange Response Object
+   */
+  public Object getTimeRange(String level, List<Integer> attributes);
 }

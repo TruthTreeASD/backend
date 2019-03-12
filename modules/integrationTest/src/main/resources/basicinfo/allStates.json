@@ -1,0 +1,358 @@
+[{
+    "name": "ALABAMA",
+    "id": 10000000,
+    "state_code": 1,
+    "abbreviation": "AL",
+    "population": 4858979
+  },
+  {
+    "name": "ALASKA",
+    "id": 20000000,
+    "state_code": 2,
+    "abbreviation": "AK",
+    "population": 738432
+  },
+  {
+    "name": "ARIZONA",
+    "id": 30000000,
+    "state_code": 4,
+    "abbreviation": "AZ",
+    "population": 6828065
+  },
+  {
+    "name": "ARKANSAS",
+    "id": 40000000,
+    "state_code": 5,
+    "abbreviation": "AR",
+    "population": 2978204
+  },
+  {
+    "name": "CALIFORNIA",
+    "id": 50000000,
+    "state_code": 6,
+    "abbreviation": "CA",
+    "population": 39144818
+  },
+  {
+    "name": "COLORADO",
+    "id": 60000000,
+    "state_code": 8,
+    "abbreviation": "CO",
+    "population": 5456574
+  },
+  {
+    "name": "CONNECTICUT",
+    "id": 70000000,
+    "state_code": 9,
+    "abbreviation": "CT",
+    "population": 3590886
+  },
+  {
+    "name": "DELAWARE",
+    "id": 80000000,
+    "state_code": 10,
+    "abbreviation": "DE",
+    "population": 945934
+  },
+  {
+    "name": "WASHINGTON DC CITY",
+    "id": 92001001,
+    "state_code": 11,
+    "abbreviation": "DC",
+    "population": 672228
+  },
+  {
+    "name": "FLORIDA",
+    "id": 100000000,
+    "state_code": 12,
+    "abbreviation": "FL",
+    "population": 20271272
+  },
+  {
+    "name": "GEORGIA",
+    "id": 110000000,
+    "state_code": 13,
+    "abbreviation": "GA",
+    "population": 10214860
+  },
+  {
+    "name": "HAWAII",
+    "id": 120000000,
+    "state_code": 15,
+    "abbreviation": "HI",
+    "population": 1431603
+  },
+  {
+    "name": "IDAHO",
+    "id": 130000000,
+    "state_code": 16,
+    "abbreviation": "ID",
+    "population": 1654930
+  },
+  {
+    "name": "ILLINOIS",
+    "id": 140000000,
+    "state_code": 17,
+    "abbreviation": "IL",
+    "population": 12859995
+  },
+  {
+    "name": "INDIANA",
+    "id": 150000000,
+    "state_code": 18,
+    "abbreviation": "IN",
+    "population": 6619680
+  },
+  {
+    "name": "IOWA",
+    "id": 160000000,
+    "state_code": 19,
+    "abbreviation": "IA",
+    "population": 3123899
+  },
+  {
+    "name": "KANSAS",
+    "id": 170000000,
+    "state_code": 20,
+    "abbreviation": "KS",
+    "population": 2911641
+  },
+  {
+    "name": "KENTUCKY",
+    "id": 180000000,
+    "state_code": 21,
+    "abbreviation": "KY",
+    "population": 4425092
+  },
+  {
+    "name": "LOUISIANA",
+    "id": 190000000,
+    "state_code": 22,
+    "abbreviation": "LA",
+    "population": 4670724
+  },
+  {
+    "name": "MAINE",
+    "id": 200000000,
+    "state_code": 23,
+    "abbreviation": "ME",
+    "population": 1329328
+  },
+  {
+    "name": "MARYLAND",
+    "id": 210000000,
+    "state_code": 24,
+    "abbreviation": "MD",
+    "population": 6006401
+  },
+  {
+    "name": "MASSACHUSETTS",
+    "id": 220000000,
+    "state_code": 25,
+    "abbreviation": "MA",
+    "population": 6794422
+  },
+  {
+    "name": "MICHIGAN",
+    "id": 230000000,
+    "state_code": 26,
+    "abbreviation": "MI",
+    "population": 9922576
+  },
+  {
+    "name": "MINNESOTA",
+    "id": 240000000,
+    "state_code": 27,
+    "abbreviation": "MN",
+    "population": 5489594
+  },
+  {
+    "name": "MISSISSIPPI",
+    "id": 250000000,
+    "state_code": 28,
+    "abbreviation": "MS",
+    "population": 2992333
+  },
+  {
+    "name": "MISSOURI",
+    "id": 260000000,
+    "state_code": 29,
+    "abbreviation": "MO",
+    "population": 6083672
+  },
+  {
+    "name": "MONTANA",
+    "id": 270000000,
+    "state_code": 30,
+    "abbreviation": "MT",
+    "population": 1032949
+  },
+  {
+    "name": "NEBRASKA",
+    "id": 280000000,
+    "state_code": 31,
+    "abbreviation": "NE",
+    "population": 1896190
+  },
+  {
+    "name": "NEVADA",
+    "id": 290000000,
+    "state_code": 32,
+    "abbreviation": "NV",
+    "population": 2890845
+  },
+  {
+    "name": "NEW HAMPSHIRE",
+    "id": 300000000,
+    "state_code": 33,
+    "abbreviation": "NH",
+    "population": 1330608
+  },
+  {
+    "name": "NEW JERSEY",
+    "id": 310000000,
+    "state_code": 34,
+    "abbreviation": "NJ",
+    "population": 8958013
+  },
+  {
+    "name": "NEW MEXICO",
+    "id": 320000000,
+    "state_code": 35,
+    "abbreviation": "NM",
+    "population": 2085109
+  },
+  {
+    "name": "NEW YORK",
+    "id": 330000000,
+    "state_code": 36,
+    "abbreviation": "NY",
+    "population": 19795791
+  },
+  {
+    "name": "NORTH CAROLINA",
+    "id": 340000000,
+    "state_code": 37,
+    "abbreviation": "NC",
+    "population": 10042802
+  },
+  {
+    "name": "NORTH DAKOTA",
+    "id": 350000000,
+    "state_code": 38,
+    "abbreviation": "ND",
+    "population": 756927
+  },
+  {
+    "name": "OHIO",
+    "id": 360000000,
+    "state_code": 39,
+    "abbreviation": "OH",
+    "population": 11613423
+  },
+  {
+    "name": "OKLAHOMA",
+    "id": 370000000,
+    "state_code": 40,
+    "abbreviation": "OK",
+    "population": 3911338
+  },
+  {
+    "name": "OREGON",
+    "id": 380000000,
+    "state_code": 41,
+    "abbreviation": "OR",
+    "population": 4028977
+  },
+  {
+    "name": "PENNSYLVANIA",
+    "id": 390000000,
+    "state_code": 42,
+    "abbreviation": "PA",
+    "population": 12787085
+  },
+  {
+    "name": "RHODE ISLAND",
+    "id": 400000000,
+    "state_code": 44,
+    "abbreviation": "RI",
+    "population": 1056298
+  },
+  {
+    "name": "SOUTH CAROLINA",
+    "id": 410000000,
+    "state_code": 45,
+    "abbreviation": "SC",
+    "population": 4896146
+  },
+  {
+    "name": "SOUTH DAKOTA",
+    "id": 420000000,
+    "state_code": 46,
+    "abbreviation": "SD",
+    "population": 858469
+  },
+  {
+    "name": "TENNESSEE",
+    "id": 430000000,
+    "state_code": 47,
+    "abbreviation": "TN",
+    "population": 6600299
+  },
+  {
+    "name": "TEXAS",
+    "id": 440000000,
+    "state_code": 48,
+    "abbreviation": "TX",
+    "population": 27469114
+  },
+  {
+    "name": "UTAH",
+    "id": 450000000,
+    "state_code": 49,
+    "abbreviation": "UT",
+    "population": 2995919
+  },
+  {
+    "name": "VERMONT",
+    "id": 460000000,
+    "state_code": 50,
+    "abbreviation": "VT",
+    "population": 626042
+  },
+  {
+    "name": "VIRGINIA",
+    "id": 470000000,
+    "state_code": 51,
+    "abbreviation": "VA",
+    "population": 8382993
+  },
+  {
+    "name": "WASHINGTON",
+    "id": 480000000,
+    "state_code": 53,
+    "abbreviation": "WA",
+    "population": 7170351
+  },
+  {
+    "name": "WEST VIRGINIA",
+    "id": 490000000,
+    "state_code": 54,
+    "abbreviation": "WV",
+    "population": 1844128
+  },
+  {
+    "name": "WISCONSIN",
+    "id": 500000000,
+    "state_code": 55,
+    "abbreviation": "WI",
+    "population": 5771337
+  },
+  {
+    "name": "WYOMING",
+    "id": 510000000,
+    "state_code": 56,
+    "abbreviation": "WY",
+    "population": 586107
+  }
+]

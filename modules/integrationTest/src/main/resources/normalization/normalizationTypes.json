@@ -1,0 +1,13 @@
+[{
+  "name":"GROSS",
+  "displayValue":"Gross"
+  },
+  {
+    "name":"PER_CAPITA",
+    "displayValue":"Per Capita"
+  },
+  {
+    "name":"BY_REVENUE",
+    "displayValue":"By Revenue"
+  }
+]

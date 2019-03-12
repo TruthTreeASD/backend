@@ -4,6 +4,11 @@
   <test name="Regression">
     <classes>
       <class name="edu.northeastern.truthtree.AttributeApiTests"/>
+      <class name="edu.northeastern.truthtree.CollectionApiTests"/>
+      <class name="edu.northeastern.truthtree.NormalizationTypesApiTest"/>
+      <class name="edu.northeastern.truthtree.PopulationApiTests"/>
+      <class name="edu.northeastern.truthtree.BasicInfoApiTests"/>
+      <class name="edu.northeastern.truthtree.TimeRangeApiTests"/>
     </classes>
   </test>
 </suite>

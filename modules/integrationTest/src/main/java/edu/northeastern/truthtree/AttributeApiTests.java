@@ -17,8 +17,8 @@ public class AttributeApiTests {
   @DataProvider(name = "data")
   public static Object[][] credentials() {
     return new Object[][]{
-        {"locationIds=320000000&attributeIds=4&yearList=2000", "attributeResponse1.json"},
-        {"locationIds=420000000&attributeIds=4%2C5&yearList=2001", "attributeResponse2.json"}};
+        {"locationIds=320000000&attributeIds=4&yearList=2000", "attribute/attributeResponse1.json"},
+        {"locationIds=420000000&attributeIds=4%2C5&yearList=2001", "attribute/attributeResponse2.json"}};
   }
 
   @Test(dataProvider = "data")
