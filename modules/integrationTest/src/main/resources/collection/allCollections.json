@@ -1,0 +1,3405 @@
+[{
+    "name": "All Other Non-insurance Funds Cash and Securities",
+    "collection_id": 0,
+    "attributes": [
+      {
+        "attribute_id": 579,
+        "name": "Oth Nonin Fd Cash Sec",
+        "property_id": 164
+      }
+    ]
+  },
+  {
+    "name": "Long Term Debt Outstanding",
+    "collection_id": 1,
+    "attributes": [
+      {
+        "attribute_id": 527,
+        "name": "Total",
+        "property_id": 180
+      },
+      {
+        "attribute_id": 528,
+        "name": "Private Purp",
+        "property_id": 131
+      },
+      {
+        "attribute_id": 529,
+        "name": "All Other",
+        "property_id": 91
+      },
+      {
+        "attribute_id": 530,
+        "name": "Total Utility",
+        "property_id": 133
+      },
+      {
+        "attribute_id": 531,
+        "name": "Water Utility",
+        "property_id": 102
+      },
+      {
+        "attribute_id": 532,
+        "name": "Electric Utility",
+        "property_id": 137
+      },
+      {
+        "attribute_id": 533,
+        "name": "Util Gas Supply",
+        "property_id": 74
+      },
+      {
+        "attribute_id": 534,
+        "name": "Util Transit",
+        "property_id": 13
+      },
+      {
+        "attribute_id": 535,
+        "name": "General",
+        "property_id": 119
+      },
+      {
+        "attribute_id": 536,
+        "name": "Gen Elem Educ",
+        "property_id": 110
+      },
+      {
+        "attribute_id": 537,
+        "name": "Gen Other Educ",
+        "property_id": 163
+      },
+      {
+        "attribute_id": 538,
+        "name": "Gen Other NEC",
+        "property_id": 159
+      }
+    ]
+  },
+  {
+    "name": "Intergovernmental Revenue Local",
+    "collection_id": 2,
+    "attributes": [
+      {
+        "attribute_id": 66,
+        "name": "Total",
+        "property_id": 180
+      },
+      {
+        "attribute_id": 67,
+        "name": "InterSchool Aid",
+        "property_id": 37
+      },
+      {
+        "attribute_id": 68,
+        "name": "Other Education",
+        "property_id": 120
+      },
+      {
+        "attribute_id": 69,
+        "name": "Oth Gen Sup",
+        "property_id": 67
+      },
+      {
+        "attribute_id": 70,
+        "name": "Hospitals",
+        "property_id": 177
+      },
+      {
+        "attribute_id": 71,
+        "name": "Highways",
+        "property_id": 127
+      },
+      {
+        "attribute_id": 72,
+        "name": "Transit Sub",
+        "property_id": 61
+      },
+      {
+        "attribute_id": 73,
+        "name": "Hous Com Dev",
+        "property_id": 111
+      },
+      {
+        "attribute_id": 74,
+        "name": "Public Welf",
+        "property_id": 99
+      },
+      {
+        "attribute_id": 75,
+        "name": "Sewerage",
+        "property_id": 41
+      },
+      {
+        "attribute_id": 76,
+        "name": "Other",
+        "property_id": 29
+      }
+    ]
+  },
+  {
+    "name": "Long Term Debt Outstanding, Nonguaranteed",
+    "collection_id": 3,
+    "attributes": [
+      {
+        "attribute_id": 549,
+        "name": "Total",
+        "property_id": 180
+      },
+      {
+        "attribute_id": 550,
+        "name": "Utility",
+        "property_id": 59
+      },
+      {
+        "attribute_id": 551,
+        "name": "Water Utility",
+        "property_id": 102
+      },
+      {
+        "attribute_id": 552,
+        "name": "Electric Utility",
+        "property_id": 137
+      },
+      {
+        "attribute_id": 553,
+        "name": "Gas Util",
+        "property_id": 151
+      },
+      {
+        "attribute_id": 554,
+        "name": "Trans Utility",
+        "property_id": 141
+      },
+      {
+        "attribute_id": 555,
+        "name": "General",
+        "property_id": 119
+      },
+      {
+        "attribute_id": 556,
+        "name": "Elem Educ",
+        "property_id": 132
+      },
+      {
+        "attribute_id": 557,
+        "name": "Other Education",
+        "property_id": 120
+      },
+      {
+        "attribute_id": 558,
+        "name": "Private Purp",
+        "property_id": 131
+      },
+      {
+        "attribute_id": 559,
+        "name": "Other NEC",
+        "property_id": 12
+      }
+    ]
+  },
+  {
+    "name": "Intergovernmental Revenue State",
+    "collection_id": 4,
+    "attributes": [
+      {
+        "attribute_id": 54,
+        "name": "Total",
+        "property_id": 180
+      },
+      {
+        "attribute_id": 55,
+        "name": "Education",
+        "property_id": 19
+      },
+      {
+        "attribute_id": 56,
+        "name": "Tax Relief",
+        "property_id": 40
+      },
+      {
+        "attribute_id": 57,
+        "name": "Oth Gen Sup",
+        "property_id": 67
+      },
+      {
+        "attribute_id": 58,
+        "name": "Gen Sup",
+        "property_id": 85
+      },
+      {
+        "attribute_id": 59,
+        "name": "Hospitals",
+        "property_id": 177
+      },
+      {
+        "attribute_id": 60,
+        "name": "Highways",
+        "property_id": 127
+      },
+      {
+        "attribute_id": 61,
+        "name": "Transit Sub",
+        "property_id": 61
+      },
+      {
+        "attribute_id": 62,
+        "name": "Hous Com Dev",
+        "property_id": 111
+      },
+      {
+        "attribute_id": 63,
+        "name": "Public Welf",
+        "property_id": 99
+      },
+      {
+        "attribute_id": 64,
+        "name": "Sewerage",
+        "property_id": 41
+      },
+      {
+        "attribute_id": 65,
+        "name": "Other",
+        "property_id": 29
+      }
+    ]
+  },
+  {
+    "name": "Long Term Debt Issued - Unspecified Issue",
+    "collection_id": 5,
+    "attributes": [
+      {
+        "attribute_id": 474,
+        "name": "Total",
+        "property_id": 180
+      },
+      {
+        "attribute_id": 475,
+        "name": "Utility",
+        "property_id": 59
+      },
+      {
+        "attribute_id": 476,
+        "name": "Water Utility",
+        "property_id": 102
+      },
+      {
+        "attribute_id": 477,
+        "name": "Electric Utility",
+        "property_id": 137
+      },
+      {
+        "attribute_id": 478,
+        "name": "Gas Util",
+        "property_id": 151
+      },
+      {
+        "attribute_id": 479,
+        "name": "Trans Utility",
+        "property_id": 141
+      },
+      {
+        "attribute_id": 480,
+        "name": "General",
+        "property_id": 119
+      },
+      {
+        "attribute_id": 481,
+        "name": "Elem Educ",
+        "property_id": 132
+      },
+      {
+        "attribute_id": 482,
+        "name": "Other Education",
+        "property_id": 120
+      },
+      {
+        "attribute_id": 483,
+        "name": "Other NEC",
+        "property_id": 12
+      }
+    ]
+  },
+  {
+    "name": "Interest on General Debt",
+    "collection_id": 6,
+    "attributes": [
+      {
+        "attribute_id": 380,
+        "name": "Interest on Gen Debt",
+        "property_id": 54
+      }
+    ]
+  },
+  {
+    "name": "Bond Funds Cash and Securities",
+    "collection_id": 7,
+    "attributes": [
+      {
+        "attribute_id": 578,
+        "name": "Bond Fd Cash Sec",
+        "property_id": 47
+      }
+    ]
+  },
+  {
+    "name": "Hospital",
+    "collection_id": 8,
+    "attributes": [
+      {
+        "attribute_id": 244,
+        "name": "Total Expenditure",
+        "property_id": 82
+      },
+      {
+        "attribute_id": 245,
+        "name": "Total Dir Exp",
+        "property_id": 89
+      },
+      {
+        "attribute_id": 246,
+        "name": "Total Capital Outlays",
+        "property_id": 183
+      },
+      {
+        "attribute_id": 247,
+        "name": "Total Current Exp",
+        "property_id": 9
+      },
+      {
+        "attribute_id": 248,
+        "name": "Total Construction",
+        "property_id": 65
+      },
+      {
+        "attribute_id": 249,
+        "name": "Total IG To State",
+        "property_id": 87
+      },
+      {
+        "attribute_id": 250,
+        "name": "Total IG Loc Govts",
+        "property_id": 18
+      }
+    ]
+  },
+  {
+    "name": "Employment Security Administation",
+    "collection_id": 9,
+    "attributes": [
+      {
+        "attribute_id": 201,
+        "name": "Adm Direct Exp",
+        "property_id": 97
+      },
+      {
+        "attribute_id": 202,
+        "name": "Capital Outlay",
+        "property_id": 70
+      },
+      {
+        "attribute_id": 203,
+        "name": "Adm Current Exp",
+        "property_id": 38
+      },
+      {
+        "attribute_id": 204,
+        "name": "Adm Construct",
+        "property_id": 10
+      }
+    ]
+  },
+  {
+    "name": "Income Taxes",
+    "collection_id": 10,
+    "attributes": [
+      {
+        "attribute_id": 32,
+        "name": "Total",
+        "property_id": 180
+      },
+      {
+        "attribute_id": 33,
+        "name": "Individual",
+        "property_id": 106
+      },
+      {
+        "attribute_id": 34,
+        "name": "Corp Net",
+        "property_id": 173
+      },
+      {
+        "attribute_id": 35,
+        "name": "Death and Gift",
+        "property_id": 101
+      },
+      {
+        "attribute_id": 36,
+        "name": "Docum and Stock Tr ",
+        "property_id": 154
+      },
+      {
+        "attribute_id": 37,
+        "name": "Severance",
+        "property_id": 14
+      },
+      {
+        "attribute_id": 38,
+        "name": "NEC",
+        "property_id": 31
+      }
+    ]
+  },
+  {
+    "name": "Totals",
+    "collection_id": 11,
+    "attributes": [
+      {
+        "attribute_id": 131,
+        "name": "IG Expenditure",
+        "property_id": 109
+      },
+      {
+        "attribute_id": 132,
+        "name": "Direct Expenditure",
+        "property_id": 145
+      },
+      {
+        "attribute_id": 133,
+        "name": "Current Expenditure",
+        "property_id": 42
+      },
+      {
+        "attribute_id": 134,
+        "name": "Current Oper",
+        "property_id": 55
+      },
+      {
+        "attribute_id": 135,
+        "name": "Capital Outlay",
+        "property_id": 70
+      },
+      {
+        "attribute_id": 136,
+        "name": "Construction",
+        "property_id": 58
+      },
+      {
+        "attribute_id": 137,
+        "name": "Other Capital Outlays",
+        "property_id": 21
+      },
+      {
+        "attribute_id": 138,
+        "name": "Assist Subsidies",
+        "property_id": 17
+      },
+      {
+        "attribute_id": 139,
+        "name": "Interest on Debt",
+        "property_id": 100
+      },
+      {
+        "attribute_id": 140,
+        "name": "Insur Trust Ben",
+        "property_id": 138
+      },
+      {
+        "attribute_id": 141,
+        "name": "Salaries Wages",
+        "property_id": 114
+      }
+    ]
+  },
+  {
+    "name": "Libraries",
+    "collection_id": 12,
+    "attributes": [
+      {
+        "attribute_id": 290,
+        "name": "Total Expenditure",
+        "property_id": 82
+      },
+      {
+        "attribute_id": 291,
+        "name": "Direct Expenditure",
+        "property_id": 145
+      },
+      {
+        "attribute_id": 292,
+        "name": "Capital Outlay",
+        "property_id": 70
+      },
+      {
+        "attribute_id": 293,
+        "name": "Current Expenditure",
+        "property_id": 42
+      },
+      {
+        "attribute_id": 294,
+        "name": "Construction",
+        "property_id": 58
+      },
+      {
+        "attribute_id": 295,
+        "name": "IG To State",
+        "property_id": 179
+      },
+      {
+        "attribute_id": 296,
+        "name": "IG Govts",
+        "property_id": 6
+      }
+    ]
+  },
+  {
+    "name": "Total Utilities",
+    "collection_id": 13,
+    "attributes": [
+      {
+        "attribute_id": 394,
+        "name": "Total Expenditure",
+        "property_id": 82
+      },
+      {
+        "attribute_id": 395,
+        "name": "Inter Exp",
+        "property_id": 15
+      },
+      {
+        "attribute_id": 396,
+        "name": "Capital Outlay",
+        "property_id": 70
+      },
+      {
+        "attribute_id": 397,
+        "name": "Current Expenditure",
+        "property_id": 42
+      },
+      {
+        "attribute_id": 398,
+        "name": "Construction",
+        "property_id": 58
+      }
+    ]
+  },
+  {
+    "name": "Fire Protection",
+    "collection_id": 14,
+    "attributes": [
+      {
+        "attribute_id": 212,
+        "name": "Total Expenditure",
+        "property_id": 82
+      },
+      {
+        "attribute_id": 213,
+        "name": "Direct Expenditure",
+        "property_id": 145
+      },
+      {
+        "attribute_id": 214,
+        "name": "Capital Outlay",
+        "property_id": 70
+      },
+      {
+        "attribute_id": 215,
+        "name": "Current Expenditure",
+        "property_id": 42
+      },
+      {
+        "attribute_id": 216,
+        "name": "Construction",
+        "property_id": 58
+      },
+      {
+        "attribute_id": 217,
+        "name": "IG To State",
+        "property_id": 179
+      },
+      {
+        "attribute_id": 218,
+        "name": "IG Govts",
+        "property_id": 6
+      }
+    ]
+  },
+  {
+    "name": "Health",
+    "collection_id": 15,
+    "attributes": [
+      {
+        "attribute_id": 237,
+        "name": "Total Expenditure",
+        "property_id": 82
+      },
+      {
+        "attribute_id": 238,
+        "name": "Direct Expenditure",
+        "property_id": 145
+      },
+      {
+        "attribute_id": 239,
+        "name": "Capital Outlay",
+        "property_id": 70
+      },
+      {
+        "attribute_id": 240,
+        "name": "Current Expenditure",
+        "property_id": 42
+      },
+      {
+        "attribute_id": 241,
+        "name": "Construction",
+        "property_id": 58
+      },
+      {
+        "attribute_id": 242,
+        "name": "IG To State",
+        "property_id": 179
+      },
+      {
+        "attribute_id": 243,
+        "name": "IG Govts",
+        "property_id": 6
+      }
+    ]
+  },
+  {
+    "name": "Long Term Debt Retired, Full Faith and Credit",
+    "collection_id": 16,
+    "attributes": [
+      {
+        "attribute_id": 496,
+        "name": "Total",
+        "property_id": 180
+      },
+      {
+        "attribute_id": 497,
+        "name": "Utility",
+        "property_id": 59
+      },
+      {
+        "attribute_id": 498,
+        "name": "Water Utility",
+        "property_id": 102
+      },
+      {
+        "attribute_id": 499,
+        "name": "Electric Utility",
+        "property_id": 137
+      },
+      {
+        "attribute_id": 500,
+        "name": "Gas Util",
+        "property_id": 151
+      },
+      {
+        "attribute_id": 501,
+        "name": "Trans Utility",
+        "property_id": 141
+      },
+      {
+        "attribute_id": 502,
+        "name": "General",
+        "property_id": 119
+      },
+      {
+        "attribute_id": 503,
+        "name": "Elem Educ",
+        "property_id": 132
+      },
+      {
+        "attribute_id": 504,
+        "name": "Other Education",
+        "property_id": 120
+      },
+      {
+        "attribute_id": 505,
+        "name": "Other NEC",
+        "property_id": 12
+      }
+    ]
+  },
+  {
+    "name": "Unemployment Compensation",
+    "collection_id": 17,
+    "attributes": [
+      {
+        "attribute_id": 423,
+        "name": "Total Expenditure",
+        "property_id": 82
+      },
+      {
+        "attribute_id": 424,
+        "name": "Benefit Payments",
+        "property_id": 52
+      },
+      {
+        "attribute_id": 425,
+        "name": "Spec Pmts",
+        "property_id": 113
+      }
+    ]
+  },
+  {
+    "name": "Public Welfare Institutions",
+    "collection_id": 18,
+    "attributes": [
+      {
+        "attribute_id": 348,
+        "name": "Total Expenditure",
+        "property_id": 82
+      },
+      {
+        "attribute_id": 349,
+        "name": "Capital Outlay",
+        "property_id": 70
+      },
+      {
+        "attribute_id": 350,
+        "name": "Current Expenditure",
+        "property_id": 42
+      },
+      {
+        "attribute_id": 351,
+        "name": "Construction",
+        "property_id": 58
+      }
+    ]
+  },
+  {
+    "name": "Unemployment Compensation Funds Cash and Securities",
+    "collection_id": 19,
+    "attributes": [
+      {
+        "attribute_id": 573,
+        "name": "Cash Security",
+        "property_id": 171
+      },
+      {
+        "attribute_id": 574,
+        "name": "Bal In US Trs",
+        "property_id": 5
+      },
+      {
+        "attribute_id": 575,
+        "name": "Other Balance",
+        "property_id": 86
+      }
+    ]
+  },
+  {
+    "name": "General Public Buildings",
+    "collection_id": 20,
+    "attributes": [
+      {
+        "attribute_id": 233,
+        "name": "Total Expenditure",
+        "property_id": 82
+      },
+      {
+        "attribute_id": 234,
+        "name": "Capital Outlay",
+        "property_id": 70
+      },
+      {
+        "attribute_id": 235,
+        "name": "Current Expenditure",
+        "property_id": 42
+      },
+      {
+        "attribute_id": 236,
+        "name": "Construction",
+        "property_id": 58
+      }
+    ]
+  },
+  {
+    "name": "State Share of Medicare Part D",
+    "collection_id": 21,
+    "attributes": [
+      {
+        "attribute_id": 347,
+        "name": "Welf Share Part D",
+        "property_id": 161
+      }
+    ]
+  },
+  {
+    "name": "Solid Waste Management",
+    "collection_id": 22,
+    "attributes": [
+      {
+        "attribute_id": 366,
+        "name": "Total Expenditure",
+        "property_id": 82
+      },
+      {
+        "attribute_id": 367,
+        "name": "Direct Expenditure",
+        "property_id": 145
+      },
+      {
+        "attribute_id": 368,
+        "name": "Capital Outlay",
+        "property_id": 70
+      },
+      {
+        "attribute_id": 369,
+        "name": "Current Expenditure",
+        "property_id": 42
+      },
+      {
+        "attribute_id": 370,
+        "name": "Construction",
+        "property_id": 58
+      },
+      {
+        "attribute_id": 371,
+        "name": "IG To State",
+        "property_id": 179
+      },
+      {
+        "attribute_id": 372,
+        "name": "IG Govts",
+        "property_id": 6
+      }
+    ]
+  },
+  {
+    "name": "Insurance Trust Funds only Cash and Securities",
+    "collection_id": 23,
+    "attributes": [
+      {
+        "attribute_id": 561,
+        "name": "Insur Trust Cash Sec",
+        "property_id": 35
+      }
+    ]
+  },
+  {
+    "name": "Central Staff Services",
+    "collection_id": 24,
+    "attributes": [
+      {
+        "attribute_id": 226,
+        "name": "Total Expenditure",
+        "property_id": 82
+      },
+      {
+        "attribute_id": 227,
+        "name": "Direct Expenditure",
+        "property_id": 145
+      },
+      {
+        "attribute_id": 228,
+        "name": "Capital Outlay",
+        "property_id": 70
+      },
+      {
+        "attribute_id": 229,
+        "name": "Current Expenditure",
+        "property_id": 42
+      },
+      {
+        "attribute_id": 230,
+        "name": "Construction",
+        "property_id": 58
+      },
+      {
+        "attribute_id": 231,
+        "name": "IG To State",
+        "property_id": 179
+      },
+      {
+        "attribute_id": 232,
+        "name": "IG Govts",
+        "property_id": 6
+      }
+    ]
+  },
+  {
+    "name": "Federal Owned Hospitals",
+    "collection_id": 25,
+    "attributes": [
+      {
+        "attribute_id": 251,
+        "name": "Total Expenditure",
+        "property_id": 82
+      },
+      {
+        "attribute_id": 252,
+        "name": "Capital Outlay",
+        "property_id": 70
+      },
+      {
+        "attribute_id": 253,
+        "name": "Current Expenditure",
+        "property_id": 42
+      },
+      {
+        "attribute_id": 254,
+        "name": "Construction",
+        "property_id": 58
+      }
+    ]
+  },
+  {
+    "name": "Judicial Expenditures",
+    "collection_id": 26,
+    "attributes": [
+      {
+        "attribute_id": 219,
+        "name": "Total Expenditure",
+        "property_id": 82
+      },
+      {
+        "attribute_id": 220,
+        "name": "Direct Expenditure",
+        "property_id": 145
+      },
+      {
+        "attribute_id": 221,
+        "name": "Capital Outlay",
+        "property_id": 70
+      },
+      {
+        "attribute_id": 222,
+        "name": "Current Expenditure",
+        "property_id": 42
+      },
+      {
+        "attribute_id": 223,
+        "name": "Construction",
+        "property_id": 58
+      },
+      {
+        "attribute_id": 224,
+        "name": "IG To State",
+        "property_id": 179
+      },
+      {
+        "attribute_id": 225,
+        "name": "IG Govts",
+        "property_id": 6
+      }
+    ]
+  },
+  {
+    "name": "Intergovernmental Revenue",
+    "collection_id": 27,
+    "attributes": [
+      {
+        "attribute_id": 39,
+        "name": "Total",
+        "property_id": 180
+      }
+    ]
+  },
+  {
+    "name": "Non-Toll Highways",
+    "collection_id": 28,
+    "attributes": [
+      {
+        "attribute_id": 267,
+        "name": "Total Expenditure",
+        "property_id": 82
+      },
+      {
+        "attribute_id": 268,
+        "name": "Direct Expenditure",
+        "property_id": 145
+      },
+      {
+        "attribute_id": 269,
+        "name": "Capital Outlay",
+        "property_id": 70
+      },
+      {
+        "attribute_id": 270,
+        "name": "Current Expenditure",
+        "property_id": 42
+      },
+      {
+        "attribute_id": 271,
+        "name": "Construction",
+        "property_id": 58
+      },
+      {
+        "attribute_id": 272,
+        "name": "IG To State",
+        "property_id": 179
+      },
+      {
+        "attribute_id": 273,
+        "name": "IG Loc Govts",
+        "property_id": 169
+      }
+    ]
+  },
+  {
+    "name": "Long Term Debt Issued",
+    "collection_id": 29,
+    "attributes": [
+      {
+        "attribute_id": 441,
+        "name": "Total",
+        "property_id": 180
+      },
+      {
+        "attribute_id": 442,
+        "name": "Private Purp",
+        "property_id": 131
+      },
+      {
+        "attribute_id": 443,
+        "name": "All Other",
+        "property_id": 91
+      },
+      {
+        "attribute_id": 444,
+        "name": "Utility",
+        "property_id": 59
+      },
+      {
+        "attribute_id": 445,
+        "name": "Water Utility",
+        "property_id": 102
+      },
+      {
+        "attribute_id": 446,
+        "name": "Electric Utility",
+        "property_id": 137
+      },
+      {
+        "attribute_id": 447,
+        "name": "Util Gas Supply",
+        "property_id": 74
+      },
+      {
+        "attribute_id": 448,
+        "name": "Util Transit",
+        "property_id": 13
+      },
+      {
+        "attribute_id": 449,
+        "name": "General",
+        "property_id": 119
+      },
+      {
+        "attribute_id": 450,
+        "name": "Gen Elem Educ",
+        "property_id": 110
+      },
+      {
+        "attribute_id": 451,
+        "name": "Gen Other Educ",
+        "property_id": 163
+      },
+      {
+        "attribute_id": 452,
+        "name": "Gen Other NEC",
+        "property_id": 159
+      }
+    ]
+  },
+  {
+    "name": "Public Welfare Vendor Payments",
+    "collection_id": 30,
+    "attributes": [
+      {
+        "attribute_id": 345,
+        "name": "Pmts Medical",
+        "property_id": 185
+      },
+      {
+        "attribute_id": 346,
+        "name": "Pmts NEC",
+        "property_id": 157
+      }
+    ]
+  },
+  {
+    "name": "Misc Commercial Activities",
+    "collection_id": 31,
+    "attributes": [
+      {
+        "attribute_id": 161,
+        "name": "Total Expenditure",
+        "property_id": 82
+      },
+      {
+        "attribute_id": 162,
+        "name": "Capital Outlay",
+        "property_id": 70
+      },
+      {
+        "attribute_id": 163,
+        "name": "Current Expenditure",
+        "property_id": 42
+      },
+      {
+        "attribute_id": 164,
+        "name": "Construction",
+        "property_id": 58
+      }
+    ]
+  },
+  {
+    "name": "Long Term Debt Retired, Non Guaranteed",
+    "collection_id": 32,
+    "attributes": [
+      {
+        "attribute_id": 506,
+        "name": "Total",
+        "property_id": 180
+      },
+      {
+        "attribute_id": 507,
+        "name": "Utility",
+        "property_id": 59
+      },
+      {
+        "attribute_id": 508,
+        "name": "Water Utility",
+        "property_id": 102
+      },
+      {
+        "attribute_id": 509,
+        "name": "Electric Utility",
+        "property_id": 137
+      },
+      {
+        "attribute_id": 510,
+        "name": "Gas Util",
+        "property_id": 151
+      },
+      {
+        "attribute_id": 511,
+        "name": "Trans Utility",
+        "property_id": 141
+      },
+      {
+        "attribute_id": 512,
+        "name": "General",
+        "property_id": 119
+      },
+      {
+        "attribute_id": 513,
+        "name": "Elem Educ",
+        "property_id": 132
+      },
+      {
+        "attribute_id": 514,
+        "name": "Other Education",
+        "property_id": 120
+      },
+      {
+        "attribute_id": 515,
+        "name": "Private Purp",
+        "property_id": 131
+      },
+      {
+        "attribute_id": 516,
+        "name": "Other NEC",
+        "property_id": 12
+      }
+    ]
+  },
+  {
+    "name": "Long Term Debt Retired, Unspecified",
+    "collection_id": 33,
+    "attributes": [
+      {
+        "attribute_id": 517,
+        "name": "Total",
+        "property_id": 180
+      },
+      {
+        "attribute_id": 518,
+        "name": "Utility",
+        "property_id": 59
+      },
+      {
+        "attribute_id": 519,
+        "name": "Water Utility",
+        "property_id": 102
+      },
+      {
+        "attribute_id": 520,
+        "name": "Electric Utility",
+        "property_id": 137
+      },
+      {
+        "attribute_id": 521,
+        "name": "Gas Util",
+        "property_id": 151
+      },
+      {
+        "attribute_id": 522,
+        "name": "Trans Utility",
+        "property_id": 141
+      },
+      {
+        "attribute_id": 523,
+        "name": "General",
+        "property_id": 119
+      },
+      {
+        "attribute_id": 524,
+        "name": "Elem Educ",
+        "property_id": 132
+      },
+      {
+        "attribute_id": 525,
+        "name": "Other Education",
+        "property_id": 120
+      },
+      {
+        "attribute_id": 526,
+        "name": "Other NEC",
+        "property_id": 12
+      }
+    ]
+  },
+  {
+    "name": "Toll Highways",
+    "collection_id": 34,
+    "attributes": [
+      {
+        "attribute_id": 274,
+        "name": "Total Expenditure",
+        "property_id": 82
+      },
+      {
+        "attribute_id": 275,
+        "name": "Capital Outlay",
+        "property_id": 70
+      },
+      {
+        "attribute_id": 276,
+        "name": "Current Expenditure",
+        "property_id": 42
+      },
+      {
+        "attribute_id": 277,
+        "name": "Construction",
+        "property_id": 58
+      }
+    ]
+  },
+  {
+    "name": "Transit System Utilities",
+    "collection_id": 35,
+    "attributes": [
+      {
+        "attribute_id": 414,
+        "name": "Total Expenditure",
+        "property_id": 82
+      },
+      {
+        "attribute_id": 415,
+        "name": "Inter Exp",
+        "property_id": 15
+      },
+      {
+        "attribute_id": 416,
+        "name": "Capital Outlay",
+        "property_id": 70
+      },
+      {
+        "attribute_id": 417,
+        "name": "Current Expenditure",
+        "property_id": 42
+      },
+      {
+        "attribute_id": 418,
+        "name": "Construction",
+        "property_id": 58
+      }
+    ]
+  },
+  {
+    "name": "Education Not Otherwise classified",
+    "collection_id": 36,
+    "attributes": [
+      {
+        "attribute_id": 193,
+        "name": "Total Expenditure",
+        "property_id": 82
+      },
+      {
+        "attribute_id": 194,
+        "name": "Direct Expenditure",
+        "property_id": 145
+      },
+      {
+        "attribute_id": 195,
+        "name": "Assistance",
+        "property_id": 62
+      },
+      {
+        "attribute_id": 196,
+        "name": "Capital Outlay",
+        "property_id": 70
+      },
+      {
+        "attribute_id": 197,
+        "name": "Current Expenditure",
+        "property_id": 42
+      },
+      {
+        "attribute_id": 198,
+        "name": "Construction",
+        "property_id": 58
+      },
+      {
+        "attribute_id": 199,
+        "name": "IG To State",
+        "property_id": 179
+      },
+      {
+        "attribute_id": 200,
+        "name": "IG Govts",
+        "property_id": 6
+      }
+    ]
+  },
+  {
+    "name": "Gas Supply Utilities",
+    "collection_id": 37,
+    "attributes": [
+      {
+        "attribute_id": 409,
+        "name": "Total Expenditure",
+        "property_id": 82
+      },
+      {
+        "attribute_id": 410,
+        "name": "Inter Exp",
+        "property_id": 15
+      },
+      {
+        "attribute_id": 411,
+        "name": "Capital Outlay",
+        "property_id": 70
+      },
+      {
+        "attribute_id": 412,
+        "name": "Current Expenditure",
+        "property_id": 42
+      },
+      {
+        "attribute_id": 413,
+        "name": "Construction",
+        "property_id": 58
+      }
+    ]
+  },
+  {
+    "name": "Elementary And Secondary Education",
+    "collection_id": 38,
+    "attributes": [
+      {
+        "attribute_id": 178,
+        "name": "Total Expenditure",
+        "property_id": 82
+      },
+      {
+        "attribute_id": 179,
+        "name": "Direct Expenditure",
+        "property_id": 145
+      },
+      {
+        "attribute_id": 180,
+        "name": "Capital Outlay",
+        "property_id": 70
+      },
+      {
+        "attribute_id": 181,
+        "name": "Current Expenditure",
+        "property_id": 42
+      },
+      {
+        "attribute_id": 182,
+        "name": "Construction",
+        "property_id": 58
+      },
+      {
+        "attribute_id": 183,
+        "name": "IG To State",
+        "property_id": 179
+      },
+      {
+        "attribute_id": 184,
+        "name": "IG Govts",
+        "property_id": 6
+      },
+      {
+        "attribute_id": 185,
+        "name": "IG Sch to Sch",
+        "property_id": 49
+      }
+    ]
+  },
+  {
+    "name": "Parking Facilities",
+    "collection_id": 39,
+    "attributes": [
+      {
+        "attribute_id": 304,
+        "name": "Total Expenditure",
+        "property_id": 82
+      },
+      {
+        "attribute_id": 305,
+        "name": "Direct Expenditure",
+        "property_id": 145
+      },
+      {
+        "attribute_id": 306,
+        "name": "Capital Outlay",
+        "property_id": 70
+      },
+      {
+        "attribute_id": 307,
+        "name": "Current Expenditure",
+        "property_id": 42
+      },
+      {
+        "attribute_id": 308,
+        "name": "Construction",
+        "property_id": 58
+      },
+      {
+        "attribute_id": 309,
+        "name": "IG To State",
+        "property_id": 179
+      },
+      {
+        "attribute_id": 310,
+        "name": "IG Govts",
+        "property_id": 6
+      }
+    ]
+  },
+  {
+    "name": "Sinking Funds (Debt Service Funds) cash and Securities",
+    "collection_id": 40,
+    "attributes": [
+      {
+        "attribute_id": 577,
+        "name": "Sinking Fd Cash Sec",
+        "property_id": 44
+      }
+    ]
+  },
+  {
+    "name": "Cash and Securities",
+    "collection_id": 41,
+    "attributes": [
+      {
+        "attribute_id": 560,
+        "name": "Total",
+        "property_id": 180
+      }
+    ]
+  },
+  {
+    "name": "Welfare Not elsewhere Classified",
+    "collection_id": 42,
+    "attributes": [
+      {
+        "attribute_id": 352,
+        "name": "Total Expenditure",
+        "property_id": 82
+      },
+      {
+        "attribute_id": 353,
+        "name": "Direct Expenditure",
+        "property_id": 145
+      },
+      {
+        "attribute_id": 354,
+        "name": "Capital Outlay",
+        "property_id": 70
+      },
+      {
+        "attribute_id": 355,
+        "name": "Current Expenditure",
+        "property_id": 42
+      },
+      {
+        "attribute_id": 356,
+        "name": "Construction",
+        "property_id": 58
+      },
+      {
+        "attribute_id": 357,
+        "name": "IG To State",
+        "property_id": 179
+      },
+      {
+        "attribute_id": 358,
+        "name": "IG Govts",
+        "property_id": 6
+      }
+    ]
+  },
+  {
+    "name": "Employee Retirement",
+    "collection_id": 43,
+    "attributes": [
+      {
+        "attribute_id": 419,
+        "name": "Total Expenditure",
+        "property_id": 82
+      },
+      {
+        "attribute_id": 420,
+        "name": "Benefit Payments",
+        "property_id": 52
+      },
+      {
+        "attribute_id": 421,
+        "name": "Withdrawals",
+        "property_id": 167
+      },
+      {
+        "attribute_id": 422,
+        "name": "Other Paymts",
+        "property_id": 144
+      }
+    ]
+  },
+  {
+    "name": "Air Transport",
+    "collection_id": 44,
+    "attributes": [
+      {
+        "attribute_id": 154,
+        "name": "Total Expenditure",
+        "property_id": 82
+      },
+      {
+        "attribute_id": 155,
+        "name": "Direct Expenditure",
+        "property_id": 145
+      },
+      {
+        "attribute_id": 156,
+        "name": "Capital Outlay",
+        "property_id": 70
+      },
+      {
+        "attribute_id": 157,
+        "name": "Current Expenditure",
+        "property_id": 42
+      },
+      {
+        "attribute_id": 158,
+        "name": "Construction",
+        "property_id": 58
+      },
+      {
+        "attribute_id": 159,
+        "name": "IG To State",
+        "property_id": 179
+      },
+      {
+        "attribute_id": 160,
+        "name": "IG Govts",
+        "property_id": 6
+      }
+    ]
+  },
+  {
+    "name": "Parks and Recreation",
+    "collection_id": 45,
+    "attributes": [
+      {
+        "attribute_id": 311,
+        "name": "Total Expenditure",
+        "property_id": 82
+      },
+      {
+        "attribute_id": 312,
+        "name": "Direct Expenditure",
+        "property_id": 145
+      },
+      {
+        "attribute_id": 313,
+        "name": "Capital Outlay",
+        "property_id": 70
+      },
+      {
+        "attribute_id": 314,
+        "name": "Current Expenditure",
+        "property_id": 42
+      },
+      {
+        "attribute_id": 315,
+        "name": "Construction",
+        "property_id": 58
+      },
+      {
+        "attribute_id": 316,
+        "name": "IG To State",
+        "property_id": 179
+      },
+      {
+        "attribute_id": 317,
+        "name": "IG Loc Govts",
+        "property_id": 169
+      }
+    ]
+  },
+  {
+    "name": "Intergovernmental Revenue Federal",
+    "collection_id": 46,
+    "attributes": [
+      {
+        "attribute_id": 40,
+        "name": "Total",
+        "property_id": 180
+      },
+      {
+        "attribute_id": 41,
+        "name": "Air Transportation",
+        "property_id": 140
+      },
+      {
+        "attribute_id": 42,
+        "name": "Education",
+        "property_id": 19
+      },
+      {
+        "attribute_id": 43,
+        "name": "Emp Sec Adm",
+        "property_id": 94
+      },
+      {
+        "attribute_id": 44,
+        "name": "Gen Rev Shar",
+        "property_id": 176
+      },
+      {
+        "attribute_id": 45,
+        "name": "Gen Support",
+        "property_id": 71
+      },
+      {
+        "attribute_id": 46,
+        "name": "Hospitals",
+        "property_id": 177
+      },
+      {
+        "attribute_id": 47,
+        "name": "Highways",
+        "property_id": 127
+      },
+      {
+        "attribute_id": 48,
+        "name": "Transit Sub",
+        "property_id": 61
+      },
+      {
+        "attribute_id": 49,
+        "name": "Hous Com Dev",
+        "property_id": 111
+      },
+      {
+        "attribute_id": 50,
+        "name": "Natural Res",
+        "property_id": 36
+      },
+      {
+        "attribute_id": 51,
+        "name": "Public Welf",
+        "property_id": 99
+      },
+      {
+        "attribute_id": 52,
+        "name": "Sewerage",
+        "property_id": 41
+      },
+      {
+        "attribute_id": 53,
+        "name": "Other",
+        "property_id": 29
+      }
+    ]
+  },
+  {
+    "name": "Higher Education",
+    "collection_id": 47,
+    "attributes": [
+      {
+        "attribute_id": 186,
+        "name": "Total Expenditure",
+        "property_id": 82
+      },
+      {
+        "attribute_id": 187,
+        "name": "Direct Expenditure",
+        "property_id": 145
+      },
+      {
+        "attribute_id": 188,
+        "name": "Capital Outlay",
+        "property_id": 70
+      },
+      {
+        "attribute_id": 189,
+        "name": "Current Expenditure",
+        "property_id": 42
+      },
+      {
+        "attribute_id": 190,
+        "name": "Construction",
+        "property_id": 58
+      },
+      {
+        "attribute_id": 191,
+        "name": "IG To State",
+        "property_id": 179
+      },
+      {
+        "attribute_id": 192,
+        "name": "IG Loc Govts",
+        "property_id": 169
+      }
+    ]
+  },
+  {
+    "name": "General Expenses  ",
+    "collection_id": 48,
+    "attributes": [
+      {
+        "attribute_id": 144,
+        "name": "IG Exp To Govts",
+        "property_id": 53
+      },
+      {
+        "attribute_id": 145,
+        "name": "IG Exp To Federal Govt",
+        "property_id": 34
+      },
+      {
+        "attribute_id": 146,
+        "name": "Direct Expenditure",
+        "property_id": 145
+      },
+      {
+        "attribute_id": 147,
+        "name": "General Current Expend",
+        "property_id": 116
+      },
+      {
+        "attribute_id": 149,
+        "name": "Capital Outlay",
+        "property_id": 70
+      },
+      {
+        "attribute_id": 150,
+        "name": "General Construction",
+        "property_id": 107
+      },
+      {
+        "attribute_id": 151,
+        "name": "General Capital Outlay Other",
+        "property_id": 16
+      },
+      {
+        "attribute_id": 152,
+        "name": "General Assist Sub",
+        "property_id": 57
+      },
+      {
+        "attribute_id": 153,
+        "name": "General Debt Interest",
+        "property_id": 79
+      },
+      {
+        "attribute_id": 143,
+        "name": "IG Exp To Govts",
+        "property_id": 53
+      },
+      {
+        "attribute_id": 148,
+        "name": "General Current Oper",
+        "property_id": 134
+      }
+    ]
+  },
+  {
+    "name": "Insurance Trusts ",
+    "collection_id": 49,
+    "attributes": [
+      {
+        "attribute_id": 115,
+        "name": "Total Revenue",
+        "property_id": 51
+      },
+      {
+        "attribute_id": 116,
+        "name": "Total contributions",
+        "property_id": 66
+      },
+      {
+        "attribute_id": 117,
+        "name": "Tot Inv Rev",
+        "property_id": 174
+      }
+    ]
+  },
+  {
+    "name": "Transit Subsidies",
+    "collection_id": 50,
+    "attributes": [
+      {
+        "attribute_id": 278,
+        "name": "Total Expenditure",
+        "property_id": 82
+      },
+      {
+        "attribute_id": 279,
+        "name": "Direct Sub",
+        "property_id": 124
+      },
+      {
+        "attribute_id": 280,
+        "name": "IG To State",
+        "property_id": 179
+      },
+      {
+        "attribute_id": 281,
+        "name": "IG Loc Govts",
+        "property_id": 169
+      },
+      {
+        "attribute_id": 282,
+        "name": "To Own Sys",
+        "property_id": 149
+      }
+    ]
+  },
+  {
+    "name": "Charges",
+    "collection_id": 51,
+    "attributes": [
+      {
+        "attribute_id": 77,
+        "name": "Tot Chgs and Misc Rev",
+        "property_id": 69
+      },
+      {
+        "attribute_id": 78,
+        "name": "Total General",
+        "property_id": 30
+      },
+      {
+        "attribute_id": 79,
+        "name": "Air Transportation",
+        "property_id": 140
+      },
+      {
+        "attribute_id": 80,
+        "name": "Misc Com Activ",
+        "property_id": 165
+      },
+      {
+        "attribute_id": 81,
+        "name": "Total Education",
+        "property_id": 27
+      },
+      {
+        "attribute_id": 82,
+        "name": "Total Elem Education",
+        "property_id": 142
+      },
+      {
+        "attribute_id": 83,
+        "name": "Elem Ed Sch Lunch",
+        "property_id": 152
+      },
+      {
+        "attribute_id": 84,
+        "name": "Elem Ed Tuition",
+        "property_id": 181
+      },
+      {
+        "attribute_id": 85,
+        "name": "Elem Ed NEC",
+        "property_id": 123
+      },
+      {
+        "attribute_id": 86,
+        "name": "Total High Ed",
+        "property_id": 128
+      },
+      {
+        "attribute_id": 87,
+        "name": "Hospitals",
+        "property_id": 177
+      },
+      {
+        "attribute_id": 88,
+        "name": "Highways",
+        "property_id": 127
+      },
+      {
+        "attribute_id": 89,
+        "name": "Regular Highways",
+        "property_id": 155
+      },
+      {
+        "attribute_id": 90,
+        "name": "Toll Highways",
+        "property_id": 11
+      },
+      {
+        "attribute_id": 91,
+        "name": "Housing Comm Dev",
+        "property_id": 158
+      },
+      {
+        "attribute_id": 92,
+        "name": "Total Nat Res",
+        "property_id": 83
+      },
+      {
+        "attribute_id": 93,
+        "name": "Parking",
+        "property_id": 186
+      },
+      {
+        "attribute_id": 94,
+        "name": "Parks Recreation",
+        "property_id": 33
+      },
+      {
+        "attribute_id": 95,
+        "name": "Sewerage",
+        "property_id": 41
+      },
+      {
+        "attribute_id": 96,
+        "name": "Solid Waste Mgmt",
+        "property_id": 75
+      },
+      {
+        "attribute_id": 97,
+        "name": "Water Transport",
+        "property_id": 28
+      },
+      {
+        "attribute_id": 98,
+        "name": "All Other NEC",
+        "property_id": 175
+      }
+    ]
+  },
+  {
+    "name": "Correctional Institutions",
+    "collection_id": 52,
+    "attributes": [
+      {
+        "attribute_id": 165,
+        "name": "Total Expenditure",
+        "property_id": 82
+      },
+      {
+        "attribute_id": 166,
+        "name": "Direct Expenditure",
+        "property_id": 145
+      },
+      {
+        "attribute_id": 167,
+        "name": "Capital Outlay",
+        "property_id": 70
+      },
+      {
+        "attribute_id": 168,
+        "name": "Current Expenditure",
+        "property_id": 42
+      },
+      {
+        "attribute_id": 169,
+        "name": "Construction",
+        "property_id": 58
+      },
+      {
+        "attribute_id": 170,
+        "name": "IG To State",
+        "property_id": 179
+      },
+      {
+        "attribute_id": 171,
+        "name": "IG Loc Govts",
+        "property_id": 169
+      }
+    ]
+  },
+  {
+    "name": "Sewerage",
+    "collection_id": 53,
+    "attributes": [
+      {
+        "attribute_id": 359,
+        "name": "Total Expenditure",
+        "property_id": 82
+      },
+      {
+        "attribute_id": 360,
+        "name": "Direct Expenditure",
+        "property_id": 145
+      },
+      {
+        "attribute_id": 361,
+        "name": "Capital Outlay",
+        "property_id": 70
+      },
+      {
+        "attribute_id": 362,
+        "name": "Current Expenditure",
+        "property_id": 42
+      },
+      {
+        "attribute_id": 363,
+        "name": "Construction",
+        "property_id": 58
+      },
+      {
+        "attribute_id": 364,
+        "name": "IG To State",
+        "property_id": 179
+      },
+      {
+        "attribute_id": 365,
+        "name": "IG Govts",
+        "property_id": 6
+      }
+    ]
+  },
+  {
+    "name": "Long Term Debt Outstanding, Full-Faith and Credit",
+    "collection_id": 54,
+    "attributes": [
+      {
+        "attribute_id": 539,
+        "name": "Total",
+        "property_id": 180
+      },
+      {
+        "attribute_id": 540,
+        "name": "Utility",
+        "property_id": 59
+      },
+      {
+        "attribute_id": 541,
+        "name": "Water Utility",
+        "property_id": 102
+      },
+      {
+        "attribute_id": 542,
+        "name": "Electric Utility",
+        "property_id": 137
+      },
+      {
+        "attribute_id": 543,
+        "name": "Gas Util",
+        "property_id": 151
+      },
+      {
+        "attribute_id": 544,
+        "name": "Trans Utility",
+        "property_id": 141
+      },
+      {
+        "attribute_id": 545,
+        "name": "General",
+        "property_id": 119
+      },
+      {
+        "attribute_id": 546,
+        "name": "Elem Educ",
+        "property_id": 132
+      },
+      {
+        "attribute_id": 547,
+        "name": "Other Education",
+        "property_id": 120
+      },
+      {
+        "attribute_id": 548,
+        "name": "Other NEC",
+        "property_id": 12
+      }
+    ]
+  },
+  {
+    "name": "Sea and Inland Port Facilities",
+    "collection_id": 55,
+    "attributes": [
+      {
+        "attribute_id": 373,
+        "name": "Total Expenditure",
+        "property_id": 82
+      },
+      {
+        "attribute_id": 374,
+        "name": "Direct Expenditure",
+        "property_id": 145
+      },
+      {
+        "attribute_id": 375,
+        "name": "Capital Outlay",
+        "property_id": 70
+      },
+      {
+        "attribute_id": 376,
+        "name": "Current Expenditure",
+        "property_id": 42
+      },
+      {
+        "attribute_id": 377,
+        "name": "Construction",
+        "property_id": 58
+      },
+      {
+        "attribute_id": 378,
+        "name": "IG To State",
+        "property_id": 179
+      },
+      {
+        "attribute_id": 379,
+        "name": "IG Loc Govts",
+        "property_id": 169
+      }
+    ]
+  },
+  {
+    "name": "Taxes",
+    "collection_id": 56,
+    "attributes": [
+      {
+        "attribute_id": 8,
+        "name": "Total",
+        "property_id": 180
+      },
+      {
+        "attribute_id": 9,
+        "name": "Property",
+        "property_id": 136
+      },
+      {
+        "attribute_id": 10,
+        "name": "Tot Sales Gr Rec",
+        "property_id": 39
+      },
+      {
+        "attribute_id": 11,
+        "name": "Total Gen Sales",
+        "property_id": 103
+      },
+      {
+        "attribute_id": 12,
+        "name": "Total Select Sales",
+        "property_id": 93
+      },
+      {
+        "attribute_id": 13,
+        "name": "Alcoholic Beverage",
+        "property_id": 2
+      },
+      {
+        "attribute_id": 14,
+        "name": "Amusement",
+        "property_id": 92
+      },
+      {
+        "attribute_id": 15,
+        "name": "Insurance Premium",
+        "property_id": 32
+      },
+      {
+        "attribute_id": 16,
+        "name": "Motor Fuels",
+        "property_id": 168
+      },
+      {
+        "attribute_id": 17,
+        "name": "Pari mutuels",
+        "property_id": 60
+      },
+      {
+        "attribute_id": 18,
+        "name": "Public Utility",
+        "property_id": 118
+      },
+      {
+        "attribute_id": 19,
+        "name": "Tobacco",
+        "property_id": 24
+      },
+      {
+        "attribute_id": 20,
+        "name": "Other Select Sales",
+        "property_id": 184
+      }
+    ]
+  },
+  {
+    "name": "Housing and Community Development",
+    "collection_id": 57,
+    "attributes": [
+      {
+        "attribute_id": 283,
+        "name": "Total Expenditure",
+        "property_id": 82
+      },
+      {
+        "attribute_id": 284,
+        "name": "Direct Expenditure",
+        "property_id": 145
+      },
+      {
+        "attribute_id": 285,
+        "name": "Capital Outlay",
+        "property_id": 70
+      },
+      {
+        "attribute_id": 286,
+        "name": "Current Expenditure",
+        "property_id": 42
+      },
+      {
+        "attribute_id": 287,
+        "name": "Construction",
+        "property_id": 58
+      },
+      {
+        "attribute_id": 288,
+        "name": "IG To State",
+        "property_id": 179
+      },
+      {
+        "attribute_id": 289,
+        "name": "IG Loc Govts",
+        "property_id": 169
+      }
+    ]
+  },
+  {
+    "name": "Beginning Long Term Debt Outstanding",
+    "collection_id": 58,
+    "attributes": [
+      {
+        "attribute_id": 429,
+        "name": "Total Outstanding",
+        "property_id": 148
+      },
+      {
+        "attribute_id": 430,
+        "name": "Private Purp",
+        "property_id": 131
+      },
+      {
+        "attribute_id": 431,
+        "name": "All Other",
+        "property_id": 91
+      },
+      {
+        "attribute_id": 432,
+        "name": "Utility",
+        "property_id": 59
+      },
+      {
+        "attribute_id": 433,
+        "name": "Water Utility",
+        "property_id": 102
+      },
+      {
+        "attribute_id": 434,
+        "name": "Electric Utility",
+        "property_id": 137
+      },
+      {
+        "attribute_id": 435,
+        "name": "Gas Util",
+        "property_id": 151
+      },
+      {
+        "attribute_id": 436,
+        "name": "Trans Utility",
+        "property_id": 141
+      },
+      {
+        "attribute_id": 437,
+        "name": "General",
+        "property_id": 119
+      },
+      {
+        "attribute_id": 438,
+        "name": "Education",
+        "property_id": 19
+      },
+      {
+        "attribute_id": 439,
+        "name": "Private Purp",
+        "property_id": 131
+      },
+      {
+        "attribute_id": 440,
+        "name": "Other NEC",
+        "property_id": 12
+      }
+    ]
+  },
+  {
+    "name": "Public Welfare",
+    "collection_id": 59,
+    "attributes": [
+      {
+        "attribute_id": 332,
+        "name": "Total Expenditure",
+        "property_id": 82
+      },
+      {
+        "attribute_id": 333,
+        "name": "Direct Expenditure",
+        "property_id": 145
+      },
+      {
+        "attribute_id": 334,
+        "name": "Cash Assistance",
+        "property_id": 81
+      },
+      {
+        "attribute_id": 335,
+        "name": "Capital Outlay",
+        "property_id": 70
+      },
+      {
+        "attribute_id": 336,
+        "name": "Current Expenditure",
+        "property_id": 42
+      },
+      {
+        "attribute_id": 337,
+        "name": "Construction",
+        "property_id": 58
+      }
+    ]
+  },
+  {
+    "name": "Long Term Debt Issued - Full Faith and Credit",
+    "collection_id": 60,
+    "attributes": [
+      {
+        "attribute_id": 453,
+        "name": "Total",
+        "property_id": 180
+      },
+      {
+        "attribute_id": 454,
+        "name": "Utility",
+        "property_id": 59
+      },
+      {
+        "attribute_id": 455,
+        "name": "Water Utility",
+        "property_id": 102
+      },
+      {
+        "attribute_id": 456,
+        "name": "Electric Utility",
+        "property_id": 137
+      },
+      {
+        "attribute_id": 457,
+        "name": "Gas Util",
+        "property_id": 151
+      },
+      {
+        "attribute_id": 458,
+        "name": "Trans Utility",
+        "property_id": 141
+      },
+      {
+        "attribute_id": 459,
+        "name": "General",
+        "property_id": 119
+      },
+      {
+        "attribute_id": 460,
+        "name": "Elem Educ",
+        "property_id": 132
+      },
+      {
+        "attribute_id": 461,
+        "name": "Other Education",
+        "property_id": 120
+      },
+      {
+        "attribute_id": 462,
+        "name": "Other NEC",
+        "property_id": 12
+      }
+    ]
+  },
+  {
+    "name": "General Expenses not elsewhere classified",
+    "collection_id": 61,
+    "attributes": [
+      {
+        "attribute_id": 381,
+        "name": "Total Expenditure",
+        "property_id": 82
+      },
+      {
+        "attribute_id": 382,
+        "name": "Direct Expenditure",
+        "property_id": 145
+      },
+      {
+        "attribute_id": 383,
+        "name": "VetBonus",
+        "property_id": 160
+      },
+      {
+        "attribute_id": 384,
+        "name": "Capital Outlay",
+        "property_id": 70
+      },
+      {
+        "attribute_id": 385,
+        "name": "Current Expenditure",
+        "property_id": 42
+      },
+      {
+        "attribute_id": 386,
+        "name": "Construction",
+        "property_id": 58
+      },
+      {
+        "attribute_id": 387,
+        "name": "IG To State",
+        "property_id": 179
+      },
+      {
+        "attribute_id": 388,
+        "name": "IG Loc Govts",
+        "property_id": 169
+      },
+      {
+        "attribute_id": 389,
+        "name": "IG To Fed",
+        "property_id": 56
+      }
+    ]
+  },
+  {
+    "name": "Retirement Plan Data",
+    "collection_id": 62,
+    "attributes": [
+      {
+        "attribute_id": 118,
+        "name": "Total Revenue",
+        "property_id": 51
+      },
+      {
+        "attribute_id": 119,
+        "name": "total contributions",
+        "property_id": 46
+      },
+      {
+        "attribute_id": 120,
+        "name": "Loc Emp Ctrib",
+        "property_id": 153
+      },
+      {
+        "attribute_id": 121,
+        "name": "Loc To Loc Sys",
+        "property_id": 130
+      },
+      {
+        "attribute_id": 122,
+        "name": "From Other Gov",
+        "property_id": 43
+      },
+      {
+        "attribute_id": 123,
+        "name": "Sta To Sta Ctr",
+        "property_id": 105
+      },
+      {
+        "attribute_id": 124,
+        "name": "Int Rev",
+        "property_id": 147
+      },
+      {
+        "attribute_id": 125,
+        "name": "Other Earnings",
+        "property_id": 135
+      }
+    ]
+  },
+  {
+    "name": "Water Supply Utilities",
+    "collection_id": 63,
+    "attributes": [
+      {
+        "attribute_id": 399,
+        "name": "Total Expenditure",
+        "property_id": 82
+      },
+      {
+        "attribute_id": 400,
+        "name": "Inter Exp",
+        "property_id": 15
+      },
+      {
+        "attribute_id": 401,
+        "name": "Capital Outlay",
+        "property_id": 70
+      },
+      {
+        "attribute_id": 402,
+        "name": "Current Expenditure",
+        "property_id": 42
+      },
+      {
+        "attribute_id": 403,
+        "name": "Construction",
+        "property_id": 58
+      }
+    ]
+  },
+  {
+    "name": "Long Term Debt Retired During Fiscal Year",
+    "collection_id": 64,
+    "attributes": [
+      {
+        "attribute_id": 484,
+        "name": "Total",
+        "property_id": 180
+      },
+      {
+        "attribute_id": 485,
+        "name": "Private Purp",
+        "property_id": 131
+      },
+      {
+        "attribute_id": 486,
+        "name": "All Other",
+        "property_id": 91
+      },
+      {
+        "attribute_id": 487,
+        "name": "Utility",
+        "property_id": 59
+      },
+      {
+        "attribute_id": 488,
+        "name": "Water Utility",
+        "property_id": 102
+      },
+      {
+        "attribute_id": 489,
+        "name": "Electric Utility",
+        "property_id": 137
+      },
+      {
+        "attribute_id": 490,
+        "name": "Util Gas Supply",
+        "property_id": 74
+      },
+      {
+        "attribute_id": 491,
+        "name": "Util Transit",
+        "property_id": 13
+      },
+      {
+        "attribute_id": 492,
+        "name": "General",
+        "property_id": 119
+      },
+      {
+        "attribute_id": 493,
+        "name": "Gen Elem Educ",
+        "property_id": 110
+      },
+      {
+        "attribute_id": 494,
+        "name": "Gen Other Educ",
+        "property_id": 163
+      },
+      {
+        "attribute_id": 495,
+        "name": "Gen Other NEC",
+        "property_id": 159
+      }
+    ]
+  },
+  {
+    "name": "Electric Power Utilities",
+    "collection_id": 65,
+    "attributes": [
+      {
+        "attribute_id": 404,
+        "name": "Total Expenditure",
+        "property_id": 82
+      },
+      {
+        "attribute_id": 405,
+        "name": "Inter Exp",
+        "property_id": 15
+      },
+      {
+        "attribute_id": 406,
+        "name": "Capital Outlay",
+        "property_id": 70
+      },
+      {
+        "attribute_id": 407,
+        "name": "Current Expenditure",
+        "property_id": 42
+      },
+      {
+        "attribute_id": 408,
+        "name": "Construction",
+        "property_id": 58
+      }
+    ]
+  },
+  {
+    "name": "Misc General Revenue",
+    "collection_id": 66,
+    "attributes": [
+      {
+        "attribute_id": 99,
+        "name": "General Revenue",
+        "property_id": 72
+      },
+      {
+        "attribute_id": 100,
+        "name": "Special Assessments",
+        "property_id": 98
+      },
+      {
+        "attribute_id": 101,
+        "name": "Prop Sale Total",
+        "property_id": 7
+      },
+      {
+        "attribute_id": 102,
+        "name": "Prop Sale Hous Com Dev",
+        "property_id": 129
+      },
+      {
+        "attribute_id": 103,
+        "name": "Prop Sale Other",
+        "property_id": 23
+      },
+      {
+        "attribute_id": 104,
+        "name": "Interest Revenue",
+        "property_id": 178
+      },
+      {
+        "attribute_id": 105,
+        "name": "Fines and Forfeits",
+        "property_id": 8
+      },
+      {
+        "attribute_id": 106,
+        "name": "Rents and Royalties",
+        "property_id": 156
+      },
+      {
+        "attribute_id": 107,
+        "name": "Net Lottery Revenue",
+        "property_id": 108
+      },
+      {
+        "attribute_id": 108,
+        "name": "Misc General Rev NEC",
+        "property_id": 25
+      }
+    ]
+  },
+  {
+    "name": "Natural Resources",
+    "collection_id": 67,
+    "attributes": [
+      {
+        "attribute_id": 297,
+        "name": "Total Expenditure",
+        "property_id": 82
+      },
+      {
+        "attribute_id": 298,
+        "name": "Direct Expenditure",
+        "property_id": 145
+      },
+      {
+        "attribute_id": 299,
+        "name": "Capital Outlay",
+        "property_id": 70
+      },
+      {
+        "attribute_id": 300,
+        "name": "Current Expenditure",
+        "property_id": 42
+      },
+      {
+        "attribute_id": 301,
+        "name": "Construction",
+        "property_id": 58
+      },
+      {
+        "attribute_id": 302,
+        "name": "IG To State",
+        "property_id": 179
+      },
+      {
+        "attribute_id": 303,
+        "name": "IG Loc Govts",
+        "property_id": 169
+      }
+    ]
+  },
+  {
+    "name": "Debt Totals",
+    "collection_id": 68,
+    "attributes": [
+      {
+        "attribute_id": 426,
+        "name": "Total Outstanding",
+        "property_id": 148
+      },
+      {
+        "attribute_id": 427,
+        "name": "Long Term Debt Out",
+        "property_id": 90
+      },
+      {
+        "attribute_id": 428,
+        "name": "ST Debt End of Year",
+        "property_id": 150
+      }
+    ]
+  },
+  {
+    "name": "Public Welfare-Categorical Assistance Programs",
+    "collection_id": 69,
+    "attributes": [
+      {
+        "attribute_id": 338,
+        "name": "Total Expenditure",
+        "property_id": 82
+      },
+      {
+        "attribute_id": 339,
+        "name": "Cash Assistance",
+        "property_id": 81
+      },
+      {
+        "attribute_id": 340,
+        "name": "IG To State",
+        "property_id": 179
+      },
+      {
+        "attribute_id": 341,
+        "name": "IG Loc Govts",
+        "property_id": 169
+      }
+    ]
+  },
+  {
+    "name": "Police Protection",
+    "collection_id": 70,
+    "attributes": [
+      {
+        "attribute_id": 318,
+        "name": "Total Expenditure",
+        "property_id": 82
+      },
+      {
+        "attribute_id": 319,
+        "name": "Direct Expenditure",
+        "property_id": 145
+      },
+      {
+        "attribute_id": 320,
+        "name": "Capital Outlay",
+        "property_id": 70
+      },
+      {
+        "attribute_id": 321,
+        "name": "Current Expenditure",
+        "property_id": 42
+      },
+      {
+        "attribute_id": 322,
+        "name": "Construction",
+        "property_id": 58
+      },
+      {
+        "attribute_id": 323,
+        "name": "IG To State",
+        "property_id": 179
+      },
+      {
+        "attribute_id": 324,
+        "name": "IG Loc Govts",
+        "property_id": 169
+      }
+    ]
+  },
+  {
+    "name": "Public Welfare-Cash assistance payments",
+    "collection_id": 71,
+    "attributes": [
+      {
+        "attribute_id": 342,
+        "name": "Total Expenditure",
+        "property_id": 82
+      },
+      {
+        "attribute_id": 343,
+        "name": "Cash Assistance",
+        "property_id": 81
+      },
+      {
+        "attribute_id": 344,
+        "name": "IG Govts",
+        "property_id": 6
+      }
+    ]
+  },
+  {
+    "name": "Other Hospital Expenses- Federal but not veterans",
+    "collection_id": 72,
+    "attributes": [
+      {
+        "attribute_id": 255,
+        "name": "Total Expenditure",
+        "property_id": 82
+      },
+      {
+        "attribute_id": 256,
+        "name": "Direct Expenditure",
+        "property_id": 145
+      },
+      {
+        "attribute_id": 257,
+        "name": "Capital Outlay",
+        "property_id": 70
+      },
+      {
+        "attribute_id": 258,
+        "name": "Current Expenditure",
+        "property_id": 42
+      },
+      {
+        "attribute_id": 259,
+        "name": "Construction",
+        "property_id": 58
+      },
+      {
+        "attribute_id": 260,
+        "name": "IG To State",
+        "property_id": 179
+      },
+      {
+        "attribute_id": 261,
+        "name": "IG Loc Govts",
+        "property_id": 169
+      }
+    ]
+  },
+  {
+    "name": "Long Term Debt Issued - Non guaranteed",
+    "collection_id": 73,
+    "attributes": [
+      {
+        "attribute_id": 463,
+        "name": "Total",
+        "property_id": 180
+      },
+      {
+        "attribute_id": 464,
+        "name": "Utility",
+        "property_id": 59
+      },
+      {
+        "attribute_id": 465,
+        "name": "Water Utility",
+        "property_id": 102
+      },
+      {
+        "attribute_id": 466,
+        "name": "Electric Utility",
+        "property_id": 137
+      },
+      {
+        "attribute_id": 467,
+        "name": "Gas Util",
+        "property_id": 151
+      },
+      {
+        "attribute_id": 468,
+        "name": "Trans Utility",
+        "property_id": 141
+      },
+      {
+        "attribute_id": 469,
+        "name": "General",
+        "property_id": 119
+      },
+      {
+        "attribute_id": 470,
+        "name": "Elem Educ",
+        "property_id": 132
+      },
+      {
+        "attribute_id": 471,
+        "name": "Other Education",
+        "property_id": 120
+      },
+      {
+        "attribute_id": 472,
+        "name": "Private Purp",
+        "property_id": 131
+      },
+      {
+        "attribute_id": 473,
+        "name": "Other NEC",
+        "property_id": 12
+      }
+    ]
+  },
+  {
+    "name": "General",
+    "collection_id": 74,
+    "attributes": [
+      {
+        "attribute_id": 1,
+        "name": "Population",
+        "property_id": 73
+      },
+      {
+        "attribute_id": 2,
+        "name": "FunctionCode",
+        "property_id": 45
+      },
+      {
+        "attribute_id": 3,
+        "name": "Enrollment",
+        "property_id": 121
+      },
+      {
+        "attribute_id": 4,
+        "name": "Total Revenue",
+        "property_id": 51
+      },
+      {
+        "attribute_id": 5,
+        "name": "Total Rev Own Sources",
+        "property_id": 64
+      },
+      {
+        "attribute_id": 6,
+        "name": "General Revenue",
+        "property_id": 72
+      },
+      {
+        "attribute_id": 7,
+        "name": "Gen Rev Own Sources",
+        "property_id": 125
+      },
+      {
+        "attribute_id": 142,
+        "name": "General Expenditure",
+        "property_id": 139
+      }
+    ]
+  },
+  {
+    "name": "Financial Administation",
+    "collection_id": 75,
+    "attributes": [
+      {
+        "attribute_id": 205,
+        "name": "Total Expenditure",
+        "property_id": 82
+      },
+      {
+        "attribute_id": 206,
+        "name": "Direct Expenditure",
+        "property_id": 145
+      },
+      {
+        "attribute_id": 207,
+        "name": "Capital Outlay",
+        "property_id": 70
+      },
+      {
+        "attribute_id": 208,
+        "name": "Current Expenditure",
+        "property_id": 42
+      },
+      {
+        "attribute_id": 209,
+        "name": "Construction",
+        "property_id": 58
+      },
+      {
+        "attribute_id": 210,
+        "name": "IG To State",
+        "property_id": 179
+      },
+      {
+        "attribute_id": 211,
+        "name": "IG Govts",
+        "property_id": 6
+      }
+    ]
+  },
+  {
+    "name": "Highways",
+    "collection_id": 76,
+    "attributes": [
+      {
+        "attribute_id": 262,
+        "name": "Total Expenditure",
+        "property_id": 82
+      },
+      {
+        "attribute_id": 263,
+        "name": "Total Dir Exp",
+        "property_id": 89
+      },
+      {
+        "attribute_id": 264,
+        "name": "Total Capital Outlays",
+        "property_id": 183
+      },
+      {
+        "attribute_id": 265,
+        "name": "Total Current Exp",
+        "property_id": 9
+      },
+      {
+        "attribute_id": 266,
+        "name": "Total Construction",
+        "property_id": 65
+      }
+    ]
+  },
+  {
+    "name": "Employee Retirement Systems Cash and Securities",
+    "collection_id": 77,
+    "attributes": [
+      {
+        "attribute_id": 562,
+        "name": "Emp Retire Cash Sec",
+        "property_id": 22
+      },
+      {
+        "attribute_id": 563,
+        "name": "Emp Retire Cash Dep",
+        "property_id": 26
+      },
+      {
+        "attribute_id": 564,
+        "name": "Emp Retire Total Sec",
+        "property_id": 48
+      },
+      {
+        "attribute_id": 565,
+        "name": "Emp Retire Sec Tot Fed",
+        "property_id": 126
+      },
+      {
+        "attribute_id": 566,
+        "name": "Emp Retire Sec S L Secur",
+        "property_id": 172
+      },
+      {
+        "attribute_id": 567,
+        "name": "Emp Retire Sec Tot Nong",
+        "property_id": 68
+      },
+      {
+        "attribute_id": 568,
+        "name": "Emp Retire Sec Corp Bds",
+        "property_id": 182
+      },
+      {
+        "attribute_id": 569,
+        "name": "Emp Retire Sec Corp Stk",
+        "property_id": 76
+      },
+      {
+        "attribute_id": 570,
+        "name": "Emp Retire Sec Mortgages",
+        "property_id": 77
+      },
+      {
+        "attribute_id": 571,
+        "name": "Emp Retire Sec Misc Inv",
+        "property_id": 88
+      },
+      {
+        "attribute_id": 572,
+        "name": "Emp Retire Sec Oth Nong",
+        "property_id": 80
+      }
+    ]
+  },
+  {
+    "name": "Liquor and Utilities",
+    "collection_id": 78,
+    "attributes": [
+      {
+        "attribute_id": 109,
+        "name": "Liquor Revenue",
+        "property_id": 96
+      },
+      {
+        "attribute_id": 110,
+        "name": "Total Utility Revenue",
+        "property_id": 95
+      },
+      {
+        "attribute_id": 111,
+        "name": "Water Utility Revenue",
+        "property_id": 4
+      },
+      {
+        "attribute_id": 112,
+        "name": "Electric Utility Revenue",
+        "property_id": 146
+      },
+      {
+        "attribute_id": 113,
+        "name": "Gas Utility Revenue",
+        "property_id": 20
+      },
+      {
+        "attribute_id": 114,
+        "name": "Transit Utility Revenue",
+        "property_id": 104
+      }
+    ]
+  },
+  {
+    "name": "Licenses",
+    "collection_id": 79,
+    "attributes": [
+      {
+        "attribute_id": 21,
+        "name": "Total Taxes",
+        "property_id": 122
+      },
+      {
+        "attribute_id": 22,
+        "name": "Alcoholic Beverage",
+        "property_id": 2
+      },
+      {
+        "attribute_id": 23,
+        "name": "Amusement",
+        "property_id": 92
+      },
+      {
+        "attribute_id": 24,
+        "name": "Corporation",
+        "property_id": 143
+      },
+      {
+        "attribute_id": 25,
+        "name": "Hunting Fishing",
+        "property_id": 1
+      },
+      {
+        "attribute_id": 26,
+        "name": "Motor Vehicle",
+        "property_id": 162
+      },
+      {
+        "attribute_id": 27,
+        "name": "Motor Veh Oper",
+        "property_id": 115
+      },
+      {
+        "attribute_id": 28,
+        "name": "Motor Vehicle Total",
+        "property_id": 3
+      },
+      {
+        "attribute_id": 29,
+        "name": "Public Utility",
+        "property_id": 118
+      },
+      {
+        "attribute_id": 30,
+        "name": "Occup and Bus NEC",
+        "property_id": 84
+      },
+      {
+        "attribute_id": 31,
+        "name": "Other Taxes",
+        "property_id": 112
+      }
+    ]
+  },
+  {
+    "name": "Liquor",
+    "collection_id": 80,
+    "attributes": [
+      {
+        "attribute_id": 390,
+        "name": "Total Expenditure",
+        "property_id": 82
+      },
+      {
+        "attribute_id": 391,
+        "name": "Capital Outlay",
+        "property_id": 70
+      },
+      {
+        "attribute_id": 392,
+        "name": "Current Expenditure",
+        "property_id": 42
+      },
+      {
+        "attribute_id": 393,
+        "name": "Construction",
+        "property_id": 58
+      }
+    ]
+  },
+  {
+    "name": "Education",
+    "collection_id": 81,
+    "attributes": [
+      {
+        "attribute_id": 172,
+        "name": "Expenditure",
+        "property_id": 170
+      },
+      {
+        "attribute_id": 173,
+        "name": "Direct Expenditure",
+        "property_id": 145
+      },
+      {
+        "attribute_id": 174,
+        "name": "Assist Subsidies",
+        "property_id": 17
+      },
+      {
+        "attribute_id": 175,
+        "name": "Capital Outlay",
+        "property_id": 70
+      },
+      {
+        "attribute_id": 176,
+        "name": "Total Current Exp",
+        "property_id": 9
+      },
+      {
+        "attribute_id": 177,
+        "name": "Total Construction",
+        "property_id": 65
+      }
+    ]
+  },
+  {
+    "name": "Protective Inspection and Regulation",
+    "collection_id": 82,
+    "attributes": [
+      {
+        "attribute_id": 325,
+        "name": "Total Expenditure",
+        "property_id": 82
+      },
+      {
+        "attribute_id": 326,
+        "name": "Direct Expenditure",
+        "property_id": 145
+      },
+      {
+        "attribute_id": 327,
+        "name": "Capital Outlay",
+        "property_id": 70
+      },
+      {
+        "attribute_id": 328,
+        "name": "Current Expenditure",
+        "property_id": 42
+      },
+      {
+        "attribute_id": 329,
+        "name": "Construction",
+        "property_id": 58
+      },
+      {
+        "attribute_id": 330,
+        "name": "IG To State",
+        "property_id": 179
+      },
+      {
+        "attribute_id": 331,
+        "name": "IG Govts",
+        "property_id": 6
+      }
+    ]
+  },
+  {
+    "name": "Other Insurance Trusts Holdings Cash and Securities",
+    "collection_id": 83,
+    "attributes": [
+      {
+        "attribute_id": 576,
+        "name": "Nonin Trust Cash Sec",
+        "property_id": 117
+      }
+    ]
+  },
+  {
+    "name": "Unemployment Revenue",
+    "collection_id": 84,
+    "attributes": [
+      {
+        "attribute_id": 126,
+        "name": "Total",
+        "property_id": 180
+      },
+      {
+        "attribute_id": 127,
+        "name": "Payroll Tax",
+        "property_id": 78
+      },
+      {
+        "attribute_id": 128,
+        "name": "Int Revenue",
+        "property_id": 50
+      },
+      {
+        "attribute_id": 129,
+        "name": "Federal Advances",
+        "property_id": 166
+      },
+      {
+        "attribute_id": 130,
+        "name": "Expenditure",
+        "property_id": 170
+      }
+    ]
+  }]
