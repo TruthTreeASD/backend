@@ -5,6 +5,8 @@ import org.json.simple.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 public class TimeRangeService implements ITimeRangeService {
 
@@ -15,8 +17,15 @@ public class TimeRangeService implements ITimeRangeService {
     this.adapter = adapter;
   }
 
+  /**
+   * Returns the time-range response value
+   * using
+   * @param level and
+   * @param attributes
+   * @return TimeRange Response Object
+   */
   @Override
-  public JSONArray getTimeRange() {
-    return adapter.getTimeRange();
+  public Object getTimeRange(String level, List<Integer> attributes) {
+    return adapter.getTimeRange(level, attributes);
   }
 }

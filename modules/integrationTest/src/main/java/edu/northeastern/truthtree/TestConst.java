@@ -21,4 +21,7 @@ public class TestConst {
   //Basic Info Adapter Constants
   public static final String BASIC_INFO_API = APPLICATION_URL + "/api/";
 
+  //TimeRange Adapter Constants
+  public static final String TIME_RANGE_API = APPLICATION_URL + "/api/time_range?";
+
 }
