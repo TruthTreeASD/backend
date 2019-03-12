@@ -2,6 +2,7 @@ package edu.northeastern.truthtree.adapter;
 
 import edu.northeastern.truthtree.adapter.population.PopulationDBAdapter;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class PopulationDBAdapterTests {
@@ -13,8 +14,8 @@ public class PopulationDBAdapterTests {
   }
 
   @Test
-  public void test() {
+  @Ignore
+  public void getPopulationTest() {
     populationDBAdapter.getPopulation(420000000,2012);
   }
-
 }
