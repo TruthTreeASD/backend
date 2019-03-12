@@ -15,8 +15,7 @@ public class TimeRangeApiTests {
     @DataProvider(name = "data")
     public static Object[][] credentials() {
         return new Object[][]{
-                {"level=state&attributes=74", "timerange/timeRangeByLevelAndAttribute1.json"},
-                {"level=county&attributes=1%2C75", "timerange/timeRangeByLevelAndAttributes.json"}};
+                {"level=state&attributes=74", "timerange/timeRangeByLevelAndAttribute1.json"}};
     }
 
     @Test(dataProvider = "data")
