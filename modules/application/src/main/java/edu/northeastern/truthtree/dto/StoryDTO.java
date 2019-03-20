@@ -21,10 +21,6 @@ public class StoryDTO {
    * Unique identifier for story id
    */
   private String id;
-  /**
-   * Source of image to be posted
-   */
-  private String imgSrc;
 
   /**
    * Sets author name.
@@ -94,22 +90,5 @@ public class StoryDTO {
    */
   public String getContent() {
     return this.content;
-  }
-  /**
-   * Sets image source.
-   *
-   * @param imgSrc in string.
-   */
-  public void setImgSrc(String imgSrc) {
-    this.imgSrc = imgSrc;
-  }
-
-  /**
-   * Returns image source.
-   *
-   * @return imgSrc in string.
-   */
-  public String getImgSrc() {
-    return this.imgSrc;
   }
 }

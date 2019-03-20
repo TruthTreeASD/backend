@@ -23,7 +23,6 @@ public class StoriesMockAdapter implements IStoriesAdapter {
     tags1.add("Finance");
     tags1.add("Crime");
     storyDTO1.setTags(tags1);
-    storyDTO1.setImgSrc("https://images.pexels.com/photos/1782151/pexels-photo-1782151.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
     storyDTO1.setContent("This is my first post");
 
     StoryDTO storyDTO2 = new StoryDTO();
@@ -33,7 +32,6 @@ public class StoriesMockAdapter implements IStoriesAdapter {
     tags2.add("Finance");
     tags2.add("Debt");
     storyDTO2.setTags(tags2);
-    storyDTO2.setImgSrc("https://images.pexels.com/photos/903028/pexels-photo-903028.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
     storyDTO2.setContent("This is my second post");
 
     response.add(storyDTO1);

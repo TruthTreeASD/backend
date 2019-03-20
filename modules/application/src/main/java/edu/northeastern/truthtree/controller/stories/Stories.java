@@ -22,7 +22,7 @@ public class Stories implements IStories {
     this.service = service;
   }
 
-  @RequestMapping(value = "/api/story", method = RequestMethod.POST)
+  @RequestMapping(value = "/api/stories", method = RequestMethod.POST)
   public StoryDTO createStory(@RequestBody StoryDTO storyDTO) {
     return service.createStory(storyDTO);
   }
