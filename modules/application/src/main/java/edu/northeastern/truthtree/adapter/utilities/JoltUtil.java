@@ -43,7 +43,7 @@ public class JoltUtil {
    * @return Jolt mapping spec chainr
    */
   private static Chainr getSpecChainr(String mappingSpecPath) {
-    List chainrSpecJSON = JsonUtils.filepathToList(mappingSpecPath);
+    List chainrSpecJSON = JsonUtils.classpathToList(mappingSpecPath);
     return Chainr.fromSpec(chainrSpecJSON);
   }
 

@@ -1,11 +1,15 @@
 package edu.northeastern.truthtree.adapter.utilities;
 
-import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import org.springframework.core.io.ClassPathResource;
+
 
 /**
  * Represents the methods used to manipulate JSON.
@@ -23,7 +27,8 @@ public class JSONUtil {
     JSONArray jsonArray = new JSONArray();
 
     try {
-      jsonArray = (JSONArray) parser.parse(new FileReader(filePath));
+      InputStream inputStream = new ClassPathResource(filePath).getInputStream();
+      jsonArray = (JSONArray) parser.parse(new InputStreamReader(inputStream));
 
     } catch (IOException | ParseException e) {
       e.printStackTrace();
