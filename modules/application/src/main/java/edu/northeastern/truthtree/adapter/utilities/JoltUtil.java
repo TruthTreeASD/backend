@@ -28,7 +28,6 @@ public class JoltUtil {
    * @return transformed Json array
    */
   public static JSONArray joltTransform(JSONArray jsonArray, String mappingSpecPath) {
-    System.out.println(mappingSpecPath);
     Chainr chainr = getSpecChainr(mappingSpecPath);
     JSONArray transformedAttributes = new JSONArray();
     for (Object jsonObject : jsonArray) {
