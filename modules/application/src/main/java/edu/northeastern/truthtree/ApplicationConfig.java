@@ -17,6 +17,9 @@ import edu.northeastern.truthtree.adapter.collections.ICollectionsAdapter;
 import edu.northeastern.truthtree.adapter.population.IPopulationAdapter;
 import edu.northeastern.truthtree.adapter.population.PopulationDBAdapter;
 import edu.northeastern.truthtree.adapter.population.PopulationMockAdapter;
+import edu.northeastern.truthtree.adapter.stories.IStoriesAdapter;
+import edu.northeastern.truthtree.adapter.stories.StoriesDBAdapter;
+import edu.northeastern.truthtree.adapter.stories.StoriesMockAdapter;
 import edu.northeastern.truthtree.adapter.timerange.ITimeRangeAdapter;
 import edu.northeastern.truthtree.adapter.timerange.TimeRangeDBAdapter;
 import edu.northeastern.truthtree.adapter.timerange.TimeRangeMockAdapter;
@@ -32,6 +35,7 @@ public class ApplicationConfig {
   private static final Boolean RETURN_MOCK_DATA_COLLECTIONS = false;
   private static final Boolean RETURN_MOCK_DATA_TIME_RANGE = false;
   private static final Boolean RETURN_MOCK_DATA_POPULATION = false;
+  private static final Boolean RETURN_MOCK_DATA_STORY = true;
 
   /**
    * Gets the adapter instance for attributes.
@@ -85,6 +89,16 @@ public class ApplicationConfig {
   @Bean
   public ITimeRangeAdapter getTimeRangeAdapter() {
     return RETURN_MOCK_DATA_TIME_RANGE ? new TimeRangeMockAdapter() : new TimeRangeDBAdapter();
+  }
+
+  /**
+   * Gets the adapter instance for time range.
+   * @return if RETURN_MOCK_DATA_TIME_RANGE is true, the mock time range adapter, database
+   * 				 time range adapter otherwise.
+   */
+  @Bean
+  public IStoriesAdapter getStoryAdapter() {
+    return RETURN_MOCK_DATA_STORY ? new StoriesMockAdapter() : new StoriesDBAdapter();
   }
 
   @Bean
