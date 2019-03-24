@@ -1,7 +1,9 @@
 package edu.northeastern.truthtree;
 
+import org.apache.http.HttpHost;
+import org.elasticsearch.client.RestClient;
+import org.elasticsearch.client.RestHighLevelClient;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
 
@@ -23,6 +25,8 @@ import edu.northeastern.truthtree.adapter.stories.StoriesMockAdapter;
 import edu.northeastern.truthtree.adapter.timerange.ITimeRangeAdapter;
 import edu.northeastern.truthtree.adapter.timerange.TimeRangeDBAdapter;
 import edu.northeastern.truthtree.adapter.timerange.TimeRangeMockAdapter;
+
+import static edu.northeastern.truthtree.AppConst.ES_URL;
 
 /**
  * Represents the instances that will be created when the API is queried.
@@ -105,4 +109,11 @@ public class ApplicationConfig {
   public RestTemplate restTemplate() {
     return new RestTemplate();
   }
+
+  @Bean
+  public RestHighLevelClient restHighLevelClient() {
+    return new RestHighLevelClient(RestClient
+            .builder(new HttpHost(ES_URL, 443, "https")));
+  }
+
 }
