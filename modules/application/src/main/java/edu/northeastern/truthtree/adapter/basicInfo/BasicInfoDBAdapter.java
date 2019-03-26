@@ -160,6 +160,7 @@ public class BasicInfoDBAdapter extends BaseAdapter implements IBasicInfoAdapter
     builder.queryParam("from", startValue);
     builder.queryParam("to", endValue);
     builder.queryParam("typeCode", typeCode);
+    builder.queryParam("pageSize", 500);
     String url = builder.toUriString();
     JSONArray response = readJSONFromURL(url);
     return response;
