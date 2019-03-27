@@ -73,5 +73,9 @@ public class AppConst {
   public static final String BY_REVENUE = "by_revenue";
   public static final String PER_CAPITA = "per_capita";
 
+  //Stories APIs
+  public static final String STORIES_URL_POST = DATABASE_URL + "/api/stories/story/add";
+  public static final String STORIES_URL_GET = DATABASE_URL+"/api/stories/story/all";
+
 
 }

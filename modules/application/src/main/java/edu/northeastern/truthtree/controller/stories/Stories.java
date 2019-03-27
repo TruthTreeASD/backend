@@ -5,11 +5,14 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 import edu.northeastern.truthtree.dto.StoryDTO;
+import edu.northeastern.truthtree.enums.NormalizationType;
+import edu.northeastern.truthtree.enums.StoryOrder;
 import edu.northeastern.truthtree.service.stories.IStoriesService;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -28,7 +31,7 @@ public class Stories implements IStories {
   }
 
   @RequestMapping(value = "/api/stories", method = RequestMethod.GET)
-  public List<StoryDTO> getStories() {
-    return service.getStories();
+  public List<StoryDTO> getStories( @RequestParam(value = "sortBy", required = false) StoryOrder storyOrder) {
+    return service.getStories(storyOrder);
   }
 }

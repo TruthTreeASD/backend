@@ -3,6 +3,7 @@ package edu.northeastern.truthtree.controller.stories;
 import java.util.List;
 
 import edu.northeastern.truthtree.dto.StoryDTO;
+import edu.northeastern.truthtree.enums.StoryOrder;
 
 public interface IStories {
   /**
@@ -18,5 +19,5 @@ public interface IStories {
    *
    * @return list of stories
    */
-  List<StoryDTO> getStories();
+  List<StoryDTO> getStories(StoryOrder storyOrder);
 }
