@@ -38,7 +38,7 @@ public class StoriesDBAdapter implements IStoriesAdapter {
     } catch (JsonProcessingException e) {
       e.printStackTrace();
     }
-    JSONArray jsonResponse = JSONUtil.stringToJSONArray(URLUtil.postJSONFromURL(STORIES_URL_POST, jsonString));
+    String jsonResponse = URLUtil.postJSONFromURL(STORIES_URL_POST, jsonString);
     return assembler.fromJSONStringToDTO(jsonResponse);
   }
 
@@ -60,7 +60,7 @@ public class StoriesDBAdapter implements IStoriesAdapter {
     builder.queryParam("sortBy", fieldName);
     builder.queryParam("orderType", orderType);
     String url = builder.toUriString();
-    JSONArray jsonResponse = URLUtil.readJSONFromURL(url);
+    String jsonResponse = URLUtil.readJSONFromURLInString(url);
     return assembler.fromJSONStringToDTOList(jsonResponse);
   }
 }
