@@ -1,5 +1,6 @@
 package edu.northeastern.truthtree;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.http.HttpHost;
 import org.elasticsearch.client.RestClient;
 import org.elasticsearch.client.RestHighLevelClient;
@@ -25,6 +26,7 @@ import edu.northeastern.truthtree.adapter.stories.StoriesMockAdapter;
 import edu.northeastern.truthtree.adapter.timerange.ITimeRangeAdapter;
 import edu.northeastern.truthtree.adapter.timerange.TimeRangeDBAdapter;
 import edu.northeastern.truthtree.adapter.timerange.TimeRangeMockAdapter;
+import edu.northeastern.truthtree.assembler.StoriesAssembler;
 
 import static edu.northeastern.truthtree.AppConst.ES_URL;
 
@@ -39,7 +41,7 @@ public class ApplicationConfig {
   private static final Boolean RETURN_MOCK_DATA_COLLECTIONS = false;
   private static final Boolean RETURN_MOCK_DATA_TIME_RANGE = false;
   private static final Boolean RETURN_MOCK_DATA_POPULATION = false;
-  private static final Boolean RETURN_MOCK_DATA_STORY = true;
+  private static final Boolean RETURN_MOCK_DATA_STORY = false;
 
   /**
    * Gets the adapter instance for attributes.
@@ -102,7 +104,7 @@ public class ApplicationConfig {
    */
   @Bean
   public IStoriesAdapter getStoryAdapter() {
-    return RETURN_MOCK_DATA_STORY ? new StoriesMockAdapter() : new StoriesDBAdapter();
+    return RETURN_MOCK_DATA_STORY ? new StoriesMockAdapter() : new StoriesDBAdapter(new StoriesAssembler(new ObjectMapper()));
   }
 
   @Bean
