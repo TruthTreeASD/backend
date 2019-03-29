@@ -6,35 +6,35 @@ public class StoryDTOWrapper {
   private boolean ok;
   private String message;
 
-  public void setRespCode(int respCode){
+  public void setRespCode(int respCode) {
     this.respCode = respCode;
   }
 
-  public int getRespCode(){
+  public int getRespCode() {
     return this.respCode;
   }
 
-  public void setData(StoryDTO data){
+  public void setData(StoryDTO data) {
     this.data = data;
   }
 
-  public StoryDTO getData(){
+  public StoryDTO getData() {
     return this.data;
   }
 
-  public void setOk(boolean ok){
+  public void setOk(boolean ok) {
     this.ok = ok;
   }
 
-  public boolean getOk(){
+  public boolean getOk() {
     return this.ok;
   }
 
-  public String getMessage(){
+  public String getMessage() {
     return this.message;
   }
 
-  public void setMessage(String message){
+  public void setMessage(String message) {
     this.message = message;
   }
 

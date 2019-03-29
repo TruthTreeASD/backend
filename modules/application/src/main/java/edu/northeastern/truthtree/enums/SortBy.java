@@ -1,11 +1,7 @@
 package edu.northeastern.truthtree.enums;
 
-/**
- * Represents types of sorting available for stories.
- */
-public enum StoryOrder {
-
-  RECENT("Recent"), MOST_UPVOTES("Most Upvotes"), MOST_DOWNVOTES("Most Downvotes");
+public enum SortBy {
+  ASC("Asc"), DESC("Desc");
   String value;
 
   /**
@@ -13,7 +9,7 @@ public enum StoryOrder {
    *
    * @param value in String.
    */
-  StoryOrder(String value) {
+  SortBy(String value) {
     this.value = value;
   }
 
@@ -22,5 +18,3 @@ public enum StoryOrder {
   }
 
 }
-
-

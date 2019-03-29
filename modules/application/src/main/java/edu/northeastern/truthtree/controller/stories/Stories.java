@@ -11,8 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 import edu.northeastern.truthtree.dto.StoryDTO;
-import edu.northeastern.truthtree.enums.NormalizationType;
-import edu.northeastern.truthtree.enums.StoryOrder;
+import edu.northeastern.truthtree.enums.OrderType;
 import edu.northeastern.truthtree.service.stories.IStoriesService;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -31,7 +30,7 @@ public class Stories implements IStories {
   }
 
   @RequestMapping(value = "/api/stories", method = RequestMethod.GET)
-  public List<StoryDTO> getStories( @RequestParam(value = "sortBy", required = false) StoryOrder storyOrder) {
-    return service.getStories(storyOrder);
+  public List<StoryDTO> getStories(@RequestParam(value = "orderType", required = false) OrderType orderType) {
+    return service.getStories(orderType);
   }
 }

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import edu.northeastern.truthtree.dto.StoryDTO;
-import edu.northeastern.truthtree.enums.StoryOrder;
+import edu.northeastern.truthtree.enums.OrderType;
 
 @Component("storiesMockAdapter")
 public class StoriesMockAdapter implements IStoriesAdapter {
@@ -18,7 +18,7 @@ public class StoriesMockAdapter implements IStoriesAdapter {
   }
 
   @Override
-  public List<StoryDTO> getStories(StoryOrder order) {
+  public List<StoryDTO> getStories(OrderType order) {
     List<StoryDTO> response = new ArrayList<>();
     StoryDTO storyDTO1 = new StoryDTO();
     storyDTO1.setId("43232233323");

@@ -1,7 +1,5 @@
 package edu.northeastern.truthtree.dto;
 
-import java.sql.Timestamp;
-import java.util.Date;
 import java.util.List;
 
 public class StoryDTO {
@@ -164,11 +162,21 @@ public class StoryDTO {
     return this.upvote;
   }
 
-  public void setTimestamp(Long timestamp){
+  /**
+   * Sets timestamp of story.
+   *
+   * @param timestamp in long.
+   */
+  public void setTimestamp(Long timestamp) {
     this.timestamp = timestamp;
   }
 
-  public Long getTimestamp(){
+  /**
+   * Returns timestamp of story.
+   *
+   * @return timestamp in long.
+   */
+  public Long getTimestamp() {
     return this.timestamp;
   }
 

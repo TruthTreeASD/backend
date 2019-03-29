@@ -8,7 +8,7 @@ import java.util.List;
 
 import edu.northeastern.truthtree.adapter.stories.IStoriesAdapter;
 import edu.northeastern.truthtree.dto.StoryDTO;
-import edu.northeastern.truthtree.enums.StoryOrder;
+import edu.northeastern.truthtree.enums.OrderType;
 
 @Component
 public class StoriesService implements IStoriesService {
@@ -25,7 +25,7 @@ public class StoriesService implements IStoriesService {
   }
 
   @Override
-  public List<StoryDTO> getStories(StoryOrder storyOrder) {
-    return adapter.getStories(storyOrder);
+  public List<StoryDTO> getStories(OrderType orderType) {
+    return adapter.getStories(orderType);
   }
 }

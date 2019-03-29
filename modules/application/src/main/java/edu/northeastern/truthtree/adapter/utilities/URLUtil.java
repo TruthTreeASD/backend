@@ -81,7 +81,6 @@ public class URLUtil {
       try {
         write = new DataOutputStream(con.getOutputStream());
         write.writeBytes(jsonString);
-        int responseCode = con.getResponseCode();
         BufferedReader in = new BufferedReader(
                 new InputStreamReader(con.getInputStream()));
         String output;
