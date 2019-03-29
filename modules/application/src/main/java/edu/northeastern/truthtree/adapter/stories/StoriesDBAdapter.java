@@ -45,26 +45,31 @@ public class StoriesDBAdapter implements IStoriesAdapter {
   public List<StoryDTO> getStories(OrderType order) {
     String fieldName = null;
     String sortBy = null;
-    switch (order) {
-      case RECENT:
-        fieldName = "timestamp";
-        sortBy = "desc";
-        break;
-      case MOST_UPVOTES:
-        fieldName = "upvote";
-        sortBy = "desc";
-        break;
-      case MOST_DOWNVOTES:
-        fieldName = "downvote";
-        sortBy = "desc";
-        break;
-      case OLDEST:
-        fieldName = "timestamp";
-        sortBy = "asc";
-        break;
-      default:
-        fieldName = "timestamp";
-        sortBy = "desc";
+    if (order == null) {
+      fieldName = "upvote";
+      sortBy = "desc";
+    } else {
+      switch (order) {
+        case RECENT:
+          fieldName = "timestamp";
+          sortBy = "desc";
+          break;
+        case MOST_UPVOTES:
+          fieldName = "upvote";
+          sortBy = "desc";
+          break;
+        case MOST_DOWNVOTES:
+          fieldName = "downvote";
+          sortBy = "desc";
+          break;
+        case OLDEST:
+          fieldName = "timestamp";
+          sortBy = "asc";
+          break;
+        default:
+          fieldName = "upvote";
+          sortBy = "desc";
+      }
     }
     UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(STORIES_URL_GET + "/" + fieldName);
     builder.queryParam("orderType", sortBy);
