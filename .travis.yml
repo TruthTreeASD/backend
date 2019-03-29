@@ -23,4 +23,4 @@ deploy:
     docker push registry.heroku.com/truthtree/web;
     heroku container:release web --app=truthtree;
   on:
-    branch: master
+    branch: develop
