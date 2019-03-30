@@ -1,5 +1,6 @@
 package edu.northeastern.truthtree.adapter.stories;
 
+import org.json.simple.JSONArray;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -43,4 +44,8 @@ public class StoriesMockAdapter implements IStoriesAdapter {
     return response;
   }
 
+  @Override
+  public JSONArray updateVotes(String id, String type, int value) {
+    return new JSONArray();
+  }
 }

@@ -4,6 +4,7 @@ import java.util.List;
 
 import edu.northeastern.truthtree.dto.StoryDTO;
 import edu.northeastern.truthtree.enums.OrderType;
+import org.json.simple.JSONArray;
 
 public interface IStoriesService {
   /**
@@ -21,4 +22,15 @@ public interface IStoriesService {
    * @return list of stories.
    */
   List<StoryDTO> getStories(OrderType orderType);
+
+  /**
+   * Updates votes of a type and story id
+   *
+   * @param id represents how story id.
+   * @param type represents upvote or downvote.
+   * @param value represents upvote or downvote value.
+   * @return updated value.
+   */
+  JSONArray updateVotes(String id, String type, int value);
+
 }

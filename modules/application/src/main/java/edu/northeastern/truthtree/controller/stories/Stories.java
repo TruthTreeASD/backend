@@ -1,7 +1,9 @@
 package edu.northeastern.truthtree.controller.stories;
 
+import org.json.simple.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -33,4 +35,12 @@ public class Stories implements IStories {
   public List<StoryDTO> getStories(@RequestParam(value = "orderType", required = false) OrderType orderType) {
     return service.getStories(orderType);
   }
+
+  @RequestMapping(value = "/api/stories/{id}", method = RequestMethod.PUT)
+  public JSONArray updateVotes( @PathVariable String id,
+      @RequestParam(value = "type", required = true) String type,
+      @RequestParam(value = "value", required = true) int value) {
+    return service.updateVotes(id, type, value);
+  }
+
 }
