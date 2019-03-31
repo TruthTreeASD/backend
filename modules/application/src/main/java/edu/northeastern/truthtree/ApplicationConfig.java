@@ -1,7 +1,19 @@
 package edu.northeastern.truthtree;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.apache.http.HttpHost;
+import org.elasticsearch.client.RestClient;
+import org.elasticsearch.client.RestHighLevelClient;
+
+import edu.northeastern.truthtree.adapter.advancedsearch.similarityby.multipleattributes.ISimilarityByAttributesAdapter;
+import edu.northeastern.truthtree.adapter.advancedsearch.similarityby.multipleattributes.SimilarityByAttributesMockAdapter;
+import edu.northeastern.truthtree.adapter.advancedsearch.similarityby.singleattribute.ISimilarityByAttributeAdapter;
+import edu.northeastern.truthtree.adapter.advancedsearch.similarityby.singleattribute.SimilarityByAttributeMockAdapter;
+import edu.northeastern.truthtree.adapter.advancedsearch.commonattributes.ISupportedAttributesAdapter;
+import edu.northeastern.truthtree.adapter.advancedsearch.commonattributes.SupportedAttributesDBAdapter;
+import edu.northeastern.truthtree.adapter.advancedsearch.commonattributes.SupportedAttributesMockAdapter;
+
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
 
@@ -23,6 +35,9 @@ import edu.northeastern.truthtree.adapter.stories.StoriesMockAdapter;
 import edu.northeastern.truthtree.adapter.timerange.ITimeRangeAdapter;
 import edu.northeastern.truthtree.adapter.timerange.TimeRangeDBAdapter;
 import edu.northeastern.truthtree.adapter.timerange.TimeRangeMockAdapter;
+import edu.northeastern.truthtree.assembler.StoriesAssembler;
+
+import static edu.northeastern.truthtree.AppConst.ES_URL;
 
 /**
  * Represents the instances that will be created when the API is queried.
@@ -35,7 +50,10 @@ public class ApplicationConfig {
   private static final Boolean RETURN_MOCK_DATA_COLLECTIONS = false;
   private static final Boolean RETURN_MOCK_DATA_TIME_RANGE = false;
   private static final Boolean RETURN_MOCK_DATA_POPULATION = false;
-  private static final Boolean RETURN_MOCK_DATA_STORY = true;
+  private static final Boolean RETURN_MOCK_DATA_STORY = false;
+  private static final Boolean RETURN_MOCK_DATA_SUPPORTED_ATTRIBUTES = false;
+  private static final Boolean RETURN_MOCK_DATA_SIMILARITY_BY_ATTRIBUTE = true;
+  private static final Boolean RETURN_MOCK_DATA_SIMILARITY_BY_ATTRIBUTES = true;
 
   /**
    * Gets the adapter instance for attributes.
@@ -98,11 +116,34 @@ public class ApplicationConfig {
    */
   @Bean
   public IStoriesAdapter getStoryAdapter() {
-    return RETURN_MOCK_DATA_STORY ? new StoriesMockAdapter() : new StoriesDBAdapter();
+    return RETURN_MOCK_DATA_STORY ? new StoriesMockAdapter() : new StoriesDBAdapter(new StoriesAssembler(new ObjectMapper()));
+  }
+
+  @Bean
+  public ISupportedAttributesAdapter getSupportedAttributesAdapter() {
+    return RETURN_MOCK_DATA_SUPPORTED_ATTRIBUTES ?
+            new SupportedAttributesMockAdapter() : new SupportedAttributesDBAdapter();
+  }
+
+  @Bean
+  public ISimilarityByAttributeAdapter getSimilarityByAttributeAdapter() {
+    return new SimilarityByAttributeMockAdapter();
+  }
+
+  @Bean
+  public ISimilarityByAttributesAdapter getSimilarityByAttributesAdapter() {
+    return new SimilarityByAttributesMockAdapter();
   }
 
   @Bean
   public RestTemplate restTemplate() {
     return new RestTemplate();
   }
+
+  @Bean
+  public RestHighLevelClient restHighLevelClient() {
+    return new RestHighLevelClient(RestClient
+            .builder(new HttpHost(ES_URL, 443, "https")));
+  }
+
 }

@@ -9,6 +9,13 @@ public class AppConst {
   private static final String DATABASE_URL = "http://54.153.74.217:8080";
   //  private static final String RESOURCES_PATH = "modules/application/src/main/resources";
   private static final String RESOURCES_PATH = "";
+
+  // Elastic Search endpoint
+  public static final String ES_URL =
+          "search-gov-fin-es-3y3ydkxijtitmqim7xxyhtczeq.us-west-1.es.amazonaws.com";
+
+  private static final String ML_ENDPOINT = "http://truthtree-ml.herokuapp.com";
+
   //Attribute Adapter Constants
   public static final String ATTRIBUTES_FILE_PATH = RESOURCES_PATH + "/Attributes.json";
   public static final String ATTRIBUTES_MOCK_SPEC_PATH =
@@ -73,5 +80,12 @@ public class AppConst {
   public static final String BY_REVENUE = "by_revenue";
   public static final String PER_CAPITA = "per_capita";
 
+  //Stories APIs
+  public static final String STORIES_URL_POST = DATABASE_URL + "/api/stories/story";
+  public static final String STORIES_URL_GET = DATABASE_URL+"/api/stories/story/all";
+
+  // Similar State, City and County constants
+  public static final String COMMON_ATTRIBUTES_URL = ML_ENDPOINT + "/api/similar/supported";
+  public static final String COMMON_ATTRIBUTES_PATH = RESOURCES_PATH + "/CommonAttributes.json";
 
 }
