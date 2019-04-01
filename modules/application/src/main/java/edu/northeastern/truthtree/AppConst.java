@@ -79,6 +79,7 @@ public class AppConst {
   //Stories APIs
   public static final String STORIES_URL_POST = DATABASE_URL + "/api/stories/story";
   public static final String STORIES_URL_GET = DATABASE_URL+"/api/stories/story/all";
+  public static final String STORIES_URL_UPDATE_VOTES = DATABASE_URL+"/api/stories/story/{id}/{voteType}";
 
 
 }

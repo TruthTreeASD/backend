@@ -1,21 +1,22 @@
 package edu.northeastern.truthtree.adapter.stories;
 
+import static edu.northeastern.truthtree.AppConst.STORIES_URL_GET;
+import static edu.northeastern.truthtree.AppConst.STORIES_URL_POST;
+import static edu.northeastern.truthtree.AppConst.STORIES_URL_UPDATE_VOTES;
+import static edu.northeastern.truthtree.adapter.utilities.URLUtil.putJSONFromURL;
+
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import org.springframework.web.util.UriComponentsBuilder;
-
-import java.util.List;
-
 import edu.northeastern.truthtree.adapter.utilities.URLUtil;
 import edu.northeastern.truthtree.assembler.StoriesAssembler;
 import edu.northeastern.truthtree.dto.StoryDTO;
 import edu.northeastern.truthtree.enums.OrderType;
-
-import static edu.northeastern.truthtree.AppConst.STORIES_URL_GET;
-import static edu.northeastern.truthtree.AppConst.STORIES_URL_POST;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.web.util.UriComponentsBuilder;
 
 @Component("storiesDBAdapter")
 public class StoriesDBAdapter implements IStoriesAdapter {
@@ -76,5 +77,18 @@ public class StoriesDBAdapter implements IStoriesAdapter {
     String url = builder.toUriString();
     String jsonResponse = URLUtil.readJSONFromURLInString(url);
     return assembler.fromJSONStringToDTOList(jsonResponse);
+  }
+
+  @Override
+  public StoryDTO updateVotes(String id, String type) {
+    Map<String, String> uriParams = new HashMap<String, String>();
+    uriParams.put("id", id);
+    uriParams.put("voteType", type);
+
+    UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(STORIES_URL_UPDATE_VOTES);
+    String url = builder.buildAndExpand(uriParams).toUriString();
+
+    String response = putJSONFromURL(url);
+    return assembler.fromJSONStringToDTO(response);
   }
 }

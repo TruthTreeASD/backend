@@ -1,5 +1,6 @@
 package edu.northeastern.truthtree.adapter.stories;
 
+import org.json.simple.JSONArray;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -43,4 +44,17 @@ public class StoriesMockAdapter implements IStoriesAdapter {
     return response;
   }
 
+  @Override
+  public StoryDTO updateVotes(String id, String type) {
+    StoryDTO storyDTO1 = new StoryDTO();
+    storyDTO1.setId("43232233323");
+    storyDTO1.setAuthor("Alice");
+    List<String> tags1 = new ArrayList<>();
+    tags1.add("Finance");
+    tags1.add("Crime");
+    storyDTO1.setTags(tags1);
+    storyDTO1.setContent("This is my first post");
+
+    return storyDTO1;
+  }
 }
