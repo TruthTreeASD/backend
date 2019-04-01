@@ -43,4 +43,9 @@ public class Stories implements IStories {
   public List<StoryDTO> getPendingStories() {
     return service.getPendingStories();
   }
+
+  @RequestMapping(value = "/api/stories/approve", method = RequestMethod.GET)
+  public StoryDTO approveStory(@RequestParam(value = "id") String id) {
+    return service.approveStory(id);
+  }
 }

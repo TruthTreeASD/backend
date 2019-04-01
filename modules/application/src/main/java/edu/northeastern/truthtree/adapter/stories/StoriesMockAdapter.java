@@ -73,4 +73,17 @@ public class StoriesMockAdapter implements IStoriesAdapter {
     return response;
   }
 
+  @Override
+  public StoryDTO approveStory(String id) {
+    StoryDTO storyDTO2 = new StoryDTO();
+    storyDTO2.setId("4323223321993");
+    storyDTO2.setAuthor("Bob");
+    List<String> tags2 = new ArrayList<>();
+    tags2.add("Finance");
+    tags2.add("Debt");
+    storyDTO2.setTags(tags2);
+    storyDTO2.setContent("This is my second post");
+    return storyDTO2;
+  }
+
 }

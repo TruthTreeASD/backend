@@ -35,4 +35,11 @@ public interface IStoriesAdapter {
    * @return list of pending stories.
    */
   List<StoryDTO> getPendingStories();
+
+  /**
+   * Approves a given story.
+   *
+   * @return story DTO
+   */
+  StoryDTO approveStory(String id);
 }

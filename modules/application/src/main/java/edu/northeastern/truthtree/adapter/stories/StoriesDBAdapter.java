@@ -3,6 +3,8 @@ package edu.northeastern.truthtree.adapter.stories;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import java.util.HashMap;
+import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -14,6 +16,7 @@ import edu.northeastern.truthtree.assembler.StoriesAssembler;
 import edu.northeastern.truthtree.dto.StoryDTO;
 import edu.northeastern.truthtree.enums.OrderType;
 
+import static edu.northeastern.truthtree.AppConst.STORIES_URL_APPROVE_STORY;
 import static edu.northeastern.truthtree.AppConst.STORIES_URL_GET;
 import static edu.northeastern.truthtree.AppConst.STORIES_URL_GET_APPROVED;
 import static edu.northeastern.truthtree.AppConst.STORIES_URL_GET_PENDING;
@@ -94,5 +97,15 @@ public class StoriesDBAdapter implements IStoriesAdapter {
     String url = builder.toUriString();
     String jsonResponse = URLUtil.readJSONFromURLInString(url);
     return assembler.fromJSONStringToDTOList(jsonResponse);
+  }
+
+  @Override
+  public StoryDTO approveStory(String id) {
+    Map<String, String> uriParams = new HashMap<String, String>();
+    uriParams.put("id", id);
+    UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(STORIES_URL_APPROVE_STORY);
+    String url = builder.buildAndExpand(uriParams).toUriString();
+    String jsonResponse = URLUtil.readJSONFromURLInString(url);
+    return assembler.fromJSONStringToDTO(jsonResponse);
   }
 }

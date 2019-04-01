@@ -38,4 +38,9 @@ public class StoriesService implements IStoriesService {
   public List<StoryDTO> getPendingStories() {
     return adapter.getPendingStories();
   }
+
+  @Override
+  public StoryDTO approveStory(String id) {
+    return adapter.approveStory(id);
+  }
 }
