@@ -25,6 +25,6 @@ deploy:
   on:
     branch: develop
   provider: script
-  script: deploy.sh
+  script: sh deploy.sh
   on:
     branch: feature/pull_frontend_from_docker
