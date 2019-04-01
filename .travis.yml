@@ -24,3 +24,7 @@ deploy:
     heroku container:release web --app=truthtree;
   on:
     branch: develop
+  provider: script
+  script: bin/deploy.sh
+  on:
+    branch: feature/pull_frontend_from_docker
