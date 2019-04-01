@@ -33,10 +33,24 @@ public class Stories implements IStories {
     return service.getStories(orderType);
   }
 
+  @RequestMapping(value = "/api/stories/approved", method = RequestMethod.GET)
+  public List<StoryDTO> getApprovedStories() {
+    return service.getApprovedStories();
+  }
+
+  @RequestMapping(value = "/api/stories/pending", method = RequestMethod.GET)
+  public List<StoryDTO> getPendingStories() {
+    return service.getPendingStories();
+  }
+
+  @RequestMapping(value = "/api/stories/approve", method = RequestMethod.GET)
+  public StoryDTO approveStory(@RequestParam(value = "id") String id) {
+    return service.approveStory(id);
+  }
   @RequestMapping(value = "/api/stories/{id}", method = RequestMethod.PUT)
   public StoryDTO updateVotes( @PathVariable String id,
       @RequestParam(value = "type", required = true) String type) {
-    return service.updateVotes(id, type);
+    return service.updateVotes(id, type.toUpperCase());
   }
 
 }

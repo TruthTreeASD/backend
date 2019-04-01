@@ -1,10 +1,8 @@
 package edu.northeastern.truthtree.adapter.stories;
 
-import java.util.List;
-
 import edu.northeastern.truthtree.dto.StoryDTO;
 import edu.northeastern.truthtree.enums.OrderType;
-import org.json.simple.JSONArray;
+import java.util.List;
 
 public interface IStoriesAdapter {
   /**
@@ -24,6 +22,27 @@ public interface IStoriesAdapter {
   List<StoryDTO> getStories(OrderType order);
 
   /**
+   * Returns list of approved stories.
+   *
+   * @return list of approved stories.
+   */
+  List<StoryDTO> getApprovedStories();
+
+  /**
+   * Returns list of pending stories.
+   *
+   * @return list of pending stories.
+   */
+  List<StoryDTO> getPendingStories();
+
+  /**
+   * Approves a given story.
+   *
+   * @return story DTO
+   */
+  StoryDTO approveStory(String id);
+
+  /**
    * Update votes of a story.
    *
    * @param id corresponding to story id
@@ -31,5 +50,4 @@ public interface IStoriesAdapter {
    * @return updated upvotes.
    */
   StoryDTO updateVotes(String id, String type);
-
 }

@@ -1,6 +1,9 @@
 package edu.northeastern.truthtree.adapter.stories;
 
+import static edu.northeastern.truthtree.AppConst.STORIES_URL_APPROVE_STORY;
 import static edu.northeastern.truthtree.AppConst.STORIES_URL_GET;
+import static edu.northeastern.truthtree.AppConst.STORIES_URL_GET_APPROVED;
+import static edu.northeastern.truthtree.AppConst.STORIES_URL_GET_PENDING;
 import static edu.northeastern.truthtree.AppConst.STORIES_URL_POST;
 import static edu.northeastern.truthtree.AppConst.STORIES_URL_UPDATE_VOTES;
 import static edu.northeastern.truthtree.adapter.utilities.URLUtil.putJSONFromURL;
@@ -77,6 +80,32 @@ public class StoriesDBAdapter implements IStoriesAdapter {
     String url = builder.toUriString();
     String jsonResponse = URLUtil.readJSONFromURLInString(url);
     return assembler.fromJSONStringToDTOList(jsonResponse);
+  }
+
+  @Override
+  public List<StoryDTO> getApprovedStories() {
+    UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(STORIES_URL_GET_APPROVED);
+    String url = builder.toUriString();
+    String jsonResponse = URLUtil.readJSONFromURLInString(url);
+    return assembler.fromJSONStringToDTOList(jsonResponse);
+  }
+
+  @Override
+  public List<StoryDTO> getPendingStories() {
+    UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(STORIES_URL_GET_PENDING);
+    String url = builder.toUriString();
+    String jsonResponse = URLUtil.readJSONFromURLInString(url);
+    return assembler.fromJSONStringToDTOList(jsonResponse);
+  }
+
+  @Override
+  public StoryDTO approveStory(String id) {
+    Map<String, String> uriParams = new HashMap<String, String>();
+    uriParams.put("id", id);
+    UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(STORIES_URL_APPROVE_STORY);
+    String url = builder.buildAndExpand(uriParams).toUriString();
+    String jsonResponse = URLUtil.readJSONFromURLInString(url);
+    return assembler.fromJSONStringToDTO(jsonResponse);
   }
 
   @Override
