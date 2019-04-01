@@ -1,12 +1,10 @@
 package edu.northeastern.truthtree.adapter.stories;
 
-import org.springframework.stereotype.Component;
-
-import java.util.ArrayList;
-import java.util.List;
-
 import edu.northeastern.truthtree.dto.StoryDTO;
 import edu.northeastern.truthtree.enums.OrderType;
+import java.util.ArrayList;
+import java.util.List;
+import org.springframework.stereotype.Component;
 
 @Component("storiesMockAdapter")
 public class StoriesMockAdapter implements IStoriesAdapter {
@@ -58,6 +56,18 @@ public class StoriesMockAdapter implements IStoriesAdapter {
     return response;
   }
 
+  public StoryDTO updateVotes(String id, String type) {
+    StoryDTO storyDTO1 = new StoryDTO();
+    storyDTO1.setId("43232233323");
+    storyDTO1.setAuthor("Alice");
+    List<String> tags1 = new ArrayList<>();
+    tags1.add("Finance");
+    tags1.add("Crime");
+    storyDTO1.setTags(tags1);
+    storyDTO1.setContent("This is my first post");
+    return storyDTO1;
+  }
+
   @Override
   public List<StoryDTO> getPendingStories() {
     List<StoryDTO> response = new ArrayList<>();
@@ -85,5 +95,4 @@ public class StoriesMockAdapter implements IStoriesAdapter {
     storyDTO2.setContent("This is my second post");
     return storyDTO2;
   }
-
 }

@@ -1,18 +1,17 @@
 package edu.northeastern.truthtree.controller.stories;
 
+import edu.northeastern.truthtree.dto.StoryDTO;
+import edu.northeastern.truthtree.enums.OrderType;
+import edu.northeastern.truthtree.service.stories.IStoriesService;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
-
-import edu.northeastern.truthtree.dto.StoryDTO;
-import edu.northeastern.truthtree.enums.OrderType;
-import edu.northeastern.truthtree.service.stories.IStoriesService;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
@@ -48,4 +47,10 @@ public class Stories implements IStories {
   public StoryDTO approveStory(@RequestParam(value = "id") String id) {
     return service.approveStory(id);
   }
+  @RequestMapping(value = "/api/stories/{id}", method = RequestMethod.PUT)
+  public StoryDTO updateVotes( @PathVariable String id,
+      @RequestParam(value = "type", required = true) String type) {
+    return service.updateVotes(id, type);
+  }
+
 }

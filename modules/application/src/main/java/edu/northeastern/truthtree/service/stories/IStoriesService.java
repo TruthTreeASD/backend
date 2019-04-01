@@ -1,9 +1,8 @@
 package edu.northeastern.truthtree.service.stories;
 
-import java.util.List;
-
 import edu.northeastern.truthtree.dto.StoryDTO;
 import edu.northeastern.truthtree.enums.OrderType;
+import java.util.List;
 
 public interface IStoriesService {
   /**
@@ -42,4 +41,14 @@ public interface IStoriesService {
    * @return story DTO
    */
   StoryDTO approveStory(String id);
+
+  /**
+   * Updates votes of a type and story id
+   *
+   * @param id represents how story id.
+   * @param type represents upvote or downvote.
+   * @return updated value.
+   */
+  StoryDTO updateVotes(String id, String type);
+
 }

@@ -1,14 +1,12 @@
 package edu.northeastern.truthtree.service.stories;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Component;
-
-import java.util.List;
-
 import edu.northeastern.truthtree.adapter.stories.IStoriesAdapter;
 import edu.northeastern.truthtree.dto.StoryDTO;
 import edu.northeastern.truthtree.enums.OrderType;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
 @Component
 public class StoriesService implements IStoriesService {
@@ -40,7 +38,11 @@ public class StoriesService implements IStoriesService {
   }
 
   @Override
-  public StoryDTO approveStory(String id) {
-    return adapter.approveStory(id);
+  public StoryDTO approveStory(String id) { return adapter.approveStory(id); }
+
+  @Override
+  public StoryDTO updateVotes(String id, String type) {
+    return adapter.updateVotes(id, type);
   }
+
 }
