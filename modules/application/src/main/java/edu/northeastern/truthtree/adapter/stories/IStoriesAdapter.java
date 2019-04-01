@@ -22,4 +22,17 @@ public interface IStoriesAdapter {
    */
   List<StoryDTO> getStories(OrderType order);
 
+  /**
+   * Returns list of approved stories.
+   *
+   * @return list of approved stories.
+   */
+  List<StoryDTO> getApprovedStories();
+
+  /**
+   * Returns list of pending stories.
+   *
+   * @return list of pending stories.
+   */
+  List<StoryDTO> getPendingStories();
 }

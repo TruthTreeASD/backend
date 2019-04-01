@@ -28,4 +28,14 @@ public class StoriesService implements IStoriesService {
   public List<StoryDTO> getStories(OrderType orderType) {
     return adapter.getStories(orderType);
   }
+
+  @Override
+  public List<StoryDTO> getApprovedStories() {
+    return adapter.getApprovedStories();
+  }
+
+  @Override
+  public List<StoryDTO> getPendingStories() {
+    return adapter.getPendingStories();
+  }
 }

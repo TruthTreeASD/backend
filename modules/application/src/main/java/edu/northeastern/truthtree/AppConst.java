@@ -79,6 +79,8 @@ public class AppConst {
   //Stories APIs
   public static final String STORIES_URL_POST = DATABASE_URL + "/api/stories/story";
   public static final String STORIES_URL_GET = DATABASE_URL+"/api/stories/story/all";
+  public static final String STORIES_URL_GET_APPROVED = DATABASE_URL+"/api/stories/story/approved";
+  public static final String STORIES_URL_GET_PENDING = DATABASE_URL+"/api/stories/story/pending";
 
 
 }

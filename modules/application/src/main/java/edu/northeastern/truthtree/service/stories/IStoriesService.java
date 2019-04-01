@@ -21,4 +21,18 @@ public interface IStoriesService {
    * @return list of stories.
    */
   List<StoryDTO> getStories(OrderType orderType);
+
+  /**
+   * Returns list of approved stories.
+   *
+   * @return list of approved stories.
+   */
+  List<StoryDTO> getApprovedStories();
+
+  /**
+   * Returns list of pending stories.
+   *
+   * @return list of pending stories.
+   */
+  List<StoryDTO> getPendingStories();
 }

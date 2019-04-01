@@ -33,4 +33,14 @@ public class Stories implements IStories {
   public List<StoryDTO> getStories(@RequestParam(value = "orderType", required = false) OrderType orderType) {
     return service.getStories(orderType);
   }
+
+  @RequestMapping(value = "/api/stories/approved", method = RequestMethod.GET)
+  public List<StoryDTO> getApprovedStories() {
+    return service.getApprovedStories();
+  }
+
+  @RequestMapping(value = "/api/stories/pending", method = RequestMethod.GET)
+  public List<StoryDTO> getPendingStories() {
+    return service.getPendingStories();
+  }
 }
