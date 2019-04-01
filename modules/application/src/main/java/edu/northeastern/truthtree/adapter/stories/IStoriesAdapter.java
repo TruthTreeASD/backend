@@ -28,9 +28,8 @@ public interface IStoriesAdapter {
    *
    * @param id corresponding to story id
    * @param type corresponding to action upvote or downvote
-   * @param value corresponding to updated value of votes
    * @return updated upvotes.
    */
-  JSONArray updateVotes(String id, String type, int value);
+  StoryDTO updateVotes(String id, String type);
 
 }

@@ -31,8 +31,8 @@ public class StoriesService implements IStoriesService {
   }
 
   @Override
-  public JSONArray updateVotes(String id, String type, int value) {
-    return adapter.updateVotes(id, type, value);
+  public StoryDTO updateVotes(String id, String type) {
+    return adapter.updateVotes(id, type);
   }
 
 }

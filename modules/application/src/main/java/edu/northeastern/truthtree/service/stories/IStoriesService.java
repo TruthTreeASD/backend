@@ -28,9 +28,8 @@ public interface IStoriesService {
    *
    * @param id represents how story id.
    * @param type represents upvote or downvote.
-   * @param value represents upvote or downvote value.
    * @return updated value.
    */
-  JSONArray updateVotes(String id, String type, int value);
+  StoryDTO updateVotes(String id, String type);
 
 }

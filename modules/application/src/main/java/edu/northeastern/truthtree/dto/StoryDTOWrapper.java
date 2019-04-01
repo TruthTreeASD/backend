@@ -14,8 +14,8 @@ public class StoryDTOWrapper {
     return this.respCode;
   }
 
-  public void setData(StoryDTO data) {
-    this.data = data;
+  public void setData(StoryDTO[] data) {
+    this.data = data[0];
   }
 
   public StoryDTO getData() {

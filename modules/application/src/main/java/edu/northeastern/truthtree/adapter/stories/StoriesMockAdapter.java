@@ -45,7 +45,16 @@ public class StoriesMockAdapter implements IStoriesAdapter {
   }
 
   @Override
-  public JSONArray updateVotes(String id, String type, int value) {
-    return new JSONArray();
+  public StoryDTO updateVotes(String id, String type) {
+    StoryDTO storyDTO1 = new StoryDTO();
+    storyDTO1.setId("43232233323");
+    storyDTO1.setAuthor("Alice");
+    List<String> tags1 = new ArrayList<>();
+    tags1.add("Finance");
+    tags1.add("Crime");
+    storyDTO1.setTags(tags1);
+    storyDTO1.setContent("This is my first post");
+
+    return storyDTO1;
   }
 }
