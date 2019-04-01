@@ -50,7 +50,7 @@ public class Stories implements IStories {
   @RequestMapping(value = "/api/stories/{id}", method = RequestMethod.PUT)
   public StoryDTO updateVotes( @PathVariable String id,
       @RequestParam(value = "type", required = true) String type) {
-    return service.updateVotes(id, type);
+    return service.updateVotes(id, type.toUpperCase());
   }
 
 }
