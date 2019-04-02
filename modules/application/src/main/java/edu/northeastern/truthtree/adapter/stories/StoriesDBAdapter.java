@@ -17,6 +17,7 @@ import edu.northeastern.truthtree.enums.OrderType;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -118,6 +119,12 @@ public class StoriesDBAdapter implements IStoriesAdapter {
     String url = builder.buildAndExpand(uriParams).toUriString();
 
     String response = putJSONFromURL(url);
-    return assembler.fromJSONStringToDTO(response);
+    StoryDTO storyDTO = assembler.fromJSONStringToDTO(response);
+    if (Objects.equals(type, "UPVOTE")) {
+      storyDTO.setUpvote(storyDTO.getUpvote() + 1);
+    } else if (Objects.equals(type, "DOWNVOTE")) {
+      storyDTO.setDownvote(storyDTO.getDownvote() + 1);
+    }
+    return storyDTO;
   }
 }
