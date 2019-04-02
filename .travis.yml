@@ -9,13 +9,25 @@ install:
   - wget -qO- https://toolbelt.heroku.com/install.sh | sh
   # login to heroku
   - echo "$HEROKU_PASSWORD" | docker login -u "$HEROKU_USERNAME" --password-stdin registry.heroku.com
+  - pip install --user awscli
+  - export PATH=$PATH:$HOME/.local/bin
+
+  - add-apt-repository ppa:eugenesan/ppa
+  - apt-get update
+  - apt-get install jq -y
+
+  - curl https://raw.githubusercontent.com/silinternational/ecs-deploy/master/ecs-deploy | sudo tee -a /usr/bin/ecs-deploy
+  - sudo chmod +x /usr/bin/ecs-deploy
+
+    # Use this for AWS ECR
+  - eval $(aws ecr get-login --region us-west-2)
 
 script:
   # build docker image
   - mvn clean install
   - docker build -t truthtree:test .
   - docker tag truthtree:test registry.heroku.com/truthtree/web
-  - chmod +x ./deploy.sh
+  - docker tag truthtree:test $IMAGE_REPO_URL:latest
 
 deploy:
   provider: script
@@ -26,6 +38,9 @@ deploy:
   on:
     branch: develop
   provider: script
-  script: sh deploy.sh
+  script:
+    #docker tag truthtree:test 869798252720.dkr.ecr.us-west-2.amazonaws.com/truthtree:latest
+    docker push $IMAGE_REPO_URL:latest
+    ecs-deploy -c $CLUSTER_NAME -n $SERVICE_NAME -i $IMAGE_REPO_URL:latest
   on:
     branch: feature/pull_frontend_from_docker
