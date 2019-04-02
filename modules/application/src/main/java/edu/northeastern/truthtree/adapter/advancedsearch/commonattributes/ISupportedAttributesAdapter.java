@@ -1,7 +1,11 @@
 package edu.northeastern.truthtree.adapter.advancedsearch.commonattributes;
 
+import edu.northeastern.truthtree.dto.CommonAttributeDTO;
+
+import java.util.List;
+
 public interface ISupportedAttributesAdapter {
 
-    Object getSupportedAttributes(String placeType);
+    List<CommonAttributeDTO> getSupportedAttributes();
 
 }

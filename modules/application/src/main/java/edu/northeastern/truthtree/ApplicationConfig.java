@@ -1,6 +1,7 @@
 package edu.northeastern.truthtree;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import edu.northeastern.truthtree.assembler.CommonAttributesAssembler;
 import org.apache.http.HttpHost;
 import org.elasticsearch.client.RestClient;
 import org.elasticsearch.client.RestHighLevelClient;
@@ -122,7 +123,8 @@ public class ApplicationConfig {
   @Bean
   public ISupportedAttributesAdapter getSupportedAttributesAdapter() {
     return RETURN_MOCK_DATA_SUPPORTED_ATTRIBUTES ?
-            new SupportedAttributesMockAdapter() : new SupportedAttributesDBAdapter();
+            new SupportedAttributesMockAdapter() :
+            new SupportedAttributesDBAdapter(new CommonAttributesAssembler(new ObjectMapper()));
   }
 
   @Bean

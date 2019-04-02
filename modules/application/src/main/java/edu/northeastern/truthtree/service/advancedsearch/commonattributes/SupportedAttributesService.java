@@ -1,8 +1,11 @@
 package edu.northeastern.truthtree.service.advancedsearch.commonattributes;
 
 import edu.northeastern.truthtree.adapter.advancedsearch.commonattributes.ISupportedAttributesAdapter;
+import edu.northeastern.truthtree.dto.CommonAttributeDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 @Component
 public class SupportedAttributesService implements ISupportedAttributesService {
@@ -15,7 +18,7 @@ public class SupportedAttributesService implements ISupportedAttributesService {
     }
 
     @Override
-    public Object getSupportedAttributes(String placeType) {
-        return adapter.getSupportedAttributes(placeType);
+    public List<CommonAttributeDTO> getSupportedAttributes() {
+        return adapter.getSupportedAttributes();
     }
 }

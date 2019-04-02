@@ -14,7 +14,7 @@ public class AppConst {
   public static final String ES_URL =
           "search-gov-fin-es-3y3ydkxijtitmqim7xxyhtczeq.us-west-1.es.amazonaws.com";
 
-  private static final String ML_ENDPOINT = "http://truthtree-ml.herokuapp.com";
+  private static final String ML_ENDPOINT = "https://rest-ml.herokuapp.com";
 
   //Attribute Adapter Constants
   public static final String ATTRIBUTES_FILE_PATH = RESOURCES_PATH + "/Attributes.json";
