@@ -26,7 +26,7 @@ install:
     && echo 'export PATH="$HOME/anaconda3/bin:$PATH"' >> ~/.bashrc
     && source ~/.bashrc
     && conda create -n py27 python=2.7.16 -y
-    && conda activate py27
+    && source activate py27
 
 
 after_success:
