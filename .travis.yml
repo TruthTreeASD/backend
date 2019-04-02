@@ -29,7 +29,7 @@ script:
   - mvn clean install
   - docker build -t truthtree:test .
   - docker tag truthtree:test registry.heroku.com/truthtree/web
-  - docker tag truthtree:test $IMAGE_REPO_URL:latest
+  - docker tag truthtree:test 869798252720.dkr.ecr.us-west-2.amazonaws.com/truthtree:latest
 
 deploy:
   provider: heroku
@@ -42,7 +42,7 @@ deploy:
   provider: script
   script:
     #docker tag truthtree:test 869798252720.dkr.ecr.us-west-2.amazonaws.com/truthtree:latest
-    docker push $IMAGE_REPO_URL:latest
+    docker push 869798252720.dkr.ecr.us-west-2.amazonaws.com/truthtree:latest
     ecs-deploy -c $CLUSTER_NAME -n $SERVICE_NAME -i $IMAGE_REPO_URL:latest
   on:
     branch: feature/pull_frontend_from_docker
