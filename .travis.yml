@@ -22,7 +22,7 @@ after_success:
     - pip install --user awscli
     - export PATH=$PATH:$HOME/.local/bin
     # login to ECR
-    - eval $(aws ecr get-login --region us-west-2)
+    - eval $(aws ecr get-login --no-include-email --region us-west-2)
 
 script:
   # build docker image
@@ -32,7 +32,7 @@ script:
   - docker tag truthtree:test $IMAGE_REPO_URL:latest
 
 deploy:
-  provider: script
+  provider: heroku
   script:
     # push to heroku
     docker push registry.heroku.com/truthtree/web;
