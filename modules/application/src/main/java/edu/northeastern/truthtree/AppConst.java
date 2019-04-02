@@ -83,16 +83,14 @@ public class AppConst {
   //Stories APIs
   public static final String STORIES_URL_POST = DATABASE_URL + "/api/stories/story";
   public static final String STORIES_URL_GET = DATABASE_URL+"/api/stories/story/all";
-<<<<<<< HEAD
 
   // Similar State, City and County constants
   public static final String COMMON_ATTRIBUTES_URL = ML_ENDPOINT + "/api/similar/supported";
   public static final String COMMON_ATTRIBUTES_PATH = RESOURCES_PATH + "/CommonAttributes.json";
 
-=======
   public static final String STORIES_URL_GET_APPROVED = DATABASE_URL+"/api/stories/story/approved";
   public static final String STORIES_URL_GET_PENDING = DATABASE_URL+"/api/stories/story/pending";
   public static final String STORIES_URL_APPROVE_STORY = DATABASE_URL+"/api/stories/story/approve/{id}";
   public static final String STORIES_URL_UPDATE_VOTES = DATABASE_URL+"/api/stories/story/{id}/{voteType}";
->>>>>>> 4a55ced660a95402d7d36b23cab0b42fc31464f5
+
 }
