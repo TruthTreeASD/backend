@@ -19,13 +19,14 @@ install:
 
   # install python using conda
   - >-
-      wget https://repo.continuum.io/archive/Anaconda3-5.0.1-Linux-x86_64.sh -O ~/anaconda3.sh
-      || true
-      && bash ~/anaconda3.sh -b -p ~/anaconda3 || true
-      && rm ~/anaconda3.sh
-      && echo 'export PATH="$HOME/anaconda3/bin:$PATH"' >> ~/.profile
-      && conda create -n py27 python=2.7.16
-      && conda activate py27
+    wget https://repo.continuum.io/archive/Anaconda3-5.0.1-Linux-x86_64.sh -O ~/anaconda3.sh
+    || true
+    && bash ~/anaconda3.sh -b -p ~/anaconda3 || true
+    && rm ~/anaconda3.sh
+    && echo 'export PATH="$HOME/anaconda3/bin:$PATH"' >> ~/.bashrc
+    && source ~/.bashrc
+    && conda create -n py27 python=2.7.16
+    && conda activate py27
 
 
 after_success:
