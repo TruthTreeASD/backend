@@ -55,6 +55,6 @@ deploy:
   script:
     #docker tag truthtree:test 869798252720.dkr.ecr.us-west-2.amazonaws.com/truthtree:latest
     docker push $IMAGE_REPO_URL:latest;
-    ecs-deploy -c $CLUSTER_NAME -n $SERVICE_NAME -i $IMAGE_REPO_URL:latest -r us-west-2;
+    ecs-deploy -c $CLUSTER_NAME -n $SERVICE_NAME -i $IMAGE_REPO_URL:latest -r us-west-2 --timeout 600;
   on:
     branch: feature/pull_frontend_from_docker
