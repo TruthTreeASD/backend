@@ -10,17 +10,19 @@ install:
   - wget -qO- https://toolbelt.heroku.com/install.sh | sh
   # login to heroku
   - echo "$HEROKU_PASSWORD" | docker login -u "$HEROKU_USERNAME" --password-stdin registry.heroku.com
-  # install AWS CLI
-  - pip install --user awscli
-  - export PATH=$PATH:$HOME/.local/bin
-  # login to ECR
-  - eval $(aws ecr get-login --region us-west-2)
 
+  # install ecs-deploy
   - sudo apt-get update
   - sudo apt-get install jq -y
-
   - curl https://raw.githubusercontent.com/silinternational/ecs-deploy/master/ecs-deploy | sudo tee -a /usr/bin/ecs-deploy
   - sudo chmod +x /usr/bin/ecs-deploy
+
+after_success:
+    # install AWS CLI
+    - pip install --user awscli
+    - export PATH=$PATH:$HOME/.local/bin
+    # login to ECR
+    - eval $(aws ecr get-login --region us-west-2)
 
 script:
   # build docker image
