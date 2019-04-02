@@ -1,0 +1,181 @@
+[{
+  "name": "population",
+  "id": 1,
+  "display_name": "Population General"
+},
+  {
+    "name": "total_expenditure",
+    "id": 130,
+    "display_name": "Expenditure Unemployment Revenue"
+  },
+  {
+    "name": "general_nec_current_exp",
+    "id": 385,
+    "display_name": "Current Expenditure General Expenses not elsewhere classified"
+  },
+  {
+    "name": "total_revenue",
+    "id": 4,
+    "display_name": "Total Revenue General"
+  },
+  {
+    "name": "total_rev_own_sources",
+    "id": 5,
+    "display_name": "Total Rev Own Sources General"
+  },
+  {
+    "name": "general_revenue",
+    "id": 6,
+    "display_name": "General Revenue"
+  },
+  {
+    "name": "gen_rev_own_sources",
+    "id": 7,
+    "display_name": "Gen Rev Own Sources General"
+  },
+  {
+    "name": "total_taxes",
+    "id": 8,
+    "display_name": "Total Taxes"
+  },
+  {
+    "name": "property_tax",
+    "id": 9,
+    "display_name": "Property Taxes"
+  },
+  {
+    "name": "tot_sales___gr_rec_tax",
+    "id": 10,
+    "display_name": "Tot Sales Gr Rec Taxes"
+  },
+  {
+    "name": "direct_expenditure",
+    "id": 132,
+    "display_name": "Direct Expenditure Totals"
+  },
+  {
+    "name": "total_current_expend",
+    "id": 133,
+    "display_name": "Current Expenditure Totals"
+  },
+  {
+    "name": "total_current_oper",
+    "id": 134,
+    "display_name": "Current Oper Totals"
+  },
+  {
+    "name": "total_capital_outlays",
+    "id": 135,
+    "display_name": "Capital Outlay Totals"
+  },
+  {
+    "name": "total_ltd_out",
+    "id": 527,
+    "display_name": "Total Long Term Debt Outstanding"
+  },
+  {
+    "name": "total_construction",
+    "id": 136,
+    "display_name": "Construction Totals"
+  },
+  {
+    "name": "ltd_out_all_other",
+    "id": 529,
+    "display_name": "All Other Long Term Debt Outstanding"
+  },
+  {
+    "name": "total_other_capital_outlays",
+    "id": 137,
+    "display_name": "Other Capital Outlays Totals"
+  },
+  {
+    "name": "total_interest_on_debt",
+    "id": 139,
+    "display_name": "Interest on Debt Totals"
+  },
+  {
+    "name": "total_salaries___wages",
+    "id": 141,
+    "display_name": "Salaries Wages Totals"
+  },
+  {
+    "name": "general_expenditure",
+    "id": 142,
+    "display_name": "General Expenditure"
+  },
+  {
+    "name": "direct_general_expend",
+    "id": 146,
+    "display_name": "Direct Expenditure General Expenses"
+  },
+  {
+    "name": "ltd_out_general",
+    "id": 535,
+    "display_name": "General Long Term Debt Outstanding"
+  },
+  {
+    "name": "general_current_expend",
+    "id": 147,
+    "display_name": "General Current Expend General Expenses"
+  },
+  {
+    "name": "general_current_oper",
+    "id": 148,
+    "display_name": "General Current Oper General Expenses"
+  },
+  {
+    "name": "ltd_out_gen_other_nec",
+    "id": 538,
+    "display_name": "Gen Other NEC Long Term Debt Outstanding"
+  },
+  {
+    "name": "general_capital_outlay",
+    "id": 149,
+    "display_name": "Capital Outlay General Expenses"
+  },
+  {
+    "name": "general_construction",
+    "id": 150,
+    "display_name": "General Construction General Expenses"
+  },
+  {
+    "name": "general_capital_outlay_other",
+    "id": 151,
+    "display_name": "General Capital Outlay Other General Expenses"
+  },
+  {
+    "name": "general_debt_interest",
+    "id": 153,
+    "display_name": "General Debt Interest General Expenses"
+  },
+  {
+    "name": "total_ig_revenue",
+    "id": 39,
+    "display_name": "Total Intergovernmental Revenue"
+  },
+  {
+    "name": "total_fed_ig_revenue",
+    "id": 40,
+    "display_name": "Total Intergovernmental Revenue Federal"
+  },
+  {
+    "name": "total_highways_tot_exp",
+    "id": 262,
+    "display_name": "Total Expenditure Highways"
+  },
+  {
+    "name": "total_debt_outstanding",
+    "id": 426,
+    "display_name": "Total Outstanding Debt Totals"
+  },
+  {
+    "name": "total_long_term_debt_out",
+    "id": 427,
+    "display_name": "Long Term Debt Out Debt Totals"
+  },
+  {
+    "name": "total_highways_dir_exp",
+    "id": 263,
+    "display_name": "Total Dir Exp Highways"
+  }
+]
