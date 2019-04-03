@@ -2,61 +2,68 @@ package edu.northeastern.truthtree.dto;
 
 public class SingleAttributePayloadDTO {
 
-    private int id;
-    private int place_type;
-    private int attribute;
-    private int normalize_by;
+    private String id;
+    private String place_type;
+    private String attribute;
+    private String normalize_by;
     private YearRange year_range;
-    private int count;
+    private String count;
 
     SingleAttributePayloadDTO() {}
 
-    public int getId() { return id; }
+    public String getId() {
+        return id;
+    }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public int getPlaceType() {
+    public String getPlace_type() {
         return place_type;
     }
 
-    public void setPlaceType(int place_type) {
+    public void setPlace_type(String place_type) {
         this.place_type = place_type;
     }
 
-    public int getNormalizeBy() { return normalize_by; }
+    public String getAttribute() {
+        return attribute;
+    }
 
-    public void setNormalizeBy(int normalize_by) {
+    public void setAttribute(String attribute) {
+        this.attribute = attribute;
+    }
+
+    public String getNormalize_by() {
+        return normalize_by;
+    }
+
+    public void setNormalize_by(String normalize_by) {
         this.normalize_by = normalize_by;
     }
 
-    public int getAttribute() { return attribute; }
-
-    public void setAttribute(int attribute) { this.attribute = attribute; }
-
-    public int getCount() {
-        return count;
-    }
-
-    public void setCount(int count) {
-        this.count = count;
-    }
-
-    public YearRange getYearRange() {
+    public YearRange getYear_range() {
         return year_range;
     }
 
-    public void setYearRange(int start, int end) {
-        YearRange yearRange = new YearRange(start, end);
-        this.year_range = yearRange;
+    public void setYear_range(YearRange year_range) {
+        this.year_range = year_range;
+    }
+
+    public String getCount() {
+        return count;
+    }
+
+    public void setCount(String count) {
+        this.count = count;
     }
 
     private class YearRange {
-        int start;
-        int end;
+        String start;
+        String end;
 
-        YearRange(int start, int end) {
+        YearRange(String start, String end) {
             this.start = start;
             this.end = end;
         }

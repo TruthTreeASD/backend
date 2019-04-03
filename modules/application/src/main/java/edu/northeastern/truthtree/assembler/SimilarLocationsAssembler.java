@@ -3,6 +3,7 @@ package edu.northeastern.truthtree.assembler;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
 import edu.northeastern.truthtree.dto.CommonAttributeDTO;
+import edu.northeastern.truthtree.dto.SimilarPlacesDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -10,12 +11,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class CommonAttributesAssembler {
+public class SimilarLocationsAssembler {
 
     private ObjectMapper mapper;
 
     @Autowired
-    public CommonAttributesAssembler(ObjectMapper mapper) {
+    public SimilarLocationsAssembler(ObjectMapper mapper) {
         this.mapper = mapper;
     }
 
@@ -29,17 +30,30 @@ public class CommonAttributesAssembler {
         return commonAttributeDTO;
     }
 
-    public List<CommonAttributeDTO> getJSONStringToDTOList(String jsonStr) {
-        List<CommonAttributeDTO> commonAttributeDTOWrapperListDTO = new ArrayList<>();
+    public List<CommonAttributeDTO> getJSONStringToCommonAttributeDTOList(String jsonStr) {
+        List<CommonAttributeDTO> commonAttributeDTOList = new ArrayList<>();
         try {
             CollectionType collectionType = mapper
                     .getTypeFactory()
                     .constructCollectionType(List.class, CommonAttributeDTO.class);
-            commonAttributeDTOWrapperListDTO = mapper.readValue(jsonStr, collectionType);
+            commonAttributeDTOList = mapper.readValue(jsonStr, collectionType);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return commonAttributeDTOWrapperListDTO;
+        return commonAttributeDTOList;
+    }
+
+    public List<SimilarPlacesDTO> getJSONStringToSimilarPlacesDTOList(String jsonStr) {
+        List<SimilarPlacesDTO> similarPlacesDTOList = new ArrayList<>();
+        try {
+            CollectionType collectionType = mapper
+                    .getTypeFactory()
+                    .constructCollectionType(List.class, SimilarPlacesDTO.class);
+            similarPlacesDTOList = mapper.readValue(jsonStr, collectionType);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return similarPlacesDTOList;
     }
 
 }

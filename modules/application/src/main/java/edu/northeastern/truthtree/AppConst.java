@@ -87,6 +87,7 @@ public class AppConst {
   // Similar State, City and County constants
   public static final String COMMON_ATTRIBUTES_URL = ML_ENDPOINT + "/api/similar/supported";
   public static final String COMMON_ATTRIBUTES_PATH = RESOURCES_PATH + "/CommonAttributes.json";
+  public static final String SIMILAR_PLACES_URL = ML_ENDPOINT + "/api/similar/";
 
   public static final String STORIES_URL_GET_APPROVED = DATABASE_URL+"/api/stories/story/approved";
   public static final String STORIES_URL_GET_PENDING = DATABASE_URL+"/api/stories/story/pending";

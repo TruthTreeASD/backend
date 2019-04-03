@@ -1,7 +1,7 @@
 package edu.northeastern.truthtree;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import edu.northeastern.truthtree.assembler.CommonAttributesAssembler;
+import edu.northeastern.truthtree.assembler.SimilarLocationsAssembler;
 import org.apache.http.HttpHost;
 import org.elasticsearch.client.RestClient;
 import org.elasticsearch.client.RestHighLevelClient;
@@ -10,9 +10,9 @@ import edu.northeastern.truthtree.adapter.advancedsearch.similarityby.multipleat
 import edu.northeastern.truthtree.adapter.advancedsearch.similarityby.multipleattributes.SimilarityByAttributesMockAdapter;
 import edu.northeastern.truthtree.adapter.advancedsearch.similarityby.singleattribute.ISimilarityByAttributeAdapter;
 import edu.northeastern.truthtree.adapter.advancedsearch.similarityby.singleattribute.SimilarityByAttributeMockAdapter;
-import edu.northeastern.truthtree.adapter.advancedsearch.commonattributes.ISupportedAttributesAdapter;
-import edu.northeastern.truthtree.adapter.advancedsearch.commonattributes.SupportedAttributesDBAdapter;
-import edu.northeastern.truthtree.adapter.advancedsearch.commonattributes.SupportedAttributesMockAdapter;
+import edu.northeastern.truthtree.adapter.advancedsearch.ISimilarLocationsAdapter;
+import edu.northeastern.truthtree.adapter.advancedsearch.SimilarLocationsDBAdapter;
+import edu.northeastern.truthtree.adapter.advancedsearch.SimilarLocationsMockAdapter;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -121,10 +121,10 @@ public class ApplicationConfig {
   }
 
   @Bean
-  public ISupportedAttributesAdapter getSupportedAttributesAdapter() {
+  public ISimilarLocationsAdapter getSupportedAttributesAdapter() {
     return RETURN_MOCK_DATA_SUPPORTED_ATTRIBUTES ?
-            new SupportedAttributesMockAdapter() :
-            new SupportedAttributesDBAdapter(new CommonAttributesAssembler(new ObjectMapper()));
+            new SimilarLocationsMockAdapter() :
+            new SimilarLocationsDBAdapter(new SimilarLocationsAssembler(new ObjectMapper()));
   }
 
   @Bean

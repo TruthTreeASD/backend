@@ -1,13 +1,13 @@
-package edu.northeastern.truthtree.controller.advancedsearch;
+package edu.northeastern.truthtree.service.advancedsearch;
 
 import edu.northeastern.truthtree.dto.CommonAttributeDTO;
 import edu.northeastern.truthtree.dto.SimilarPlacesDTO;
 
 import java.util.List;
 
-public interface ISimilarLocations {
+public interface ISimilarLocationsService {
 
-    List<CommonAttributeDTO> getAttributes();
+    List<CommonAttributeDTO> getSupportedAttributes();
 
     List<SimilarPlacesDTO> getSimilarLocations(String id,
                                                String placeType,
@@ -15,4 +15,5 @@ public interface ISimilarLocations {
                                                String normalizeBy,
                                                List<String> year,
                                                String count);
+
 }
