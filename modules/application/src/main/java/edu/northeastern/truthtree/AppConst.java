@@ -13,7 +13,8 @@ public class AppConst {
   // Elastic Search endpoint
   public static final String ES_URL =
           "search-gov-fin-es-3y3ydkxijtitmqim7xxyhtczeq.us-west-1.es.amazonaws.com";
-
+  //login hash
+  public static final String PASSWORD_HASH = "$2a$10$bxqqs1qQ9CKptVf4IuxVGeN4yOkBAumtYNRL7mwXjVF6AoM7fbFle";
   private static final String ML_ENDPOINT = "https://rest-ml.herokuapp.com";
 
   //Attribute Adapter Constants
@@ -92,5 +93,4 @@ public class AppConst {
   public static final String STORIES_URL_GET_PENDING = DATABASE_URL+"/api/stories/story/pending";
   public static final String STORIES_URL_APPROVE_STORY = DATABASE_URL+"/api/stories/story/approve/{id}";
   public static final String STORIES_URL_UPDATE_VOTES = DATABASE_URL+"/api/stories/story/{id}/{voteType}";
-
 }
