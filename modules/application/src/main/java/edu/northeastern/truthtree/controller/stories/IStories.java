@@ -1,8 +1,9 @@
 package edu.northeastern.truthtree.controller.stories;
 
+import java.util.List;
+
 import edu.northeastern.truthtree.dto.StoryDTO;
 import edu.northeastern.truthtree.enums.OrderType;
-import java.util.List;
 
 
 public interface IStories {
@@ -45,9 +46,16 @@ public interface IStories {
   /**
    * Upvote a story.
    *
-   * @param id corresponding to story id
+   * @param id   corresponding to story id
    * @param type corresponding to action upvote or downvote
    */
- StoryDTO updateVotes(String id, String type);
+  StoryDTO updateVotes(String id, String type);
+
+  /**
+   * Deletes story from the system.
+   *
+   * @param id corresponding to the story id in String.
+   */
+  void deleteStory(String id);
 
 }

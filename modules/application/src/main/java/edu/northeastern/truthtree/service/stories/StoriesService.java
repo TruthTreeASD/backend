@@ -49,4 +49,9 @@ public class StoriesService implements IStoriesService {
     return adapter.updateVotes(id, type);
   }
 
+  @Override
+  public void deleteStory(String id) {
+    adapter.deleteStory(id);
+  }
+
 }

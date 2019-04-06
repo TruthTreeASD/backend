@@ -1,6 +1,7 @@
 package edu.northeastern.truthtree.adapter.stories;
 
 import static edu.northeastern.truthtree.AppConst.STORIES_URL_APPROVE_STORY;
+import static edu.northeastern.truthtree.AppConst.STORIES_URL_DELETE;
 import static edu.northeastern.truthtree.AppConst.STORIES_URL_GET;
 import static edu.northeastern.truthtree.AppConst.STORIES_URL_GET_APPROVED;
 import static edu.northeastern.truthtree.AppConst.STORIES_URL_GET_PENDING;
@@ -10,6 +11,8 @@ import static edu.northeastern.truthtree.adapter.utilities.URLUtil.putJSONFromUR
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.sun.jndi.toolkit.url.UrlUtil;
+
 import edu.northeastern.truthtree.adapter.utilities.URLUtil;
 import edu.northeastern.truthtree.assembler.StoriesAssembler;
 import edu.northeastern.truthtree.dto.StoryDTO;
@@ -118,5 +121,14 @@ public class StoriesDBAdapter implements IStoriesAdapter {
 
     String response = putJSONFromURL(url);
     return assembler.fromJSONStringToDTO(response);
+  }
+
+  @Override
+  public void deleteStory(String id) {
+    Map<String, String> uriParams = new HashMap<String, String>();
+    uriParams.put("id", id);
+    UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(STORIES_URL_DELETE);
+    String url = builder.buildAndExpand(uriParams).toUriString();
+    URLUtil.deleteJSONFromURL(url);
   }
 }
