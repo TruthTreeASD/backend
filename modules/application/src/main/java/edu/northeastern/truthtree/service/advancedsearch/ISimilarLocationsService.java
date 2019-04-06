@@ -9,11 +9,11 @@ public interface ISimilarLocationsService {
 
     List<CommonAttributeDTO> getSupportedAttributes();
 
-    List<SimilarPlacesDTO> getSimilarLocations(String id,
-                                               String placeType,
+    List<SimilarPlacesDTO> getSimilarLocations(int id,
+                                               int placeType,
                                                List<Integer> attributes,
-                                               String normalizeBy,
-                                               List<String> year,
-                                               String count);
+                                               int normalizeBy,
+                                               List<Integer> year,
+                                               Integer count) throws Exception ;
 
 }

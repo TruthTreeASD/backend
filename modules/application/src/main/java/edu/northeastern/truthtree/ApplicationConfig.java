@@ -6,10 +6,6 @@ import org.apache.http.HttpHost;
 import org.elasticsearch.client.RestClient;
 import org.elasticsearch.client.RestHighLevelClient;
 
-import edu.northeastern.truthtree.adapter.advancedsearch.similarityby.multipleattributes.ISimilarityByAttributesAdapter;
-import edu.northeastern.truthtree.adapter.advancedsearch.similarityby.multipleattributes.SimilarityByAttributesMockAdapter;
-import edu.northeastern.truthtree.adapter.advancedsearch.similarityby.singleattribute.ISimilarityByAttributeAdapter;
-import edu.northeastern.truthtree.adapter.advancedsearch.similarityby.singleattribute.SimilarityByAttributeMockAdapter;
 import edu.northeastern.truthtree.adapter.advancedsearch.ISimilarLocationsAdapter;
 import edu.northeastern.truthtree.adapter.advancedsearch.SimilarLocationsDBAdapter;
 import edu.northeastern.truthtree.adapter.advancedsearch.SimilarLocationsMockAdapter;
@@ -121,20 +117,10 @@ public class ApplicationConfig {
   }
 
   @Bean
-  public ISimilarLocationsAdapter getSupportedAttributesAdapter() {
+  public ISimilarLocationsAdapter getSimilarLocationsAdapter() {
     return RETURN_MOCK_DATA_SUPPORTED_ATTRIBUTES ?
             new SimilarLocationsMockAdapter() :
             new SimilarLocationsDBAdapter(new SimilarLocationsAssembler(new ObjectMapper()));
-  }
-
-  @Bean
-  public ISimilarityByAttributeAdapter getSimilarityByAttributeAdapter() {
-    return new SimilarityByAttributeMockAdapter();
-  }
-
-  @Bean
-  public ISimilarityByAttributesAdapter getSimilarityByAttributesAdapter() {
-    return new SimilarityByAttributesMockAdapter();
   }
 
   @Bean

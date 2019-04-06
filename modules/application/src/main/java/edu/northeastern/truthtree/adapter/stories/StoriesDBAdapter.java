@@ -40,8 +40,7 @@ public class StoriesDBAdapter implements IStoriesAdapter {
     } catch (JsonProcessingException e) {
       e.printStackTrace();
     }
-    String jsonResponse = URLUtil.postJSONFromURL(STORIES_URL_POST, jsonString);
-//    return assembler.fromJSONStringToDTO(jsonResponse);
+    URLUtil.postJSONFromURL(STORIES_URL_POST, jsonString);
     return storyDTO;
   }
 
