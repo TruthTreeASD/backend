@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+import edu.northeastern.truthtree.dto.NameValueDTO;
 import edu.northeastern.truthtree.dto.StoryDTO;
 import edu.northeastern.truthtree.enums.OrderType;
 import edu.northeastern.truthtree.enums.StoryStatus;
@@ -63,6 +64,11 @@ public class Stories implements IStories {
   @RequestMapping(value = "/api/stories/{id}", method = RequestMethod.DELETE)
   public void deleteStory(@PathVariable String id) {
     service.deleteStory(id);
+  }
+
+  @RequestMapping(value = "/api/stories/order", method = RequestMethod.GET)
+  public List<NameValueDTO> getOrderType() {
+    return service.getOrderType();
   }
 
 }
