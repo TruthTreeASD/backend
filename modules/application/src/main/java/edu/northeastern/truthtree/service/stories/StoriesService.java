@@ -9,6 +9,7 @@ import java.util.List;
 import edu.northeastern.truthtree.adapter.stories.IStoriesAdapter;
 import edu.northeastern.truthtree.dto.StoryDTO;
 import edu.northeastern.truthtree.enums.OrderType;
+import edu.northeastern.truthtree.enums.StoryStatus;
 
 @Component
 public class StoriesService implements IStoriesService {
@@ -25,8 +26,8 @@ public class StoriesService implements IStoriesService {
   }
 
   @Override
-  public List<StoryDTO> getStories(OrderType orderType) {
-    return adapter.getStories(orderType);
+  public List<StoryDTO> getStories(OrderType orderType, StoryStatus storyStatus) {
+    return adapter.getStories(orderType, storyStatus);
   }
 
   @Override
@@ -53,5 +54,4 @@ public class StoriesService implements IStoriesService {
   public void deleteStory(String id) {
     adapter.deleteStory(id);
   }
-
 }
