@@ -1,6 +1,5 @@
 package edu.northeastern.truthtree.controller.advancedsearch;
 
-<<<<<<< HEAD
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,7 +7,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
@@ -17,20 +15,9 @@ import edu.northeastern.truthtree.dto.CommonAttributeDTO;
 import edu.northeastern.truthtree.dto.SimilarPlacesDTO;
 import edu.northeastern.truthtree.service.advancedsearch.ISimilarLocationsService;
 
-=======
-import edu.northeastern.truthtree.dto.CommonAttributeDTO;
-import edu.northeastern.truthtree.service.advancedsearch.commonattributes.ISupportedAttributesService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
-
->>>>>>> 41daaf689657d57e715e06997abfc043380cb549
 @RestController
 @CrossOrigin(value = "*", maxAge = 3600)
 public class SimilarLocations implements ISimilarLocations {
-
-<<<<<<< HEAD
   private ISimilarLocationsService service;
 
   @Autowired
@@ -46,12 +33,12 @@ public class SimilarLocations implements ISimilarLocations {
 
   @Override
   @RequestMapping(value = "/api/similarlocations", method = RequestMethod.GET)
-  public List<SimilarPlacesDTO> getSimilarLocations(@RequestParam(name = "id", required = true) int id,
-                                                    @RequestParam(name = "place_type", required = true)
+  public List<SimilarPlacesDTO> getSimilarLocations(@RequestParam(name = "id") int id,
+                                                    @RequestParam(name = "place_type")
                                                             int placeType,
-                                                    @RequestParam(name = "attribute", required = true)
+                                                    @RequestParam(name = "attribute")
                                                             List<Integer> attributes,
-                                                    @RequestParam(name = "normalize_by", required = true)
+                                                    @RequestParam(name = "normalize_by")
                                                             int normalizeBy,
                                                     @RequestParam(name = "year", required = false) List<Integer> year,
                                                     @RequestParam(name = "count", required = false) Integer count,
@@ -65,19 +52,4 @@ public class SimilarLocations implements ISimilarLocations {
     }
     return serviceResponse;
   }
-
-=======
-    private ISupportedAttributesService service;
-
-    @Autowired
-    public SimilarLocations(ISupportedAttributesService service) {
-        this.service = service;
-    }
-
-    @Override
-    @RequestMapping(value = "/api/similarlocations/attributes", method = RequestMethod.GET)
-    public List<CommonAttributeDTO> getAttributes() {
-        return service.getSupportedAttributes();
-    }
->>>>>>> 41daaf689657d57e715e06997abfc043380cb549
 }
