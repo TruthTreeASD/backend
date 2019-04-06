@@ -66,7 +66,6 @@ public class SimilarLocationsDBAdapter implements ISimilarLocationsAdapter {
       }
 
       response = URLUtil.postJSONFromURL(SIMILAR_PLACES_URL + "multi", jsonString);
-      System.out.println(response);
 
     } else {
       SingleAttributeDTO attributeDTO = new SingleAttributeDTO();
