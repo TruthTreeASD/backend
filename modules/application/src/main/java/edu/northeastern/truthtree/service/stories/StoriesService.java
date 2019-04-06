@@ -4,10 +4,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 import edu.northeastern.truthtree.adapter.stories.IStoriesAdapter;
+import edu.northeastern.truthtree.dto.NameValueDTO;
 import edu.northeastern.truthtree.dto.StoryDTO;
+import edu.northeastern.truthtree.enums.NormalizationType;
 import edu.northeastern.truthtree.enums.OrderType;
 
 @Component
@@ -52,6 +57,23 @@ public class StoriesService implements IStoriesService {
   @Override
   public void deleteStory(String id) {
     adapter.deleteStory(id);
+  }
+
+  /**
+   * Returns supported story order types in name-display value format.
+   *
+   * @return Object containing list of story order types.
+   */
+  @Override
+  public List<NameValueDTO> getOrderType() {
+    List<NameValueDTO> orderTypes = new ArrayList<>();
+    for (OrderType type : OrderType.values()) {
+      NameValueDTO nameValueDTO = new NameValueDTO();
+      nameValueDTO.setName(type.name());
+      nameValueDTO.setValue(type.getValue());
+      orderTypes.add(nameValueDTO);
+    }
+    return orderTypes;
   }
 
 }

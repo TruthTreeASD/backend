@@ -2,6 +2,7 @@ package edu.northeastern.truthtree.service.stories;
 
 import java.util.List;
 
+import edu.northeastern.truthtree.dto.NameValueDTO;
 import edu.northeastern.truthtree.dto.StoryDTO;
 import edu.northeastern.truthtree.enums.OrderType;
 
@@ -58,5 +59,12 @@ public interface IStoriesService {
    * @param id represents story id in String.
    */
   void deleteStory(String id);
+
+  /**
+   * Returns supported story order types in name-display value format.
+   *
+   * @return Object containing list of story order types.
+   */
+  List<NameValueDTO> getOrderType();
 
 }
