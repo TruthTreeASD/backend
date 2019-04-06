@@ -54,6 +54,4 @@ public class StoriesService implements IStoriesService {
   public void deleteStory(String id) {
     adapter.deleteStory(id);
   }
-
-
 }
