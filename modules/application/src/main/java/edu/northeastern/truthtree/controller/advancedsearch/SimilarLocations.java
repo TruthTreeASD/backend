@@ -1,5 +1,6 @@
 package edu.northeastern.truthtree.controller.advancedsearch;
 
+<<<<<<< HEAD
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,10 +17,20 @@ import edu.northeastern.truthtree.dto.CommonAttributeDTO;
 import edu.northeastern.truthtree.dto.SimilarPlacesDTO;
 import edu.northeastern.truthtree.service.advancedsearch.ISimilarLocationsService;
 
+=======
+import edu.northeastern.truthtree.dto.CommonAttributeDTO;
+import edu.northeastern.truthtree.service.advancedsearch.commonattributes.ISupportedAttributesService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+>>>>>>> 41daaf689657d57e715e06997abfc043380cb549
 @RestController
 @CrossOrigin(value = "*", maxAge = 3600)
 public class SimilarLocations implements ISimilarLocations {
 
+<<<<<<< HEAD
   private ISimilarLocationsService service;
 
   @Autowired
@@ -55,4 +66,18 @@ public class SimilarLocations implements ISimilarLocations {
     return serviceResponse;
   }
 
+=======
+    private ISupportedAttributesService service;
+
+    @Autowired
+    public SimilarLocations(ISupportedAttributesService service) {
+        this.service = service;
+    }
+
+    @Override
+    @RequestMapping(value = "/api/similarlocations/attributes", method = RequestMethod.GET)
+    public List<CommonAttributeDTO> getAttributes() {
+        return service.getSupportedAttributes();
+    }
+>>>>>>> 41daaf689657d57e715e06997abfc043380cb549
 }

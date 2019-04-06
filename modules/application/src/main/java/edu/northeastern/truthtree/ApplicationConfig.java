@@ -1,19 +1,17 @@
 package edu.northeastern.truthtree;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import edu.northeastern.truthtree.assembler.SimilarLocationsAssembler;
+
 import org.apache.http.HttpHost;
 import org.elasticsearch.client.RestClient;
 import org.elasticsearch.client.RestHighLevelClient;
-
-import edu.northeastern.truthtree.adapter.advancedsearch.ISimilarLocationsAdapter;
-import edu.northeastern.truthtree.adapter.advancedsearch.SimilarLocationsDBAdapter;
-import edu.northeastern.truthtree.adapter.advancedsearch.SimilarLocationsMockAdapter;
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
 
+import edu.northeastern.truthtree.adapter.advancedsearch.ISimilarLocationsAdapter;
+import edu.northeastern.truthtree.adapter.advancedsearch.SimilarLocationsDBAdapter;
+import edu.northeastern.truthtree.adapter.advancedsearch.SimilarLocationsMockAdapter;
 import edu.northeastern.truthtree.adapter.attributes.AttributesDBAdapter;
 import edu.northeastern.truthtree.adapter.attributes.AttributesMockAdapter;
 import edu.northeastern.truthtree.adapter.attributes.IAttributesAdapter;
@@ -32,6 +30,7 @@ import edu.northeastern.truthtree.adapter.stories.StoriesMockAdapter;
 import edu.northeastern.truthtree.adapter.timerange.ITimeRangeAdapter;
 import edu.northeastern.truthtree.adapter.timerange.TimeRangeDBAdapter;
 import edu.northeastern.truthtree.adapter.timerange.TimeRangeMockAdapter;
+import edu.northeastern.truthtree.assembler.SimilarLocationsAssembler;
 import edu.northeastern.truthtree.assembler.StoriesAssembler;
 
 import static edu.northeastern.truthtree.AppConst.ES_URL;
@@ -98,8 +97,9 @@ public class ApplicationConfig {
 
   /**
    * Gets the adapter instance for time range.
-   * @return if RETURN_MOCK_DATA_TIME_RANGE is true, the mock time range adapter, database
-   * 				 time range adapter otherwise.
+   *
+   * @return if RETURN_MOCK_DATA_TIME_RANGE is true, the mock time range adapter, database time
+   * range adapter otherwise.
    */
   @Bean
   public ITimeRangeAdapter getTimeRangeAdapter() {
@@ -108,8 +108,9 @@ public class ApplicationConfig {
 
   /**
    * Gets the adapter instance for time range.
-   * @return if RETURN_MOCK_DATA_TIME_RANGE is true, the mock time range adapter, database
-   * 				 time range adapter otherwise.
+   *
+   * @return if RETURN_MOCK_DATA_TIME_RANGE is true, the mock time range adapter, database time
+   * range adapter otherwise.
    */
   @Bean
   public IStoriesAdapter getStoryAdapter() {
@@ -121,6 +122,7 @@ public class ApplicationConfig {
     return RETURN_MOCK_DATA_SUPPORTED_ATTRIBUTES ?
             new SimilarLocationsMockAdapter() :
             new SimilarLocationsDBAdapter(new SimilarLocationsAssembler(new ObjectMapper()));
+
   }
 
   @Bean
