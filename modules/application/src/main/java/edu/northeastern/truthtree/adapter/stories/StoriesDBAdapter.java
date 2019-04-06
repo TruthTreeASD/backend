@@ -1,5 +1,22 @@
 package edu.northeastern.truthtree.adapter.stories;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.web.util.UriComponentsBuilder;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import edu.northeastern.truthtree.adapter.utilities.URLUtil;
+import edu.northeastern.truthtree.assembler.StoriesAssembler;
+import edu.northeastern.truthtree.dto.StoryDTO;
+import edu.northeastern.truthtree.enums.OrderType;
+import edu.northeastern.truthtree.enums.StoryStatus;
+
 import static edu.northeastern.truthtree.AppConst.STORIES_URL_APPROVE_STORY;
 import static edu.northeastern.truthtree.AppConst.STORIES_URL_DELETE;
 import static edu.northeastern.truthtree.AppConst.STORIES_URL_GET;
@@ -8,21 +25,6 @@ import static edu.northeastern.truthtree.AppConst.STORIES_URL_GET_PENDING;
 import static edu.northeastern.truthtree.AppConst.STORIES_URL_POST;
 import static edu.northeastern.truthtree.AppConst.STORIES_URL_UPDATE_VOTES;
 import static edu.northeastern.truthtree.adapter.utilities.URLUtil.putJSONFromURL;
-
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.sun.jndi.toolkit.url.UrlUtil;
-
-import edu.northeastern.truthtree.adapter.utilities.URLUtil;
-import edu.northeastern.truthtree.assembler.StoriesAssembler;
-import edu.northeastern.truthtree.dto.StoryDTO;
-import edu.northeastern.truthtree.enums.OrderType;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import org.springframework.web.util.UriComponentsBuilder;
 
 @Component("storiesDBAdapter")
 public class StoriesDBAdapter implements IStoriesAdapter {
@@ -48,7 +50,7 @@ public class StoriesDBAdapter implements IStoriesAdapter {
   }
 
   @Override
-  public List<StoryDTO> getStories(OrderType order) {
+  public List<StoryDTO> getStories(OrderType order, StoryStatus storyStatus) {
     String fieldName = null;
     String sortBy = null;
     if (order == null) {
@@ -77,9 +79,16 @@ public class StoriesDBAdapter implements IStoriesAdapter {
           sortBy = "desc";
       }
     }
-    UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(STORIES_URL_GET + "/" + fieldName);
-    builder.queryParam("orderType", sortBy);
-    String url = builder.toUriString();
+    Map<String, String> uriParams = new HashMap<String, String>();
+    if (storyStatus == null) {
+      uriParams.put("status", StoryStatus.APPROVED.name());
+    } else {
+      uriParams.put("status", storyStatus.name());
+    }
+    UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(STORIES_URL_GET);
+    builder.queryParam("order", sortBy);
+    builder.queryParam("orderBy", fieldName);
+    String url = builder.buildAndExpand(uriParams).toUriString();
     String jsonResponse = URLUtil.readJSONFromURLInString(url);
     return assembler.fromJSONStringToDTOList(jsonResponse);
   }

@@ -4,6 +4,7 @@ import java.util.List;
 
 import edu.northeastern.truthtree.dto.StoryDTO;
 import edu.northeastern.truthtree.enums.OrderType;
+import edu.northeastern.truthtree.enums.StoryStatus;
 
 public interface IStoriesAdapter {
   /**
@@ -20,7 +21,7 @@ public interface IStoriesAdapter {
    * @param order containing specified order.
    * @return list of stories.
    */
-  List<StoryDTO> getStories(OrderType order);
+  List<StoryDTO> getStories(OrderType order, StoryStatus storyStatus);
 
   /**
    * Returns list of approved stories.

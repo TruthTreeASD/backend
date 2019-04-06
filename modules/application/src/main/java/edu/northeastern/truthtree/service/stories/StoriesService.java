@@ -5,15 +5,13 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 
 import edu.northeastern.truthtree.adapter.stories.IStoriesAdapter;
 import edu.northeastern.truthtree.dto.NameValueDTO;
 import edu.northeastern.truthtree.dto.StoryDTO;
-import edu.northeastern.truthtree.enums.NormalizationType;
 import edu.northeastern.truthtree.enums.OrderType;
+import edu.northeastern.truthtree.enums.StoryStatus;
 
 @Component
 public class StoriesService implements IStoriesService {
@@ -30,8 +28,8 @@ public class StoriesService implements IStoriesService {
   }
 
   @Override
-  public List<StoryDTO> getStories(OrderType orderType) {
-    return adapter.getStories(orderType);
+  public List<StoryDTO> getStories(OrderType orderType, StoryStatus storyStatus) {
+    return adapter.getStories(orderType, storyStatus);
   }
 
   @Override
@@ -75,5 +73,4 @@ public class StoriesService implements IStoriesService {
     }
     return orderTypes;
   }
-
 }

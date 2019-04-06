@@ -14,6 +14,7 @@ import java.util.List;
 import edu.northeastern.truthtree.dto.NameValueDTO;
 import edu.northeastern.truthtree.dto.StoryDTO;
 import edu.northeastern.truthtree.enums.OrderType;
+import edu.northeastern.truthtree.enums.StoryStatus;
 import edu.northeastern.truthtree.service.stories.IStoriesService;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -32,8 +33,10 @@ public class Stories implements IStories {
   }
 
   @RequestMapping(value = "/api/stories", method = RequestMethod.GET)
-  public List<StoryDTO> getStories(@RequestParam(value = "orderType", required = false) OrderType orderType) {
-    return service.getStories(orderType);
+  public List<StoryDTO> getStories(@RequestParam(value = "orderType", required = false) OrderType orderType,
+                                   @RequestParam(value = "storyStatus", required = false) StoryStatus storyStatus
+  ) {
+    return service.getStories(orderType, storyStatus);
   }
 
   @RequestMapping(value = "/api/stories/approved", method = RequestMethod.GET)

@@ -12,6 +12,7 @@ import java.util.List;
 import edu.northeastern.truthtree.adapter.utilities.URLUtil;
 import edu.northeastern.truthtree.assembler.SimilarLocationsAssembler;
 import edu.northeastern.truthtree.dto.CommonAttributeDTO;
+import edu.northeastern.truthtree.dto.LocationDTO;
 import edu.northeastern.truthtree.dto.MultipleAttributeDTO;
 import edu.northeastern.truthtree.dto.SimilarPlacesDTO;
 import edu.northeastern.truthtree.dto.SingleAttributeDTO;
@@ -38,12 +39,12 @@ public class SimilarLocationsDBAdapter implements ISimilarLocationsAdapter {
   }
 
   @Override
-  public List<SimilarPlacesDTO> getSimilarLocations(int id,
-                                                    int placeType,
-                                                    List<Integer> attributes,
-                                                    int normalizeBy,
-                                                    List<Integer> year,
-                                                    Integer count) {
+  public List<LocationDTO> getSimilarLocations(int id,
+                                               int placeType,
+                                               List<Integer> attributes,
+                                               int normalizeBy,
+                                               List<Integer> year,
+                                               Integer count) {
     String response = "";
     if (attributes.size() > 1) {
       MultipleAttributeDTO attributeDTO = new MultipleAttributeDTO();

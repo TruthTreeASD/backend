@@ -5,6 +5,7 @@ import java.util.List;
 import edu.northeastern.truthtree.dto.NameValueDTO;
 import edu.northeastern.truthtree.dto.StoryDTO;
 import edu.northeastern.truthtree.enums.OrderType;
+import edu.northeastern.truthtree.enums.StoryStatus;
 
 public interface IStoriesService {
   /**
@@ -21,7 +22,7 @@ public interface IStoriesService {
    * @param orderType represents how story will be sorted.
    * @return list of stories.
    */
-  List<StoryDTO> getStories(OrderType orderType);
+  List<StoryDTO> getStories(OrderType orderType, StoryStatus storyStatus);
 
   /**
    * Returns list of approved stories.

@@ -12,7 +12,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletResponse;
 
 import edu.northeastern.truthtree.dto.CommonAttributeDTO;
-import edu.northeastern.truthtree.dto.SimilarPlacesDTO;
+import edu.northeastern.truthtree.dto.LocationDTO;
 import edu.northeastern.truthtree.service.advancedsearch.ISimilarLocationsService;
 
 @RestController
@@ -33,21 +33,21 @@ public class SimilarLocations implements ISimilarLocations {
 
   @Override
   @RequestMapping(value = "/api/similarlocations", method = RequestMethod.GET)
-  public List<SimilarPlacesDTO> getSimilarLocations(@RequestParam(name = "id") int id,
-                                                    @RequestParam(name = "place_type")
-                                                            int placeType,
-                                                    @RequestParam(name = "attribute")
-                                                            List<Integer> attributes,
-                                                    @RequestParam(name = "normalize_by")
-                                                            int normalizeBy,
-                                                    @RequestParam(name = "year", required = false) List<Integer> year,
-                                                    @RequestParam(name = "count", required = false) Integer count,
-                                                    HttpServletResponse response) throws Exception {
+  public List<LocationDTO> getSimilarLocations(@RequestParam(name = "id") int id,
+                                               @RequestParam(name = "place_type")
+                                                       int placeType,
+                                               @RequestParam(name = "attribute")
+                                                       List<Integer> attributes,
+                                               @RequestParam(name = "normalize_by")
+                                                       int normalizeBy,
+                                               @RequestParam(name = "year", required = false) List<Integer> year,
+                                               @RequestParam(name = "count", required = false) Integer count,
+                                               HttpServletResponse response) throws Exception {
 
-    List<SimilarPlacesDTO> serviceResponse = null;
-    try{
+    List<LocationDTO> serviceResponse = null;
+    try {
       serviceResponse = service.getSimilarLocations(id, placeType, attributes, normalizeBy, year, count);
-    } catch (Exception e){
+    } catch (Exception e) {
       response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());
     }
     return serviceResponse;
