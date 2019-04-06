@@ -31,7 +31,7 @@ public class StoriesAssembler {
     } catch (IOException e) {
       e.printStackTrace();
     }
-    return storyDTO.getData();
+    return storyDTO.getData().getData();
   }
 
   public StoryDTO fromJSONStringToDTO(String jsonString) {

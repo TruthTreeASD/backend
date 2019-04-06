@@ -1,12 +1,19 @@
 package edu.northeastern.truthtree.dto;
 
-import java.util.List;
-
 public class StoryDTOWrapperList {
   private int respCode;
-  private List<StoryDTO> data;
   private boolean ok;
   private String message;
+
+  public StoryPaginationResponseDTO getData() {
+    return data;
+  }
+
+  public void setData(StoryPaginationResponseDTO data) {
+    this.data = data;
+  }
+
+  private StoryPaginationResponseDTO data;
 
   public void setRespCode(int respCode) {
     this.respCode = respCode;
@@ -14,14 +21,6 @@ public class StoryDTOWrapperList {
 
   public int getRespCode() {
     return this.respCode;
-  }
-
-  public void setData(List<StoryDTO> data) {
-    this.data = data;
-  }
-
-  public List<StoryDTO> getData() {
-    return this.data;
   }
 
   public void setOk(boolean ok) {

@@ -1,10 +1,5 @@
 package edu.northeastern.truthtree.dto;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import io.swagger.models.auth.In;
-
 public class SingleAttributeDTO {
   private int id;
   private int place_type;

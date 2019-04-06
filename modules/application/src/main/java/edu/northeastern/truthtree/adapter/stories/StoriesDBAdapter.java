@@ -11,12 +11,13 @@ import static edu.northeastern.truthtree.adapter.utilities.URLUtil.putJSONFromUR
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.sun.jndi.toolkit.url.UrlUtil;
 
 import edu.northeastern.truthtree.adapter.utilities.URLUtil;
 import edu.northeastern.truthtree.assembler.StoriesAssembler;
 import edu.northeastern.truthtree.dto.StoryDTO;
 import edu.northeastern.truthtree.enums.OrderType;
+import edu.northeastern.truthtree.enums.StoryStatus;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -48,7 +49,7 @@ public class StoriesDBAdapter implements IStoriesAdapter {
   }
 
   @Override
-  public List<StoryDTO> getStories(OrderType order) {
+  public List<StoryDTO> getStories(OrderType order, StoryStatus storyStatus) {
     String fieldName = null;
     String sortBy = null;
     if (order == null) {
@@ -77,9 +78,16 @@ public class StoriesDBAdapter implements IStoriesAdapter {
           sortBy = "desc";
       }
     }
-    UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(STORIES_URL_GET + "/" + fieldName);
-    builder.queryParam("orderType", sortBy);
-    String url = builder.toUriString();
+    Map<String, String> uriParams = new HashMap<String, String>();
+    if(storyStatus==null){
+      uriParams.put("status", StoryStatus.APPROVED.name());
+    } else{
+      uriParams.put("status", storyStatus.name());
+    }
+    UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(STORIES_URL_GET);
+    builder.queryParam("order", sortBy);
+    builder.queryParam("orderBy", fieldName);
+    String url = builder.buildAndExpand(uriParams).toUriString();
     String jsonResponse = URLUtil.readJSONFromURLInString(url);
     return assembler.fromJSONStringToDTOList(jsonResponse);
   }
@@ -131,4 +139,5 @@ public class StoriesDBAdapter implements IStoriesAdapter {
     String url = builder.buildAndExpand(uriParams).toUriString();
     URLUtil.deleteJSONFromURL(url);
   }
+
 }

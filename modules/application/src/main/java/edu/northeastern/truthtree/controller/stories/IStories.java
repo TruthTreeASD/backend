@@ -4,6 +4,7 @@ import java.util.List;
 
 import edu.northeastern.truthtree.dto.StoryDTO;
 import edu.northeastern.truthtree.enums.OrderType;
+import edu.northeastern.truthtree.enums.StoryStatus;
 
 
 public interface IStories {
@@ -16,11 +17,13 @@ public interface IStories {
   StoryDTO createStory(StoryDTO storyDTO);
 
   /**
-   * Returns all the posted stories.
+   * Returns all the posted stories. If storyState is not provided, it returns all by default to an
+   * admin, approved to a non-admin user. If orderType is not provided, it returns story with max
+   * upvotes (more popular story).
    *
    * @return list of stories
    */
-  List<StoryDTO> getStories(OrderType orderType);
+  List<StoryDTO> getStories(OrderType orderType, StoryStatus storyStatus);
 
   /**
    * Returns the approved stories.
