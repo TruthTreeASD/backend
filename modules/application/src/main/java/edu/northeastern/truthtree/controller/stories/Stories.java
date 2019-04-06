@@ -53,4 +53,10 @@ public class Stories implements IStories {
     return service.updateVotes(id, type.toUpperCase());
   }
 
+  @Override
+  @RequestMapping(value = "/api/stories/{id}", method = RequestMethod.DELETE)
+  public void deleteStory(@PathVariable String id) {
+    service.deleteStory(id);
+  }
+
 }

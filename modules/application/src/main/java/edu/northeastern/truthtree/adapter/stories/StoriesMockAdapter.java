@@ -69,6 +69,11 @@ public class StoriesMockAdapter implements IStoriesAdapter {
   }
 
   @Override
+  public void deleteStory(String id) {
+
+  }
+
+  @Override
   public List<StoryDTO> getPendingStories() {
     List<StoryDTO> response = new ArrayList<>();
     StoryDTO storyDTO2 = new StoryDTO();

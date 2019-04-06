@@ -1,6 +1,14 @@
 package edu.northeastern.truthtree.adapter.utilities;
 
 import org.json.simple.JSONArray;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.client.RestTemplateBuilder;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
+import org.springframework.web.client.RestTemplate;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
@@ -10,10 +18,20 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
 
+import javax.servlet.http.HttpServletResponse;
+
 /**
  * Represents the methods needed to read JSON from a URL API.
  */
+@Component
 public class URLUtil {
+
+  private static RestTemplate restTemplate = null;
+
+  @Autowired
+  public URLUtil(RestTemplate restTemplate) {
+    this.restTemplate = restTemplate;
+  }
 
   /**
    * Reads the content form a web address and converts it into a JSONArray.
@@ -22,14 +40,11 @@ public class URLUtil {
    * @return JSONArray in the form of the text on the web page
    */
   public static JSONArray readJSONFromURL(String url) {
-
     String jsonString = readURL(url);
-
     return JSONUtil.stringToJSONArray(jsonString);
   }
 
   public static String readJSONFromURLInString(String url) {
-
     return readURL(url);
   }
 
@@ -40,27 +55,9 @@ public class URLUtil {
    * @return Web contents as a string
    */
   private static String readURL(String url) {
-    String line;
-    URL urlObj;
-    StringBuilder response = new StringBuilder();
-
-    try {
-      urlObj = new URL(url);
-      URLConnection connection = urlObj.openConnection();
-
-      BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-
-      while ((line = br.readLine()) != null) {
-        response.append(line);
-      }
-
-      br.close();
-
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
-
-    return response.toString();
+    ResponseEntity<String> response
+            = restTemplate.getForEntity(url, String.class);
+    return response.getBody();
   }
 
   /**
@@ -70,42 +67,11 @@ public class URLUtil {
    * @return Web contents as a string
    */
   public static String postJSONFromURL(String url, String jsonString) {
-    StringBuffer response = new StringBuffer();
-    try {
-      URL postUrl = new URL(url);
-      HttpURLConnection con = (HttpURLConnection) postUrl.openConnection();
-      con.setRequestMethod("POST");
-      con.setDoOutput(true);
-      con.setRequestProperty("Content-Type", "application/json");
-      DataOutputStream write = null;
-      try {
-        write = new DataOutputStream(con.getOutputStream());
-        write.writeBytes(jsonString);
-        BufferedReader in = new BufferedReader(
-                new InputStreamReader(con.getInputStream()));
-        String output;
-        response = new StringBuffer();
-        while ((output = in.readLine()) != null) {
-          response.append(output);
-        }
-        System.out.println(response);
-        in.close();
-      } catch (IOException exception) {
-        throw exception;
-      } finally {
-        try {
-          if (write != null) {
-            write.close();
-          }
-        } catch (IOException ex) {
-          ex.printStackTrace();
-        }
-      }
-
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
-    return response.toString();
+    HttpHeaders headers = new HttpHeaders();
+    headers.setContentType(MediaType.APPLICATION_JSON);
+    HttpEntity<String> entity = new HttpEntity<String>(jsonString, headers);
+    ResponseEntity<String> response = restTemplate.postForEntity(url, entity, String.class);
+    return response.getBody();
   }
 
   /**
@@ -115,40 +81,14 @@ public class URLUtil {
    * @return Web contents as a string
    */
   public static String putJSONFromURL(String url) {
-    StringBuffer response = new StringBuffer();
-    try {
-      URL putUrl = new URL(url);
-      HttpURLConnection con = (HttpURLConnection) putUrl.openConnection();
-      con.setRequestMethod("PUT");
-      con.setDoOutput(true);
-      con.setRequestProperty("Content-Type", "application/json");
-      DataOutputStream write = null;
-      try {
-        write = new DataOutputStream(con.getOutputStream());
-        BufferedReader in = new BufferedReader(
-            new InputStreamReader(con.getInputStream()));
-        String output;
-        response = new StringBuffer();
-        while ((output = in.readLine()) != null) {
-          response.append(output);
-        }
-        System.out.println(response);
-        in.close();
-      } catch (IOException exception) {
-        throw exception;
-      } finally {
-        try {
-          if (write != null) {
-            write.close();
-          }
-        } catch (IOException ex) {
-          ex.printStackTrace();
-        }
-      }
+    HttpHeaders headers = new HttpHeaders();
+    headers.setContentType(MediaType.APPLICATION_JSON);
+    HttpEntity<String> entity = new HttpEntity<String>("", headers);
+    restTemplate.put(url, entity, String.class);
+    return "";
+  }
 
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
-    return response.toString();
+  public static void deleteJSONFromURL(String url){
+    restTemplate.delete(url);
   }
 }
