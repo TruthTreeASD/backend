@@ -29,20 +29,6 @@ public interface IStories {
   List<StoryDTO> getStories(OrderType orderType, StoryStatus storyStatus);
 
   /**
-   * Returns the approved stories.
-   *
-   * @return list of approved stories
-   */
-  List<StoryDTO> getApprovedStories();
-
-  /**
-   * Returns the pending stories.
-   *
-   * @return list of pending stories
-   */
-  List<StoryDTO> getPendingStories();
-
-  /**
    * Changes status of a given story.
    *
    * @return story String

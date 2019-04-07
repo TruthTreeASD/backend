@@ -35,16 +35,6 @@ public class StoriesService implements IStoriesService {
   }
 
   @Override
-  public List<StoryDTO> getApprovedStories() {
-    return adapter.getApprovedStories();
-  }
-
-  @Override
-  public List<StoryDTO> getPendingStories() {
-    return adapter.getPendingStories();
-  }
-
-  @Override
   public String changeStatusStory(String status, String id) {
     return adapter.changeStatusStory(status, id);
   }

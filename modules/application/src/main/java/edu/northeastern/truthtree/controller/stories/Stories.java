@@ -41,16 +41,6 @@ public class Stories implements IStories {
     return service.getStories(orderType, storyStatus);
   }
 
-  @RequestMapping(value = "/api/stories/approved", method = RequestMethod.GET)
-  public List<StoryDTO> getApprovedStories() {
-    return service.getApprovedStories();
-  }
-
-  @RequestMapping(value = "/api/stories/pending", method = RequestMethod.GET)
-  public List<StoryDTO> getPendingStories() {
-    return service.getPendingStories();
-  }
-
   @RequestMapping(value = "/api/stories/story/{status}/{id}", method = RequestMethod.PUT)
   public String changeStatusStory(@PathVariable String status, @PathVariable String id) {
     return service.changeStatusStory(status.toUpperCase(), id);
