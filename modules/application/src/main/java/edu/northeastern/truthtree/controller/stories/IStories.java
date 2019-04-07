@@ -1,14 +1,18 @@
 package edu.northeastern.truthtree.controller.stories;
 
+import edu.northeastern.truthtree.enums.VoteType;
 import java.util.List;
 
 import edu.northeastern.truthtree.dto.NameValueDTO;
 import edu.northeastern.truthtree.dto.StoryDTO;
 import edu.northeastern.truthtree.enums.OrderType;
 import edu.northeastern.truthtree.enums.StoryStatus;
+import org.json.simple.JSONObject;
+import org.springframework.http.ResponseEntity;
 
 
 public interface IStories {
+
   /**
    * Posts a user story.
    *
@@ -27,33 +31,19 @@ public interface IStories {
   List<StoryDTO> getStories(OrderType orderType, StoryStatus storyStatus);
 
   /**
-   * Returns the approved stories.
+   * Changes status of a given story.
    *
-   * @return list of approved stories
    */
-  List<StoryDTO> getApprovedStories();
-
-  /**
-   * Returns the pending stories.
-   *
-   * @return list of pending stories
-   */
-  List<StoryDTO> getPendingStories();
-
-  /**
-   * Approves a given story.
-   *
-   * @return story DTO
-   */
-  StoryDTO approveStory(String id);
+  void changeStatus(StoryStatus status, String id);
 
   /**
    * Upvote a story.
    *
-   * @param id   corresponding to story id
-   * @param type corresponding to action upvote or downvote
+   * @param storyDTO containing details of the story
+   * @param type containing the type of update
+   * @return storyDTO
    */
-  StoryDTO updateVotes(String id, String type);
+  StoryDTO updateVotes(StoryDTO storyDTO, VoteType type);
 
   /**
    * Deletes story from the system.

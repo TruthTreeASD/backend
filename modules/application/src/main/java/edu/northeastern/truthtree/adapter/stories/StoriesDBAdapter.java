@@ -1,30 +1,26 @@
 package edu.northeastern.truthtree.adapter.stories;
 
+import static edu.northeastern.truthtree.AppConst.STORIES_URL_CHANGE_STATUS;
+import static edu.northeastern.truthtree.AppConst.STORIES_URL_DELETE;
+import static edu.northeastern.truthtree.AppConst.STORIES_URL_GET;
+import static edu.northeastern.truthtree.AppConst.STORIES_URL_POST;
+import static edu.northeastern.truthtree.AppConst.STORIES_URL_UPDATE_VOTES;
+
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import org.springframework.web.util.UriComponentsBuilder;
-
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import edu.northeastern.truthtree.adapter.utilities.URLUtil;
 import edu.northeastern.truthtree.assembler.StoriesAssembler;
 import edu.northeastern.truthtree.dto.StoryDTO;
 import edu.northeastern.truthtree.enums.OrderType;
 import edu.northeastern.truthtree.enums.StoryStatus;
-
-import static edu.northeastern.truthtree.AppConst.STORIES_URL_APPROVE_STORY;
-import static edu.northeastern.truthtree.AppConst.STORIES_URL_DELETE;
-import static edu.northeastern.truthtree.AppConst.STORIES_URL_GET;
-import static edu.northeastern.truthtree.AppConst.STORIES_URL_GET_APPROVED;
-import static edu.northeastern.truthtree.AppConst.STORIES_URL_GET_PENDING;
-import static edu.northeastern.truthtree.AppConst.STORIES_URL_POST;
-import static edu.northeastern.truthtree.AppConst.STORIES_URL_UPDATE_VOTES;
-import static edu.northeastern.truthtree.adapter.utilities.URLUtil.putJSONFromURL;
+import edu.northeastern.truthtree.enums.VoteType;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Component;
+import org.springframework.web.util.UriComponentsBuilder;
 
 @Component("storiesDBAdapter")
 public class StoriesDBAdapter implements IStoriesAdapter {
@@ -94,42 +90,31 @@ public class StoriesDBAdapter implements IStoriesAdapter {
   }
 
   @Override
-  public List<StoryDTO> getApprovedStories() {
-    UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(STORIES_URL_GET_APPROVED);
-    String url = builder.toUriString();
-    String jsonResponse = URLUtil.readJSONFromURLInString(url);
-    return assembler.fromJSONStringToDTOList(jsonResponse);
-  }
-
-  @Override
-  public List<StoryDTO> getPendingStories() {
-    UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(STORIES_URL_GET_PENDING);
-    String url = builder.toUriString();
-    String jsonResponse = URLUtil.readJSONFromURLInString(url);
-    return assembler.fromJSONStringToDTOList(jsonResponse);
-  }
-
-  @Override
-  public StoryDTO approveStory(String id) {
+  public void changeStatus(StoryStatus status, String id) {
     Map<String, String> uriParams = new HashMap<String, String>();
+    uriParams.put("status", status.name());
     uriParams.put("id", id);
-    UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(STORIES_URL_APPROVE_STORY);
+    UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(STORIES_URL_CHANGE_STATUS);
     String url = builder.buildAndExpand(uriParams).toUriString();
-    String jsonResponse = URLUtil.readJSONFromURLInString(url);
-    return assembler.fromJSONStringToDTO(jsonResponse);
+    URLUtil.putJSONFromURL(url);
   }
 
   @Override
-  public StoryDTO updateVotes(String id, String type) {
+  public StoryDTO updateVotes(StoryDTO storyDTO, VoteType type) {
     Map<String, String> uriParams = new HashMap<String, String>();
-    uriParams.put("id", id);
-    uriParams.put("voteType", type);
+    uriParams.put("id", storyDTO.getId());
+    uriParams.put("voteType", type.name());
 
     UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(STORIES_URL_UPDATE_VOTES);
     String url = builder.buildAndExpand(uriParams).toUriString();
 
-    String response = putJSONFromURL(url);
-    return assembler.fromJSONStringToDTO(response);
+    URLUtil.putJSONFromURL(url);
+    if (type.equals(VoteType.UPVOTE)) {
+      storyDTO.setUpvote(storyDTO.getUpvote() + 1);
+    } else if (type.equals(VoteType.DOWNVOTE)) {
+      storyDTO.setDownvote(storyDTO.getDownvote() + 1);
+    }
+    return storyDTO;
   }
 
   @Override

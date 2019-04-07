@@ -43,4 +43,5 @@ public class StoriesAssembler {
     }
     return storyDTO.getData();
   }
+
 }

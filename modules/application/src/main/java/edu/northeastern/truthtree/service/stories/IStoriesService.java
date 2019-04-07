@@ -1,13 +1,17 @@
 package edu.northeastern.truthtree.service.stories;
 
+import edu.northeastern.truthtree.enums.VoteType;
 import java.util.List;
 
 import edu.northeastern.truthtree.dto.NameValueDTO;
 import edu.northeastern.truthtree.dto.StoryDTO;
 import edu.northeastern.truthtree.enums.OrderType;
 import edu.northeastern.truthtree.enums.StoryStatus;
+import org.json.simple.JSONObject;
+import org.springframework.http.ResponseEntity;
 
 public interface IStoriesService {
+
   /**
    * Creates a story with the parameters provided in {@link StoryDTO}.
    *
@@ -25,34 +29,19 @@ public interface IStoriesService {
   List<StoryDTO> getStories(OrderType orderType, StoryStatus storyStatus);
 
   /**
-   * Returns list of approved stories.
+   * Changes status of a given story.
    *
-   * @return list of approved stories.
    */
-  List<StoryDTO> getApprovedStories();
-
-  /**
-   * Returns list of pending stories.
-   *
-   * @return list of pending stories.
-   */
-  List<StoryDTO> getPendingStories();
-
-  /**
-   * Approves a given story.
-   *
-   * @return story DTO
-   */
-  StoryDTO approveStory(String id);
+  void changeStatus(StoryStatus status, String id);
 
   /**
    * Updates votes of a type and story id
    *
-   * @param id   represents how story id.
-   * @param type represents upvote or downvote.
-   * @return updated value.
+   * @param storyDTO containing details of the story
+   * @param type containing type of update
+   * @return storyDTO
    */
-  StoryDTO updateVotes(String id, String type);
+  StoryDTO updateVotes(StoryDTO storyDTO, VoteType type);
 
   /**
    * Deletes story.

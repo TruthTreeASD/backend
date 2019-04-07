@@ -2,23 +2,13 @@ package edu.northeastern.truthtree.adapter.utilities;
 
 import org.json.simple.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
-
-import java.io.BufferedReader;
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.net.URLConnection;
-
-import javax.servlet.http.HttpServletResponse;
 
 /**
  * Represents the methods needed to read JSON from a URL API.
@@ -80,12 +70,11 @@ public class URLUtil {
    * @param url The web address of the web page to be read and converted.
    * @return Web contents as a string
    */
-  public static String putJSONFromURL(String url) {
+  public static void putJSONFromURL(String url) {
     HttpHeaders headers = new HttpHeaders();
     headers.setContentType(MediaType.APPLICATION_JSON);
     HttpEntity<String> entity = new HttpEntity<String>("", headers);
     restTemplate.put(url, entity, String.class);
-    return "";
   }
 
   public static void deleteJSONFromURL(String url){

@@ -1,5 +1,6 @@
 package edu.northeastern.truthtree.adapter.stories;
 
+import edu.northeastern.truthtree.enums.VoteType;
 import java.util.List;
 
 import edu.northeastern.truthtree.dto.StoryDTO;
@@ -7,6 +8,7 @@ import edu.northeastern.truthtree.enums.OrderType;
 import edu.northeastern.truthtree.enums.StoryStatus;
 
 public interface IStoriesAdapter {
+
   /**
    * Calls external services to create a story.
    *
@@ -24,34 +26,19 @@ public interface IStoriesAdapter {
   List<StoryDTO> getStories(OrderType order, StoryStatus storyStatus);
 
   /**
-   * Returns list of approved stories.
+   * Change status of a given story.
    *
-   * @return list of approved stories.
    */
-  List<StoryDTO> getApprovedStories();
-
-  /**
-   * Returns list of pending stories.
-   *
-   * @return list of pending stories.
-   */
-  List<StoryDTO> getPendingStories();
-
-  /**
-   * Approves a given story.
-   *
-   * @return story DTO
-   */
-  StoryDTO approveStory(String id);
+  void changeStatus(StoryStatus status, String id);
 
   /**
    * Update votes of a story.
    *
-   * @param id   corresponding to story id
-   * @param type corresponding to action upvote or downvote
-   * @return updated upvotes.
+   * @param storyDTO containing details of the story
+   * @param type containing type of update
+   * @return storyDTO
    */
-  StoryDTO updateVotes(String id, String type);
+  StoryDTO updateVotes(StoryDTO storyDTO, VoteType type);
 
   /**
    * Deletes story.

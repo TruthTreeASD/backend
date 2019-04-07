@@ -1,6 +1,9 @@
 package edu.northeastern.truthtree.controller.stories;
 
+import edu.northeastern.truthtree.enums.VoteType;
+import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,6 +23,7 @@ import edu.northeastern.truthtree.service.stories.IStoriesService;
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 public class Stories implements IStories {
+
   private IStoriesService service;
 
   @Autowired
@@ -33,31 +37,22 @@ public class Stories implements IStories {
   }
 
   @RequestMapping(value = "/api/stories", method = RequestMethod.GET)
-  public List<StoryDTO> getStories(@RequestParam(value = "orderType", required = false) OrderType orderType,
-                                   @RequestParam(value = "storyStatus", required = false) StoryStatus storyStatus
+  public List<StoryDTO> getStories(
+      @RequestParam(value = "orderType", required = false) OrderType orderType,
+      @RequestParam(value = "storyStatus", required = false) StoryStatus storyStatus
   ) {
     return service.getStories(orderType, storyStatus);
   }
 
-  @RequestMapping(value = "/api/stories/approved", method = RequestMethod.GET)
-  public List<StoryDTO> getApprovedStories() {
-    return service.getApprovedStories();
+  @RequestMapping(value = "/api/stories/story/{status}/{id}", method = RequestMethod.PUT)
+  public void changeStatus(@PathVariable StoryStatus status, @PathVariable String id) {
+    service.changeStatus(status, id);
   }
 
-  @RequestMapping(value = "/api/stories/pending", method = RequestMethod.GET)
-  public List<StoryDTO> getPendingStories() {
-    return service.getPendingStories();
-  }
-
-  @RequestMapping(value = "/api/stories/approve", method = RequestMethod.GET)
-  public StoryDTO approveStory(@RequestParam(value = "id") String id) {
-    return service.approveStory(id);
-  }
-
-  @RequestMapping(value = "/api/stories/{id}", method = RequestMethod.PUT)
-  public StoryDTO updateVotes(@PathVariable String id,
-                              @RequestParam(value = "type", required = true) String type) {
-    return service.updateVotes(id, type.toUpperCase());
+  @RequestMapping(value = "/api/stories", method = RequestMethod.PUT)
+  public StoryDTO updateVotes(@RequestBody StoryDTO storyDTO,
+      @RequestParam(value = "type", required = true) VoteType type) {
+    return service.updateVotes(storyDTO, type);
   }
 
   @Override
