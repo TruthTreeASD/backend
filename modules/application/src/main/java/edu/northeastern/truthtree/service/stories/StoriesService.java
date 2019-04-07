@@ -26,4 +26,8 @@ public class StoriesService implements IStoriesService {
   public List<StoryDTO> getStories() {
     return adapter.getStories();
   }
+   @Override
+  public List<StoryDTO> search(String keyword, int pageSize) {
+    return adapter.search(String keyword, int pageSize);
+  }
 }

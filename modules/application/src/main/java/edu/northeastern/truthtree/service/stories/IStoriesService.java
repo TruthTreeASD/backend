@@ -8,4 +8,6 @@ public interface IStoriesService {
   StoryDTO createStory(StoryDTO storyDTO);
 
   List<StoryDTO> getStories();
+
+  public List<StoryDTO> search(String keyword, int pageSize);
 }

@@ -19,4 +19,11 @@ public interface IStories {
    * @return list of stories
    */
   List<StoryDTO> getStories();
+    /**
+   * Returns searched stories.
+   *
+   * @param List<StoryDTO> containing stories
+   * @return storyDTO
+   */
+  public List<StoryDTO> search(String keyword, int pageSize);
 }
