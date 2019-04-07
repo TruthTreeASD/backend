@@ -4,6 +4,7 @@ import edu.northeastern.truthtree.dto.StoryDTO;
 import edu.northeastern.truthtree.enums.OrderType;
 import edu.northeastern.truthtree.enums.StoryStatus;
 
+import edu.northeastern.truthtree.enums.VoteType;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.http.HttpStatus;
@@ -45,7 +46,7 @@ public class StoriesMockAdapter implements IStoriesAdapter {
     return response;
   }
 
-  public StoryDTO updateVotes(StoryDTO storyDTO, String type) {
+  public StoryDTO updateVotes(StoryDTO storyDTO, VoteType type) {
     StoryDTO storyDTO1 = new StoryDTO();
     storyDTO1.setId("43232233323");
     storyDTO1.setAuthor("Alice");

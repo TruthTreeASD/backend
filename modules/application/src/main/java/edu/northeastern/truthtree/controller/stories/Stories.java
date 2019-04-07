@@ -1,5 +1,6 @@
 package edu.northeastern.truthtree.controller.stories;
 
+import edu.northeastern.truthtree.enums.VoteType;
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -50,8 +51,8 @@ public class Stories implements IStories {
 
   @RequestMapping(value = "/api/stories", method = RequestMethod.PUT)
   public StoryDTO updateVotes(@RequestBody StoryDTO storyDTO,
-      @RequestParam(value = "type", required = true) String type) {
-    return service.updateVotes(storyDTO, type.toUpperCase());
+      @RequestParam(value = "type", required = true) VoteType type) {
+    return service.updateVotes(storyDTO, type);
   }
 
   @Override

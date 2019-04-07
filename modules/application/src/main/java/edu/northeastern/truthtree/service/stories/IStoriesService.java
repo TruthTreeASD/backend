@@ -1,5 +1,6 @@
 package edu.northeastern.truthtree.service.stories;
 
+import edu.northeastern.truthtree.enums.VoteType;
 import java.util.List;
 
 import edu.northeastern.truthtree.dto.NameValueDTO;
@@ -40,7 +41,7 @@ public interface IStoriesService {
    * @param type containing type of update
    * @return storyDTO
    */
-  StoryDTO updateVotes(StoryDTO storyDTO, String type);
+  StoryDTO updateVotes(StoryDTO storyDTO, VoteType type);
 
   /**
    * Deletes story.

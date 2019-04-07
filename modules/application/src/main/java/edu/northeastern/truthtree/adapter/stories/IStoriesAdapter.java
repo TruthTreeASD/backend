@@ -1,5 +1,6 @@
 package edu.northeastern.truthtree.adapter.stories;
 
+import edu.northeastern.truthtree.enums.VoteType;
 import java.util.List;
 
 import edu.northeastern.truthtree.dto.StoryDTO;
@@ -37,7 +38,7 @@ public interface IStoriesAdapter {
    * @param type containing type of update
    * @return storyDTO
    */
-  StoryDTO updateVotes(StoryDTO storyDTO, String type);
+  StoryDTO updateVotes(StoryDTO storyDTO, VoteType type);
 
   /**
    * Deletes story.

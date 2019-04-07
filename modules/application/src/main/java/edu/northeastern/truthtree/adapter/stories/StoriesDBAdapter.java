@@ -13,6 +13,7 @@ import edu.northeastern.truthtree.assembler.StoriesAssembler;
 import edu.northeastern.truthtree.dto.StoryDTO;
 import edu.northeastern.truthtree.enums.OrderType;
 import edu.northeastern.truthtree.enums.StoryStatus;
+import edu.northeastern.truthtree.enums.VoteType;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -99,18 +100,18 @@ public class StoriesDBAdapter implements IStoriesAdapter {
   }
 
   @Override
-  public StoryDTO updateVotes(StoryDTO storyDTO, String type) {
+  public StoryDTO updateVotes(StoryDTO storyDTO, VoteType type) {
     Map<String, String> uriParams = new HashMap<String, String>();
     uriParams.put("id", storyDTO.getId());
-    uriParams.put("voteType", type);
+    uriParams.put("voteType", type.name());
 
     UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(STORIES_URL_UPDATE_VOTES);
     String url = builder.buildAndExpand(uriParams).toUriString();
 
     URLUtil.putJSONFromURL(url);
-    if (type.equals("UPVOTE")) {
+    if (type.equals(VoteType.UPVOTE)) {
       storyDTO.setUpvote(storyDTO.getUpvote() + 1);
-    } else if (type.equals("DOWNVOTE")) {
+    } else if (type.equals(VoteType.DOWNVOTE)) {
       storyDTO.setDownvote(storyDTO.getDownvote() + 1);
     }
     return storyDTO;

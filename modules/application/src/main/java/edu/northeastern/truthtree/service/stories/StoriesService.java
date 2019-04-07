@@ -1,5 +1,6 @@
 package edu.northeastern.truthtree.service.stories;
 
+import edu.northeastern.truthtree.enums.VoteType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
@@ -39,7 +40,7 @@ public class StoriesService implements IStoriesService {
   }
 
   @Override
-  public StoryDTO updateVotes(StoryDTO storyDTO, String type) {
+  public StoryDTO updateVotes(StoryDTO storyDTO, VoteType type) {
     return adapter.updateVotes(storyDTO, type);
   }
 
