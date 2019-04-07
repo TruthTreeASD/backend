@@ -25,11 +25,10 @@ public interface IStoriesAdapter {
   List<StoryDTO> getStories(OrderType order, StoryStatus storyStatus);
 
   /**
-   * CHange status of a given story.
+   * Change status of a given story.
    *
-   * @return JSONObject
    */
-  String changeStatusStory(String status, String id);
+  void changeStatus(StoryStatus status, String id);
 
   /**
    * Update votes of a story.

@@ -89,14 +89,13 @@ public class StoriesDBAdapter implements IStoriesAdapter {
   }
 
   @Override
-  public String changeStatusStory(String status, String id) {
+  public void changeStatus(StoryStatus status, String id) {
     Map<String, String> uriParams = new HashMap<String, String>();
-    uriParams.put("status", status);
+    uriParams.put("status", status.name());
     uriParams.put("id", id);
     UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(STORIES_URL_CHANGE_STATUS);
     String url = builder.buildAndExpand(uriParams).toUriString();
-    String response = URLUtil.putJSONFromURL(url);
-    return response;
+    URLUtil.putJSONFromURL(url);
   }
 
   @Override
@@ -108,13 +107,11 @@ public class StoriesDBAdapter implements IStoriesAdapter {
     UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(STORIES_URL_UPDATE_VOTES);
     String url = builder.buildAndExpand(uriParams).toUriString();
 
-    String response = URLUtil.putJSONFromURL(url);
-    if (response.equals(HttpStatus.OK.toString())) {
-      if (type.equals("UPVOTE")) {
-        storyDTO.setUpvote(storyDTO.getUpvote() + 1);
-      } else if (type.equals("DOWNVOTE")) {
-        storyDTO.setDownvote(storyDTO.getDownvote() + 1);
-      }
+    URLUtil.putJSONFromURL(url);
+    if (type.equals("UPVOTE")) {
+      storyDTO.setUpvote(storyDTO.getUpvote() + 1);
+    } else if (type.equals("DOWNVOTE")) {
+      storyDTO.setDownvote(storyDTO.getDownvote() + 1);
     }
     return storyDTO;
   }

@@ -63,7 +63,6 @@ public class StoriesMockAdapter implements IStoriesAdapter {
   }
 
   @Override
-  public String changeStatusStory(String status, String id) {
-    return "";
+  public void changeStatus(StoryStatus status, String id) {
   }
 }

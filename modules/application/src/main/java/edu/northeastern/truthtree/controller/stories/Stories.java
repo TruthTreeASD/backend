@@ -44,8 +44,8 @@ public class Stories implements IStories {
   }
 
   @RequestMapping(value = "/api/stories/story/{status}/{id}", method = RequestMethod.PUT)
-  public String changeStatusStory(@PathVariable String status, @PathVariable String id) {
-    return service.changeStatusStory(status.toUpperCase(), id);
+  public void changeStatus(@PathVariable StoryStatus status, @PathVariable String id) {
+    service.changeStatus(status, id);
   }
 
   @RequestMapping(value = "/api/stories", method = RequestMethod.PUT)

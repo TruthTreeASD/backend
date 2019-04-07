@@ -32,9 +32,8 @@ public interface IStories {
   /**
    * Changes status of a given story.
    *
-   * @return story String
    */
-  String changeStatusStory(String status, String id);
+  void changeStatus(StoryStatus status, String id);
 
   /**
    * Upvote a story.

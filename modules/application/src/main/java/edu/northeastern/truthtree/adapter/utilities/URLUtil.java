@@ -70,12 +70,11 @@ public class URLUtil {
    * @param url The web address of the web page to be read and converted.
    * @return Web contents as a string
    */
-  public static String putJSONFromURL(String url) {
+  public static void putJSONFromURL(String url) {
     HttpHeaders headers = new HttpHeaders();
     headers.setContentType(MediaType.APPLICATION_JSON);
     HttpEntity<String> entity = new HttpEntity<String>("", headers);
     restTemplate.put(url, entity, String.class);
-    return HttpStatus.OK.toString();
   }
 
   public static void deleteJSONFromURL(String url){

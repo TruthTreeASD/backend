@@ -30,9 +30,8 @@ public interface IStoriesService {
   /**
    * Changes status of a given story.
    *
-   * @return String
    */
-  String changeStatusStory(String status, String id);
+  void changeStatus(StoryStatus status, String id);
 
   /**
    * Updates votes of a type and story id
