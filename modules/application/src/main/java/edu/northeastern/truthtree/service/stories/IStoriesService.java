@@ -10,6 +10,7 @@ import org.json.simple.JSONObject;
 import org.springframework.http.ResponseEntity;
 
 public interface IStoriesService {
+
   /**
    * Creates a story with the parameters provided in {@link StoryDTO}.
    *
@@ -36,11 +37,11 @@ public interface IStoriesService {
   /**
    * Updates votes of a type and story id
    *
-   * @param id   represents how story id.
-   * @param type represents upvote or downvote.
-   * @return updated value.
+   * @param storyDTO containing details of the story
+   * @param type containing type of update
+   * @return storyDTO
    */
-  StoryDTO updateVotes(String id, String type);
+  StoryDTO updateVotes(StoryDTO storyDTO, String type);
 
   /**
    * Deletes story.

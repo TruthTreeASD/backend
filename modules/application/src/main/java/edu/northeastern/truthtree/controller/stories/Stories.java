@@ -22,6 +22,7 @@ import edu.northeastern.truthtree.service.stories.IStoriesService;
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 public class Stories implements IStories {
+
   private IStoriesService service;
 
   @Autowired
@@ -35,8 +36,9 @@ public class Stories implements IStories {
   }
 
   @RequestMapping(value = "/api/stories", method = RequestMethod.GET)
-  public List<StoryDTO> getStories(@RequestParam(value = "orderType", required = false) OrderType orderType,
-                                   @RequestParam(value = "storyStatus", required = false) StoryStatus storyStatus
+  public List<StoryDTO> getStories(
+      @RequestParam(value = "orderType", required = false) OrderType orderType,
+      @RequestParam(value = "storyStatus", required = false) StoryStatus storyStatus
   ) {
     return service.getStories(orderType, storyStatus);
   }
@@ -46,10 +48,10 @@ public class Stories implements IStories {
     return service.changeStatusStory(status.toUpperCase(), id);
   }
 
-  @RequestMapping(value = "/api/stories/{id}", method = RequestMethod.PUT)
-  public StoryDTO updateVotes(@PathVariable String id,
-                              @RequestParam(value = "type", required = true) String type) {
-    return service.updateVotes(id, type.toUpperCase());
+  @RequestMapping(value = "/api/stories", method = RequestMethod.PUT)
+  public StoryDTO updateVotes(@RequestBody StoryDTO storyDTO,
+      @RequestParam(value = "type", required = true) String type) {
+    return service.updateVotes(storyDTO, type.toUpperCase());
   }
 
   @Override

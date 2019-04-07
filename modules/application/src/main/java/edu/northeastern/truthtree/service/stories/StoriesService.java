@@ -17,6 +17,7 @@ import edu.northeastern.truthtree.enums.StoryStatus;
 
 @Component
 public class StoriesService implements IStoriesService {
+
   private IStoriesAdapter adapter;
 
   @Autowired
@@ -40,8 +41,8 @@ public class StoriesService implements IStoriesService {
   }
 
   @Override
-  public StoryDTO updateVotes(String id, String type) {
-    return adapter.updateVotes(id, type);
+  public StoryDTO updateVotes(StoryDTO storyDTO, String type) {
+    return adapter.updateVotes(storyDTO, type);
   }
 
   @Override

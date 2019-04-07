@@ -91,6 +91,6 @@ public class AppConst {
   public static final String SIMILAR_PLACES_URL = ML_ENDPOINT + "/api/similar/";
 
   public static final String STORIES_URL_CHANGE_STATUS = DATABASE_URL + "/api/stories/story/{status}/{id}";
-  public static final String STORIES_URL_UPDATE_VOTES = DATABASE_URL + "/api/stories/story/{id}/{voteType}";
+  public static final String STORIES_URL_UPDATE_VOTES = DATABASE_URL + "/api/stories/story/vote/{id}/{voteType}";
   public static final String STORIES_URL_DELETE = DATABASE_URL + "/api/stories/story/{id}";
 }

@@ -45,7 +45,7 @@ public class StoriesMockAdapter implements IStoriesAdapter {
     return response;
   }
 
-  public StoryDTO updateVotes(String id, String type) {
+  public StoryDTO updateVotes(StoryDTO storyDTO, String type) {
     StoryDTO storyDTO1 = new StoryDTO();
     storyDTO1.setId("43232233323");
     storyDTO1.setAuthor("Alice");

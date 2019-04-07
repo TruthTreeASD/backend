@@ -7,6 +7,7 @@ import edu.northeastern.truthtree.enums.OrderType;
 import edu.northeastern.truthtree.enums.StoryStatus;
 
 public interface IStoriesAdapter {
+
   /**
    * Calls external services to create a story.
    *
@@ -33,11 +34,11 @@ public interface IStoriesAdapter {
   /**
    * Update votes of a story.
    *
-   * @param id   corresponding to story id
-   * @param type corresponding to action upvote or downvote
-   * @return updated upvotes.
+   * @param storyDTO containing details of the story
+   * @param type containing type of update
+   * @return storyDTO
    */
-  StoryDTO updateVotes(String id, String type);
+  StoryDTO updateVotes(StoryDTO storyDTO, String type);
 
   /**
    * Deletes story.

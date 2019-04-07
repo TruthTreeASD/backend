@@ -17,6 +17,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -99,17 +100,23 @@ public class StoriesDBAdapter implements IStoriesAdapter {
   }
 
   @Override
-  public StoryDTO updateVotes(String id, String type) {
+  public StoryDTO updateVotes(StoryDTO storyDTO, String type) {
     Map<String, String> uriParams = new HashMap<String, String>();
-    uriParams.put("id", id);
+    uriParams.put("id", storyDTO.getId());
     uriParams.put("voteType", type);
 
     UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(STORIES_URL_UPDATE_VOTES);
     String url = builder.buildAndExpand(uriParams).toUriString();
 
-    //String response = putJSONFromURL(url);
-    String response = "";
-    return assembler.fromJSONStringToDTO(response);
+    String response = URLUtil.putJSONFromURL(url);
+    if (response.equals(HttpStatus.OK.toString())) {
+      if (type.equals("UPVOTE")) {
+        storyDTO.setUpvote(storyDTO.getUpvote() + 1);
+      } else if (type.equals("DOWNVOTE")) {
+        storyDTO.setDownvote(storyDTO.getDownvote() + 1);
+      }
+    }
+    return storyDTO;
   }
 
   @Override

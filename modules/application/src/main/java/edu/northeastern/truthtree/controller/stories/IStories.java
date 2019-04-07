@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 
 
 public interface IStories {
+
   /**
    * Posts a user story.
    *
@@ -38,10 +39,11 @@ public interface IStories {
   /**
    * Upvote a story.
    *
-   * @param id   corresponding to story id
-   * @param type corresponding to action upvote or downvote
+   * @param storyDTO containing details of the story
+   * @param type containing the type of update
+   * @return storyDTO
    */
-  StoryDTO updateVotes(String id, String type);
+  StoryDTO updateVotes(StoryDTO storyDTO, String type);
 
   /**
    * Deletes story from the system.
