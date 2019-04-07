@@ -6,6 +6,8 @@ import edu.northeastern.truthtree.dto.NameValueDTO;
 import edu.northeastern.truthtree.dto.StoryDTO;
 import edu.northeastern.truthtree.enums.OrderType;
 import edu.northeastern.truthtree.enums.StoryStatus;
+import org.json.simple.JSONObject;
+import org.springframework.http.ResponseEntity;
 
 
 public interface IStories {
@@ -41,11 +43,11 @@ public interface IStories {
   List<StoryDTO> getPendingStories();
 
   /**
-   * Approves a given story.
+   * Changes status of a given story.
    *
-   * @return story DTO
+   * @return story String
    */
-  StoryDTO approveStory(String id);
+  String changeStatusStory(String status, String id);
 
   /**
    * Upvote a story.

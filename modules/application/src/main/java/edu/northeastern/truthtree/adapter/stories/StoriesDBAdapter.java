@@ -17,14 +17,13 @@ import edu.northeastern.truthtree.dto.StoryDTO;
 import edu.northeastern.truthtree.enums.OrderType;
 import edu.northeastern.truthtree.enums.StoryStatus;
 
-import static edu.northeastern.truthtree.AppConst.STORIES_URL_APPROVE_STORY;
+import static edu.northeastern.truthtree.AppConst.STORIES_URL_CHANGE_STATUS;
 import static edu.northeastern.truthtree.AppConst.STORIES_URL_DELETE;
 import static edu.northeastern.truthtree.AppConst.STORIES_URL_GET;
 import static edu.northeastern.truthtree.AppConst.STORIES_URL_GET_APPROVED;
 import static edu.northeastern.truthtree.AppConst.STORIES_URL_GET_PENDING;
 import static edu.northeastern.truthtree.AppConst.STORIES_URL_POST;
 import static edu.northeastern.truthtree.AppConst.STORIES_URL_UPDATE_VOTES;
-import static edu.northeastern.truthtree.adapter.utilities.URLUtil.putJSONFromURL;
 
 @Component("storiesDBAdapter")
 public class StoriesDBAdapter implements IStoriesAdapter {
@@ -110,13 +109,14 @@ public class StoriesDBAdapter implements IStoriesAdapter {
   }
 
   @Override
-  public StoryDTO approveStory(String id) {
+  public String changeStatusStory(String status, String id) {
     Map<String, String> uriParams = new HashMap<String, String>();
+    uriParams.put("status", status);
     uriParams.put("id", id);
-    UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(STORIES_URL_APPROVE_STORY);
+    UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(STORIES_URL_CHANGE_STATUS);
     String url = builder.buildAndExpand(uriParams).toUriString();
-    String jsonResponse = URLUtil.readJSONFromURLInString(url);
-    return assembler.fromJSONStringToDTO(jsonResponse);
+    String response = URLUtil.putJSONFromURL(url);
+    return response;
   }
 
   @Override
@@ -128,7 +128,8 @@ public class StoriesDBAdapter implements IStoriesAdapter {
     UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(STORIES_URL_UPDATE_VOTES);
     String url = builder.buildAndExpand(uriParams).toUriString();
 
-    String response = putJSONFromURL(url);
+    //String response = putJSONFromURL(url);
+    String response = "";
     return assembler.fromJSONStringToDTO(response);
   }
 

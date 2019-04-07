@@ -67,7 +67,7 @@ public class JSONUtil {
    * @param jsonString string to be converted into a JSONArray.
    * @return jsonString as a JSONObject
    */
-  private static JSONObject stringToJSONObject(String jsonString) {
+  public static JSONObject stringToJSONObject(String jsonString) {
     JSONParser parser = new JSONParser();
     JSONObject jsonObject = null;
 

@@ -38,11 +38,11 @@ public interface IStoriesAdapter {
   List<StoryDTO> getPendingStories();
 
   /**
-   * Approves a given story.
+   * CHange status of a given story.
    *
-   * @return story DTO
+   * @return JSONObject
    */
-  StoryDTO approveStory(String id);
+  String changeStatusStory(String status, String id);
 
   /**
    * Update votes of a story.

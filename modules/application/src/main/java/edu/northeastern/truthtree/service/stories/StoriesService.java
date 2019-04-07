@@ -1,7 +1,9 @@
 package edu.northeastern.truthtree.service.stories;
 
+import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -43,8 +45,8 @@ public class StoriesService implements IStoriesService {
   }
 
   @Override
-  public StoryDTO approveStory(String id) {
-    return adapter.approveStory(id);
+  public String changeStatusStory(String status, String id) {
+    return adapter.changeStatusStory(status, id);
   }
 
   @Override

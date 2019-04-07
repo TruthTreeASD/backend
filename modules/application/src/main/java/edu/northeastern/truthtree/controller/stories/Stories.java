@@ -1,6 +1,8 @@
 package edu.northeastern.truthtree.controller.stories;
 
+import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -49,9 +51,9 @@ public class Stories implements IStories {
     return service.getPendingStories();
   }
 
-  @RequestMapping(value = "/api/stories/approve", method = RequestMethod.GET)
-  public StoryDTO approveStory(@RequestParam(value = "id") String id) {
-    return service.approveStory(id);
+  @RequestMapping(value = "/api/stories/story/{status}/{id}", method = RequestMethod.PUT)
+  public String changeStatusStory(@PathVariable String status, @PathVariable String id) {
+    return service.changeStatusStory(status.toUpperCase(), id);
   }
 
   @RequestMapping(value = "/api/stories/{id}", method = RequestMethod.PUT)

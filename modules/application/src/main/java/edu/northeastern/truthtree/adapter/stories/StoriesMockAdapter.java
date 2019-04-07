@@ -6,6 +6,8 @@ import edu.northeastern.truthtree.enums.StoryStatus;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
 @Component("storiesMockAdapter")
@@ -91,15 +93,7 @@ public class StoriesMockAdapter implements IStoriesAdapter {
   }
 
   @Override
-  public StoryDTO approveStory(String id) {
-    StoryDTO storyDTO2 = new StoryDTO();
-    storyDTO2.setId("4323223321993");
-    storyDTO2.setAuthor("Bob");
-    List<String> tags2 = new ArrayList<>();
-    tags2.add("Finance");
-    tags2.add("Debt");
-    storyDTO2.setTags(tags2);
-    storyDTO2.setContent("This is my second post");
-    return storyDTO2;
+  public String changeStatusStory(String status, String id) {
+    return "";
   }
 }

@@ -92,7 +92,7 @@ public class AppConst {
 
   public static final String STORIES_URL_GET_APPROVED = DATABASE_URL + "/api/stories/story/approved";
   public static final String STORIES_URL_GET_PENDING = DATABASE_URL + "/api/stories/story/pending";
-  public static final String STORIES_URL_APPROVE_STORY = DATABASE_URL + "/api/stories/story/approve/{id}";
+  public static final String STORIES_URL_CHANGE_STATUS = DATABASE_URL + "/api/stories/story/{status}/{id}";
   public static final String STORIES_URL_UPDATE_VOTES = DATABASE_URL + "/api/stories/story/{id}/{voteType}";
   public static final String STORIES_URL_DELETE = DATABASE_URL + "/api/stories/story/{id}";
 }
