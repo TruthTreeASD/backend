@@ -3,7 +3,6 @@ package edu.northeastern.truthtree.assembler;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
 
-import edu.northeastern.truthtree.dto.LocationDTOWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -12,7 +11,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import edu.northeastern.truthtree.dto.CommonAttributeDTO;
+import edu.northeastern.truthtree.dto.LocationDBResponseDTO;
 import edu.northeastern.truthtree.dto.LocationDTO;
+import edu.northeastern.truthtree.dto.LocationDTOWrapper;
 import edu.northeastern.truthtree.dto.SimilarPlacesDTO;
 
 @Component
@@ -26,13 +27,20 @@ public class SimilarLocationsAssembler {
   }
 
   public LocationDTO getJSONStringToLocationDTO(String jsonStr) {
-    LocationDTOWrapper locationDTO = new LocationDTOWrapper();
+    LocationDTO dto = null;
     try {
-      locationDTO = mapper.readValue(jsonStr, LocationDTOWrapper.class);
+      LocationDTOWrapper locationDTO = mapper.readValue(jsonStr, LocationDTOWrapper.class);
+      LocationDBResponseDTO responseDTO = locationDTO.getData();
+      dto = new LocationDTO.Builder().withId(responseDTO.getId())
+              .withName(responseDTO.getName())
+              .withLatitude(responseDTO.getLatitude())
+              .withLongitude(responseDTO.getLongitude())
+              .withTypeCode(responseDTO.getType_code())
+              .build();
     } catch (Exception e) {
       e.printStackTrace();
     }
-    return locationDTO.getData();
+    return dto;
   }
 
   public List<CommonAttributeDTO> getJSONStringToCommonAttributeDTOList(String jsonStr) {

@@ -3,7 +3,7 @@ package edu.northeastern.truthtree.dto;
 public class LocationDTOWrapper {
 
     private int respCode;
-    private LocationDTO data;
+    private LocationDBResponseDTO data;
     private boolean ok;
     private String message;
 
@@ -15,11 +15,11 @@ public class LocationDTOWrapper {
         return this.respCode;
     }
 
-    public void setData(LocationDTO data) {
+    public void setData(LocationDBResponseDTO data) {
         this.data = data;
     }
 
-    public LocationDTO getData() {
+    public LocationDBResponseDTO getData() {
         return this.data;
     }
 

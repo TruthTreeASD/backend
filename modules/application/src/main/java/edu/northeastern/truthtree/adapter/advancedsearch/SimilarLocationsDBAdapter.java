@@ -3,7 +3,6 @@ package edu.northeastern.truthtree.adapter.advancedsearch;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import edu.northeastern.truthtree.enums.NormalizationType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -18,6 +17,7 @@ import edu.northeastern.truthtree.dto.LocationDTO;
 import edu.northeastern.truthtree.dto.MultipleAttributeDTO;
 import edu.northeastern.truthtree.dto.SingleAttributeDTO;
 import edu.northeastern.truthtree.dto.YearRangeDTO;
+import edu.northeastern.truthtree.enums.NormalizationType;
 
 import static edu.northeastern.truthtree.AppConst.COMMON_ATTRIBUTES_URL;
 import static edu.northeastern.truthtree.AppConst.LOCATION_BY_ID_URL;
@@ -108,7 +108,6 @@ public class SimilarLocationsDBAdapter implements ISimilarLocationsAdapter {
       UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(LOCATION_BY_ID_URL);
       builder.queryParam("id", locationId);
       String response = URLUtil.readJSONFromURLInString(builder.toUriString());
-      System.out.println(response);
       LocationDTO locationDTOResponse = assembler.getJSONStringToLocationDTO(response);
       locationsResponse.add(locationDTOResponse);
     }

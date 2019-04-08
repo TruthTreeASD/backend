@@ -40,23 +40,14 @@ public class SimilarLocations implements ISimilarLocations {
                                                        int placeType,
                                                @RequestParam(name = "attribute")
                                                        List<Integer> attributes,
-<<<<<<< HEAD
                                                @RequestParam(name = "normalize_by") NormalizationType normalizeBy,
-=======
-                                               @RequestParam(name = "normalize_by")
-                                                       NormalizationType normalizeBy,
->>>>>>> 2a4af5e956cdcb6d17f0f19cae4b34057756bc8d
                                                @RequestParam(name = "year", required = false) List<Integer> year,
                                                @RequestParam(name = "count", required = false) Integer count,
                                                HttpServletResponse response) throws Exception {
 
     List<LocationDTO> serviceResponse = null;
     try {
-<<<<<<< HEAD
-      serviceResponse = service.getSimilarLocations(id, placeType, attributes, normalizeBy, year, count);
-=======
       serviceResponse = service.getSimilarLocations(locationId, placeType, attributes, normalizeBy, year, count);
->>>>>>> 2a4af5e956cdcb6d17f0f19cae4b34057756bc8d
     } catch (Exception e) {
       response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());
     }
