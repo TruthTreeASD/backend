@@ -70,7 +70,7 @@ public class Stories implements IStories {
  public List<StoryDTO> search(@RequestParam(value = "keyword", required = true) String keyword,
                                   @RequestParam(value = "pageSize", required = false) int pageSize, 
 								  @RequestParam(value = "pageNumber", required = false) int pageNumber) {
-   return service.search(keyword, pageSize);
+   return service.search(keyword, pageSize, pageNumber);
  }
 
 }
