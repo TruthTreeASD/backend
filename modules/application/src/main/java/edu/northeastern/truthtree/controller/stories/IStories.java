@@ -22,8 +22,9 @@ public interface IStories {
     /**
    * Returns searched stories.
    *
-   * @param List<StoryDTO> containing stories
-   * @return storyDTO
+   * @param String containing a string of keywords
+   * @param int , the number of stories per page
+   * @return List<StoryDTO> containing stories
    */
   public List<StoryDTO> search(String keyword, int pageSize);
 }
