@@ -1,5 +1,6 @@
 package edu.northeastern.truthtree.service.advancedsearch;
 
+import edu.northeastern.truthtree.enums.NormalizationType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
@@ -32,7 +33,7 @@ public class SimilarLocationsService implements ISimilarLocationsService {
   public List<LocationDTO> getSimilarLocations(int id,
                                                int placeType,
                                                List<Integer> attributes,
-                                               int normalizeBy,
+                                               NormalizationType normalizationType,
                                                List<Integer> year,
                                                Integer count) throws Exception {
     if (attributes.size() == 1) {
@@ -40,6 +41,6 @@ public class SimilarLocationsService implements ISimilarLocationsService {
         throw new Exception(SIMILAR_LOCATIONS_ERROR);
       }
     }
-    return adapter.getSimilarLocations(id, placeType, attributes, normalizeBy, year, count);
+    return adapter.getSimilarLocations(id, placeType, attributes, normalizationType, year, count);
   }
 }

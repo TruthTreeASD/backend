@@ -3,6 +3,7 @@ package edu.northeastern.truthtree.adapter.advancedsearch;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import edu.northeastern.truthtree.enums.NormalizationType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -14,7 +15,6 @@ import edu.northeastern.truthtree.assembler.SimilarLocationsAssembler;
 import edu.northeastern.truthtree.dto.CommonAttributeDTO;
 import edu.northeastern.truthtree.dto.LocationDTO;
 import edu.northeastern.truthtree.dto.MultipleAttributeDTO;
-import edu.northeastern.truthtree.dto.SimilarPlacesDTO;
 import edu.northeastern.truthtree.dto.SingleAttributeDTO;
 import edu.northeastern.truthtree.dto.YearRangeDTO;
 
@@ -42,7 +42,7 @@ public class SimilarLocationsDBAdapter implements ISimilarLocationsAdapter {
   public List<LocationDTO> getSimilarLocations(int id,
                                                int placeType,
                                                List<Integer> attributes,
-                                               int normalizeBy,
+                                               NormalizationType normalizationType,
                                                List<Integer> year,
                                                Integer count) {
     String response = "";
@@ -53,7 +53,7 @@ public class SimilarLocationsDBAdapter implements ISimilarLocationsAdapter {
         attributeDTO.setCount(10);
       }
       attributeDTO.setPlace_type(placeType);
-      attributeDTO.setNormalize_by(normalizeBy);
+      attributeDTO.setNormalize_by(normalizationType.getValue());
       attributeDTO.setAttribute(attributes);
       attributeDTO.setYear(year.get(0));
 
@@ -66,7 +66,7 @@ public class SimilarLocationsDBAdapter implements ISimilarLocationsAdapter {
         e.printStackTrace();
       }
 
-      response = URLUtil.postJSONFromURL(SIMILAR_PLACES_URL + "multi", jsonString);
+      response = URLUtil.postJSONFromURL(SIMILAR_PLACES_URL + "multiple", jsonString);
 
     } else {
       SingleAttributeDTO attributeDTO = new SingleAttributeDTO();
@@ -75,7 +75,7 @@ public class SimilarLocationsDBAdapter implements ISimilarLocationsAdapter {
         attributeDTO.setCount(10);
       }
       attributeDTO.setPlace_type(placeType);
-      attributeDTO.setNormalize_by(normalizeBy);
+      attributeDTO.setNormalize_by(normalizationType.getValue());
       attributeDTO.setAttribute(attributes.get(0));
       YearRangeDTO yearRangeDTO = new YearRangeDTO();
       yearRangeDTO.setStart(year.get(0));

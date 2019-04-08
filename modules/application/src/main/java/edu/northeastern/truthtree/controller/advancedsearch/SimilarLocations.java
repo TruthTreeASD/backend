@@ -1,5 +1,7 @@
 package edu.northeastern.truthtree.controller.advancedsearch;
 
+import edu.northeastern.truthtree.enums.LocationType;
+import edu.northeastern.truthtree.enums.NormalizationType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -39,17 +41,47 @@ public class SimilarLocations implements ISimilarLocations {
                                                @RequestParam(name = "attribute")
                                                        List<Integer> attributes,
                                                @RequestParam(name = "normalize_by")
-                                                       int normalizeBy,
+                                                       String normalizeBy,
                                                @RequestParam(name = "year", required = false) List<Integer> year,
                                                @RequestParam(name = "count", required = false) Integer count,
                                                HttpServletResponse response) throws Exception {
 
     List<LocationDTO> serviceResponse = null;
     try {
-      serviceResponse = service.getSimilarLocations(id, placeType, attributes, normalizeBy, year, count);
+      NormalizationType normalizationType = setNormalizationType(normalizeBy);
+      serviceResponse = service.getSimilarLocations(id, placeType, attributes, normalizationType, year, count);
     } catch (Exception e) {
       response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());
     }
     return serviceResponse;
   }
+
+  private NormalizationType setNormalizationType(String normalizeBy) {
+    NormalizationType normalizationType = null;
+    switch(normalizeBy.toLowerCase()) {
+      case "gross":
+        normalizationType.setType("Gross");
+        normalizationType.setValue(0);
+        break;
+      case "per_capita":
+        normalizationType.setType("Per Capita");
+        normalizationType.setValue(1);
+        break;
+      case "by_revenue":
+        normalizationType.setType("By Revenue");
+        normalizationType.setValue(2);
+        break;
+      default:
+        break;
+    }
+    return normalizationType;
+  }
+
+//  private LocationType setPlaceType(String placeType) {
+//    LocationType locationType = null;
+//    switch (placeType) {
+//      case "state":
+//
+//    }
+//  }
 }

@@ -1,5 +1,6 @@
 package edu.northeastern.truthtree.adapter.advancedsearch;
 
+import edu.northeastern.truthtree.enums.NormalizationType;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -17,7 +18,7 @@ public class SimilarLocationsMockAdapter implements ISimilarLocationsAdapter {
 
   @Override
   public List<LocationDTO> getSimilarLocations(int id, int placeType, List<Integer> attributes,
-                                               int normalizeBy, List<Integer> year, Integer count) {
+                                               NormalizationType normalizeBy, List<Integer> year, Integer count) {
     return null;
   }
 }

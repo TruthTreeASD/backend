@@ -6,6 +6,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import edu.northeastern.truthtree.dto.CommonAttributeDTO;
 import edu.northeastern.truthtree.dto.LocationDTO;
+import edu.northeastern.truthtree.enums.LocationType;
+import edu.northeastern.truthtree.enums.NormalizationType;
 
 public interface ISimilarLocations {
 
@@ -14,7 +16,7 @@ public interface ISimilarLocations {
   List<LocationDTO> getSimilarLocations(int id,
                                         int placeType,
                                         List<Integer> attributes,
-                                        int normalizeBy,
+                                        String normalizeBy,
                                         List<Integer> year,
                                         Integer count, HttpServletResponse response) throws Exception;
 }
