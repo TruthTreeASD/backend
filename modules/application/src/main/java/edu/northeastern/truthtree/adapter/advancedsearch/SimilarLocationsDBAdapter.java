@@ -53,6 +53,7 @@ public class SimilarLocationsDBAdapter implements ISimilarLocationsAdapter {
         attributeDTO.setCount(10);
       }
       attributeDTO.setPlace_type(placeType);
+      System.out.println(normalizationType.getValue());
       attributeDTO.setNormalize_by(normalizationType.getValue());
       attributeDTO.setAttribute(attributes);
       attributeDTO.setYear(year.get(0));
@@ -75,6 +76,7 @@ public class SimilarLocationsDBAdapter implements ISimilarLocationsAdapter {
         attributeDTO.setCount(10);
       }
       attributeDTO.setPlace_type(placeType);
+      System.out.println(normalizationType.getValue());
       attributeDTO.setNormalize_by(normalizationType.getValue());
       attributeDTO.setAttribute(attributes.get(0));
       YearRangeDTO yearRangeDTO = new YearRangeDTO();
@@ -90,7 +92,7 @@ public class SimilarLocationsDBAdapter implements ISimilarLocationsAdapter {
       } catch (JsonProcessingException e) {
         e.printStackTrace();
       }
-
+      System.out.println(jsonString);
       response = URLUtil.postJSONFromURL(SIMILAR_PLACES_URL + "single", jsonString);
     }
     return assembler.getJSONStringToSimilarPlacesDTOList(response);

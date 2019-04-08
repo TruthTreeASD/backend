@@ -16,7 +16,7 @@ public interface ISimilarLocations {
   List<LocationDTO> getSimilarLocations(int id,
                                         int placeType,
                                         List<Integer> attributes,
-                                        String normalizeBy,
+                                        NormalizationType normalizeBy,
                                         List<Integer> year,
                                         Integer count, HttpServletResponse response) throws Exception;
 }

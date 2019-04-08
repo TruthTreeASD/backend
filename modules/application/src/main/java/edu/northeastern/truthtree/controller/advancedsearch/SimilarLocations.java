@@ -40,48 +40,17 @@ public class SimilarLocations implements ISimilarLocations {
                                                        int placeType,
                                                @RequestParam(name = "attribute")
                                                        List<Integer> attributes,
-                                               @RequestParam(name = "normalize_by")
-                                                       String normalizeBy,
+                                               @RequestParam(name = "normalize_by") NormalizationType normalizeBy,
                                                @RequestParam(name = "year", required = false) List<Integer> year,
                                                @RequestParam(name = "count", required = false) Integer count,
                                                HttpServletResponse response) throws Exception {
 
     List<LocationDTO> serviceResponse = null;
     try {
-      NormalizationType normalizationType = setNormalizationType(normalizeBy);
-      serviceResponse = service.getSimilarLocations(id, placeType, attributes, normalizationType, year, count);
+      serviceResponse = service.getSimilarLocations(id, placeType, attributes, normalizeBy, year, count);
     } catch (Exception e) {
       response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());
     }
     return serviceResponse;
   }
-
-  private NormalizationType setNormalizationType(String normalizeBy) {
-    NormalizationType normalizationType = null;
-    switch(normalizeBy.toLowerCase()) {
-      case "gross":
-        normalizationType.setType("Gross");
-        normalizationType.setValue(0);
-        break;
-      case "per_capita":
-        normalizationType.setType("Per Capita");
-        normalizationType.setValue(1);
-        break;
-      case "by_revenue":
-        normalizationType.setType("By Revenue");
-        normalizationType.setValue(2);
-        break;
-      default:
-        break;
-    }
-    return normalizationType;
-  }
-
-//  private LocationType setPlaceType(String placeType) {
-//    LocationType locationType = null;
-//    switch (placeType) {
-//      case "state":
-//
-//    }
-//  }
 }
