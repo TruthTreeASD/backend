@@ -35,7 +35,7 @@ public class SimilarLocations implements ISimilarLocations {
 
   @Override
   @RequestMapping(value = "/api/similarlocations", method = RequestMethod.GET)
-  public List<LocationDTO> getSimilarLocations(@RequestParam(name = "id") int locationId,
+  public List<LocationDTO> getSimilarLocations(@RequestParam(name = "locationId") int locationId,
                                                @RequestParam(name = "place_type")
                                                        int placeType,
                                                @RequestParam(name = "attribute")
