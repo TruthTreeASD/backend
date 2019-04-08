@@ -59,4 +59,15 @@ public interface IStories {
    */
   List<NameValueDTO> getOrderType();
 
+   /**
+   * Returns searched stories.
+   *
+   * @param String containing a string of keywords
+   * @param int , the number of stories per page
+   * @param int pageNumber, the number of the page of stories returned
+   * @return List<StoryDTO> containing stories
+   */
+  public List<StoryDTO> search(String keyword, int pageSize, int pageNumber);
+
+
 }

@@ -5,6 +5,8 @@ import static edu.northeastern.truthtree.AppConst.STORIES_URL_DELETE;
 import static edu.northeastern.truthtree.AppConst.STORIES_URL_GET;
 import static edu.northeastern.truthtree.AppConst.STORIES_URL_POST;
 import static edu.northeastern.truthtree.AppConst.STORIES_URL_UPDATE_VOTES;
+import static edu.northeastern.truthtree.AppConst.STORIES_URL_SEARCH;
+
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -125,4 +127,20 @@ public class StoriesDBAdapter implements IStoriesAdapter {
     String url = builder.buildAndExpand(uriParams).toUriString();
     URLUtil.deleteJSONFromURL(url);
   }
+
+  @Override
+  public List<StoryDTO> getStories() {
+    return null;
+  }
+  @Override
+  public List<StoryDTO> search(String keyword, int pageSize, int pageNumber) {
+   Map<String, String> uriParams = new HashMap<String, String>();
+   uriParams.put("keyword", keyword);
+   UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(STORIES_URL_SEARCH);
+   builder.queryParam("pageSize", pageSize);
+   builder.queryParam("currentPage", pageNumber);
+   String url = builder.buildAndExpand(uriParams).toUriString();
+   String jsonResponse = URLUtil.readJSONFromURLInString(url);
+   return assembler.fromJSONStringToDTOList(jsonResponse);
+ }
 }

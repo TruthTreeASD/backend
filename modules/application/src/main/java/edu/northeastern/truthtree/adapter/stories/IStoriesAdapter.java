@@ -46,4 +46,10 @@ public interface IStoriesAdapter {
    * @param id corresponding to story id
    */
   void deleteStory(String id);
+   /**
+   * Returns a list of stories that fit the keyword.
+   *
+   * @return Object containing list of stories.
+   */
+  public List<StoryDTO> search(String keyword, int pageSize, int currentPage);
 }

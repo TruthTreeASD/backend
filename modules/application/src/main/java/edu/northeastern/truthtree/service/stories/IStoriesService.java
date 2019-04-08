@@ -56,5 +56,12 @@ public interface IStoriesService {
    * @return Object containing list of story order types.
    */
   List<NameValueDTO> getOrderType();
+  
+  /**
+   * Returns a list of stories that fit the keyword.
+   *
+   * @return Object containing list of stories.
+   */
+   public List<StoryDTO> search(String keyword, int pageSize, int pageNumber);
 
 }

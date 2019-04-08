@@ -49,6 +49,11 @@ public class StoriesService implements IStoriesService {
     adapter.deleteStory(id);
   }
 
+   @Override
+  public List<StoryDTO> search(String keyword, int pageSize, int pageNumber) {
+    return adapter.search( keyword,  pageSize,  pageNumber);
+  }
+
   /**
    * Returns supported story order types in name-display value format.
    *
