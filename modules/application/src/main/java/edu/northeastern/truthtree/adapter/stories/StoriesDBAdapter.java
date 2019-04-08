@@ -129,10 +129,6 @@ public class StoriesDBAdapter implements IStoriesAdapter {
   }
 
   @Override
-  public List<StoryDTO> getStories() {
-    return null;
-  }
-  @Override
   public List<StoryDTO> search(String keyword, int pageSize, int pageNumber) {
    Map<String, String> uriParams = new HashMap<String, String>();
    uriParams.put("keyword", keyword);
