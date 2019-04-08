@@ -1,9 +1,6 @@
 package edu.northeastern.truthtree.controller.stories;
 
-import edu.northeastern.truthtree.enums.VoteType;
-import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,6 +15,7 @@ import edu.northeastern.truthtree.dto.NameValueDTO;
 import edu.northeastern.truthtree.dto.StoryDTO;
 import edu.northeastern.truthtree.enums.OrderType;
 import edu.northeastern.truthtree.enums.StoryStatus;
+import edu.northeastern.truthtree.enums.VoteType;
 import edu.northeastern.truthtree.service.stories.IStoriesService;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -38,8 +36,8 @@ public class Stories implements IStories {
 
   @RequestMapping(value = "/api/stories", method = RequestMethod.GET)
   public List<StoryDTO> getStories(
-      @RequestParam(value = "orderType", required = false) OrderType orderType,
-      @RequestParam(value = "storyStatus", required = false) StoryStatus storyStatus
+          @RequestParam(value = "orderType", required = false) OrderType orderType,
+          @RequestParam(value = "storyStatus", required = false) StoryStatus storyStatus
   ) {
     return service.getStories(orderType, storyStatus);
   }
@@ -51,7 +49,7 @@ public class Stories implements IStories {
 
   @RequestMapping(value = "/api/stories", method = RequestMethod.PUT)
   public StoryDTO updateVotes(@RequestBody StoryDTO storyDTO,
-      @RequestParam(value = "type", required = true) VoteType type) {
+                              @RequestParam(value = "type", required = true) VoteType type) {
     return service.updateVotes(storyDTO, type);
   }
 
@@ -64,6 +62,13 @@ public class Stories implements IStories {
   @RequestMapping(value = "/api/stories/order", method = RequestMethod.GET)
   public List<NameValueDTO> getOrderType() {
     return service.getOrderType();
+  }
+
+  @RequestMapping(value = "/api/stories/search", method = RequestMethod.GET)
+  public List<StoryDTO> search(@RequestParam(value = "keyword") String keyword,
+                               @RequestParam(value = "pageSize") int pageSize,
+                               @RequestParam(value = "pageNumber") int pageNumber) {
+    return service.search(keyword, pageSize, pageNumber);
   }
 
 }
