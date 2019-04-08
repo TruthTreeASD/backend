@@ -23,7 +23,7 @@ public class NormalizationService implements INormalizationService {
     for (NormalizationType type : NormalizationType.values()) {
       Map<String, String> map = new LinkedHashMap<>();
       map.put("name", type.name());
-      map.put("displayValue", type.getValue());
+      map.put("displayValue", Integer.toString(type.getValue()));
       normalizationTypes.add(map);
     }
     return normalizationTypes;
