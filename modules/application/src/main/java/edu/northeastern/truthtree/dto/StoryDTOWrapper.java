@@ -1,6 +1,7 @@
 package edu.northeastern.truthtree.dto;
 
 public class StoryDTOWrapper {
+
   private int respCode;
   private StoryDTO data;
   private boolean ok;
@@ -14,8 +15,8 @@ public class StoryDTOWrapper {
     return this.respCode;
   }
 
-  public void setData(StoryDTO data) {
-    this.data = data;
+  public void setData(StoryDTO[] data) {
+    this.data = data[0];
   }
 
   public StoryDTO getData() {

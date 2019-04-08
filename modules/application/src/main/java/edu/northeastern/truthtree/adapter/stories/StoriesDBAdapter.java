@@ -7,15 +7,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import edu.northeastern.truthtree.adapter.utilities.URLUtil;
 import edu.northeastern.truthtree.assembler.StoriesAssembler;
 import edu.northeastern.truthtree.dto.StoryDTO;
 import edu.northeastern.truthtree.enums.OrderType;
+import edu.northeastern.truthtree.enums.StoryStatus;
+import edu.northeastern.truthtree.enums.VoteType;
 
+import static edu.northeastern.truthtree.AppConst.STORIES_URL_CHANGE_STATUS;
+import static edu.northeastern.truthtree.AppConst.STORIES_URL_DELETE;
 import static edu.northeastern.truthtree.AppConst.STORIES_URL_GET;
 import static edu.northeastern.truthtree.AppConst.STORIES_URL_POST;
+import static edu.northeastern.truthtree.AppConst.STORIES_URL_SEARCH;
+import static edu.northeastern.truthtree.AppConst.STORIES_URL_UPDATE_VOTES;
 
 @Component("storiesDBAdapter")
 public class StoriesDBAdapter implements IStoriesAdapter {
@@ -36,13 +44,12 @@ public class StoriesDBAdapter implements IStoriesAdapter {
     } catch (JsonProcessingException e) {
       e.printStackTrace();
     }
-    String jsonResponse = URLUtil.postJSONFromURL(STORIES_URL_POST, jsonString);
-//    return assembler.fromJSONStringToDTO(jsonResponse);
+    URLUtil.postJSONFromURL(STORIES_URL_POST, jsonString);
     return storyDTO;
   }
 
   @Override
-  public List<StoryDTO> getStories(OrderType order) {
+  public List<StoryDTO> getStories(OrderType order, StoryStatus storyStatus) {
     String fieldName = null;
     String sortBy = null;
     if (order == null) {
@@ -71,9 +78,65 @@ public class StoriesDBAdapter implements IStoriesAdapter {
           sortBy = "desc";
       }
     }
-    UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(STORIES_URL_GET + "/" + fieldName);
-    builder.queryParam("orderType", sortBy);
-    String url = builder.toUriString();
+    Map<String, String> uriParams = new HashMap<String, String>();
+    if (storyStatus == null) {
+      uriParams.put("status", StoryStatus.APPROVED.name());
+    } else {
+      uriParams.put("status", storyStatus.name());
+    }
+    UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(STORIES_URL_GET);
+    builder.queryParam("order", sortBy);
+    builder.queryParam("orderBy", fieldName);
+    String url = builder.buildAndExpand(uriParams).toUriString();
+    String jsonResponse = URLUtil.readJSONFromURLInString(url);
+    return assembler.fromJSONStringToDTOList(jsonResponse);
+  }
+
+  @Override
+  public void changeStatus(StoryStatus status, String id) {
+    Map<String, String> uriParams = new HashMap<String, String>();
+    uriParams.put("status", status.name());
+    uriParams.put("id", id);
+    UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(STORIES_URL_CHANGE_STATUS);
+    String url = builder.buildAndExpand(uriParams).toUriString();
+    URLUtil.putJSONFromURL(url);
+  }
+
+  @Override
+  public StoryDTO updateVotes(StoryDTO storyDTO, VoteType type) {
+    Map<String, String> uriParams = new HashMap<String, String>();
+    uriParams.put("id", storyDTO.getId());
+    uriParams.put("voteType", type.name());
+
+    UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(STORIES_URL_UPDATE_VOTES);
+    String url = builder.buildAndExpand(uriParams).toUriString();
+
+    URLUtil.putJSONFromURL(url);
+    if (type.equals(VoteType.UPVOTE)) {
+      storyDTO.setUpvote(storyDTO.getUpvote() + 1);
+    } else if (type.equals(VoteType.DOWNVOTE)) {
+      storyDTO.setDownvote(storyDTO.getDownvote() + 1);
+    }
+    return storyDTO;
+  }
+
+  @Override
+  public void deleteStory(String id) {
+    Map<String, String> uriParams = new HashMap<String, String>();
+    uriParams.put("id", id);
+    UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(STORIES_URL_DELETE);
+    String url = builder.buildAndExpand(uriParams).toUriString();
+    URLUtil.deleteJSONFromURL(url);
+  }
+
+  @Override
+  public List<StoryDTO> search(String keyword, int pageSize, int pageNumber) {
+    Map<String, String> uriParams = new HashMap<String, String>();
+    uriParams.put("keyword", keyword);
+    UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(STORIES_URL_SEARCH);
+    builder.queryParam("pageSize", pageSize);
+    builder.queryParam("currentPage", pageNumber);
+    String url = builder.buildAndExpand(uriParams).toUriString();
     String jsonResponse = URLUtil.readJSONFromURLInString(url);
     return assembler.fromJSONStringToDTOList(jsonResponse);
   }

@@ -16,6 +16,10 @@ public class StoryDTO {
    */
   private String content;
   /**
+   * Stores raw content of story.
+   */
+  private String rawContent;
+  /**
    * Unique identifier for story id
    */
   private String id;
@@ -36,6 +40,11 @@ public class StoryDTO {
    */
   private Long timestamp;
 
+  /**
+   * Approved field for this story
+   */
+  private Boolean approved;
+  
   /**
    * Sets author name.
    *
@@ -100,6 +109,15 @@ public class StoryDTO {
   }
 
   /**
+   * Sets raw content of story.
+   *
+   * @param rawContent in string.
+   */
+  public void setRawContent(String rawContent) {
+    this.rawContent = rawContent;
+  }
+
+  /**
    * Sets content of story.
    *
    * @return content in string.
@@ -109,10 +127,20 @@ public class StoryDTO {
   }
 
   /**
-   * Sets title of story.
+   * Sets content of story.
    *
-   * @param title in string.
+   * @return content in string.
    */
+  public String getRawContent() {
+    return this.rawContent;
+  }
+
+
+    /**
+     * Sets title of story.
+     *
+     * @param title in string.
+     */
   public void setTitle(String title) {
     this.title = title;
   }
@@ -180,4 +208,20 @@ public class StoryDTO {
     return this.timestamp;
   }
 
+  /**
+   * Sets approved field of story.
+   *
+   * @param approved in boolean.
+   */
+  public void setApproved(Boolean approved) {
+    this.approved = approved;
+  }
+
+  /**
+   * Returns approved field of story.
+   *
+   */
+  public Boolean getApproved() {
+    return this.approved;
+  }
 }

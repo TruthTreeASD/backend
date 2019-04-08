@@ -7,6 +7,8 @@ import java.util.List;
 
 import edu.northeastern.truthtree.dto.StoryDTO;
 import edu.northeastern.truthtree.enums.OrderType;
+import edu.northeastern.truthtree.enums.StoryStatus;
+import edu.northeastern.truthtree.enums.VoteType;
 
 @Component("storiesMockAdapter")
 public class StoriesMockAdapter implements IStoriesAdapter {
@@ -18,7 +20,7 @@ public class StoriesMockAdapter implements IStoriesAdapter {
   }
 
   @Override
-  public List<StoryDTO> getStories(OrderType order) {
+  public List<StoryDTO> getStories(OrderType order, StoryStatus storyStatus) {
     List<StoryDTO> response = new ArrayList<>();
     StoryDTO storyDTO1 = new StoryDTO();
     storyDTO1.setId("43232233323");
@@ -43,4 +45,29 @@ public class StoriesMockAdapter implements IStoriesAdapter {
     return response;
   }
 
+  public StoryDTO updateVotes(StoryDTO storyDTO, VoteType type) {
+    StoryDTO storyDTO1 = new StoryDTO();
+    storyDTO1.setId("43232233323");
+    storyDTO1.setAuthor("Alice");
+    List<String> tags1 = new ArrayList<>();
+    tags1.add("Finance");
+    tags1.add("Crime");
+    storyDTO1.setTags(tags1);
+    storyDTO1.setContent("This is my first post");
+    return storyDTO1;
+  }
+
+  @Override
+  public void deleteStory(String id) {
+
+  }
+
+  @Override
+  public void changeStatus(StoryStatus status, String id) {
+  }
+
+  @Override
+  public List<StoryDTO> search(String keyword, int pageSize, int currentPage) {
+    return null;
+  }
 }
