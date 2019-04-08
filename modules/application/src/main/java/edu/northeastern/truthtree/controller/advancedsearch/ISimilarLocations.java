@@ -13,7 +13,7 @@ public interface ISimilarLocations {
 
   List<CommonAttributeDTO> getAttributes();
 
-  List<LocationDTO> getSimilarLocations(int id,
+  List<LocationDTO> getSimilarLocations(int locationId,
                                         int placeType,
                                         List<Integer> attributes,
                                         NormalizationType normalizeBy,

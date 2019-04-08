@@ -27,11 +27,4 @@ public enum NormalizationType {
     return this.value;
   }
 
-  public void setType(String type) {
-    this.type = type;
-  }
-
-  public void setValue(int value) {
-    this.value = value;
-  }
 }
