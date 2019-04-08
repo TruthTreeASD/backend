@@ -1,15 +1,14 @@
 package edu.northeastern.truthtree.adapter.stories;
 
+import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import edu.northeastern.truthtree.dto.StoryDTO;
 import edu.northeastern.truthtree.enums.OrderType;
 import edu.northeastern.truthtree.enums.StoryStatus;
-
 import edu.northeastern.truthtree.enums.VoteType;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Component;
 
 @Component("storiesMockAdapter")
 public class StoriesMockAdapter implements IStoriesAdapter {
@@ -68,7 +67,7 @@ public class StoriesMockAdapter implements IStoriesAdapter {
   }
 
   @Override
- public List<StoryDTO> search(String keyword, int pageSize, int currentPage) {
-   return null;
- }
+  public List<StoryDTO> search(String keyword, int pageSize, int currentPage) {
+    return null;
+  }
 }

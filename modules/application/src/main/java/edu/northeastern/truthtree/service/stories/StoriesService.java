@@ -1,6 +1,5 @@
 package edu.northeastern.truthtree.service.stories;
 
-import edu.northeastern.truthtree.enums.VoteType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
@@ -13,6 +12,7 @@ import edu.northeastern.truthtree.dto.NameValueDTO;
 import edu.northeastern.truthtree.dto.StoryDTO;
 import edu.northeastern.truthtree.enums.OrderType;
 import edu.northeastern.truthtree.enums.StoryStatus;
+import edu.northeastern.truthtree.enums.VoteType;
 
 @Component
 public class StoriesService implements IStoriesService {
@@ -49,9 +49,9 @@ public class StoriesService implements IStoriesService {
     adapter.deleteStory(id);
   }
 
-   @Override
+  @Override
   public List<StoryDTO> search(String keyword, int pageSize, int pageNumber) {
-    return adapter.search( keyword,  pageSize,  pageNumber);
+    return adapter.search(keyword, pageSize, pageNumber);
   }
 
   /**
