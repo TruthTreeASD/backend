@@ -16,7 +16,7 @@ public class StoryDTO {
    */
   private String content;
   /**
-   * Stores content of story.
+   * Stores raw content of story.
    */
   private String rawContent;
   /**
