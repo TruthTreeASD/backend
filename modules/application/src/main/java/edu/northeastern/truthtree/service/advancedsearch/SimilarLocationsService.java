@@ -41,6 +41,7 @@ public class SimilarLocationsService implements ISimilarLocationsService {
         throw new Exception(SIMILAR_LOCATIONS_ERROR);
       }
     }
-    return adapter.getSimilarLocations(id, placeType, attributes, normalizationType, year, count);
+    List<LocationDTO> response = adapter.getSimilarLocations(id, placeType, attributes, normalizationType, year, count);
+    return adapter.getLocations(response);
   }
 }

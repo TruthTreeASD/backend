@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import edu.northeastern.truthtree.adapter.utilities.URLUtil;
@@ -19,6 +20,7 @@ import edu.northeastern.truthtree.dto.SingleAttributeDTO;
 import edu.northeastern.truthtree.dto.YearRangeDTO;
 
 import static edu.northeastern.truthtree.AppConst.COMMON_ATTRIBUTES_URL;
+import static edu.northeastern.truthtree.AppConst.LOCATION_BY_ID_URL;
 import static edu.northeastern.truthtree.AppConst.SIMILAR_PLACES_URL;
 
 @Component("similarLocationsDBAdapter")
@@ -94,6 +96,21 @@ public class SimilarLocationsDBAdapter implements ISimilarLocationsAdapter {
       response = URLUtil.postJSONFromURL(SIMILAR_PLACES_URL + "single", jsonString);
     }
     return assembler.getJSONStringToSimilarPlacesDTOList(response);
+  }
+
+  @Override
+  public List<LocationDTO> getLocations(List<LocationDTO> locationDTOList) {
+    List<LocationDTO> locationsResponse = new ArrayList<>();
+    for (LocationDTO locationDTO : locationDTOList) {
+      String locationId = locationDTO.getId();
+      UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(LOCATION_BY_ID_URL);
+      builder.queryParam("id", locationId);
+      String response = URLUtil.readJSONFromURLInString(builder.toUriString());
+      System.out.println(response);
+      LocationDTO locationDTOResponse = assembler.getJSONStringToLocationDTO(response);
+      locationsResponse.add(locationDTOResponse);
+    }
+    return locationsResponse;
   }
 
 }

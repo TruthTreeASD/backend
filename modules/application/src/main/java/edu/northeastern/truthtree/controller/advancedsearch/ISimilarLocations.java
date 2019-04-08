@@ -13,10 +13,10 @@ public interface ISimilarLocations {
 
   List<CommonAttributeDTO> getAttributes();
 
-  List<LocationDTO> getSimilarLocations(int id,
+  List<LocationDTO> getSimilarLocations(int locationId,
                                         int placeType,
                                         List<Integer> attributes,
-                                        String normalizeBy,
+                                        NormalizationType normalizeBy,
                                         List<Integer> year,
                                         Integer count, HttpServletResponse response) throws Exception;
 }

@@ -17,5 +17,6 @@ public interface ISimilarLocationsAdapter {
                                           NormalizationType normalizeBy,
                                           List<Integer> year,
                                           Integer count);
+    List<LocationDTO> getLocations(List<LocationDTO> locationDTOList);
 
 }

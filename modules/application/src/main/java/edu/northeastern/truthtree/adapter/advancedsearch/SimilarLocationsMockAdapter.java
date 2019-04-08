@@ -21,4 +21,9 @@ public class SimilarLocationsMockAdapter implements ISimilarLocationsAdapter {
                                                NormalizationType normalizeBy, List<Integer> year, Integer count) {
     return null;
   }
+
+  @Override
+  public List<LocationDTO> getLocations(List<LocationDTO> locationDTOList) {
+    return null;
+  }
 }

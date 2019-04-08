@@ -3,6 +3,7 @@ package edu.northeastern.truthtree.assembler;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
 
+import edu.northeastern.truthtree.dto.LocationDTOWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -24,14 +25,14 @@ public class SimilarLocationsAssembler {
     this.mapper = mapper;
   }
 
-  public CommonAttributeDTO getJSONStringToDTO(String jsonStr) {
-    CommonAttributeDTO commonAttributeDTO = new CommonAttributeDTO();
+  public LocationDTO getJSONStringToLocationDTO(String jsonStr) {
+    LocationDTOWrapper locationDTO = new LocationDTOWrapper();
     try {
-      commonAttributeDTO = mapper.readValue(jsonStr, CommonAttributeDTO.class);
+      locationDTO = mapper.readValue(jsonStr, LocationDTOWrapper.class);
     } catch (Exception e) {
       e.printStackTrace();
     }
-    return commonAttributeDTO;
+    return locationDTO.getData();
   }
 
   public List<CommonAttributeDTO> getJSONStringToCommonAttributeDTOList(String jsonStr) {
