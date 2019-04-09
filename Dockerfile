@@ -5,7 +5,7 @@ COPY ./modules/application/target/*SNAPSHOT.jar /truthtree/
 RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y git && \
-    curl -sL https://deb.nodesource.com/setup_8.x | bash - && \
+    curl -sL https://deb.nodesource.com/setup_11.x | bash - && \
     apt-get install -y nodejs && \
     npm install -g react-tools
 
