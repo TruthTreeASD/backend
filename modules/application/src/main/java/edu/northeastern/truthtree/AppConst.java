@@ -84,6 +84,7 @@ public class AppConst {
   //Stories APIs
   public static final String STORIES_URL_POST = DATABASE_URL + "/api/stories/story";
   public static final String STORIES_URL_GET = DATABASE_URL + "/api/stories/story/{status}/page";
+  public static final String STORIES_URL_SEARCH = DATABASE_URL + "/api/stories/story/search/page/{keyword}";
 
   // Similar State, City and County constants
   public static final String COMMON_ATTRIBUTES_URL = ML_ENDPOINT + "/api/similar/supported";

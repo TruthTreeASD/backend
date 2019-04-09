@@ -1,14 +1,12 @@
 package edu.northeastern.truthtree.controller.stories;
 
-import edu.northeastern.truthtree.enums.VoteType;
 import java.util.List;
 
 import edu.northeastern.truthtree.dto.NameValueDTO;
 import edu.northeastern.truthtree.dto.StoryDTO;
 import edu.northeastern.truthtree.enums.OrderType;
 import edu.northeastern.truthtree.enums.StoryStatus;
-import org.json.simple.JSONObject;
-import org.springframework.http.ResponseEntity;
+import edu.northeastern.truthtree.enums.VoteType;
 
 
 public interface IStories {
@@ -32,7 +30,6 @@ public interface IStories {
 
   /**
    * Changes status of a given story.
-   *
    */
   void changeStatus(StoryStatus status, String id);
 
@@ -40,7 +37,7 @@ public interface IStories {
    * Upvote a story.
    *
    * @param storyDTO containing details of the story
-   * @param type containing the type of update
+   * @param type     containing the type of update
    * @return storyDTO
    */
   StoryDTO updateVotes(StoryDTO storyDTO, VoteType type);
@@ -58,5 +55,16 @@ public interface IStories {
    * @return list containing name value pairs of {@link OrderType}
    */
   List<NameValueDTO> getOrderType();
+
+  /**
+   * Returns searched stories.
+   *
+   * @param keyword    containing a string of keywords
+   * @param pageSize   , the number of stories per page
+   * @param pageNumber pageNumber, the number of the page of stories returned
+   * @return List<StoryDTO> containing stories
+   */
+  List<StoryDTO> search(String keyword, int pageSize, int pageNumber);
+
 
 }

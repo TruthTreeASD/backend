@@ -1,11 +1,11 @@
 package edu.northeastern.truthtree.adapter.stories;
 
-import edu.northeastern.truthtree.enums.VoteType;
 import java.util.List;
 
 import edu.northeastern.truthtree.dto.StoryDTO;
 import edu.northeastern.truthtree.enums.OrderType;
 import edu.northeastern.truthtree.enums.StoryStatus;
+import edu.northeastern.truthtree.enums.VoteType;
 
 public interface IStoriesAdapter {
 
@@ -27,7 +27,6 @@ public interface IStoriesAdapter {
 
   /**
    * Change status of a given story.
-   *
    */
   void changeStatus(StoryStatus status, String id);
 
@@ -35,7 +34,7 @@ public interface IStoriesAdapter {
    * Update votes of a story.
    *
    * @param storyDTO containing details of the story
-   * @param type containing type of update
+   * @param type     containing type of update
    * @return storyDTO
    */
   StoryDTO updateVotes(StoryDTO storyDTO, VoteType type);
@@ -46,4 +45,11 @@ public interface IStoriesAdapter {
    * @param id corresponding to story id
    */
   void deleteStory(String id);
+
+  /**
+   * Returns a list of stories that fit the keyword.
+   *
+   * @return Object containing list of stories.
+   */
+  List<StoryDTO> search(String keyword, int pageSize, int currentPage);
 }
