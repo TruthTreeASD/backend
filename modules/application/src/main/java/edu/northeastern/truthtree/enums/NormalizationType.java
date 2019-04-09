@@ -5,20 +5,26 @@ package edu.northeastern.truthtree.enums;
  * understanding of comparing values
  */
 public enum NormalizationType {
-  GROSS("Gross"), PER_CAPITA("Per Capita"), BY_REVENUE("By Revenue");
+  GROSS("Gross", 0), PER_CAPITA("Per Capita", 1), BY_REVENUE("By Revenue", 4);
   String value;
+  int code;
 
   /**
    * Sets the value of enum.
    *
    * @param value in String.
    */
-  NormalizationType(String value) {
+  NormalizationType(String value, int code) {
     this.value = value;
+    this.code = code;
   }
 
-  public String getValue(){
-    return this.value;
+  public String getValue() {
+    return value;
+  }
+
+  public int getCode() {
+    return this.code;
   }
 
 }

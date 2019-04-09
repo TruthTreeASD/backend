@@ -11,7 +11,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import edu.northeastern.truthtree.dto.CommonAttributeDTO;
+import edu.northeastern.truthtree.dto.LocationDBResponseDTO;
 import edu.northeastern.truthtree.dto.LocationDTO;
+import edu.northeastern.truthtree.dto.LocationDTOWrapper;
 import edu.northeastern.truthtree.dto.SimilarPlacesDTO;
 
 @Component
@@ -24,14 +26,21 @@ public class SimilarLocationsAssembler {
     this.mapper = mapper;
   }
 
-  public CommonAttributeDTO getJSONStringToDTO(String jsonStr) {
-    CommonAttributeDTO commonAttributeDTO = new CommonAttributeDTO();
+  public LocationDTO getJSONStringToLocationDTO(String jsonStr) {
+    LocationDTO dto = null;
     try {
-      commonAttributeDTO = mapper.readValue(jsonStr, CommonAttributeDTO.class);
+      LocationDTOWrapper locationDTO = mapper.readValue(jsonStr, LocationDTOWrapper.class);
+      LocationDBResponseDTO responseDTO = locationDTO.getData();
+      dto = new LocationDTO.Builder().withId(responseDTO.getId())
+              .withName(responseDTO.getName())
+              .withLatitude(responseDTO.getLatitude())
+              .withLongitude(responseDTO.getLongitude())
+              .withTypeCode(responseDTO.getType_code())
+              .build();
     } catch (Exception e) {
       e.printStackTrace();
     }
-    return commonAttributeDTO;
+    return dto;
   }
 
   public List<CommonAttributeDTO> getJSONStringToCommonAttributeDTOList(String jsonStr) {
