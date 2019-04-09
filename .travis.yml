@@ -8,11 +8,11 @@ services:
 script:
   # build docker image
   - mvn clean install
+
+before_deploy:
   - docker build -t truthtree:test .
   - docker tag truthtree:test registry.heroku.com/truthtree/web
   - docker tag truthtree:test 869798252720.dkr.ecr.us-west-2.amazonaws.com/truthtree:latest
-
-before_deploy:
   # install heroku CLI
   - wget -qO- https://toolbelt.heroku.com/install.sh | sh
   # login to heroku
