@@ -6,11 +6,13 @@ services:
   - docker
 
 script:
-  # build docker image
+  # maven build and run unit tests and integration tests
   - mvn clean install
 
 before_deploy:
+  # build deployed docker image
   - docker build -t truthtree:test .
+  # tag docker image
   - docker tag truthtree:test registry.heroku.com/truthtree/web
   - docker tag truthtree:test 869798252720.dkr.ecr.us-west-2.amazonaws.com/truthtree:latest
   # install heroku CLI
