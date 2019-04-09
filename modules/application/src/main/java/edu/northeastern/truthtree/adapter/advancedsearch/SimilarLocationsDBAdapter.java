@@ -55,7 +55,7 @@ public class SimilarLocationsDBAdapter implements ISimilarLocationsAdapter {
         attributeDTO.setCount(10);
       }
       attributeDTO.setPlace_type(placeType);
-      attributeDTO.setNormalize_by(normalizationType.getValue());
+      attributeDTO.setNormalize_by(normalizationType.getCode());
       attributeDTO.setAttribute(attributes);
       attributeDTO.setYear(year.get(0));
 
@@ -77,7 +77,7 @@ public class SimilarLocationsDBAdapter implements ISimilarLocationsAdapter {
         attributeDTO.setCount(10);
       }
       attributeDTO.setPlace_type(placeType);
-      attributeDTO.setNormalize_by(normalizationType.getValue());
+      attributeDTO.setNormalize_by(normalizationType.getCode());
       attributeDTO.setAttribute(attributes.get(0));
       YearRangeDTO yearRangeDTO = new YearRangeDTO();
       yearRangeDTO.setStart(year.get(0));

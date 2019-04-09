@@ -6,25 +6,25 @@ package edu.northeastern.truthtree.enums;
  */
 public enum NormalizationType {
   GROSS("Gross", 0), PER_CAPITA("Per Capita", 1), BY_REVENUE("By Revenue", 4);
-  String type;
-  int value;
+  String value;
+  int code;
 
   /**
    * Sets the value of enum.
    *
    * @param value in String.
    */
-  NormalizationType(String type, int value) {
-    this.type = type;
+  NormalizationType(String value, int code) {
     this.value = value;
+    this.code = code;
   }
 
-  public String getType() {
-    return type;
+  public String getValue() {
+    return value;
   }
 
-  public int getValue(){
-    return this.value;
+  public int getCode() {
+    return this.code;
   }
 
 }
