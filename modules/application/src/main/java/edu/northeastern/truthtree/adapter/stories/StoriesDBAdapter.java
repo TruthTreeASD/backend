@@ -87,11 +87,11 @@ public class StoriesDBAdapter implements IStoriesAdapter {
     UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(STORIES_URL_GET);
     builder.queryParam("order", sortBy);
     builder.queryParam("orderBy", fieldName);
-    if(pageSize != null)
+    if(pageSize == null)
+      builder.queryParam("pageSize", 10);
+    else
       builder.queryParam("pageSize", pageSize);
-    if(currentPage != null)
-      builder.queryParam("currentPage", currentPage);
-
+    builder.queryParam("currentPage", currentPage);
     String url = builder.buildAndExpand(uriParams).toUriString();
     String jsonResponse = URLUtil.readJSONFromURLInString(url);
     return assembler.fromJSONStringToDTOList(jsonResponse);
