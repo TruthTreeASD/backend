@@ -37,9 +37,11 @@ public class Stories implements IStories {
   @RequestMapping(value = "/api/stories", method = RequestMethod.GET)
   public List<StoryDTO> getStories(
           @RequestParam(value = "orderType", required = false) OrderType orderType,
-          @RequestParam(value = "storyStatus", required = false) StoryStatus storyStatus
+          @RequestParam(value = "storyStatus", required = false) StoryStatus storyStatus,
+          @RequestParam(value = "pageSize", required = false) Integer pageSize,
+          @RequestParam(value = "currentPage", required = false) Integer currentPage
   ) {
-    return service.getStories(orderType, storyStatus);
+    return service.getStories(orderType, storyStatus, pageSize, currentPage);
   }
 
   @RequestMapping(value = "/api/stories/story/{status}/{id}", method = RequestMethod.PUT)

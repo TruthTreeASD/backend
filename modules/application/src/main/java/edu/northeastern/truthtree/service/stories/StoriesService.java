@@ -30,8 +30,8 @@ public class StoriesService implements IStoriesService {
   }
 
   @Override
-  public List<StoryDTO> getStories(OrderType orderType, StoryStatus storyStatus) {
-    return adapter.getStories(orderType, storyStatus);
+  public List<StoryDTO> getStories(OrderType orderType, StoryStatus storyStatus, Integer pageSize, Integer currentPage) {
+    return adapter.getStories(orderType, storyStatus, pageSize, currentPage);
   }
 
   @Override

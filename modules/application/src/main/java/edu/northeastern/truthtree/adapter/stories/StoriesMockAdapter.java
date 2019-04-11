@@ -20,7 +20,7 @@ public class StoriesMockAdapter implements IStoriesAdapter {
   }
 
   @Override
-  public List<StoryDTO> getStories(OrderType order, StoryStatus storyStatus) {
+  public List<StoryDTO> getStories(OrderType order, StoryStatus storyStatus, Integer pageSize, Integer currentPage) {
     List<StoryDTO> response = new ArrayList<>();
     StoryDTO storyDTO1 = new StoryDTO();
     storyDTO1.setId("43232233323");

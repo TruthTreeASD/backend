@@ -23,7 +23,7 @@ public interface IStoriesAdapter {
    * @param order containing specified order.
    * @return list of stories.
    */
-  List<StoryDTO> getStories(OrderType order, StoryStatus storyStatus);
+  List<StoryDTO> getStories(OrderType order, StoryStatus storyStatus, Integer pageSize, Integer currentPage);
 
   /**
    * Change status of a given story.
