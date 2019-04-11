@@ -26,7 +26,7 @@ public interface IStories {
    *
    * @return list of stories
    */
-  List<StoryDTO> getStories(OrderType orderType, StoryStatus storyStatus);
+  List<StoryDTO> getStories(OrderType orderType, StoryStatus storyStatus, Integer pageSize, Integer currentPage);
 
   /**
    * Changes status of a given story.

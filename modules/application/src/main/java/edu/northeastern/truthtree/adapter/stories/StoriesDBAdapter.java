@@ -49,7 +49,7 @@ public class StoriesDBAdapter implements IStoriesAdapter {
   }
 
   @Override
-  public List<StoryDTO> getStories(OrderType order, StoryStatus storyStatus) {
+  public List<StoryDTO> getStories(OrderType order, StoryStatus storyStatus, Integer pageSize, Integer currentPage) {
     String fieldName = null;
     String sortBy = null;
     if (order == null) {
@@ -87,6 +87,11 @@ public class StoriesDBAdapter implements IStoriesAdapter {
     UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(STORIES_URL_GET);
     builder.queryParam("order", sortBy);
     builder.queryParam("orderBy", fieldName);
+    if(pageSize == null)
+      builder.queryParam("pageSize", 10);
+    else
+      builder.queryParam("pageSize", pageSize);
+    builder.queryParam("currentPage", currentPage);
     String url = builder.buildAndExpand(uriParams).toUriString();
     String jsonResponse = URLUtil.readJSONFromURLInString(url);
     return assembler.fromJSONStringToDTOList(jsonResponse);

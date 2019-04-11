@@ -1,0 +1,73 @@
+[{
+    "id": "70000000",
+    "name": "CONNECTICUT",
+    "parent": null,
+    "typeCode": 0,
+    "latitude": 41.6500201,
+    "longitude": -72.7342163
+  },
+  {
+    "id": "400000000",
+    "name": "RHODE ISLAND",
+    "parent": null,
+    "typeCode": 0,
+    "latitude": 41.7962409,
+    "longitude": -71.5992372
+  },
+  {
+    "id": "200000000",
+    "name": "MAINE",
+    "parent": null,
+    "typeCode": 0,
+    "latitude": 45.709097,
+    "longitude": -68.8590201
+  },
+  {
+    "id": "80000000",
+    "name": "DELAWARE",
+    "parent": null,
+    "typeCode": 0,
+    "latitude": 38.6920451,
+    "longitude": -75.4013315
+  },
+  {
+    "id": "190000000",
+    "name": "LOUISIANA",
+    "parent": null,
+    "typeCode": 0,
+    "latitude": 30.8703881,
+    "longitude": -92.007126
+  },
+  {
+    "id": "390000000",
+    "name": "PENNSYLVANIA",
+    "parent": null,
+    "typeCode": 0,
+    "latitude": 40.9699889,
+    "longitude": -77.7278831
+  },
+  {
+    "id": "120000000",
+    "name": "HAWAII",
+    "parent": null,
+    "typeCode": 0,
+    "latitude": 21.2160437,
+    "longitude": -157.975203
+  },
+  {
+    "id": "180000000",
+    "name": "KENTUCKY",
+    "parent": null,
+    "typeCode": 0,
+    "latitude": 37.5726028,
+    "longitude": -85.1551411
+  },
+  {
+    "id": "460000000",
+    "name": "VERMONT",
+    "parent": null,
+    "typeCode": 0,
+    "latitude": 44.5990718,
+    "longitude": -72.5002608
+  }
+]
