@@ -52,5 +52,5 @@ public interface IStoriesAdapter {
    *
    * @return Object containing list of stories.
    */
-  List<StoryDTO> search(String keyword, int pageSize, int currentPage);
+  List<StoryDTO> search(String keyword, Integer pageSize, Integer currentPage);
 }

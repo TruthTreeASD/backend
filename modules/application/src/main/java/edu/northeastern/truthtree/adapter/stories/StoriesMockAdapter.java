@@ -68,7 +68,7 @@ public class StoriesMockAdapter implements IStoriesAdapter {
   }
 
   @Override
-  public List<StoryDTO> search(String keyword, int pageSize, int currentPage) {
+  public List<StoryDTO> search(String keyword, Integer pageSize, Integer currentPage) {
     return null;
   }
 }

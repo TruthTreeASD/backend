@@ -51,7 +51,7 @@ public class StoriesService implements IStoriesService {
   }
 
   @Override
-  public List<StoryDTO> search(String keyword, int pageSize, int pageNumber) {
+  public List<StoryDTO> search(String keyword, Integer pageSize, Integer pageNumber) {
     return adapter.search(keyword, pageSize, pageNumber);
   }
 

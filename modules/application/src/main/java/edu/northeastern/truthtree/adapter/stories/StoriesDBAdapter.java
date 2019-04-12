@@ -50,7 +50,8 @@ public class StoriesDBAdapter implements IStoriesAdapter {
   }
 
   @Override
-  public StoryPaginationResponseDTO getStories(OrderType order, StoryStatus storyStatus, Integer pageSize, Integer currentPage) {
+  public StoryPaginationResponseDTO getStories(OrderType order, StoryStatus storyStatus,
+      Integer pageSize, Integer currentPage) {
     String fieldName = null;
     String sortBy = null;
     if (order == null) {
@@ -88,14 +89,16 @@ public class StoriesDBAdapter implements IStoriesAdapter {
     UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(STORIES_URL_GET);
     builder.queryParam("order", sortBy);
     builder.queryParam("orderBy", fieldName);
-    if(pageSize == null)
+    if (pageSize == null) {
       builder.queryParam("pageSize", 10);
-    else
+    } else {
       builder.queryParam("pageSize", pageSize);
-    if(currentPage == null)
+    }
+    if (currentPage == null) {
       builder.queryParam("currentPage", 1);
-    else
+    } else {
       builder.queryParam("currentPage", currentPage);
+    }
     String url = builder.buildAndExpand(uriParams).toUriString();
     String jsonResponse = URLUtil.readJSONFromURLInString(url);
     return assembler.fromJSONStringToPaginationDTO(jsonResponse);
@@ -139,12 +142,20 @@ public class StoriesDBAdapter implements IStoriesAdapter {
   }
 
   @Override
-  public List<StoryDTO> search(String keyword, int pageSize, int pageNumber) {
+  public List<StoryDTO> search(String keyword, Integer pageSize, Integer pageNumber) {
     Map<String, String> uriParams = new HashMap<String, String>();
     uriParams.put("keyword", keyword);
     UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(STORIES_URL_SEARCH);
-    builder.queryParam("pageSize", pageSize);
-    builder.queryParam("currentPage", pageNumber);
+    if (pageSize == null) {
+      builder.queryParam("pageSize", 10);
+    } else {
+      builder.queryParam("pageSize", pageSize);
+    }
+    if (pageNumber == null) {
+      builder.queryParam("currentPage", 1);
+    } else {
+      builder.queryParam("currentPage", pageNumber);
+    }
     String url = builder.buildAndExpand(uriParams).toUriString();
     String jsonResponse = URLUtil.readJSONFromURLInString(url);
     return assembler.fromJSONStringToDTOList(jsonResponse);
