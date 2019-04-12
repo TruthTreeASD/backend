@@ -39,8 +39,8 @@ public class Stories implements IStories {
   public StoryPaginationResponseDTO getStories(
           @RequestParam(value = "orderType", required = false) OrderType orderType,
           @RequestParam(value = "storyStatus", required = false) StoryStatus storyStatus,
-          @RequestParam(value = "pageSize", required = true) Integer pageSize,
-          @RequestParam(value = "currentPage", required = true) Integer currentPage
+          @RequestParam(value = "pageSize", required = false) Integer pageSize,
+          @RequestParam(value = "currentPage", required = false) Integer currentPage
   ) {
     return service.getStories(orderType, storyStatus, pageSize, currentPage);
   }

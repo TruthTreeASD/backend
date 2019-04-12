@@ -92,7 +92,10 @@ public class StoriesDBAdapter implements IStoriesAdapter {
       builder.queryParam("pageSize", 10);
     else
       builder.queryParam("pageSize", pageSize);
-    builder.queryParam("currentPage", currentPage);
+    if(currentPage == null)
+      builder.queryParam("currentPage", 1);
+    else
+      builder.queryParam("currentPage", currentPage);
     String url = builder.buildAndExpand(uriParams).toUriString();
     String jsonResponse = URLUtil.readJSONFromURLInString(url);
     return assembler.fromJSONStringToPaginationDTO(jsonResponse);
