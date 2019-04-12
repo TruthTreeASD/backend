@@ -47,18 +47,12 @@ public class StoriesAssembler {
 
   public StoryPaginationResponseDTO fromJSONStringToPaginationDTO(String jsonString) {
     StoryDTOWrapperList storyDTO = new StoryDTOWrapperList();
-    StoryPaginationResponseDTO storyPaginationResponseDTO = new StoryPaginationResponseDTO();
     try {
       storyDTO = mapper.readValue(jsonString, StoryDTOWrapperList.class);
     } catch (IOException e) {
       e.printStackTrace();
     }
-    storyPaginationResponseDTO.setData(storyDTO.getData().getData());
-    storyPaginationResponseDTO.setTotal(storyDTO.getData().getTotal());
-    storyPaginationResponseDTO.setCurrentPage(storyDTO.getData().getCurrentPage());
-    storyPaginationResponseDTO.setPageSize(storyDTO.getData().getPageSize());
-    storyPaginationResponseDTO.setTotalPage(storyDTO.getData().getTotalPage());
-    return storyPaginationResponseDTO;
+    return storyDTO.getData();
   }
 
 }
