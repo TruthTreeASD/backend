@@ -63,9 +63,10 @@ public interface IStories {
    * @param keyword    containing a string of keywords
    * @param pageSize   , the number of stories per page
    * @param pageNumber pageNumber, the number of the page of stories returned
+   * @param orderBy ordertype, the available order types
    * @return List<StoryDTO> containing stories
    */
-  List<StoryDTO> search(String keyword, int pageSize, int pageNumber);
+  StoryPaginationResponseDTO search(String keyword, Integer pageSize, Integer pageNumber, OrderType orderBy);
 
 
 }
