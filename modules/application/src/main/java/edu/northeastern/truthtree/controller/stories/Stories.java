@@ -68,7 +68,7 @@ public class Stories implements IStories {
   }
 
   @RequestMapping(value = "/api/stories/search", method = RequestMethod.GET)
-  public List<StoryDTO> search(@RequestParam(value = "keyword") String keyword,
+  public StoryPaginationResponseDTO search(@RequestParam(value = "keyword") String keyword,
                                @RequestParam(value = "pageSize", required = false) Integer pageSize,
                                @RequestParam(value = "pageNumber", required = false) Integer pageNumber) {
     return service.search(keyword, pageSize, pageNumber);

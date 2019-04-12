@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import edu.northeastern.truthtree.adapter.utilities.URLUtil;
@@ -142,7 +141,7 @@ public class StoriesDBAdapter implements IStoriesAdapter {
   }
 
   @Override
-  public List<StoryDTO> search(String keyword, Integer pageSize, Integer pageNumber) {
+  public StoryPaginationResponseDTO search(String keyword, Integer pageSize, Integer pageNumber) {
     Map<String, String> uriParams = new HashMap<String, String>();
     uriParams.put("keyword", keyword);
     UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(STORIES_URL_SEARCH);
@@ -158,6 +157,6 @@ public class StoriesDBAdapter implements IStoriesAdapter {
     }
     String url = builder.buildAndExpand(uriParams).toUriString();
     String jsonResponse = URLUtil.readJSONFromURLInString(url);
-    return assembler.fromJSONStringToDTOList(jsonResponse);
+    return assembler.fromJSONStringToPaginationDTO(jsonResponse);
   }
 }

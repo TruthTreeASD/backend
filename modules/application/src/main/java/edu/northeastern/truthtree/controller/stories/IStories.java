@@ -65,7 +65,7 @@ public interface IStories {
    * @param pageNumber pageNumber, the number of the page of stories returned
    * @return List<StoryDTO> containing stories
    */
-  List<StoryDTO> search(String keyword, Integer pageSize, Integer pageNumber);
+  StoryPaginationResponseDTO search(String keyword, Integer pageSize, Integer pageNumber);
 
 
 }

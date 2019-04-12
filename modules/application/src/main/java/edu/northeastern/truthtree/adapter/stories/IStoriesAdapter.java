@@ -1,7 +1,5 @@
 package edu.northeastern.truthtree.adapter.stories;
 
-import java.util.List;
-
 import edu.northeastern.truthtree.dto.StoryDTO;
 import edu.northeastern.truthtree.dto.StoryPaginationResponseDTO;
 import edu.northeastern.truthtree.enums.OrderType;
@@ -52,5 +50,5 @@ public interface IStoriesAdapter {
    *
    * @return Object containing list of stories.
    */
-  List<StoryDTO> search(String keyword, Integer pageSize, Integer currentPage);
+  StoryPaginationResponseDTO search(String keyword, Integer pageSize, Integer currentPage);
 }
