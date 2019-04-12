@@ -3,6 +3,7 @@ package edu.northeastern.truthtree.adapter.stories;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import edu.northeastern.truthtree.dto.StoryPaginationResponseDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -49,7 +50,7 @@ public class StoriesDBAdapter implements IStoriesAdapter {
   }
 
   @Override
-  public List<StoryDTO> getStories(OrderType order, StoryStatus storyStatus, Integer pageSize, Integer currentPage) {
+  public StoryPaginationResponseDTO getStories(OrderType order, StoryStatus storyStatus, Integer pageSize, Integer currentPage) {
     String fieldName = null;
     String sortBy = null;
     if (order == null) {
@@ -94,7 +95,7 @@ public class StoriesDBAdapter implements IStoriesAdapter {
     builder.queryParam("currentPage", currentPage);
     String url = builder.buildAndExpand(uriParams).toUriString();
     String jsonResponse = URLUtil.readJSONFromURLInString(url);
-    return assembler.fromJSONStringToDTOList(jsonResponse);
+    return assembler.fromJSONStringToPaginationDTO(jsonResponse);
   }
 
   @Override

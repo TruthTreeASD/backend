@@ -1,5 +1,6 @@
 package edu.northeastern.truthtree.controller.stories;
 
+import edu.northeastern.truthtree.dto.StoryPaginationResponseDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -35,7 +36,7 @@ public class Stories implements IStories {
   }
 
   @RequestMapping(value = "/api/stories", method = RequestMethod.GET)
-  public List<StoryDTO> getStories(
+  public StoryPaginationResponseDTO getStories(
           @RequestParam(value = "orderType", required = false) OrderType orderType,
           @RequestParam(value = "storyStatus", required = false) StoryStatus storyStatus,
           @RequestParam(value = "pageSize", required = true) Integer pageSize,

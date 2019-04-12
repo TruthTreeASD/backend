@@ -3,6 +3,7 @@ package edu.northeastern.truthtree.adapter.stories;
 import java.util.List;
 
 import edu.northeastern.truthtree.dto.StoryDTO;
+import edu.northeastern.truthtree.dto.StoryPaginationResponseDTO;
 import edu.northeastern.truthtree.enums.OrderType;
 import edu.northeastern.truthtree.enums.StoryStatus;
 import edu.northeastern.truthtree.enums.VoteType;
@@ -23,7 +24,7 @@ public interface IStoriesAdapter {
    * @param order containing specified order.
    * @return list of stories.
    */
-  List<StoryDTO> getStories(OrderType order, StoryStatus storyStatus, Integer pageSize, Integer currentPage);
+  StoryPaginationResponseDTO getStories(OrderType order, StoryStatus storyStatus, Integer pageSize, Integer currentPage);
 
   /**
    * Change status of a given story.

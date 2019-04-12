@@ -4,6 +4,7 @@ import java.util.List;
 
 import edu.northeastern.truthtree.dto.NameValueDTO;
 import edu.northeastern.truthtree.dto.StoryDTO;
+import edu.northeastern.truthtree.dto.StoryPaginationResponseDTO;
 import edu.northeastern.truthtree.enums.OrderType;
 import edu.northeastern.truthtree.enums.StoryStatus;
 import edu.northeastern.truthtree.enums.VoteType;
@@ -24,7 +25,7 @@ public interface IStoriesService {
    * @param orderType represents how story will be sorted.
    * @return list of stories.
    */
-  List<StoryDTO> getStories(OrderType orderType, StoryStatus storyStatus, Integer pageSize, Integer currentPage);
+  StoryPaginationResponseDTO getStories(OrderType orderType, StoryStatus storyStatus, Integer pageSize, Integer currentPage);
 
   /**
    * Changes status of a given story.

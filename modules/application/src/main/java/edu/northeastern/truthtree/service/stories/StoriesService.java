@@ -1,5 +1,6 @@
 package edu.northeastern.truthtree.service.stories;
 
+import edu.northeastern.truthtree.dto.StoryPaginationResponseDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
@@ -30,7 +31,7 @@ public class StoriesService implements IStoriesService {
   }
 
   @Override
-  public List<StoryDTO> getStories(OrderType orderType, StoryStatus storyStatus, Integer pageSize, Integer currentPage) {
+  public StoryPaginationResponseDTO getStories(OrderType orderType, StoryStatus storyStatus, Integer pageSize, Integer currentPage) {
     return adapter.getStories(orderType, storyStatus, pageSize, currentPage);
   }
 
