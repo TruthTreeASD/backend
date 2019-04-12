@@ -141,20 +141,13 @@ public class StoriesDBAdapter implements IStoriesAdapter {
   }
 
   @Override
-  public StoryPaginationResponseDTO search(String keyword, Integer pageSize, Integer pageNumber) {
+  public StoryPaginationResponseDTO search(String keyword, Integer pageSize, Integer pageNumber, OrderType orderType) {
     Map<String, String> uriParams = new HashMap<String, String>();
     uriParams.put("keyword", keyword);
     UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(STORIES_URL_SEARCH);
-    if (pageSize == null) {
-      builder.queryParam("pageSize", 10);
-    } else {
-      builder.queryParam("pageSize", pageSize);
-    }
-    if (pageNumber == null) {
-      builder.queryParam("currentPage", 1);
-    } else {
-      builder.queryParam("currentPage", pageNumber);
-    }
+    builder.queryParam("pageSize", pageSize);
+    builder.queryParam("currentPage", pageNumber);
+    builder.queryParam("orderType", orderType);
     String url = builder.buildAndExpand(uriParams).toUriString();
     String jsonResponse = URLUtil.readJSONFromURLInString(url);
     return assembler.fromJSONStringToPaginationDTO(jsonResponse);

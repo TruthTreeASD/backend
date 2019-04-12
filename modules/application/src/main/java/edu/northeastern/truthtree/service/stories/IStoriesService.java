@@ -60,6 +60,6 @@ public interface IStoriesService {
    *
    * @return Object containing list of stories.
    */
-  StoryPaginationResponseDTO search(String keyword, Integer pageSize, Integer pageNumber);
+  StoryPaginationResponseDTO search(String keyword, Integer pageSize, Integer pageNumber, OrderType orderType);
 
 }

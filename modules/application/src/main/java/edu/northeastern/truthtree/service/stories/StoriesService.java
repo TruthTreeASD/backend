@@ -51,8 +51,8 @@ public class StoriesService implements IStoriesService {
   }
 
   @Override
-  public StoryPaginationResponseDTO search(String keyword, Integer pageSize, Integer pageNumber) {
-    return adapter.search(keyword, pageSize, pageNumber);
+  public StoryPaginationResponseDTO search(String keyword, Integer pageSize, Integer pageNumber, OrderType orderType) {
+    return adapter.search(keyword, pageSize, pageNumber, orderType);
   }
 
   /**

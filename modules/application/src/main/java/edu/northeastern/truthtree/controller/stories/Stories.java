@@ -37,10 +37,10 @@ public class Stories implements IStories {
 
   @RequestMapping(value = "/api/stories", method = RequestMethod.GET)
   public StoryPaginationResponseDTO getStories(
-          @RequestParam(value = "orderType", required = false) OrderType orderType,
-          @RequestParam(value = "storyStatus", required = false) StoryStatus storyStatus,
-          @RequestParam(value = "pageSize", required = false) Integer pageSize,
-          @RequestParam(value = "currentPage", required = false) Integer currentPage
+      @RequestParam(value = "orderType", required = false) OrderType orderType,
+      @RequestParam(value = "storyStatus", required = false) StoryStatus storyStatus,
+      @RequestParam(value = "pageSize", required = false) Integer pageSize,
+      @RequestParam(value = "currentPage", required = false) Integer currentPage
   ) {
     return service.getStories(orderType, storyStatus, pageSize, currentPage);
   }
@@ -52,7 +52,7 @@ public class Stories implements IStories {
 
   @RequestMapping(value = "/api/stories", method = RequestMethod.PUT)
   public StoryDTO updateVotes(@RequestBody StoryDTO storyDTO,
-                              @RequestParam(value = "type", required = true) VoteType type) {
+      @RequestParam(value = "type", required = true) VoteType type) {
     return service.updateVotes(storyDTO, type);
   }
 
@@ -69,9 +69,10 @@ public class Stories implements IStories {
 
   @RequestMapping(value = "/api/stories/search", method = RequestMethod.GET)
   public StoryPaginationResponseDTO search(@RequestParam(value = "keyword") String keyword,
-                               @RequestParam(value = "pageSize", required = false) Integer pageSize,
-                               @RequestParam(value = "pageNumber", required = false) Integer pageNumber) {
-    return service.search(keyword, pageSize, pageNumber);
+      @RequestParam(value = "pageSize", required = false) Integer pageSize,
+      @RequestParam(value = "pageNumber", required = false) Integer pageNumber,
+      @RequestParam(value = "orderBy", required = false) OrderType orderType) {
+    return service.search(keyword, pageSize, pageNumber, orderType);
   }
 
 }
