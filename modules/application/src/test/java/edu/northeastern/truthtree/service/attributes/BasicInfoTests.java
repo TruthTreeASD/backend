@@ -1,15 +1,17 @@
 package edu.northeastern.truthtree.service.attributes;
 
 import edu.northeastern.truthtree.adapter.basicInfo.IBasicInfoAdapter;
-import edu.northeastern.truthtree.adapter.utilities.JSONUtil;
+import edu.northeastern.truthtree.dto.LocationDTO;
+import edu.northeastern.truthtree.dto.PageDTO;
 import edu.northeastern.truthtree.service.basicInfo.BasicInfoService;
 import edu.northeastern.truthtree.service.basicInfo.IBasicInfoService;
-import org.json.simple.JSONArray;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
+
+import java.io.IOException;
 
 import static edu.northeastern.truthtree.TestConstants.*;
 import static org.junit.Assert.assertEquals;
@@ -28,41 +30,64 @@ public class BasicInfoTests {
     }
 
     @Test
-    public void testGetStateInfoWithNullRange() {
-        JSONArray actualResponse = basicInfoAdapter.getBasicStatesInfo();
-        assertEquals(actualResponse, basicInfoService.getBasicStatesInfo(null));
+    public void testGetStateInfoWithNullRange() throws IOException {
+        PageDTO<LocationDTO> actualResponse = basicInfoAdapter.getBasicStatesInfo();
+        assertEquals(actualResponse, basicInfoService.getBasicStatesInfo(1, null));
     }
 
     @Test
-    public void testGetCityInfoWithNullRange() {
-        JSONArray actualResponse = basicInfoAdapter.getBasicCitiesInfo();
-        assertEquals(actualResponse, basicInfoService.getBasicCitiesInfo(null));
+    public void testGetCityInfoWithNullRange() throws IOException {
+        PageDTO<LocationDTO> actualResponse = basicInfoAdapter.getBasicCitiesInfo();
+        assertEquals(actualResponse, basicInfoService.getBasicCitiesInfo(1, null));
     }
 
     @Test
-    public void testGetCountyInfoWithNullRange() {
-        JSONArray actualResponse = basicInfoAdapter.getBasicCountiesInfo();
-        assertEquals(actualResponse, basicInfoService.getBasicCountiesInfo(null));
+    public void testGetCountyInfoWithNullRange() throws IOException {
+        PageDTO<LocationDTO> actualResponse = basicInfoAdapter.getBasicCountiesInfo();
+        assertEquals(actualResponse, basicInfoService.getBasicCountiesInfo(1, null));
     }
 
 
     @Test
-    public void testStatePopulationError() {
-        assertEquals(JSONUtil.createErrorMessage(POPULATION_ERROR), basicInfoService.getBasicStatesInfo(RANGE1));
-        assertEquals(JSONUtil.createErrorMessage(POPULATION_ERROR), basicInfoService.getBasicStatesInfo(RANGE2));
-
+    public void testStatePopulationError() throws IOException {
+        try {
+            basicInfoService.getBasicStatesInfo(1, RANGE1);
+        } catch (IllegalArgumentException e) {
+            // test passed
+        }
+        try {
+            basicInfoService.getBasicStatesInfo(1, RANGE2);
+        } catch (IllegalArgumentException e) {
+            // test passed
+        }
     }
 
     @Test
-    public void testCityPopulationError() {
-        assertEquals(JSONUtil.createErrorMessage(POPULATION_ERROR), basicInfoService.getBasicCitiesInfo(RANGE1));
-        assertEquals(JSONUtil.createErrorMessage(POPULATION_ERROR), basicInfoService.getBasicCitiesInfo(RANGE2));
+    public void testCityPopulationError() throws IOException {
+        try {
+            basicInfoService.getBasicCitiesInfo(1, RANGE1);
+        } catch (IllegalArgumentException e) {
+            // test passed
+        }
+        try {
+            basicInfoService.getBasicCitiesInfo(1, RANGE2);
+        } catch (IllegalArgumentException e) {
+            // test passed
+        }
     }
 
     @Test
-    public void testCountyPopulationError() {
-        assertEquals(JSONUtil.createErrorMessage(POPULATION_ERROR), basicInfoService.getBasicCountiesInfo(RANGE1));
-        assertEquals(JSONUtil.createErrorMessage(POPULATION_ERROR), basicInfoService.getBasicCountiesInfo(RANGE2));
+    public void testCountyPopulationError() throws IOException {
+        try {
+            basicInfoService.getBasicCountiesInfo(1, RANGE1);
+        } catch (IllegalArgumentException e) {
+            // test passed
+        }
+        try {
+            basicInfoService.getBasicCountiesInfo(1, RANGE2);
+        } catch (IllegalArgumentException e) {
+            // test passed
+        }
     }
 
     @Test
