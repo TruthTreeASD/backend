@@ -182,7 +182,6 @@ public class BasicInfoDBAdapter extends BaseAdapter implements IBasicInfoAdapter
     return mapToLocationPage((Map) bodyMap.get("data"), basicInfoMap);
   }
 
-  @SuppressWarnings("unchecked")
   private PageDTO<LocationDTO> mapToLocationPage(Map<String, Object> dataMap,
                                                  Map<Long, Object> basicInfoMap) {
     List<Map<String, Object>> populationMaps = (List) dataMap.get("data");
