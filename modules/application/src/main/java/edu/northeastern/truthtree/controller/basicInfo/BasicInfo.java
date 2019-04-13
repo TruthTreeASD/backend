@@ -2,8 +2,10 @@ package edu.northeastern.truthtree.controller.basicInfo;
 
 import static edu.northeastern.truthtree.AppConst.POPULATION_RANGE;
 
+import edu.northeastern.truthtree.dto.LocationDTO;
+import edu.northeastern.truthtree.dto.PageDTO;
 import edu.northeastern.truthtree.service.basicInfo.IBasicInfoService;
-import org.json.simple.JSONArray;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
 import java.util.Map;
 import java.util.Optional;
 
@@ -48,11 +51,10 @@ public class BasicInfo implements IBasicInfo {
    */
   @Override
   @RequestMapping(value = "/api/states", method = RequestMethod.GET)
-  public JSONArray getBasicStatesInfo(@RequestParam
-      (value = POPULATION_RANGE, required = false)
-      int[] range) {
-
-    return this.service.getBasicStatesInfo(range);
+  public ResponseEntity<PageDTO<LocationDTO>> getBasicStatesInfo(
+          @RequestParam(value = POPULATION_RANGE, required = false) int[] range,
+          @RequestParam(name = "page", defaultValue = "1") int page) throws IOException {
+    return ResponseEntity.ok(this.service.getBasicStatesInfo(page, range));
   }
 
   /**
@@ -78,11 +80,10 @@ public class BasicInfo implements IBasicInfo {
    */
   @Override
   @RequestMapping(value = "/api/counties", method = RequestMethod.GET)
-  public JSONArray getBasicCountiesInfo(@RequestParam
-                                                  (value = POPULATION_RANGE, required = false)
-                                                  int[] range) {
-    JSONArray response = this.service.getBasicCountiesInfo(range);
-    return response;
+  public ResponseEntity<PageDTO<LocationDTO>> getBasicCountiesInfo(
+        @RequestParam(value = POPULATION_RANGE, required = false) int[] range,
+        @RequestParam(name = "page", defaultValue = "1") int page) throws IOException {
+    return ResponseEntity.ok(this.service.getBasicCountiesInfo(page, range));
   }
 
   /**
@@ -108,11 +109,10 @@ public class BasicInfo implements IBasicInfo {
    */
   @Override
   @RequestMapping(value = "/api/cities", method = RequestMethod.GET)
-  public JSONArray getBasicCitiesInfo(@RequestParam
-                                                (value = POPULATION_RANGE, required = false)
-                                                int[] range) {
-    JSONArray response = this.service.getBasicCitiesInfo(range);
-    return response;
+  public ResponseEntity<PageDTO<LocationDTO>> getBasicCitiesInfo(
+          @RequestParam(value = POPULATION_RANGE, required = false) int[] range,
+          @RequestParam(value = "page", defaultValue = "1") int page) throws IOException {
+    return ResponseEntity.ok(this.service.getBasicCitiesInfo(page, range));
   }
 
   /**
