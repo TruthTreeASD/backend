@@ -4,6 +4,7 @@ import java.util.List;
 
 import edu.northeastern.truthtree.dto.NameValueDTO;
 import edu.northeastern.truthtree.dto.StoryDTO;
+import edu.northeastern.truthtree.dto.StoryPaginationResponseDTO;
 import edu.northeastern.truthtree.enums.OrderType;
 import edu.northeastern.truthtree.enums.StoryStatus;
 import edu.northeastern.truthtree.enums.VoteType;
@@ -26,7 +27,7 @@ public interface IStories {
    *
    * @return list of stories
    */
-  List<StoryDTO> getStories(OrderType orderType, StoryStatus storyStatus, Integer pageSize, Integer currentPage);
+  StoryPaginationResponseDTO getStories(OrderType orderType, StoryStatus storyStatus, Integer pageSize, Integer currentPage);
 
   /**
    * Changes status of a given story.
@@ -62,9 +63,10 @@ public interface IStories {
    * @param keyword    containing a string of keywords
    * @param pageSize   , the number of stories per page
    * @param pageNumber pageNumber, the number of the page of stories returned
+   * @param orderBy ordertype, the available order types
    * @return List<StoryDTO> containing stories
    */
-  List<StoryDTO> search(String keyword, int pageSize, int pageNumber);
+  StoryPaginationResponseDTO search(String keyword, Integer pageSize, Integer pageNumber, OrderType orderBy);
 
 
 }

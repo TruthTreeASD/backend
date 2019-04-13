@@ -1,5 +1,6 @@
 package edu.northeastern.truthtree.controller.stories;
 
+import edu.northeastern.truthtree.dto.StoryPaginationResponseDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -35,11 +36,11 @@ public class Stories implements IStories {
   }
 
   @RequestMapping(value = "/api/stories", method = RequestMethod.GET)
-  public List<StoryDTO> getStories(
-          @RequestParam(value = "orderType", required = false) OrderType orderType,
-          @RequestParam(value = "storyStatus", required = false) StoryStatus storyStatus,
-          @RequestParam(value = "pageSize", required = true) Integer pageSize,
-          @RequestParam(value = "currentPage", required = true) Integer currentPage
+  public StoryPaginationResponseDTO getStories(
+      @RequestParam(value = "orderType", required = false) OrderType orderType,
+      @RequestParam(value = "storyStatus", required = false) StoryStatus storyStatus,
+      @RequestParam(value = "pageSize", required = false) Integer pageSize,
+      @RequestParam(value = "currentPage", required = false) Integer currentPage
   ) {
     return service.getStories(orderType, storyStatus, pageSize, currentPage);
   }
@@ -51,7 +52,7 @@ public class Stories implements IStories {
 
   @RequestMapping(value = "/api/stories", method = RequestMethod.PUT)
   public StoryDTO updateVotes(@RequestBody StoryDTO storyDTO,
-                              @RequestParam(value = "type", required = true) VoteType type) {
+      @RequestParam(value = "type", required = true) VoteType type) {
     return service.updateVotes(storyDTO, type);
   }
 
@@ -67,10 +68,11 @@ public class Stories implements IStories {
   }
 
   @RequestMapping(value = "/api/stories/search", method = RequestMethod.GET)
-  public List<StoryDTO> search(@RequestParam(value = "keyword") String keyword,
-                               @RequestParam(value = "pageSize") int pageSize,
-                               @RequestParam(value = "pageNumber") int pageNumber) {
-    return service.search(keyword, pageSize, pageNumber);
+  public StoryPaginationResponseDTO search(@RequestParam(value = "keyword") String keyword,
+      @RequestParam(value = "pageSize", required = false) Integer pageSize,
+      @RequestParam(value = "pageNumber", required = false) Integer pageNumber,
+      @RequestParam(value = "orderBy", required = false) OrderType orderType) {
+    return service.search(keyword, pageSize, pageNumber, orderType);
   }
 
 }

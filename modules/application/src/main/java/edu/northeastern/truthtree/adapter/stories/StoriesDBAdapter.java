@@ -3,12 +3,12 @@ package edu.northeastern.truthtree.adapter.stories;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import edu.northeastern.truthtree.dto.StoryPaginationResponseDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import edu.northeastern.truthtree.adapter.utilities.URLUtil;
@@ -49,7 +49,8 @@ public class StoriesDBAdapter implements IStoriesAdapter {
   }
 
   @Override
-  public List<StoryDTO> getStories(OrderType order, StoryStatus storyStatus, Integer pageSize, Integer currentPage) {
+  public StoryPaginationResponseDTO getStories(OrderType order, StoryStatus storyStatus,
+      Integer pageSize, Integer currentPage) {
     String fieldName = null;
     String sortBy = null;
     if (order == null) {
@@ -87,14 +88,19 @@ public class StoriesDBAdapter implements IStoriesAdapter {
     UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(STORIES_URL_GET);
     builder.queryParam("order", sortBy);
     builder.queryParam("orderBy", fieldName);
-    if(pageSize == null)
+    if (pageSize == null) {
       builder.queryParam("pageSize", 10);
-    else
+    } else {
       builder.queryParam("pageSize", pageSize);
-    builder.queryParam("currentPage", currentPage);
+    }
+    if (currentPage == null) {
+      builder.queryParam("currentPage", 1);
+    } else {
+      builder.queryParam("currentPage", currentPage);
+    }
     String url = builder.buildAndExpand(uriParams).toUriString();
     String jsonResponse = URLUtil.readJSONFromURLInString(url);
-    return assembler.fromJSONStringToDTOList(jsonResponse);
+    return assembler.fromJSONStringToPaginationDTO(jsonResponse);
   }
 
   @Override
@@ -135,14 +141,15 @@ public class StoriesDBAdapter implements IStoriesAdapter {
   }
 
   @Override
-  public List<StoryDTO> search(String keyword, int pageSize, int pageNumber) {
+  public StoryPaginationResponseDTO search(String keyword, Integer pageSize, Integer pageNumber, OrderType orderType) {
     Map<String, String> uriParams = new HashMap<String, String>();
     uriParams.put("keyword", keyword);
     UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(STORIES_URL_SEARCH);
     builder.queryParam("pageSize", pageSize);
     builder.queryParam("currentPage", pageNumber);
+    builder.queryParam("orderType", orderType);
     String url = builder.buildAndExpand(uriParams).toUriString();
     String jsonResponse = URLUtil.readJSONFromURLInString(url);
-    return assembler.fromJSONStringToDTOList(jsonResponse);
+    return assembler.fromJSONStringToPaginationDTO(jsonResponse);
   }
 }

@@ -15,8 +15,9 @@ public class AppConst {
           "search-gov-fin-es-3y3ydkxijtitmqim7xxyhtczeq.us-west-1.es.amazonaws.com";
   //login hash
   public static final String PASSWORD_HASH = "$2a$10$bxqqs1qQ9CKptVf4IuxVGeN4yOkBAumtYNRL7mwXjVF6AoM7fbFle";
-//  private static final String ML_ENDPOINT = "https://rest-ml.herokuapp.com";
-private static final String ML_ENDPOINT = "http://ec2-54-185-142-173.us-west-2.compute.amazonaws.com";
+  //  private static final String ML_ENDPOINT = "https://rest-ml.herokuapp.com";
+//private static final String ML_ENDPOINT = "http://ec2-54-185-142-173.us-west-2.compute.amazonaws.com";
+  public static final String ML_ENDPOINT = "http://ec2-34-220-69-18.us-west-2.compute.amazonaws.com";
 
   //Attribute Adapter Constants
   public static final String ATTRIBUTES_FILE_PATH = RESOURCES_PATH + "/Attributes.json";
