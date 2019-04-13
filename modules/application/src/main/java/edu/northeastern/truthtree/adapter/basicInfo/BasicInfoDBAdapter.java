@@ -1,15 +1,23 @@
 package edu.northeastern.truthtree.adapter.basicInfo;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import org.json.simple.JSONArray;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import edu.northeastern.truthtree.adapter.BaseAdapter;
 import edu.northeastern.truthtree.adapter.utilities.JSONUtil;
+import edu.northeastern.truthtree.dto.LocationDTO;
+import edu.northeastern.truthtree.dto.PageDTO;
 
 import static edu.northeastern.truthtree.AppConst.CITIES_FILE_PATH;
 import static edu.northeastern.truthtree.AppConst.COUNTIES_FILE_PATH;
@@ -17,11 +25,11 @@ import static edu.northeastern.truthtree.AppConst.POPULATION_ID;
 import static edu.northeastern.truthtree.AppConst.POPULATION_RANGE_URL;
 import static edu.northeastern.truthtree.AppConst.POPULATION_URL;
 import static edu.northeastern.truthtree.AppConst.STATES_FILE_PATH;
-import static edu.northeastern.truthtree.adapter.utilities.URLUtil.readJSONFromURL;
 
 /**
  * Represents the Basic Info Adapter used to communicate with the database API.
  */
+@SuppressWarnings("unchecked")
 public class BasicInfoDBAdapter extends BaseAdapter implements IBasicInfoAdapter {
   private static Map<Long, Object> stateData = new HashMap<>();
   private static Map<Long, Object> citiesData = new HashMap<>();
@@ -106,8 +114,8 @@ public class BasicInfoDBAdapter extends BaseAdapter implements IBasicInfoAdapter
    * @return JSONArray representing the data on STATES_URL
    */
   @Override
-  public JSONArray getBasicStatesInfo() {
-    return JSONUtil.readJSONFile(STATES_FILE_PATH);
+  public PageDTO<LocationDTO> getBasicStatesInfo() {
+    return jsonArrayToLocationPage(JSONUtil.readJSONFile(STATES_FILE_PATH));
   }
 
   /**
@@ -119,9 +127,9 @@ public class BasicInfoDBAdapter extends BaseAdapter implements IBasicInfoAdapter
    * @return JSONArray that contains states that are within the provided range.
    */
   @Override
-  public JSONArray getBasicStatesInfo(int startValue, int endValue) {
-    JSONArray response = getPopulationData(startValue, endValue, 0);
-    return addPopulationToBasicInfo(stateData, response);
+  public PageDTO<LocationDTO> getBasicStatesInfo(int page, int startValue, int endValue)
+          throws IOException {
+    return getPopulationData(page, startValue, endValue, stateData, 0);
   }
 
   /**
@@ -133,9 +141,9 @@ public class BasicInfoDBAdapter extends BaseAdapter implements IBasicInfoAdapter
    * @return JSONArray that contains states that are within the provided range.
    */
   @Override
-  public JSONArray getBasicCitiesInfo(int startValue, int endValue) {
-    JSONArray response = getPopulationData(startValue, endValue, 2);
-    return addPopulationToBasicInfo(citiesData, response);
+  public PageDTO<LocationDTO> getBasicCitiesInfo(int page, int startValue, int endValue)
+          throws IOException {
+    return getPopulationData(page, startValue, endValue, citiesData, 2);
 
   }
 
@@ -148,22 +156,82 @@ public class BasicInfoDBAdapter extends BaseAdapter implements IBasicInfoAdapter
    * @return JSONArray that contains states that are within the provided range.
    */
   @Override
-  public JSONArray getBasicCountiesInfo(int startValue, int endValue) {
-    JSONArray response = getPopulationData(startValue, endValue, 1);
-    return addPopulationToBasicInfo(countiesData, response);
+  public PageDTO<LocationDTO> getBasicCountiesInfo(int page, int startValue, int endValue)
+          throws IOException {
+    return getPopulationData(page, startValue, endValue, countiesData, 1);
   }
 
-  private JSONArray getPopulationData(int startValue, int endValue, int typeCode) {
-    UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(POPULATION_RANGE_URL);
-    builder.queryParam("attributeId", POPULATION_ID);
-    builder.queryParam("year", 2016);
-    builder.queryParam("from", startValue);
-    builder.queryParam("to", endValue);
-    builder.queryParam("typeCode", typeCode);
-    builder.queryParam("pageSize", 500);
-    String url = builder.toUriString();
-    JSONArray response = readJSONFromURL(url);
-    return response;
+  private PageDTO<LocationDTO> getPopulationData(int currentPage, int startValue, int endValue,
+                                 Map<Long, Object> basicInfoMap, int typeCode)
+          throws IOException {
+    String url = UriComponentsBuilder
+            .fromHttpUrl(POPULATION_RANGE_URL)
+            .queryParam("attributeId", POPULATION_ID)
+            .queryParam("year", 2016)
+            .queryParam("from", startValue)
+            .queryParam("to", endValue)
+            .queryParam("currentPage", currentPage)
+            .queryParam("typeCode", typeCode)
+            .queryParam("pageSize", 50)
+            .toUriString();
+
+    ObjectMapper mapper = new ObjectMapper();
+    ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
+    Map<String, Object> bodyMap = mapper.readValue(response.getBody(),
+            new TypeReference<HashMap<String, Object>>(){});
+    return mapToLocationPage((Map) bodyMap.get("data"), basicInfoMap);
+  }
+
+  @SuppressWarnings("unchecked")
+  private PageDTO<LocationDTO> mapToLocationPage(Map<String, Object> dataMap,
+                                                 Map<Long, Object> basicInfoMap) {
+    List<Map<String, Object>> populationMaps = (List) dataMap.get("data");
+    return new PageDTO
+            .Builder()
+            .withCurrentPage((int) dataMap.get("currentPage"))
+            .withTotalPageCount((int) dataMap.get("totalPage"))
+            .withTotalItemCount((int) dataMap.get("total"))
+            .withItems(populationMaps
+                    .stream()
+                    .map(populationMap -> this.mapToLocationDTO(populationMap, basicInfoMap))
+                    .collect(Collectors.toList()))
+            .build();
+  }
+
+  private LocationDTO mapToLocationDTO(Map<String, Object> populationMap,
+                                       Map<Long, Object> basicInfoMap) {
+    long locationId =  ((Number) populationMap.get("location_id")).longValue();
+    long population = ((Number) populationMap.get("value")).longValue();
+    Map<String, Object> locationMap = (Map) basicInfoMap.get(locationId);
+    return new LocationDTO
+            .Builder()
+            .withId(locationMap.get("id").toString())
+            .withName((String) locationMap.get("name"))
+            .withTypeCode(((Number) locationMap.get("type_code")).intValue())
+            .withPopulation(population)
+            .build();
+  }
+
+  private PageDTO<LocationDTO> jsonArrayToLocationPage(JSONArray array) {
+    return new PageDTO.Builder()
+            .withCurrentPage(1)
+            .withTotalItemCount(array.size())
+            .withTotalPageCount(1)
+            .withItems((List) array
+                    .stream()
+                    .map(location -> {
+                      Map locationMap = (Map) location;
+                      return new LocationDTO
+                              .Builder()
+                              .withId(locationMap.get("id").toString())
+                              .withTypeCode(((Number)locationMap.get("type_code")).intValue())
+                              .withName(locationMap.get("name").toString())
+                              .withLatitude((Double) locationMap.get("latitude"))
+                              .withLongitude((Double) locationMap.get("longitude"))
+                              .build();
+                    })
+                    .collect(Collectors.toList()))
+            .build();
   }
 
   private JSONArray addPopulationToBasicInfo(Map basicInfoData, JSONArray response) {
@@ -199,8 +267,8 @@ public class BasicInfoDBAdapter extends BaseAdapter implements IBasicInfoAdapter
    * @return JSONArray representing the data on CITIES_URL
    */
   @Override
-  public JSONArray getBasicCitiesInfo() {
-    return JSONUtil.readJSONFile(CITIES_FILE_PATH);
+  public PageDTO<LocationDTO> getBasicCitiesInfo() {
+    return jsonArrayToLocationPage(JSONUtil.readJSONFile(CITIES_FILE_PATH));
   }
 
   /**
@@ -218,8 +286,8 @@ public class BasicInfoDBAdapter extends BaseAdapter implements IBasicInfoAdapter
    * @return JSONArray representing the data on COUNTIES_URL
    */
   @Override
-  public JSONArray getBasicCountiesInfo() {
-    return JSONUtil.readJSONFile(COUNTIES_FILE_PATH);
+  public PageDTO<LocationDTO> getBasicCountiesInfo() {
+    return jsonArrayToLocationPage(JSONUtil.readJSONFile(COUNTIES_FILE_PATH));
   }
 
   /**
