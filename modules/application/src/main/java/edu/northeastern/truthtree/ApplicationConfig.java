@@ -16,7 +16,6 @@ import edu.northeastern.truthtree.adapter.attributes.AttributesDBAdapter;
 import edu.northeastern.truthtree.adapter.attributes.AttributesMockAdapter;
 import edu.northeastern.truthtree.adapter.attributes.IAttributesAdapter;
 import edu.northeastern.truthtree.adapter.basicInfo.BasicInfoDBAdapter;
-import edu.northeastern.truthtree.adapter.basicInfo.BasicInfoMockAdapter;
 import edu.northeastern.truthtree.adapter.basicInfo.IBasicInfoAdapter;
 import edu.northeastern.truthtree.adapter.collections.CollectionsDBAdapter;
 import edu.northeastern.truthtree.adapter.collections.CollectionsMockAdapter;
@@ -81,7 +80,7 @@ public class ApplicationConfig {
    */
   @Bean
   public IBasicInfoAdapter getBasicInfoAdapter() {
-    return RETURN_MOCK_DATA_BASIC_INFO ? new BasicInfoMockAdapter() : new BasicInfoDBAdapter();
+    return new BasicInfoDBAdapter();
   }
 
   /**
