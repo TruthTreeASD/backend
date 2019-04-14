@@ -20,7 +20,7 @@ public class BasicInfoApiTests {
         return new Object[][]{
                 //{"states", "basicinfo/allStates.json"},
                 //{"states/80000000", "basicinfo/stateById.json"},
-                {"cities", "basicinfo/allCities.json"},
+                //{"cities", "basicinfo/allCities.json"},
                 {"cities/262060004", "basicinfo/cityById.json"},
                 //{"counties", "basicinfo/allCounties.json"},
                 {"counties/391013013", "basicinfo/countyById.json"}};
