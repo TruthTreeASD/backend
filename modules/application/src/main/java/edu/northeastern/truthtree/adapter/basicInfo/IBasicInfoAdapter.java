@@ -1,7 +1,5 @@
 package edu.northeastern.truthtree.adapter.basicInfo;
 
-import org.json.simple.JSONArray;
-
 import java.io.IOException;
 import java.util.Map;
 import java.util.Optional;
