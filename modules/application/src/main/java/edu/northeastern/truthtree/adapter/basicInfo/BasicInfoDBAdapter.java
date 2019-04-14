@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import org.json.simple.JSONArray;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.io.IOException;
@@ -16,6 +17,7 @@ import java.util.stream.Collectors;
 
 import edu.northeastern.truthtree.adapter.BaseAdapter;
 import edu.northeastern.truthtree.adapter.utilities.JSONUtil;
+import edu.northeastern.truthtree.assembler.LocationAssembler;
 import edu.northeastern.truthtree.dto.LocationDTO;
 import edu.northeastern.truthtree.dto.PageDTO;
 
@@ -29,7 +31,7 @@ import static edu.northeastern.truthtree.AppConst.STATES_FILE_PATH;
 /**
  * Represents the Basic Info Adapter used to communicate with the database API.
  */
-@SuppressWarnings("unchecked")
+@Component
 public class BasicInfoDBAdapter extends BaseAdapter implements IBasicInfoAdapter {
   private static Map<Long, Object> stateData = new HashMap<>();
   private static Map<Long, Object> citiesData = new HashMap<>();
@@ -56,6 +58,21 @@ public class BasicInfoDBAdapter extends BaseAdapter implements IBasicInfoAdapter
       Long id = (Long) map.get("id");
       citiesData.put(id, val);
     }
+  }
+
+  private final LocationAssembler locationAssembler;
+  private final List<LocationDTO> allStates;
+  private final List<LocationDTO> allCounties;
+  private final List<LocationDTO> allCities;
+
+  public BasicInfoDBAdapter(LocationAssembler locationAssembler) {
+    this.locationAssembler = locationAssembler;
+    this.allStates = locationAssembler
+            .jsonArrayToLocationList(JSONUtil.readJSONFile(STATES_FILE_PATH));
+    this.allCounties = locationAssembler
+            .jsonArrayToLocationList(JSONUtil.readJSONFile(COUNTIES_FILE_PATH));
+    this.allCities = locationAssembler
+            .jsonArrayToLocationList(JSONUtil.readJSONFile(CITIES_FILE_PATH));
   }
 
   private Long getLocationPopulation(String locationId, String year) {
@@ -115,7 +132,7 @@ public class BasicInfoDBAdapter extends BaseAdapter implements IBasicInfoAdapter
    */
   @Override
   public PageDTO<LocationDTO> getBasicStatesInfo() {
-    return jsonArrayToLocationPage(JSONUtil.readJSONFile(STATES_FILE_PATH));
+    return locationAssembler.locationListToPage(this.allStates);
   }
 
   /**
@@ -179,58 +196,7 @@ public class BasicInfoDBAdapter extends BaseAdapter implements IBasicInfoAdapter
     ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
     Map<String, Object> bodyMap = mapper.readValue(response.getBody(),
             new TypeReference<HashMap<String, Object>>(){});
-    return mapToLocationPage((Map) bodyMap.get("data"), basicInfoMap);
-  }
-
-  private PageDTO<LocationDTO> mapToLocationPage(Map<String, Object> dataMap,
-                                                 Map<Long, Object> basicInfoMap) {
-    List<Map<String, Object>> populationMaps = (List) dataMap.get("data");
-    return new PageDTO
-            .Builder()
-            .withCurrentPage((int) dataMap.get("currentPage"))
-            .withTotalPageCount((int) dataMap.get("totalPage"))
-            .withTotalItemCount((int) dataMap.get("total"))
-            .withItems(populationMaps
-                    .stream()
-                    .map(populationMap -> this.mapToLocationDTO(populationMap, basicInfoMap))
-                    .collect(Collectors.toList()))
-            .build();
-  }
-
-  private LocationDTO mapToLocationDTO(Map<String, Object> populationMap,
-                                       Map<Long, Object> basicInfoMap) {
-    long locationId =  ((Number) populationMap.get("location_id")).longValue();
-    long population = ((Number) populationMap.get("value")).longValue();
-    Map<String, Object> locationMap = (Map) basicInfoMap.get(locationId);
-    return new LocationDTO
-            .Builder()
-            .withId(locationMap.get("id").toString())
-            .withName((String) locationMap.get("name"))
-            .withTypeCode(((Number) locationMap.get("type_code")).intValue())
-            .withPopulation(population)
-            .build();
-  }
-
-  private PageDTO<LocationDTO> jsonArrayToLocationPage(JSONArray array) {
-    return new PageDTO.Builder()
-            .withCurrentPage(1)
-            .withTotalItemCount(array.size())
-            .withTotalPageCount(1)
-            .withItems((List) array
-                    .stream()
-                    .map(location -> {
-                      Map locationMap = (Map) location;
-                      return new LocationDTO
-                              .Builder()
-                              .withId(locationMap.get("id").toString())
-                              .withTypeCode(((Number)locationMap.get("type_code")).intValue())
-                              .withName(locationMap.get("name").toString())
-                              .withLatitude((Double) locationMap.get("latitude"))
-                              .withLongitude((Double) locationMap.get("longitude"))
-                              .build();
-                    })
-                    .collect(Collectors.toList()))
-            .build();
+    return locationAssembler.mapToLocationPage((Map) bodyMap.get("data"), basicInfoMap);
   }
 
   private JSONArray addPopulationToBasicInfo(Map basicInfoData, JSONArray response) {
@@ -267,7 +233,7 @@ public class BasicInfoDBAdapter extends BaseAdapter implements IBasicInfoAdapter
    */
   @Override
   public PageDTO<LocationDTO> getBasicCitiesInfo() {
-    return jsonArrayToLocationPage(JSONUtil.readJSONFile(CITIES_FILE_PATH));
+    return locationAssembler.locationListToPage(this.allCities);
   }
 
   /**
@@ -286,7 +252,7 @@ public class BasicInfoDBAdapter extends BaseAdapter implements IBasicInfoAdapter
    */
   @Override
   public PageDTO<LocationDTO> getBasicCountiesInfo() {
-    return jsonArrayToLocationPage(JSONUtil.readJSONFile(COUNTIES_FILE_PATH));
+    return locationAssembler.locationListToPage(this.allCounties);
   }
 
   /**
