@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.Map;
 import java.util.Optional;
 
+import edu.northeastern.truthtree.ErrorMessages;
 import edu.northeastern.truthtree.adapter.basicInfo.IBasicInfoAdapter;
 import edu.northeastern.truthtree.dto.LocationDTO;
 import edu.northeastern.truthtree.dto.PageDTO;
@@ -43,7 +44,7 @@ public class BasicInfoService implements IBasicInfoService {
       if (range.length == 2 && range[0] <= range[1]) {
         return this.adapter.getBasicStatesInfo(page, range[0], range[1]);
       }
-      throw new IllegalArgumentException("Invalid range");
+      throw new IllegalArgumentException(ErrorMessages.POPULATION_ERROR);
     }
 
     return this.adapter.getBasicStatesInfo();
@@ -68,7 +69,7 @@ public class BasicInfoService implements IBasicInfoService {
       if (range.length == 2 && range[0] <= range[1]) {
         return this.adapter.getBasicCitiesInfo(page, range[0], range[1]);
       }
-      throw new IllegalArgumentException("Invalid range");
+      throw new IllegalArgumentException(ErrorMessages.POPULATION_ERROR);
     }
 
     return this.adapter.getBasicCitiesInfo();
@@ -94,7 +95,7 @@ public class BasicInfoService implements IBasicInfoService {
       if (range.length == 2 && range[0] <= range[1]) {
         return this.adapter.getBasicCountiesInfo(page, range[0], range[1]);
       }
-      throw new IllegalArgumentException("Invalid range");
+      throw new IllegalArgumentException(ErrorMessages.POPULATION_ERROR);
     }
 
     return this.adapter.getBasicCountiesInfo();
