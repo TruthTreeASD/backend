@@ -53,7 +53,7 @@ public class BasicInfo implements IBasicInfo {
   @RequestMapping(value = "/api/states", method = RequestMethod.GET)
   public ResponseEntity<PageDTO<LocationDTO>> getBasicStatesInfo(
           @RequestParam(value = POPULATION_RANGE, required = false) int[] range,
-          @RequestParam(name = "page", defaultValue = "1") int page) throws IOException {
+          @RequestParam(name = "pageNumber", defaultValue = "1") int page) throws IOException {
     return ResponseEntity.ok(this.service.getBasicStatesInfo(page, range));
   }
 
@@ -82,7 +82,7 @@ public class BasicInfo implements IBasicInfo {
   @RequestMapping(value = "/api/counties", method = RequestMethod.GET)
   public ResponseEntity<PageDTO<LocationDTO>> getBasicCountiesInfo(
         @RequestParam(value = POPULATION_RANGE, required = false) int[] range,
-        @RequestParam(name = "page", defaultValue = "1") int page) throws IOException {
+        @RequestParam(name = "pageNumber", defaultValue = "1") int page) throws IOException {
     return ResponseEntity.ok(this.service.getBasicCountiesInfo(page, range));
   }
 
@@ -111,7 +111,7 @@ public class BasicInfo implements IBasicInfo {
   @RequestMapping(value = "/api/cities", method = RequestMethod.GET)
   public ResponseEntity<PageDTO<LocationDTO>> getBasicCitiesInfo(
           @RequestParam(value = POPULATION_RANGE, required = false) int[] range,
-          @RequestParam(value = "page", defaultValue = "1") int page) throws IOException {
+          @RequestParam(value = "pageNumber", defaultValue = "1") int page) throws IOException {
     return ResponseEntity.ok(this.service.getBasicCitiesInfo(page, range));
   }
 
