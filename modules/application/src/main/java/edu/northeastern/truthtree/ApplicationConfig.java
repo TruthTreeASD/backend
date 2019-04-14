@@ -29,6 +29,7 @@ import edu.northeastern.truthtree.adapter.stories.StoriesMockAdapter;
 import edu.northeastern.truthtree.adapter.timerange.ITimeRangeAdapter;
 import edu.northeastern.truthtree.adapter.timerange.TimeRangeDBAdapter;
 import edu.northeastern.truthtree.adapter.timerange.TimeRangeMockAdapter;
+import edu.northeastern.truthtree.assembler.LocationAssembler;
 import edu.northeastern.truthtree.assembler.SimilarLocationsAssembler;
 import edu.northeastern.truthtree.assembler.StoriesAssembler;
 
@@ -70,17 +71,6 @@ public class ApplicationConfig {
   @Bean
   public IPopulationAdapter getPopulationAdapter() {
     return RETURN_MOCK_DATA_POPULATION ? new PopulationMockAdapter() : new PopulationDBAdapter();
-  }
-
-  /**
-   * Gets the adapter instance for basic info.
-   *
-   * @return if RETURN_MOCK_DATA_BASIC_INFO is true, the mock basic into adapter, database basic
-   * info adapter otherwise.
-   */
-  @Bean
-  public IBasicInfoAdapter getBasicInfoAdapter() {
-    return new BasicInfoDBAdapter();
   }
 
   /**
