@@ -373,7 +373,7 @@ function updateService() {
     # Update the service
     # UPDATE=`$AWS_ECS update-service --cluster $CLUSTER --service $SERVICE $DESIRED_COUNT --task-definition $NEW_TASKDEF $DEPLOYMENT_CONFIG`
     aws ecs delete-service --cluster $CLUSTER --service $SERVICE --region us-west-2 --force
-    sleep 300
+    sleep 200
     aws ecs create-service --cluster $CLUSTER --service-name $SERVICE --task-definition $NEW_TASKDEF --desired-count 1  --region us-west-2
 
     # Only excepts RUNNING state from services whose desired-count > 0

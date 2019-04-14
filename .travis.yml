@@ -20,12 +20,6 @@ before_deploy:
   # login to heroku
   - echo "$HEROKU_PASSWORD" | docker login -u "$HEROKU_USERNAME" --password-stdin registry.heroku.com
 
-  # install ecs-deploy
-  - sudo apt-get update
-  - sudo apt-get install jq -y
-  - curl https://raw.githubusercontent.com/silinternational/ecs-deploy/master/ecs-deploy | sudo tee -a /usr/bin/ecs-deploy
-  - sudo chmod +x /usr/bin/ecs-deploy
-
   # install python using conda
   - >-
     wget https://repo.anaconda.com/archive/Anaconda3-2018.12-Linux-x86_64.sh -O ~/anaconda3.sh
@@ -53,6 +47,7 @@ deploy:
     branch: develop
   provider: script
   script:
+    # push to aws
     docker push $IMAGE_REPO_URL:latest;
     bash ./bin/travis_wait.sh "./bin/ecs-deploy.sh -c $CLUSTER_NAME -n $SERVICE_NAME -i $IMAGE_REPO_URL:latest -r us-west-2 --timeout 1200";
   on:
