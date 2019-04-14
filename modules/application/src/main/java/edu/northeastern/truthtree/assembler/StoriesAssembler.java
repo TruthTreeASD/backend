@@ -2,6 +2,7 @@ package edu.northeastern.truthtree.assembler;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import edu.northeastern.truthtree.dto.StoryPaginationResponseDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -38,6 +39,16 @@ public class StoriesAssembler {
     StoryDTOWrapper storyDTO = new StoryDTOWrapper();
     try {
       storyDTO = mapper.readValue(jsonString, StoryDTOWrapper.class);
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+    return storyDTO.getData();
+  }
+
+  public StoryPaginationResponseDTO fromJSONStringToPaginationDTO(String jsonString) {
+    StoryDTOWrapperList storyDTO = new StoryDTOWrapperList();
+    try {
+      storyDTO = mapper.readValue(jsonString, StoryDTOWrapperList.class);
     } catch (IOException e) {
       e.printStackTrace();
     }

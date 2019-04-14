@@ -9,6 +9,7 @@
       <class name="edu.northeastern.truthtree.PopulationApiTests"/>
       <class name="edu.northeastern.truthtree.BasicInfoApiTests"/>
       <class name="edu.northeastern.truthtree.TimeRangeApiTests"/>
+      <class name="edu.northeastern.truthtree.SimilarLocationsApiTests"/>
     </classes>
   </test>
 </suite>

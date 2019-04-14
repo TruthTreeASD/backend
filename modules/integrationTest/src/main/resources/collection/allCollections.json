@@ -1,4 +1,5 @@
-[{
+[
+  {
     "name": "All Other Non-insurance Funds Cash and Securities",
     "collection_id": 0,
     "attributes": [
@@ -2184,11 +2185,6 @@
     "collection_id": 56,
     "attributes": [
       {
-        "attribute_id": 8,
-        "name": "Total",
-        "property_id": 180
-      },
-      {
         "attribute_id": 9,
         "name": "Property",
         "property_id": 136
@@ -2247,6 +2243,11 @@
         "attribute_id": 20,
         "name": "Other Select Sales",
         "property_id": 184
+      },
+      {
+        "attribute_id": 8,
+        "name": "Total",
+        "property_id": 180
       }
     ]
   },
@@ -3402,4 +3403,5 @@
         "property_id": 170
       }
     ]
-  }]
+  }
+]

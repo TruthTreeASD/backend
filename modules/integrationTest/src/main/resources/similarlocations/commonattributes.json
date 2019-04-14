@@ -1,0 +1,321 @@
+[{
+    "id": "1",
+    "display_name": "Population General"
+  },
+  {
+    "id": "130",
+    "display_name": "Expenditure Unemployment Revenue"
+  },
+  {
+    "id": "385",
+    "display_name": "Current Expenditure General Expenses not elsewhere classified"
+  },
+  {
+    "id": "4",
+    "display_name": "Total Revenue General"
+  },
+  {
+    "id": "5",
+    "display_name": "Total Rev Own Sources General"
+  },
+  {
+    "id": "6",
+    "display_name": "General Revenue"
+  },
+  {
+    "id": "7",
+    "display_name": "Gen Rev Own Sources General"
+  },
+  {
+    "id": "8",
+    "display_name": "Total Taxes"
+  },
+  {
+    "id": "9",
+    "display_name": "Property Taxes"
+  },
+  {
+    "id": "10",
+    "display_name": "Tot Sales Gr Rec Taxes"
+  },
+  {
+    "id": "132",
+    "display_name": "Direct Expenditure Totals"
+  },
+  {
+    "id": "133",
+    "display_name": "Current Expenditure Totals"
+  },
+  {
+    "id": "134",
+    "display_name": "Current Oper Totals"
+  },
+  {
+    "id": "135",
+    "display_name": "Capital Outlay Totals"
+  },
+  {
+    "id": "527",
+    "display_name": "Total Long Term Debt Outstanding"
+  },
+  {
+    "id": "136",
+    "display_name": "Construction Totals"
+  },
+  {
+    "id": "529",
+    "display_name": "All Other Long Term Debt Outstanding"
+  },
+  {
+    "id": "137",
+    "display_name": "Other Capital Outlays Totals"
+  },
+  {
+    "id": "139",
+    "display_name": "Interest on Debt Totals"
+  },
+  {
+    "id": "141",
+    "display_name": "Salaries Wages Totals"
+  },
+  {
+    "id": "142",
+    "display_name": "General Expenditure"
+  },
+  {
+    "id": "146",
+    "display_name": "Direct Expenditure General Expenses"
+  },
+  {
+    "id": "535",
+    "display_name": "General Long Term Debt Outstanding"
+  },
+  {
+    "id": "147",
+    "display_name": "General Current Expend General Expenses"
+  },
+  {
+    "id": "148",
+    "display_name": "General Current Oper General Expenses"
+  },
+  {
+    "id": "538",
+    "display_name": "Gen Other NEC Long Term Debt Outstanding"
+  },
+  {
+    "id": "149",
+    "display_name": "Capital Outlay General Expenses"
+  },
+  {
+    "id": "150",
+    "display_name": "General Construction General Expenses"
+  },
+  {
+    "id": "151",
+    "display_name": "General Capital Outlay Other General Expenses"
+  },
+  {
+    "id": "153",
+    "display_name": "General Debt Interest General Expenses"
+  },
+  {
+    "id": "39",
+    "display_name": "Total Intergovernmental Revenue"
+  },
+  {
+    "id": "40",
+    "display_name": "Total Intergovernmental Revenue Federal"
+  },
+  {
+    "id": "262",
+    "display_name": "Total Expenditure Highways"
+  },
+  {
+    "id": "426",
+    "display_name": "Total Outstanding Debt Totals"
+  },
+  {
+    "id": "427",
+    "display_name": "Long Term Debt Out Debt Totals"
+  },
+  {
+    "id": "263",
+    "display_name": "Total Dir Exp Highways"
+  },
+  {
+    "id": "429",
+    "display_name": "Total Outstanding Beginning Long Term Debt Outstanding"
+  },
+  {
+    "id": "431",
+    "display_name": "All Other Beginning Long Term Debt Outstanding"
+  },
+  {
+    "id": "560",
+    "display_name": "Total Cash and Securities"
+  },
+  {
+    "id": "264",
+    "display_name": "Total Capital Outlays Highways"
+  },
+  {
+    "id": "437",
+    "display_name": "General Beginning Long Term Debt Outstanding"
+  },
+  {
+    "id": "265",
+    "display_name": "Total Current Exp Highways"
+  },
+  {
+    "id": "311",
+    "display_name": "Total Expenditure Parks and Recreation"
+  },
+  {
+    "id": "312",
+    "display_name": "Direct Expenditure Parks and Recreation"
+  },
+  {
+    "id": "314",
+    "display_name": "Current Expenditure Parks and Recreation"
+  },
+  {
+    "id": "318",
+    "display_name": "Total Expenditure Police Protection"
+  },
+  {
+    "id": "319",
+    "display_name": "Direct Expenditure Police Protection"
+  },
+  {
+    "id": "576",
+    "display_name": "Nonin Trust Cash Sec Other Insurance Trusts Holdings Cash and Securities"
+  },
+  {
+    "id": "267",
+    "display_name": "Total Expenditure Non-Toll Highways"
+  },
+  {
+    "id": "66",
+    "display_name": "Total Intergovernmental Revenue Local"
+  },
+  {
+    "id": "579",
+    "display_name": "Oth Nonin Fd Cash Sec All Other Non-insurance Funds Cash and Securities"
+  },
+  {
+    "id": "321",
+    "display_name": "Current Expenditure Police Protection"
+  },
+  {
+    "id": "268",
+    "display_name": "Direct Expenditure Non-Toll Highways"
+  },
+  {
+    "id": "269",
+    "display_name": "Capital Outlay Non-Toll Highways"
+  },
+  {
+    "id": "77",
+    "display_name": "Tot Chgs and Misc Rev Charges"
+  },
+  {
+    "id": "78",
+    "display_name": "Total General Charges"
+  },
+  {
+    "id": "205",
+    "display_name": "Total Expenditure Financial Administation"
+  },
+  {
+    "id": "206",
+    "display_name": "Direct Expenditure Financial Administation"
+  },
+  {
+    "id": "208",
+    "display_name": "Current Expenditure Financial Administation"
+  },
+  {
+    "id": "270",
+    "display_name": "Current Expenditure Non-Toll Highways"
+  },
+  {
+    "id": "98",
+    "display_name": "All Other NEC Charges"
+  },
+  {
+    "id": "99",
+    "display_name": "Misc General Revenue"
+  },
+  {
+    "id": "226",
+    "display_name": "Total Expenditure Central Staff Services"
+  },
+  {
+    "id": "227",
+    "display_name": "Direct Expenditure Central Staff Services"
+  },
+  {
+    "id": "229",
+    "display_name": "Current Expenditure Central Staff Services"
+  },
+  {
+    "id": "484",
+    "display_name": "Total Long Term Debt Retired During Fiscal Year"
+  },
+  {
+    "id": "104",
+    "display_name": "Interest Revenue Misc General Revenue"
+  },
+  {
+    "id": "486",
+    "display_name": "All Other Long Term Debt Retired During Fiscal Year"
+  },
+  {
+    "id": "108",
+    "display_name": "Misc General Rev NEC Misc General Revenue"
+  },
+  {
+    "id": "492",
+    "display_name": "General Long Term Debt Retired During Fiscal Year"
+  },
+  {
+    "id": "366",
+    "display_name": "Total Expenditure Solid Waste Management"
+  },
+  {
+    "id": "367",
+    "display_name": "Direct Expenditure Solid Waste Management"
+  },
+  {
+    "id": "495",
+    "display_name": "Gen Other NEC Long Term Debt Retired During Fiscal Year"
+  },
+  {
+    "id": "369",
+    "display_name": "Current Expenditure Solid Waste Management"
+  },
+  {
+    "id": "496",
+    "display_name": "Total Long Term Debt Retired, Full Faith and Credit"
+  },
+  {
+    "id": "502",
+    "display_name": "General Long Term Debt Retired, Full Faith and Credit"
+  },
+  {
+    "id": "505",
+    "display_name": "Other NEC Long Term Debt Retired, Full Faith and Credit"
+  },
+  {
+    "id": "380",
+    "display_name": "Interest on Gen Debt Interest on General Debt"
+  },
+  {
+    "id": "381",
+    "display_name": "Total Expenditure General Expenses not elsewhere classified"
+  },
+  {
+    "id": "382",
+    "display_name": "Direct Expenditure General Expenses not elsewhere classified"
+  }
+]

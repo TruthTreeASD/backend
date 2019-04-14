@@ -24,4 +24,7 @@ public class TestConst {
   //TimeRange Adapter Constants
   public static final String TIME_RANGE_API = APPLICATION_URL + "/api/time_range?";
 
+  //Similar Locations Adapter Constants
+  public static final String SIMILAR_LOCATIONS_API = APPLICATION_URL + "/api/similarlocations";
+
 }

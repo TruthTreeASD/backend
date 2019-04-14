@@ -1,7 +1,16 @@
-[{
-  "name":"DELAWARE",
-  "id":80000000,
-  "state_code":10,
-  "abbreviation":"DE",
-  "population":945934
-}]
+[
+  {
+    "fips_place": null,
+    "parent_id": null,
+    "latitude": 38.6920451,
+    "name": "DELAWARE",
+    "fips_county": null,
+    "id": 80000000,
+    "fyenddate": 630,
+    "abbreviation": "DE",
+    "type_code": 0,
+    "fips_code_state": 10,
+    "longitude": -75.4013315,
+    "population": 945934
+  }
+]

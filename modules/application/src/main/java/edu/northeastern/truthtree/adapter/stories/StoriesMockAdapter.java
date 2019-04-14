@@ -1,5 +1,6 @@
 package edu.northeastern.truthtree.adapter.stories;
 
+import edu.northeastern.truthtree.dto.StoryPaginationResponseDTO;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -20,7 +21,7 @@ public class StoriesMockAdapter implements IStoriesAdapter {
   }
 
   @Override
-  public List<StoryDTO> getStories(OrderType order, StoryStatus storyStatus) {
+  public StoryPaginationResponseDTO getStories(OrderType order, StoryStatus storyStatus, Integer pageSize, Integer currentPage) {
     List<StoryDTO> response = new ArrayList<>();
     StoryDTO storyDTO1 = new StoryDTO();
     storyDTO1.setId("43232233323");
@@ -42,7 +43,7 @@ public class StoriesMockAdapter implements IStoriesAdapter {
 
     response.add(storyDTO1);
     response.add(storyDTO2);
-    return response;
+    return null;
   }
 
   public StoryDTO updateVotes(StoryDTO storyDTO, VoteType type) {
@@ -67,7 +68,7 @@ public class StoriesMockAdapter implements IStoriesAdapter {
   }
 
   @Override
-  public List<StoryDTO> search(String keyword, int pageSize, int currentPage) {
+  public StoryPaginationResponseDTO search(String keyword, Integer pageSize, Integer currentPage, OrderType orderType) {
     return null;
   }
 }
