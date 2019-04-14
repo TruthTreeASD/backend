@@ -51,4 +51,4 @@ deploy:
     docker push $IMAGE_REPO_URL:latest;
     bash ./bin/travis_wait.sh "./bin/ecs-deploy.sh -c $CLUSTER_NAME -n $SERVICE_NAME -i $IMAGE_REPO_URL:latest -r us-west-2 --timeout 1200";
   on:
-    branch: feature/run_integration_tests_in_build
+    branch: master
