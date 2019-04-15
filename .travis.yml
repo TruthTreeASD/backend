@@ -38,17 +38,19 @@ before_deploy:
   - eval $(aws ecr get-login --no-include-email --region us-west-2)
 
 deploy:
-  provider: script
-  script:
-    # push to heroku
-    docker push registry.heroku.com/truthtree/web;
-    heroku container:release web --app=truthtree;
-  on:
-    branch: develop
-  provider: script
-  script:
-    # push to aws
-    docker push $IMAGE_REPO_URL:latest;
-    bash ./bin/travis_wait.sh "./bin/ecs-deploy.sh -c $CLUSTER_NAME -n $SERVICE_NAME -i $IMAGE_REPO_URL:latest -r us-west-2 --timeout 1200";
-  on:
-    branch: master
+  # deploy develop to the staging environment
+  - provider: script
+    script:
+      # push to heroku
+      docker push registry.heroku.com/truthtree/web;
+      heroku container:release web --app=truthtree;
+    on:
+      branch: develop
+  # deploy master to production
+  - provider: script
+    script:
+      # push to aws
+      docker push $IMAGE_REPO_URL:latest;
+      bash ./bin/travis_wait.sh "./bin/ecs-deploy.sh -c $CLUSTER_NAME -n $SERVICE_NAME -i $IMAGE_REPO_URL:latest -r us-west-2 --timeout 1200";
+    on:
+      branch: master
