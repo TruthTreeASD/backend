@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 public class Login implements ILogin {
+
   private ILoginService service;
 
   @Autowired
@@ -22,14 +23,14 @@ public class Login implements ILogin {
   }
 
   @RequestMapping(value = "/api/login", method = RequestMethod.POST)
-  public void authenticateUser(@RequestBody String password, HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
+  public void authenticateUser(@RequestBody String password, HttpServletRequest httpServletRequest,
+      HttpServletResponse httpServletResponse) {
     Boolean authenticateUser = service.authenticateUser(password);
     HttpSession httpSession = httpServletRequest.getSession();
-    if(authenticateUser) {
-      httpSession.setAttribute("admin",true);
+    if (authenticateUser) {
+      httpSession.setAttribute("admin", true);
       httpServletResponse.setStatus(HttpServletResponse.SC_OK);
-    }
-    else {
+    } else {
       // wrong login
       httpServletResponse.setStatus(HttpServletResponse.SC_FORBIDDEN);
     }

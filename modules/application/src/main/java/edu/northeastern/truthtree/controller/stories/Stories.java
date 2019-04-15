@@ -47,7 +47,7 @@ public class Stories implements IStories {
     if (storyStatus != null && !storyStatus.equals(StoryStatus.APPROVED)) {
       HttpSession httpSession = httpServletRequest.getSession();
       if (httpSession.getAttribute("admin") == null) {
-        httpServletResponse.setStatus(HttpServletResponse.SC_FORBIDDEN);
+        httpServletResponse.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
         return null;
       }
 
@@ -60,9 +60,10 @@ public class Stories implements IStories {
       HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
     HttpSession httpSession = httpServletRequest.getSession();
     if (httpSession.getAttribute("admin") == null) {
-      httpServletResponse.setStatus(HttpServletResponse.SC_FORBIDDEN);
+      httpServletResponse.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+    } else {
+      service.changeStatus(status, id);
     }
-    service.changeStatus(status, id);
   }
 
   @RequestMapping(value = "/api/stories", method = RequestMethod.PUT)
@@ -77,9 +78,10 @@ public class Stories implements IStories {
       HttpServletResponse httpServletResponse) {
     HttpSession httpSession = httpServletRequest.getSession();
     if (httpSession.getAttribute("admin") == null) {
-      httpServletResponse.setStatus(HttpServletResponse.SC_FORBIDDEN);
+      httpServletResponse.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+    } else {
+      service.deleteStory(id);
     }
-    service.deleteStory(id);
   }
 
   @RequestMapping(value = "/api/stories/order", method = RequestMethod.GET)
