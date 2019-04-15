@@ -44,7 +44,7 @@ public class Stories implements IStories {
       @RequestParam(value = "currentPage", required = false) Integer currentPage,
       HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse
   ) {
-    if (!storyStatus.equals(StoryStatus.APPROVED)) {
+    if (storyStatus != null && !storyStatus.equals(StoryStatus.APPROVED)) {
       HttpSession httpSession = httpServletRequest.getSession();
       if (httpSession.getAttribute("admin") == null) {
         httpServletResponse.setStatus(HttpServletResponse.SC_FORBIDDEN);
@@ -56,7 +56,12 @@ public class Stories implements IStories {
   }
 
   @RequestMapping(value = "/api/stories/story/{status}/{id}", method = RequestMethod.PUT)
-  public void changeStatus(@PathVariable StoryStatus status, @PathVariable String id) {
+  public void changeStatus(@PathVariable StoryStatus status, @PathVariable String id,
+      HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
+    HttpSession httpSession = httpServletRequest.getSession();
+    if (httpSession.getAttribute("admin") == null) {
+      httpServletResponse.setStatus(HttpServletResponse.SC_FORBIDDEN);
+    }
     service.changeStatus(status, id);
   }
 
@@ -68,7 +73,12 @@ public class Stories implements IStories {
 
   @Override
   @RequestMapping(value = "/api/stories/{id}", method = RequestMethod.DELETE)
-  public void deleteStory(@PathVariable String id) {
+  public void deleteStory(@PathVariable String id, HttpServletRequest httpServletRequest,
+      HttpServletResponse httpServletResponse) {
+    HttpSession httpSession = httpServletRequest.getSession();
+    if (httpSession.getAttribute("admin") == null) {
+      httpServletResponse.setStatus(HttpServletResponse.SC_FORBIDDEN);
+    }
     service.deleteStory(id);
   }
 

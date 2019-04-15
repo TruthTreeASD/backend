@@ -35,8 +35,14 @@ public interface IStories {
 
   /**
    * Changes status of a given story.
+   *
+   * @param status corresponding to status of story
+   * @param id corresponding to the story id in String.
+   * @param httpServletRequest corresponding to the client request.
+   * @param httpServletResponse corresponding to the sserver response.
    */
-  void changeStatus(StoryStatus status, String id);
+  void changeStatus(StoryStatus status, String id, HttpServletRequest httpServletRequest,
+      HttpServletResponse httpServletResponse);
 
   /**
    * Upvote a story.
@@ -51,8 +57,11 @@ public interface IStories {
    * Deletes story from the system.
    *
    * @param id corresponding to the story id in String.
+   * @param httpServletRequest corresponding to the client request.
+   * @param httpServletResponse corresponding to the sserver response.
    */
-  void deleteStory(String id);
+  void deleteStory(String id, HttpServletRequest httpServletRequest,
+      HttpServletResponse httpServletResponse);
 
   /**
    * Returns all order of stories supported by system.
