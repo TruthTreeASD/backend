@@ -1,5 +1,7 @@
 package edu.northeastern.truthtree.controller.login;
 
+import java.security.Principal;
+
 public interface ILogin {
   /**
    * Authenticates a user.
