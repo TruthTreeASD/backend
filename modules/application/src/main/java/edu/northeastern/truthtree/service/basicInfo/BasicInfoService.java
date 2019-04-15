@@ -1,15 +1,16 @@
 package edu.northeastern.truthtree.service.basicInfo;
 
-import org.json.simple.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import static edu.northeastern.truthtree.ErrorMessages.POPULATION_ERROR;
 
+import java.io.IOException;
 import java.util.Map;
 import java.util.Optional;
 
+import edu.northeastern.truthtree.ErrorMessages;
 import edu.northeastern.truthtree.adapter.basicInfo.IBasicInfoAdapter;
-import edu.northeastern.truthtree.adapter.utilities.JSONUtil;
+import edu.northeastern.truthtree.dto.LocationDTO;
+import edu.northeastern.truthtree.dto.PageDTO;
 
 /**
  * Represents the Basic Info Service.
@@ -37,13 +38,13 @@ public class BasicInfoService implements IBasicInfoService {
    * @return JSONArray that contains states that are within the provided range.
    */
   @Override
-  public JSONArray getBasicStatesInfo(int[] range) {
-
+  public PageDTO<LocationDTO> getBasicStatesInfo(int page, int[] range)
+          throws IOException, IllegalArgumentException {
     if (range != null) {
       if (range.length == 2 && range[0] <= range[1]) {
-        return this.adapter.getBasicStatesInfo(range[0], range[1]);
+        return this.adapter.getBasicStatesInfo(page, range[0], range[1]);
       }
-      return JSONUtil.createErrorMessage(POPULATION_ERROR);
+      throw new IllegalArgumentException(ErrorMessages.POPULATION_ERROR);
     }
 
     return this.adapter.getBasicStatesInfo();
@@ -63,13 +64,12 @@ public class BasicInfoService implements IBasicInfoService {
    * @return basic Cities information as a JSONArray.
    */
   @Override
-  public JSONArray getBasicCitiesInfo(int[] range) {
-//    return this.adapter.getBasicCitiesInfo();
+  public PageDTO<LocationDTO> getBasicCitiesInfo(int page, int[] range) throws IOException {
     if (range != null) {
       if (range.length == 2 && range[0] <= range[1]) {
-        return this.adapter.getBasicCitiesInfo(range[0], range[1]);
+        return this.adapter.getBasicCitiesInfo(page, range[0], range[1]);
       }
-      return JSONUtil.createErrorMessage(POPULATION_ERROR);
+      throw new IllegalArgumentException(ErrorMessages.POPULATION_ERROR);
     }
 
     return this.adapter.getBasicCitiesInfo();
@@ -90,12 +90,12 @@ public class BasicInfoService implements IBasicInfoService {
    * @return basic Cities information as a JSONArray.
    */
   @Override
-  public JSONArray getBasicCountiesInfo(int[] range) {
+  public PageDTO<LocationDTO> getBasicCountiesInfo(int page, int[] range) throws IOException {
     if (range != null) {
       if (range.length == 2 && range[0] <= range[1]) {
-        return this.adapter.getBasicCountiesInfo(range[0], range[1]);
+        return this.adapter.getBasicCountiesInfo(page, range[0], range[1]);
       }
-      return JSONUtil.createErrorMessage(POPULATION_ERROR);
+      throw new IllegalArgumentException(ErrorMessages.POPULATION_ERROR);
     }
 
     return this.adapter.getBasicCountiesInfo();

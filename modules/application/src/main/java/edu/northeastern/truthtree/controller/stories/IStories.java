@@ -72,6 +72,4 @@ public interface IStories {
    */
   StoryPaginationResponseDTO search(String keyword, Integer pageSize, Integer pageNumber,
       OrderType orderBy);
-
-
 }

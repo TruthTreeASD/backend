@@ -1,15 +1,21 @@
 package edu.northeastern.truthtree.dto;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+import io.swagger.models.auth.In;
+
 /**
  * Created by steven on 2019/3/21.
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class LocationDTO {
   private String id;
   private String name;
   private LocationDTO parent;
-  private int typeCode;
-  private double latitude;
-  private double longitude;
+  private Integer typeCode;
+  private Double latitude;
+  private Double longitude;
+  private Long population;
 
   private LocationDTO(Builder builder) {
     this.id = builder.id;
@@ -18,6 +24,7 @@ public class LocationDTO {
     this.typeCode = builder.typeCode;
     this.latitude = builder.latitude;
     this.longitude = builder.longitude;
+    this.population = builder.population;
   }
 
   public String getId() {
@@ -32,25 +39,30 @@ public class LocationDTO {
     return parent;
   }
 
-  public int getTypeCode() {
+  public Integer getTypeCode() {
     return typeCode;
   }
 
-  public double getLatitude() {
+  public Double getLatitude() {
     return latitude;
   }
 
-  public double getLongitude() {
+  public Double getLongitude() {
     return longitude;
+  }
+
+  public Long getPopulation() {
+    return population;
   }
 
   public static class Builder {
     private String id;
     private String name;
     private LocationDTO parent;
-    private int typeCode;
-    private double latitude;
-    private double longitude;
+    private Integer typeCode;
+    private Double latitude;
+    private Double longitude;
+    private Long population;
 
     public Builder withId(String id) {
       this.id = id;
@@ -67,18 +79,23 @@ public class LocationDTO {
       return this;
     }
 
-    public Builder withTypeCode(int typeCode) {
+    public Builder withTypeCode(Integer typeCode) {
       this.typeCode = typeCode;
       return this;
     }
 
-    public Builder withLatitude(double latitude) {
+    public Builder withLatitude(Double latitude) {
       this.latitude = latitude;
       return this;
     }
 
-    public Builder withLongitude(double longitude) {
+    public Builder withLongitude(Double longitude) {
       this.longitude = longitude;
+      return this;
+    }
+
+    public Builder withPopulation(Long population) {
+      this.population = population;
       return this;
     }
 

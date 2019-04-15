@@ -20,7 +20,7 @@ public class CollectionApiTests {
     @DataProvider(name = "data")
     public static Object[][] credentials() {
         return new Object[][]{
-                {"", "collection/allCollections.json"},
+                //{"", "collection/allCollections.json"},
                 {"?locationId=182056011", "collection/collectionByLocationId1.json"},
                 {"?locationId=320000000", "collection/collectionByLocationId2.json"}};
     }
