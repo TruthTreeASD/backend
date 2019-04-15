@@ -1,7 +1,11 @@
 package edu.northeastern.truthtree.controller.stories;
 
 import edu.northeastern.truthtree.dto.StoryPaginationResponseDTO;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -40,8 +44,17 @@ public class Stories implements IStories {
       @RequestParam(value = "orderType", required = false) OrderType orderType,
       @RequestParam(value = "storyStatus", required = false) StoryStatus storyStatus,
       @RequestParam(value = "pageSize", required = false) Integer pageSize,
-      @RequestParam(value = "currentPage", required = false) Integer currentPage
+      @RequestParam(value = "currentPage", required = false) Integer currentPage,
+      HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse
   ) {
+    if (!storyStatus.equals(StoryStatus.APPROVED)) {
+      HttpSession httpSession = httpServletRequest.getSession();
+      if (httpSession.getAttribute("admin") == null) {
+        httpServletResponse.setStatus(HttpServletResponse.SC_FORBIDDEN);
+        return null;
+      }
+
+    }
     return service.getStories(orderType, storyStatus, pageSize, currentPage);
   }
 

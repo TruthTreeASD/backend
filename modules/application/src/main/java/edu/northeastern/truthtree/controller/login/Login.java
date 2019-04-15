@@ -1,8 +1,6 @@
 package edu.northeastern.truthtree.controller.login;
 
 import edu.northeastern.truthtree.service.login.ILoginService;
-import java.security.Principal;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -24,15 +22,16 @@ public class Login implements ILogin {
   }
 
   @RequestMapping(value = "/api/login", method = RequestMethod.POST)
-  public Boolean authenticateUser(@RequestBody String password, HttpSession httpSession, HttpServletResponse httpServletResponse) {
+  public void authenticateUser(@RequestBody String password, HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
     Boolean authenticateUser = service.authenticateUser(password);
+    HttpSession httpSession = httpServletRequest.getSession();
     if(authenticateUser) {
       httpSession.setAttribute("admin",true);
+      httpServletResponse.setStatus(HttpServletResponse.SC_OK);
     }
     else {
       // wrong login
       httpServletResponse.setStatus(HttpServletResponse.SC_FORBIDDEN);
     }
-    return authenticateUser;
   }
 }
