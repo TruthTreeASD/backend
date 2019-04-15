@@ -3,6 +3,7 @@ package edu.northeastern.truthtree;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
@@ -10,6 +11,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import org.springframework.core.io.ClassPathResource;
 
 public class Utilities {
   /**
@@ -109,7 +111,8 @@ public class Utilities {
     JSONArray jsonArray = new JSONArray();
 
     try {
-      jsonArray = (JSONArray) parser.parse(new FileReader(filePath));
+      InputStream inputStream = new ClassPathResource(filePath).getInputStream();
+      jsonArray = (JSONArray) parser.parse(new InputStreamReader(inputStream));
 
     } catch (IOException | ParseException e) {
       e.printStackTrace();

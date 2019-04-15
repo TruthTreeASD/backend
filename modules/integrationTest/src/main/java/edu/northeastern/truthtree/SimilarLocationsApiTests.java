@@ -17,11 +17,12 @@ public class SimilarLocationsApiTests {
     @DataProvider(name = "data")
     public static Object[][] credentials() {
         return new Object[][]{
-                {"/attributes", "similarlocations/commonattributes.json"},
-                {"?locationId=220000000&place_type=0&attribute=132&normalize_by=PER_CAPITA&year=2014,2016",
-                        "similarlocations/singleAttribute.json"},
-                {"?locationId=220000000&place_type=0&attribute=1,132&normalize_by=BY_REVENUE&year=2014",
-                        "similarlocations/multipleAttribute.json"}};
+                {"/attributes", "similarlocations/commonattributes.json"}
+//                {"?locationId=220000000&place_type=0&attribute=132&normalize_by=PER_CAPITA&year=2014,2016",
+//                        "similarlocations/singleAttribute.json"},
+//                {"?locationId=220000000&place_type=0&attribute=1,132&normalize_by=BY_REVENUE&year=2014",
+//                        "similarlocations/multipleAttribute.json"}
+        };
     }
 
     @Test(dataProvider = "data")
