@@ -1,6 +1,7 @@
 package edu.northeastern.truthtree;
 
 import org.json.simple.JSONArray;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -10,6 +11,7 @@ import static edu.northeastern.truthtree.Utilities.readJSONFile;
 import static edu.northeastern.truthtree.Utilities.readJSONFromURL;
 import static org.testng.Assert.assertEquals;
 
+@SpringBootTest
 public class TimeRangeApiTests {
 
     @DataProvider(name = "data")

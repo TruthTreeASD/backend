@@ -1,0 +1,73 @@
+[{
+    "id": "350000000",
+    "name": "NORTH DAKOTA",
+    "parent": null,
+    "typeCode": 0,
+    "latitude": 47.6201461,
+    "longitude": -100.540737
+  },
+  {
+    "id": "460000000",
+    "name": "VERMONT",
+    "parent": null,
+    "typeCode": 0,
+    "latitude": 44.5990718,
+    "longitude": -72.5002608
+  },
+  {
+    "id": "510000000",
+    "name": "WYOMING",
+    "parent": null,
+    "typeCode": 0,
+    "latitude": 43.1700264,
+    "longitude": -107.5685348
+  },
+  {
+    "id": "70000000",
+    "name": "CONNECTICUT",
+    "parent": null,
+    "typeCode": 0,
+    "latitude": 41.6500201,
+    "longitude": -72.7342163
+  },
+  {
+    "id": "80000000",
+    "name": "DELAWARE",
+    "parent": null,
+    "typeCode": 0,
+    "latitude": 38.6920451,
+    "longitude": -75.4013315
+  },
+  {
+    "id": "320000000",
+    "name": "NEW MEXICO",
+    "parent": null,
+    "typeCode": 0,
+    "latitude": 34.5708167,
+    "longitude": -105.993007
+  },
+  {
+    "id": "400000000",
+    "name": "RHODE ISLAND",
+    "parent": null,
+    "typeCode": 0,
+    "latitude": 41.7962409,
+    "longitude": -71.5992372
+  },
+  {
+    "id": "120000000",
+    "name": "HAWAII",
+    "parent": null,
+    "typeCode": 0,
+    "latitude": 21.2160437,
+    "longitude": -157.975203
+  },
+  {
+    "id": "310000000",
+    "name": "NEW JERSEY",
+    "parent": null,
+    "typeCode": 0,
+    "latitude": 40.0757384,
+    "longitude": -74.4041622
+  }
+]

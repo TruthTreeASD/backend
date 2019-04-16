@@ -4,7 +4,7 @@ public class TestConst {
 
   //App Constants
   public static final String APPLICATION_URL = "http://localhost:8080";
-  public static final String RESOURCES_PATH = "src/main/resources/";
+  public static final String RESOURCES_PATH = "";
 
   //Attribute Adapter Constants
   public static final String ATTRIBUTES_API = APPLICATION_URL + "/api/attributes?";
@@ -23,5 +23,8 @@ public class TestConst {
 
   //TimeRange Adapter Constants
   public static final String TIME_RANGE_API = APPLICATION_URL + "/api/time_range?";
+
+  //Similar Locations Adapter Constants
+  public static final String SIMILAR_LOCATIONS_API = APPLICATION_URL + "/api/similarlocations";
 
 }

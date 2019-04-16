@@ -1,9 +1,11 @@
 package edu.northeastern.truthtree.service.basicInfo;
 
-import org.json.simple.JSONArray;
-
+import java.io.IOException;
 import java.util.Map;
 import java.util.Optional;
+
+import edu.northeastern.truthtree.dto.LocationDTO;
+import edu.northeastern.truthtree.dto.PageDTO;
 
 /**
  * Represents the Basic Info Service interface.
@@ -17,7 +19,7 @@ public interface IBasicInfoService {
    * @param range The start and end values that will be used to filter the states returned.
    * @return JSONArray that contains states that are within the provided range.
    */
-  JSONArray getBasicStatesInfo(int[] range);
+  PageDTO<LocationDTO> getBasicStatesInfo(int currentPage, int[] range) throws IOException;
 
   /**
    * Gets a state information.
@@ -33,7 +35,7 @@ public interface IBasicInfoService {
    *
    * @return basic Cities information as a JSONArray.
    */
-  JSONArray getBasicCitiesInfo(int[] range);
+  PageDTO<LocationDTO> getBasicCitiesInfo(int page, int[] range) throws IOException;
 
   /**
    * Gets a state information.
@@ -49,7 +51,7 @@ public interface IBasicInfoService {
    *
    * @return basic Cities information as a JSONArray.
    */
-  JSONArray getBasicCountiesInfo(int[] range);
+  PageDTO<LocationDTO> getBasicCountiesInfo(int page, int[] range) throws IOException;
 
   /**
    * Gets a state information.

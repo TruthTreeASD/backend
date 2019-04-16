@@ -9,6 +9,16 @@ public class AppConst {
   private static final String DATABASE_URL = "http://54.153.74.217:8080";
   //  private static final String RESOURCES_PATH = "modules/application/src/main/resources";
   private static final String RESOURCES_PATH = "";
+
+  // Elastic Search endpoint
+  public static final String ES_URL =
+          "search-gov-fin-es-3y3ydkxijtitmqim7xxyhtczeq.us-west-1.es.amazonaws.com";
+  //login hash
+  public static final String PASSWORD_HASH = "$2a$10$bxqqs1qQ9CKptVf4IuxVGeN4yOkBAumtYNRL7mwXjVF6AoM7fbFle";
+  //  private static final String ML_ENDPOINT = "https://rest-ml.herokuapp.com";
+//private static final String ML_ENDPOINT = "http://ec2-54-185-142-173.us-west-2.compute.amazonaws.com";
+  public static final String ML_ENDPOINT = "http://ec2-34-220-69-18.us-west-2.compute.amazonaws.com";
+
   //Attribute Adapter Constants
   public static final String ATTRIBUTES_FILE_PATH = RESOURCES_PATH + "/Attributes.json";
   public static final String ATTRIBUTES_MOCK_SPEC_PATH =
@@ -73,5 +83,18 @@ public class AppConst {
   public static final String BY_REVENUE = "by_revenue";
   public static final String PER_CAPITA = "per_capita";
 
+  //Stories APIs
+  public static final String STORIES_URL_POST = DATABASE_URL + "/api/stories/story";
+  public static final String STORIES_URL_GET = DATABASE_URL + "/api/stories/story/{status}/page";
+  public static final String STORIES_URL_SEARCH = DATABASE_URL + "/api/stories/story/search/page/{keyword}";
 
+  // Similar State, City and County constants
+  public static final String COMMON_ATTRIBUTES_URL = ML_ENDPOINT + "/api/similar/supported";
+  public static final String COMMON_ATTRIBUTES_PATH = RESOURCES_PATH + "/CommonAttributes.json";
+  public static final String SIMILAR_PLACES_URL = ML_ENDPOINT + "/api/similar/";
+  public static final String LOCATION_BY_ID_URL = DATABASE_URL + "/api/location/queryById";
+
+  public static final String STORIES_URL_CHANGE_STATUS = DATABASE_URL + "/api/stories/story/{status}/{id}";
+  public static final String STORIES_URL_UPDATE_VOTES = DATABASE_URL + "/api/stories/story/vote/{id}/{voteType}";
+  public static final String STORIES_URL_DELETE = DATABASE_URL + "/api/stories/story/{id}";
 }

@@ -1,15 +1,21 @@
 package edu.northeastern.truthtree;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import org.apache.http.HttpHost;
+import org.elasticsearch.client.RestClient;
+import org.elasticsearch.client.RestHighLevelClient;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
 
+import edu.northeastern.truthtree.adapter.advancedsearch.ISimilarLocationsAdapter;
+import edu.northeastern.truthtree.adapter.advancedsearch.SimilarLocationsDBAdapter;
+import edu.northeastern.truthtree.adapter.advancedsearch.SimilarLocationsMockAdapter;
 import edu.northeastern.truthtree.adapter.attributes.AttributesDBAdapter;
 import edu.northeastern.truthtree.adapter.attributes.AttributesMockAdapter;
 import edu.northeastern.truthtree.adapter.attributes.IAttributesAdapter;
 import edu.northeastern.truthtree.adapter.basicInfo.BasicInfoDBAdapter;
-import edu.northeastern.truthtree.adapter.basicInfo.BasicInfoMockAdapter;
 import edu.northeastern.truthtree.adapter.basicInfo.IBasicInfoAdapter;
 import edu.northeastern.truthtree.adapter.collections.CollectionsDBAdapter;
 import edu.northeastern.truthtree.adapter.collections.CollectionsMockAdapter;
@@ -23,6 +29,11 @@ import edu.northeastern.truthtree.adapter.stories.StoriesMockAdapter;
 import edu.northeastern.truthtree.adapter.timerange.ITimeRangeAdapter;
 import edu.northeastern.truthtree.adapter.timerange.TimeRangeDBAdapter;
 import edu.northeastern.truthtree.adapter.timerange.TimeRangeMockAdapter;
+import edu.northeastern.truthtree.assembler.LocationAssembler;
+import edu.northeastern.truthtree.assembler.SimilarLocationsAssembler;
+import edu.northeastern.truthtree.assembler.StoriesAssembler;
+
+import static edu.northeastern.truthtree.AppConst.ES_URL;
 
 /**
  * Represents the instances that will be created when the API is queried.
@@ -35,7 +46,10 @@ public class ApplicationConfig {
   private static final Boolean RETURN_MOCK_DATA_COLLECTIONS = false;
   private static final Boolean RETURN_MOCK_DATA_TIME_RANGE = false;
   private static final Boolean RETURN_MOCK_DATA_POPULATION = false;
-  private static final Boolean RETURN_MOCK_DATA_STORY = true;
+  private static final Boolean RETURN_MOCK_DATA_STORY = false;
+  private static final Boolean RETURN_MOCK_DATA_SUPPORTED_ATTRIBUTES = false;
+  private static final Boolean RETURN_MOCK_DATA_SIMILARITY_BY_ATTRIBUTE = true;
+  private static final Boolean RETURN_MOCK_DATA_SIMILARITY_BY_ATTRIBUTES = true;
 
   /**
    * Gets the adapter instance for attributes.
@@ -60,17 +74,6 @@ public class ApplicationConfig {
   }
 
   /**
-   * Gets the adapter instance for basic info.
-   *
-   * @return if RETURN_MOCK_DATA_BASIC_INFO is true, the mock basic into adapter, database basic
-   * info adapter otherwise.
-   */
-  @Bean
-  public IBasicInfoAdapter getBasicInfoAdapter() {
-    return RETURN_MOCK_DATA_BASIC_INFO ? new BasicInfoMockAdapter() : new BasicInfoDBAdapter();
-  }
-
-  /**
    * Gets the adapter instance for collections.
    *
    * @return if RETURN_MOCK_DATA_COLLECTIONS is true, the mock collections adapter, database
@@ -83,8 +86,9 @@ public class ApplicationConfig {
 
   /**
    * Gets the adapter instance for time range.
-   * @return if RETURN_MOCK_DATA_TIME_RANGE is true, the mock time range adapter, database
-   * 				 time range adapter otherwise.
+   *
+   * @return if RETURN_MOCK_DATA_TIME_RANGE is true, the mock time range adapter, database time
+   * range adapter otherwise.
    */
   @Bean
   public ITimeRangeAdapter getTimeRangeAdapter() {
@@ -93,16 +97,32 @@ public class ApplicationConfig {
 
   /**
    * Gets the adapter instance for time range.
-   * @return if RETURN_MOCK_DATA_TIME_RANGE is true, the mock time range adapter, database
-   * 				 time range adapter otherwise.
+   *
+   * @return if RETURN_MOCK_DATA_TIME_RANGE is true, the mock time range adapter, database time
+   * range adapter otherwise.
    */
   @Bean
   public IStoriesAdapter getStoryAdapter() {
-    return RETURN_MOCK_DATA_STORY ? new StoriesMockAdapter() : new StoriesDBAdapter();
+    return RETURN_MOCK_DATA_STORY ? new StoriesMockAdapter() : new StoriesDBAdapter(new StoriesAssembler(new ObjectMapper()));
+  }
+
+  @Bean
+  public ISimilarLocationsAdapter getSimilarLocationsAdapter() {
+    return RETURN_MOCK_DATA_SUPPORTED_ATTRIBUTES ?
+            new SimilarLocationsMockAdapter() :
+            new SimilarLocationsDBAdapter(new SimilarLocationsAssembler(new ObjectMapper()));
+
   }
 
   @Bean
   public RestTemplate restTemplate() {
     return new RestTemplate();
   }
+
+  @Bean
+  public RestHighLevelClient restHighLevelClient() {
+    return new RestHighLevelClient(RestClient
+            .builder(new HttpHost(ES_URL, 443, "https")));
+  }
+
 }

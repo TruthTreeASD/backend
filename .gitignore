@@ -4,6 +4,7 @@
 #Ignore IDE specific files
 *.idea
 *.iml
+*.vs
 
 #Ignore Code specific files
 *.class

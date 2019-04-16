@@ -1,9 +1,11 @@
 package edu.northeastern.truthtree.adapter.basicInfo;
 
-import org.json.simple.JSONArray;
-
+import java.io.IOException;
 import java.util.Map;
 import java.util.Optional;
+
+import edu.northeastern.truthtree.dto.LocationDTO;
+import edu.northeastern.truthtree.dto.PageDTO;
 
 /**
  * Represents the interface for the Basic Info Adapter.
@@ -15,7 +17,7 @@ public interface IBasicInfoAdapter {
    *
    * @return basic States information as a JSONArray.
    */
-  JSONArray getBasicStatesInfo();
+  PageDTO<LocationDTO> getBasicStatesInfo();
 
   /**
    * Gets the basic States information for states that have a population within startValue and
@@ -25,7 +27,7 @@ public interface IBasicInfoAdapter {
    * @param endValue   The value that all wanted values will be less than or equal to.
    * @return JSONArray that contains states that are within the provided range.
    */
-  JSONArray getBasicStatesInfo(int startValue, int endValue);
+  PageDTO<LocationDTO> getBasicStatesInfo(int page, int startValue, int endValue) throws IOException;
 
   /**
    * Gets a state's details.
@@ -39,8 +41,8 @@ public interface IBasicInfoAdapter {
    *
    * @return basic Cities information as a JSONArray.
    */
-  JSONArray getBasicCountiesInfo();
-  JSONArray getBasicCountiesInfo(int startValue, int endValue);
+  PageDTO<LocationDTO> getBasicCountiesInfo();
+  PageDTO<LocationDTO> getBasicCountiesInfo(int page, int startValue, int endValue) throws IOException;
 
   /**
    * Gets a county's details.
@@ -56,9 +58,9 @@ public interface IBasicInfoAdapter {
    *
    * @return basic Cities information as a JSONArray.
    */
-  JSONArray getBasicCitiesInfo();
+  PageDTO<LocationDTO> getBasicCitiesInfo();
 
-  JSONArray getBasicCitiesInfo(int startValue, int endValue);
+  PageDTO<LocationDTO> getBasicCitiesInfo(int page, int startValue, int endValue) throws IOException;
 
   /**
    * Gets a city's details.
