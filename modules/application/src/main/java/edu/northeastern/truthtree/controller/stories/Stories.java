@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin(origins = {"http://localhost:3000",
     "http://localhost:8080",
     "http://truthtree.herokuapp.com",
-    "https://www.truthtree.wiki"}, maxAge = 3600)
+    "https://www.truthtree.wiki"}, maxAge = 3600, allowCredentials = "true")
 @RestController
 public class Stories implements IStories {
 
