@@ -27,12 +27,29 @@ public class SimilarLocations implements ISimilarLocations {
     this.service = service;
   }
 
+  /**
+   * Returns the list of common attributes
+   * for States, Cities and Counties
+   * @return {@link List<CommonAttributeDTO>}
+   */
   @Override
   @RequestMapping(value = "/api/similarlocations/attributes", method = RequestMethod.GET)
   public List<CommonAttributeDTO> getAttributes() {
     return service.getSupportedAttributes();
   }
 
+  /**
+   * Returns the similar location(s)
+   * based on given params
+   * @param locationId - a location Id
+   * @param placeType - a state(0), a city(1) or a county (2)
+   * @param attributes - a list of single or multiple attribute Ids
+   * @param normalizeBy - Population or Revenue
+   * @param year - a single year or year range
+   * @param count - by default, 10
+   * @return {@link List<LocationDTO>}
+   * @throws Exception
+   */
   @Override
   @RequestMapping(value = "/api/similarlocations", method = RequestMethod.GET)
   public List<LocationDTO> getSimilarLocations(@RequestParam(name = "locationId") int locationId,

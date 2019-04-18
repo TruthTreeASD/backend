@@ -17,6 +17,9 @@ import edu.northeastern.truthtree.dto.StoryDTOWrapperList;
 @Component
 public class StoriesAssembler {
 
+  /**
+   * Initializing Jackson Object Mapper
+   */
   private ObjectMapper mapper;
 
   @Autowired
@@ -25,6 +28,12 @@ public class StoriesAssembler {
 
   }
 
+  /**
+   * Given a JSON Response as String
+   * @param jsonString
+   * @return a {@link List<StoryDTO>}
+   * using Jackson Object Mapper
+   */
   public List<StoryDTO> fromJSONStringToDTOList(String jsonString) {
     StoryDTOWrapperList storyDTO = new StoryDTOWrapperList();
     try {
@@ -35,6 +44,12 @@ public class StoriesAssembler {
     return storyDTO.getData().getData();
   }
 
+  /**
+   * Given a JSON Response as String
+   * @param jsonString
+   * @return a {@link StoryDTO}
+   * using Jackson Object Mapper
+   */
   public StoryDTO fromJSONStringToDTO(String jsonString) {
     StoryDTOWrapper storyDTO = new StoryDTOWrapper();
     try {
@@ -45,6 +60,12 @@ public class StoriesAssembler {
     return storyDTO.getData();
   }
 
+  /**
+   * Given a JSON Response as String
+   * @param jsonString
+   * @return a {@link StoryPaginationResponseDTO}
+   * using Jackson Object Mapper
+   */
   public StoryPaginationResponseDTO fromJSONStringToPaginationDTO(String jsonString) {
     StoryDTOWrapperList storyDTO = new StoryDTOWrapperList();
     try {
