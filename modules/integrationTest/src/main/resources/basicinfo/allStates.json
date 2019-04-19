@@ -1,602 +1,359 @@
 [
   {
-    "fips_place": null,
-    "parent_id": null,
-    "latitude": 34.395342,
-    "name": "ARIZONA",
-    "fips_county": null,
-    "id": 30000000,
-    "fyenddate": 630,
-    "type_code": 0,
-    "fips_code_state": 4,
-    "longitude": -111.7632755
-  },
-  {
-    "fips_place": null,
-    "parent_id": null,
-    "latitude": 35.2048883,
-    "name": "ARKANSAS",
-    "fips_county": null,
-    "id": 40000000,
-    "fyenddate": 630,
-    "type_code": 0,
-    "fips_code_state": 5,
-    "longitude": -92.4479108
-  },
-  {
-    "fips_place": null,
-    "parent_id": null,
-    "latitude": 36.7014631,
-    "name": "CALIFORNIA",
-    "fips_county": null,
-    "id": 50000000,
-    "fyenddate": 630,
-    "type_code": 0,
-    "fips_code_state": 6,
-    "longitude": -118.7559974
-  },
-  {
-    "fips_place": null,
-    "parent_id": null,
-    "latitude": 39.4225192,
-    "name": "UTAH",
-    "fips_county": null,
-    "id": 450000000,
-    "fyenddate": 630,
-    "type_code": 0,
-    "fips_code_state": 49,
-    "longitude": -111.7143584
-  },
-  {
-    "fips_place": null,
-    "parent_id": null,
-    "latitude": 38.8950092,
-    "name": "WASHINGTON",
-    "fips_county": null,
-    "id": 480000000,
-    "fyenddate": 630,
-    "type_code": 0,
-    "fips_code_state": 53,
-    "longitude": -77.0365625
-  },
-  {
-    "fips_place": null,
-    "parent_id": null,
-    "latitude": 38.7251776,
-    "name": "COLORADO",
-    "fips_county": null,
-    "id": 60000000,
-    "fyenddate": 630,
-    "type_code": 0,
-    "fips_code_state": 8,
-    "longitude": -105.6077167
-  },
-  {
-    "fips_place": null,
-    "parent_id": null,
-    "latitude": 38.6920451,
-    "name": "DELAWARE",
-    "fips_county": null,
-    "id": 80000000,
-    "fyenddate": 630,
-    "type_code": 0,
-    "fips_code_state": 10,
-    "longitude": -75.4013315
-  },
-  {
-    "fips_place": null,
-    "parent_id": null,
-    "latitude": 27.7567667,
-    "name": "FLORIDA",
-    "fips_county": null,
-    "id": 100000000,
-    "fyenddate": 630,
-    "type_code": 0,
-    "fips_code_state": 12,
-    "longitude": -81.4639835
-  },
-  {
-    "fips_place": null,
-    "parent_id": null,
-    "latitude": 32.3293809,
-    "name": "GEORGIA",
-    "fips_county": null,
-    "id": 110000000,
-    "fyenddate": 630,
-    "type_code": 0,
-    "fips_code_state": 13,
-    "longitude": -83.1137366
-  },
-  {
-    "fips_place": null,
-    "parent_id": null,
-    "latitude": 21.2160437,
-    "name": "HAWAII",
-    "fips_county": null,
-    "id": 120000000,
-    "fyenddate": 630,
-    "type_code": 0,
-    "fips_code_state": 15,
-    "longitude": -157.975203
-  },
-  {
-    "fips_place": null,
-    "parent_id": null,
-    "latitude": 43.6447642,
-    "name": "IDAHO",
-    "fips_county": null,
-    "id": 130000000,
-    "fyenddate": 630,
-    "type_code": 0,
-    "fips_code_state": 16,
-    "longitude": -114.0154071
-  },
-  {
-    "fips_place": null,
-    "parent_id": null,
-    "latitude": 40.0796606,
-    "name": "ILLINOIS",
-    "fips_county": null,
-    "id": 140000000,
-    "fyenddate": 630,
-    "type_code": 0,
-    "fips_code_state": 17,
-    "longitude": -89.4337288
-  },
-  {
-    "fips_place": null,
-    "parent_id": null,
-    "latitude": 40.3270127,
-    "name": "INDIANA",
-    "fips_county": null,
-    "id": 150000000,
-    "fyenddate": 630,
-    "type_code": 0,
-    "fips_code_state": 18,
-    "longitude": -86.1746933
-  },
-  {
-    "fips_place": null,
-    "parent_id": null,
-    "latitude": 40.2253569,
-    "name": "OHIO",
-    "fips_county": null,
-    "id": 360000000,
-    "fyenddate": 630,
-    "type_code": 0,
-    "fips_code_state": 39,
-    "longitude": -82.6881395
-  },
-  {
-    "fips_place": null,
-    "parent_id": null,
-    "latitude": 41.9216734,
-    "name": "IOWA",
-    "fips_county": null,
-    "id": 160000000,
-    "fyenddate": 630,
-    "type_code": 0,
-    "fips_code_state": 19,
-    "longitude": -93.3122705
-  },
-  {
-    "fips_place": null,
-    "parent_id": null,
-    "latitude": 38.27312,
-    "name": "KANSAS",
-    "fips_county": null,
-    "id": 170000000,
-    "fyenddate": 630,
-    "type_code": 0,
-    "fips_code_state": 20,
-    "longitude": -98.5821872
-  },
-  {
-    "fips_place": null,
-    "parent_id": null,
-    "latitude": 37.5726028,
-    "name": "KENTUCKY",
-    "fips_county": null,
-    "id": 180000000,
-    "fyenddate": 630,
-    "type_code": 0,
-    "fips_code_state": 21,
-    "longitude": -85.1551411
-  },
-  {
-    "fips_place": null,
-    "parent_id": null,
-    "latitude": 30.8703881,
-    "name": "LOUISIANA",
-    "fips_county": null,
-    "id": 190000000,
-    "fyenddate": 630,
-    "type_code": 0,
-    "fips_code_state": 22,
-    "longitude": -92.007126
-  },
-  {
-    "fips_place": null,
-    "parent_id": null,
-    "latitude": 45.709097,
-    "name": "MAINE",
-    "fips_county": null,
-    "id": 200000000,
-    "fyenddate": 630,
-    "type_code": 0,
-    "fips_code_state": 23,
-    "longitude": -68.8590201
-  },
-  {
-    "fips_place": null,
-    "parent_id": null,
-    "latitude": 39.5162234,
-    "name": "MARYLAND",
-    "fips_county": null,
-    "id": 210000000,
-    "fyenddate": 630,
-    "type_code": 0,
-    "fips_code_state": 24,
-    "longitude": -76.9382069
-  },
-  {
-    "fips_place": null,
-    "parent_id": null,
-    "latitude": 42.3788774,
-    "name": "MASSACHUSETTS",
-    "fips_county": null,
-    "id": 220000000,
-    "fyenddate": 630,
-    "type_code": 0,
-    "fips_code_state": 25,
-    "longitude": -72.032366
-  },
-  {
-    "fips_place": null,
-    "parent_id": null,
-    "latitude": 33.2588817,
-    "name": "ALABAMA",
-    "fips_county": null,
-    "id": 10000000,
-    "fyenddate": 930,
-    "type_code": 0,
-    "fips_code_state": 1,
-    "longitude": -86.8295337
-  },
-  {
-    "fips_place": null,
-    "parent_id": null,
-    "latitude": 43.6211955,
-    "name": "MICHIGAN",
-    "fips_county": null,
-    "id": 230000000,
-    "fyenddate": 930,
-    "type_code": 0,
-    "fips_code_state": 26,
-    "longitude": -84.6824346
-  },
-  {
-    "fips_place": null,
-    "parent_id": null,
-    "latitude": 45.9896587,
-    "name": "MINNESOTA",
-    "fips_county": null,
-    "id": 240000000,
-    "fyenddate": 630,
-    "type_code": 0,
-    "fips_code_state": 27,
-    "longitude": -94.6113288
-  },
-  {
-    "fips_place": null,
-    "parent_id": null,
-    "latitude": 32.9715645,
-    "name": "MISSISSIPPI",
-    "fips_county": null,
-    "id": 250000000,
-    "fyenddate": 630,
-    "type_code": 0,
-    "fips_code_state": 28,
-    "longitude": -89.7348497
-  },
-  {
-    "fips_place": null,
-    "parent_id": null,
-    "latitude": 38.7604815,
-    "name": "MISSOURI",
-    "fips_county": null,
-    "id": 260000000,
-    "fyenddate": 630,
-    "type_code": 0,
-    "fips_code_state": 29,
-    "longitude": -92.5617875
-  },
-  {
-    "fips_place": null,
-    "parent_id": null,
-    "latitude": 47.3752671,
-    "name": "MONTANA",
-    "fips_county": null,
-    "id": 270000000,
-    "fyenddate": 630,
-    "type_code": 0,
-    "fips_code_state": 30,
-    "longitude": -109.6387579
-  },
-  {
-    "fips_place": null,
-    "parent_id": null,
-    "latitude": 41.7370229,
-    "name": "NEBRASKA",
-    "fips_county": null,
-    "id": 280000000,
-    "fyenddate": 630,
-    "type_code": 0,
-    "fips_code_state": 31,
-    "longitude": -99.5873816
-  },
-  {
-    "fips_place": null,
-    "parent_id": null,
-    "latitude": 39.5158825,
-    "name": "NEVADA",
-    "fips_county": null,
-    "id": 290000000,
-    "fyenddate": 630,
-    "type_code": 0,
-    "fips_code_state": 32,
-    "longitude": -116.8537227
-  },
-  {
-    "fips_place": null,
-    "parent_id": null,
-    "latitude": 43.4849133,
-    "name": "NEW HAMPSHIRE",
-    "fips_county": null,
-    "id": 300000000,
-    "fyenddate": 630,
-    "type_code": 0,
-    "fips_code_state": 33,
-    "longitude": -71.6553992
-  },
-  {
-    "fips_place": null,
-    "parent_id": null,
-    "latitude": 40.0757384,
-    "name": "NEW JERSEY",
-    "fips_county": null,
-    "id": 310000000,
-    "fyenddate": 630,
-    "type_code": 0,
-    "fips_code_state": 34,
-    "longitude": -74.4041622
-  },
-  {
-    "fips_place": null,
-    "parent_id": null,
-    "latitude": 34.5708167,
-    "name": "NEW MEXICO",
-    "fips_county": null,
-    "id": 320000000,
-    "fyenddate": 630,
-    "type_code": 0,
-    "fips_code_state": 35,
-    "longitude": -105.993007
-  },
-  {
-    "fips_place": null,
-    "parent_id": null,
-    "latitude": 40.7308619,
-    "name": "NEW YORK",
-    "fips_county": null,
-    "id": 330000000,
-    "fyenddate": 331,
-    "type_code": 0,
-    "fips_code_state": 36,
-    "longitude": -73.9871558
-  },
-  {
-    "fips_place": null,
-    "parent_id": null,
-    "latitude": 35.6729639,
-    "name": "NORTH CAROLINA",
-    "fips_county": null,
-    "id": 340000000,
-    "fyenddate": 630,
-    "type_code": 0,
-    "fips_code_state": 37,
-    "longitude": -79.0392919
-  },
-  {
-    "fips_place": null,
-    "parent_id": null,
-    "latitude": 47.6201461,
-    "name": "NORTH DAKOTA",
-    "fips_county": null,
-    "id": 350000000,
-    "fyenddate": 630,
-    "type_code": 0,
-    "fips_code_state": 38,
-    "longitude": -100.540737
-  },
-  {
-    "fips_place": null,
-    "parent_id": null,
-    "latitude": 34.9550817,
-    "name": "OKLAHOMA",
-    "fips_county": null,
-    "id": 370000000,
-    "fyenddate": 630,
-    "type_code": 0,
-    "fips_code_state": 40,
-    "longitude": -97.2684063
-  },
-  {
-    "fips_place": null,
-    "parent_id": null,
-    "latitude": 43.9792797,
-    "name": "OREGON",
-    "fips_county": null,
-    "id": 380000000,
-    "fyenddate": 630,
-    "type_code": 0,
-    "fips_code_state": 41,
-    "longitude": -120.737257
-  },
-  {
-    "fips_place": null,
-    "parent_id": null,
-    "latitude": 40.9699889,
-    "name": "PENNSYLVANIA",
-    "fips_county": null,
-    "id": 390000000,
-    "fyenddate": 630,
-    "type_code": 0,
-    "fips_code_state": 42,
-    "longitude": -77.7278831
-  },
-  {
-    "fips_place": null,
-    "parent_id": null,
-    "latitude": 41.7962409,
-    "name": "RHODE ISLAND",
-    "fips_county": null,
-    "id": 400000000,
-    "fyenddate": 630,
-    "type_code": 0,
-    "fips_code_state": 44,
-    "longitude": -71.5992372
-  },
-  {
-    "fips_place": null,
-    "parent_id": null,
-    "latitude": 33.6874388,
-    "name": "SOUTH CAROLINA",
-    "fips_county": null,
-    "id": 410000000,
-    "fyenddate": 630,
-    "type_code": 0,
-    "fips_code_state": 45,
-    "longitude": -80.4363743
-  },
-  {
-    "fips_place": null,
-    "parent_id": null,
-    "latitude": 44.6471761,
-    "name": "SOUTH DAKOTA",
-    "fips_county": null,
-    "id": 420000000,
-    "fyenddate": 630,
-    "type_code": 0,
-    "fips_code_state": 46,
-    "longitude": -100.348761
-  },
-  {
-    "fips_place": null,
-    "parent_id": null,
-    "latitude": 35.7730076,
-    "name": "TENNESSEE",
-    "fips_county": null,
-    "id": 430000000,
-    "fyenddate": 630,
-    "type_code": 0,
-    "fips_code_state": 47,
-    "longitude": -86.2820081
-  },
-  {
-    "fips_place": null,
-    "parent_id": null,
-    "latitude": 31.8160381,
-    "name": "TEXAS",
-    "fips_county": null,
-    "id": 440000000,
-    "fyenddate": 831,
-    "type_code": 0,
-    "fips_code_state": 48,
-    "longitude": -99.5120986
-  },
-  {
-    "fips_place": null,
-    "parent_id": null,
-    "latitude": 44.5990718,
-    "name": "VERMONT",
-    "fips_county": null,
-    "id": 460000000,
-    "fyenddate": 630,
-    "type_code": 0,
-    "fips_code_state": 50,
-    "longitude": -72.5002608
-  },
-  {
-    "fips_place": null,
-    "parent_id": null,
-    "latitude": 37.1232245,
-    "name": "VIRGINIA",
-    "fips_county": null,
-    "id": 470000000,
-    "fyenddate": 630,
-    "type_code": 0,
-    "fips_code_state": 51,
-    "longitude": -78.4927721
-  },
-  {
-    "fips_place": null,
-    "parent_id": null,
-    "latitude": 38.4758406,
-    "name": "WEST VIRGINIA",
-    "fips_county": null,
-    "id": 490000000,
-    "fyenddate": 630,
-    "type_code": 0,
-    "fips_code_state": 54,
-    "longitude": -80.8408415
-  },
-  {
-    "fips_place": null,
-    "parent_id": null,
-    "latitude": 44.4308975,
-    "name": "WISCONSIN",
-    "fips_county": null,
-    "id": 500000000,
-    "fyenddate": 630,
-    "type_code": 0,
-    "fips_code_state": 55,
-    "longitude": -89.6884637
-  },
-  {
-    "fips_place": null,
-    "parent_id": null,
-    "latitude": 43.1700264,
-    "name": "WYOMING",
-    "fips_county": null,
-    "id": 510000000,
-    "fyenddate": 630,
-    "type_code": 0,
-    "fips_code_state": 56,
-    "longitude": -107.5685348
-  },
-  {
-    "fips_place": null,
-    "parent_id": null,
-    "latitude": 64.4459613,
-    "name": "ALASKA",
-    "fips_county": null,
-    "id": 20000000,
-    "fyenddate": 630,
-    "type_code": 0,
-    "fips_code_state": 2,
-    "longitude": -149.680909
-  },
-  {
-    "fips_place": null,
-    "parent_id": null,
-    "latitude": 41.6500201,
-    "name": "CONNECTICUT",
-    "fips_county": null,
-    "id": 70000000,
-    "fyenddate": 630,
-    "type_code": 0,
-    "fips_code_state": 9,
-    "longitude": -72.7342163
+    "totalPageCount": 1,
+    "currentPage": 1,
+    "items": [
+      {
+        "latitude": 34.395342,
+        "name": "ARIZONA",
+        "id": "30000000",
+        "typeCode": 0,
+        "longitude": -111.7632755
+      },
+      {
+        "latitude": 35.2048883,
+        "name": "ARKANSAS",
+        "id": "40000000",
+        "typeCode": 0,
+        "longitude": -92.4479108
+      },
+      {
+        "latitude": 36.7014631,
+        "name": "CALIFORNIA",
+        "id": "50000000",
+        "typeCode": 0,
+        "longitude": -118.7559974
+      },
+      {
+        "latitude": 39.4225192,
+        "name": "UTAH",
+        "id": "450000000",
+        "typeCode": 0,
+        "longitude": -111.7143584
+      },
+      {
+        "latitude": 38.8950092,
+        "name": "WASHINGTON",
+        "id": "480000000",
+        "typeCode": 0,
+        "longitude": -77.0365625
+      },
+      {
+        "latitude": 38.7251776,
+        "name": "COLORADO",
+        "id": "60000000",
+        "typeCode": 0,
+        "longitude": -105.6077167
+      },
+      {
+        "latitude": 38.6920451,
+        "name": "DELAWARE",
+        "id": "80000000",
+        "typeCode": 0,
+        "longitude": -75.4013315
+      },
+      {
+        "latitude": 27.7567667,
+        "name": "FLORIDA",
+        "id": "100000000",
+        "typeCode": 0,
+        "longitude": -81.4639835
+      },
+      {
+        "latitude": 32.3293809,
+        "name": "GEORGIA",
+        "id": "110000000",
+        "typeCode": 0,
+        "longitude": -83.1137366
+      },
+      {
+        "latitude": 21.2160437,
+        "name": "HAWAII",
+        "id": "120000000",
+        "typeCode": 0,
+        "longitude": -157.975203
+      },
+      {
+        "latitude": 43.6447642,
+        "name": "IDAHO",
+        "id": "130000000",
+        "typeCode": 0,
+        "longitude": -114.0154071
+      },
+      {
+        "latitude": 40.0796606,
+        "name": "ILLINOIS",
+        "id": "140000000",
+        "typeCode": 0,
+        "longitude": -89.4337288
+      },
+      {
+        "latitude": 40.3270127,
+        "name": "INDIANA",
+        "id": "150000000",
+        "typeCode": 0,
+        "longitude": -86.1746933
+      },
+      {
+        "latitude": 40.2253569,
+        "name": "OHIO",
+        "id": "360000000",
+        "typeCode": 0,
+        "longitude": -82.6881395
+      },
+      {
+        "latitude": 41.9216734,
+        "name": "IOWA",
+        "id": "160000000",
+        "typeCode": 0,
+        "longitude": -93.3122705
+      },
+      {
+        "latitude": 38.27312,
+        "name": "KANSAS",
+        "id": "170000000",
+        "typeCode": 0,
+        "longitude": -98.5821872
+      },
+      {
+        "latitude": 37.5726028,
+        "name": "KENTUCKY",
+        "id": "180000000",
+        "typeCode": 0,
+        "longitude": -85.1551411
+      },
+      {
+        "latitude": 30.8703881,
+        "name": "LOUISIANA",
+        "id": "190000000",
+        "typeCode": 0,
+        "longitude": -92.007126
+      },
+      {
+        "latitude": 45.709097,
+        "name": "MAINE",
+        "id": "200000000",
+        "typeCode": 0,
+        "longitude": -68.8590201
+      },
+      {
+        "latitude": 39.5162234,
+        "name": "MARYLAND",
+        "id": "210000000",
+        "typeCode": 0,
+        "longitude": -76.9382069
+      },
+      {
+        "latitude": 42.3788774,
+        "name": "MASSACHUSETTS",
+        "id": "220000000",
+        "typeCode": 0,
+        "longitude": -72.032366
+      },
+      {
+        "latitude": 33.2588817,
+        "name": "ALABAMA",
+        "id": "10000000",
+        "typeCode": 0,
+        "longitude": -86.8295337
+      },
+      {
+        "latitude": 43.6211955,
+        "name": "MICHIGAN",
+        "id": "230000000",
+        "typeCode": 0,
+        "longitude": -84.6824346
+      },
+      {
+        "latitude": 45.9896587,
+        "name": "MINNESOTA",
+        "id": "240000000",
+        "typeCode": 0,
+        "longitude": -94.6113288
+      },
+      {
+        "latitude": 32.9715645,
+        "name": "MISSISSIPPI",
+        "id": "250000000",
+        "typeCode": 0,
+        "longitude": -89.7348497
+      },
+      {
+        "latitude": 38.7604815,
+        "name": "MISSOURI",
+        "id": "260000000",
+        "typeCode": 0,
+        "longitude": -92.5617875
+      },
+      {
+        "latitude": 47.3752671,
+        "name": "MONTANA",
+        "id": "270000000",
+        "typeCode": 0,
+        "longitude": -109.6387579
+      },
+      {
+        "latitude": 41.7370229,
+        "name": "NEBRASKA",
+        "id": "280000000",
+        "typeCode": 0,
+        "longitude": -99.5873816
+      },
+      {
+        "latitude": 39.5158825,
+        "name": "NEVADA",
+        "id": "290000000",
+        "typeCode": 0,
+        "longitude": -116.8537227
+      },
+      {
+        "latitude": 43.4849133,
+        "name": "NEW HAMPSHIRE",
+        "id": "300000000",
+        "typeCode": 0,
+        "longitude": -71.6553992
+      },
+      {
+        "latitude": 40.0757384,
+        "name": "NEW JERSEY",
+        "id": "310000000",
+        "typeCode": 0,
+        "longitude": -74.4041622
+      },
+      {
+        "latitude": 34.5708167,
+        "name": "NEW MEXICO",
+        "id": "320000000",
+        "typeCode": 0,
+        "longitude": -105.993007
+      },
+      {
+        "latitude": 40.7308619,
+        "name": "NEW YORK",
+        "id": "330000000",
+        "typeCode": 0,
+        "longitude": -73.9871558
+      },
+      {
+        "latitude": 35.6729639,
+        "name": "NORTH CAROLINA",
+        "id": "340000000",
+        "typeCode": 0,
+        "longitude": -79.0392919
+      },
+      {
+        "latitude": 47.6201461,
+        "name": "NORTH DAKOTA",
+        "id": "350000000",
+        "typeCode": 0,
+        "longitude": -100.540737
+      },
+      {
+        "latitude": 34.9550817,
+        "name": "OKLAHOMA",
+        "id": "370000000",
+        "typeCode": 0,
+        "longitude": -97.2684063
+      },
+      {
+        "latitude": 43.9792797,
+        "name": "OREGON",
+        "id": "380000000",
+        "typeCode": 0,
+        "longitude": -120.737257
+      },
+      {
+        "latitude": 40.9699889,
+        "name": "PENNSYLVANIA",
+        "id": "390000000",
+        "typeCode": 0,
+        "longitude": -77.7278831
+      },
+      {
+        "latitude": 41.7962409,
+        "name": "RHODE ISLAND",
+        "id": "400000000",
+        "typeCode": 0,
+        "longitude": -71.5992372
+      },
+      {
+        "latitude": 33.6874388,
+        "name": "SOUTH CAROLINA",
+        "id": "410000000",
+        "typeCode": 0,
+        "longitude": -80.4363743
+      },
+      {
+        "latitude": 44.6471761,
+        "name": "SOUTH DAKOTA",
+        "id": "420000000",
+        "typeCode": 0,
+        "longitude": -100.348761
+      },
+      {
+        "latitude": 35.7730076,
+        "name": "TENNESSEE",
+        "id": "430000000",
+        "typeCode": 0,
+        "longitude": -86.2820081
+      },
+      {
+        "latitude": 31.8160381,
+        "name": "TEXAS",
+        "id": "440000000",
+        "typeCode": 0,
+        "longitude": -99.5120986
+      },
+      {
+        "latitude": 44.5990718,
+        "name": "VERMONT",
+        "id": "460000000",
+        "typeCode": 0,
+        "longitude": -72.5002608
+      },
+      {
+        "latitude": 37.1232245,
+        "name": "VIRGINIA",
+        "id": "470000000",
+        "typeCode": 0,
+        "longitude": -78.4927721
+      },
+      {
+        "latitude": 38.4758406,
+        "name": "WEST VIRGINIA",
+        "id": "490000000",
+        "typeCode": 0,
+        "longitude": -80.8408415
+      },
+      {
+        "latitude": 44.4308975,
+        "name": "WISCONSIN",
+        "id": "500000000",
+        "typeCode": 0,
+        "longitude": -89.6884637
+      },
+      {
+        "latitude": 43.1700264,
+        "name": "WYOMING",
+        "id": "510000000",
+        "typeCode": 0,
+        "longitude": -107.5685348
+      },
+      {
+        "latitude": 64.4459613,
+        "name": "ALASKA",
+        "id": "20000000",
+        "typeCode": 0,
+        "longitude": -149.680909
+      },
+      {
+        "latitude": 41.6500201,
+        "name": "CONNECTICUT",
+        "id": "70000000",
+        "typeCode": 0,
+        "longitude": -72.7342163
+      }
+    ],
+    "totalItemCount": 50
   }
 ]

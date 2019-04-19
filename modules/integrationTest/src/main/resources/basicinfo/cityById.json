@@ -1,13 +1,12 @@
-[{
+[
+  {
     "fips_place": 52742,
     "parent_id": "261060060",
-    "latitude": 36.5453535,
     "name": "NOEL CITY",
     "fips_county": 119,
     "id": 262060004,
     "fyenddate": 1231,
     "type_code": 2,
-    "fips_code_state": 29,
-    "longitude": -94.4854959,
-    "population": 1824
-}]
+    "fips_code_state": 29
+  }
+]
