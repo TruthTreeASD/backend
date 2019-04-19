@@ -1,17 +1,19 @@
-[{
-  "respCode": "0",
-  "data": [
-    {
-      "attribute_id": 1,
-      "start_year": 1967,
-      "end_year": 2016
-    },
-    {
-      "start_year": 1988,
-      "end_year": 2016,
-      "attribute_id": 75
-    }
-  ],
-  "ok": true,
-  "message": ""
-}]
+[
+  {
+    "respCode": "0",
+    "data": [
+      {
+        "attribute_id": 1,
+        "start_year": 1967,
+        "end_year": 2016
+      },
+      {
+        "start_year": 1988,
+        "end_year": 2016,
+        "attribute_id": 75
+      }
+    ],
+    "ok": true,
+    "message": ""
+  }
+]
