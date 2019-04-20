@@ -5,7 +5,6 @@ import static org.junit.Assert.assertNull;
 import static org.mockito.Mockito.when;
 
 import edu.northeastern.truthtree.adapter.population.PopulationDBAdapter;
-import edu.northeastern.truthtree.service.population.PopulationService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
