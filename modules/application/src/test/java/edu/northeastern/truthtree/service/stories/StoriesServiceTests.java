@@ -1,33 +1,26 @@
 package edu.northeastern.truthtree.service.stories;
 
 import edu.northeastern.truthtree.adapter.stories.StoriesDBAdapter;
-import edu.northeastern.truthtree.dto.NameValueDTO;
 import edu.northeastern.truthtree.dto.StoryDTO;
 import edu.northeastern.truthtree.dto.StoryPaginationResponseDTO;
 import edu.northeastern.truthtree.enums.OrderType;
 import edu.northeastern.truthtree.enums.StoryStatus;
 import edu.northeastern.truthtree.enums.VoteType;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.exceptions.misusing.NotAMockException;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
-import static org.hamcrest.CoreMatchers.*;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
-
-import org.hamcrest.collection.IsIterableContainingInOrder;
 
 
 @RunWith(MockitoJUnitRunner.class)
@@ -112,18 +105,11 @@ public class StoriesServiceTests {
         assertEquals(actual, storiesService.getStories(orderType, status, pageSize, currentPage));
     }
 
-//    @Test
-//    public void testGetOrderType() {
-//        List<NameValueDTO> actual = new ArrayList<>();
-//        for (OrderType orderType : OrderType.values()) {
-//            NameValueDTO nv = new NameValueDTO();
-//            nv.setName(orderType.name());
-//            nv.setValue(orderType.getValue());
-//            actual.add(nv);
-//        }
-//        List<NameValueDTO> expected = storiesService.getOrderType();
-//        assertArrayEquals(expected.toArray(), actual.toArray());
-//    }
+    @Test(expected = NotAMockException.class)
+    public void testGetOrderType() {
+        storiesService.getOrderType();
+        verify(storiesService).getOrderType();
+    }
 
 
 }
