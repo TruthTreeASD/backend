@@ -1,6 +1,5 @@
 package edu.northeastern.truthtree.service.attributes;
 
-import edu.northeastern.truthtree.adapter.attributes.AttributesDBAdapter;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.junit.BeforeClass;
@@ -14,7 +13,6 @@ import java.util.Map;
 
 import edu.northeastern.truthtree.AppConst;
 import edu.northeastern.truthtree.adapter.AttributesMockAdapter;
-import org.mockito.Mock;
 
 import static org.junit.Assert.assertEquals;
 
