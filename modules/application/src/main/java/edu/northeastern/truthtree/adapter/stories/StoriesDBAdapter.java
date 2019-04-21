@@ -1,23 +1,5 @@
 package edu.northeastern.truthtree.adapter.stories;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import edu.northeastern.truthtree.dto.StoryPaginationResponseDTO;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import org.springframework.web.util.UriComponentsBuilder;
-
-import java.util.HashMap;
-import java.util.Map;
-
-import edu.northeastern.truthtree.adapter.utilities.URLUtil;
-import edu.northeastern.truthtree.assembler.StoriesAssembler;
-import edu.northeastern.truthtree.dto.StoryDTO;
-import edu.northeastern.truthtree.enums.OrderType;
-import edu.northeastern.truthtree.enums.StoryStatus;
-import edu.northeastern.truthtree.enums.VoteType;
-
 import static edu.northeastern.truthtree.AppConst.STORIES_URL_CHANGE_STATUS;
 import static edu.northeastern.truthtree.AppConst.STORIES_URL_DELETE;
 import static edu.northeastern.truthtree.AppConst.STORIES_URL_GET;
@@ -25,8 +7,27 @@ import static edu.northeastern.truthtree.AppConst.STORIES_URL_POST;
 import static edu.northeastern.truthtree.AppConst.STORIES_URL_SEARCH;
 import static edu.northeastern.truthtree.AppConst.STORIES_URL_UPDATE_VOTES;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import edu.northeastern.truthtree.adapter.utilities.URLUtil;
+import edu.northeastern.truthtree.assembler.StoriesAssembler;
+import edu.northeastern.truthtree.dto.StoryDTO;
+import edu.northeastern.truthtree.dto.StoryPaginationResponseDTO;
+import edu.northeastern.truthtree.enums.OrderType;
+import edu.northeastern.truthtree.enums.StoryStatus;
+import edu.northeastern.truthtree.enums.VoteType;
+import java.util.HashMap;
+import java.util.Map;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+import org.springframework.web.util.UriComponentsBuilder;
+
 @Component("storiesDBAdapter")
 public class StoriesDBAdapter implements IStoriesAdapter {
+
+  @Value("${databaseUrl}")
+  private String db_endpoint;
 
   private StoriesAssembler assembler;
 
@@ -44,7 +45,7 @@ public class StoriesDBAdapter implements IStoriesAdapter {
     } catch (JsonProcessingException e) {
       e.printStackTrace();
     }
-    URLUtil.postJSONFromURL(STORIES_URL_POST, jsonString);
+    URLUtil.postJSONFromURL(db_endpoint + STORIES_URL_POST, jsonString);
     return storyDTO;
   }
 
@@ -85,7 +86,7 @@ public class StoriesDBAdapter implements IStoriesAdapter {
     } else {
       uriParams.put("status", storyStatus.name());
     }
-    UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(STORIES_URL_GET);
+    UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(db_endpoint + STORIES_URL_GET);
     builder.queryParam("order", sortBy);
     builder.queryParam("orderBy", fieldName);
     if (pageSize == null) {
@@ -108,7 +109,7 @@ public class StoriesDBAdapter implements IStoriesAdapter {
     Map<String, String> uriParams = new HashMap<String, String>();
     uriParams.put("status", status.name());
     uriParams.put("id", id);
-    UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(STORIES_URL_CHANGE_STATUS);
+    UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(db_endpoint + STORIES_URL_CHANGE_STATUS);
     String url = builder.buildAndExpand(uriParams).toUriString();
     URLUtil.putJSONFromURL(url);
   }
@@ -119,7 +120,7 @@ public class StoriesDBAdapter implements IStoriesAdapter {
     uriParams.put("id", storyDTO.getId());
     uriParams.put("voteType", type.name());
 
-    UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(STORIES_URL_UPDATE_VOTES);
+    UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(db_endpoint + STORIES_URL_UPDATE_VOTES);
     String url = builder.buildAndExpand(uriParams).toUriString();
 
     URLUtil.putJSONFromURL(url);
@@ -135,7 +136,7 @@ public class StoriesDBAdapter implements IStoriesAdapter {
   public void deleteStory(String id) {
     Map<String, String> uriParams = new HashMap<String, String>();
     uriParams.put("id", id);
-    UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(STORIES_URL_DELETE);
+    UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(db_endpoint + STORIES_URL_DELETE);
     String url = builder.buildAndExpand(uriParams).toUriString();
     URLUtil.deleteJSONFromURL(url);
   }
@@ -144,7 +145,7 @@ public class StoriesDBAdapter implements IStoriesAdapter {
   public StoryPaginationResponseDTO search(String keyword, Integer pageSize, Integer pageNumber, OrderType orderType) {
     Map<String, String> uriParams = new HashMap<String, String>();
     uriParams.put("keyword", keyword);
-    UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(STORIES_URL_SEARCH);
+    UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(db_endpoint + STORIES_URL_SEARCH);
     builder.queryParam("pageSize", pageSize);
     builder.queryParam("currentPage", pageNumber);
     builder.queryParam("orderType", orderType);

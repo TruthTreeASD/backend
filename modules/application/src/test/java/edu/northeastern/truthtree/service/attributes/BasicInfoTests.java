@@ -1,20 +1,23 @@
 package edu.northeastern.truthtree.service.attributes;
 
+import static edu.northeastern.truthtree.TestConstants.CITY_ID;
+import static edu.northeastern.truthtree.TestConstants.COUNTY_ID;
+import static edu.northeastern.truthtree.TestConstants.RANGE1;
+import static edu.northeastern.truthtree.TestConstants.RANGE2;
+import static edu.northeastern.truthtree.TestConstants.STATE_ID;
+import static org.junit.Assert.assertEquals;
+
 import edu.northeastern.truthtree.adapter.basicInfo.IBasicInfoAdapter;
 import edu.northeastern.truthtree.dto.LocationDTO;
 import edu.northeastern.truthtree.dto.PageDTO;
 import edu.northeastern.truthtree.service.basicInfo.BasicInfoService;
 import edu.northeastern.truthtree.service.basicInfo.IBasicInfoService;
+import java.io.IOException;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
-
-import java.io.IOException;
-
-import static edu.northeastern.truthtree.TestConstants.*;
-import static org.junit.Assert.assertEquals;
 
 @RunWith(MockitoJUnitRunner.class)
 public class BasicInfoTests {

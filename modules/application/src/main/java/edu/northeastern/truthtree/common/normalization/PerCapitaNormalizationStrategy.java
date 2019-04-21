@@ -1,8 +1,7 @@
 package edu.northeastern.truthtree.common.normalization;
 
-import java.util.List;
-
 import edu.northeastern.truthtree.AppConst;
+import java.util.List;
 
 /**
  * This strategy divides attribute values with the population of the location for the given year.

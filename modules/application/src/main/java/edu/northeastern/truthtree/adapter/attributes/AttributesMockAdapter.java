@@ -1,13 +1,12 @@
 package edu.northeastern.truthtree.adapter.attributes;
 
-import org.json.simple.JSONArray;
-
-import java.util.List;
-
 import static edu.northeastern.truthtree.AppConst.ATTRIBUTES_FILE_PATH;
 import static edu.northeastern.truthtree.AppConst.ATTRIBUTES_MOCK_SPEC_PATH;
 import static edu.northeastern.truthtree.adapter.utilities.JSONUtil.readJSONFile;
 import static edu.northeastern.truthtree.adapter.utilities.JoltUtil.joltTransform;
+
+import java.util.List;
+import org.json.simple.JSONArray;
 
 public class AttributesMockAdapter implements IAttributesAdapter {
 

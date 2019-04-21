@@ -1,26 +1,5 @@
 package edu.northeastern.truthtree.adapter.basicInfo;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import org.json.simple.JSONArray;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Component;
-import org.springframework.web.util.UriComponentsBuilder;
-
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-import java.util.stream.Collectors;
-
-import edu.northeastern.truthtree.adapter.BaseAdapter;
-import edu.northeastern.truthtree.adapter.utilities.JSONUtil;
-import edu.northeastern.truthtree.assembler.LocationAssembler;
-import edu.northeastern.truthtree.dto.LocationDTO;
-import edu.northeastern.truthtree.dto.PageDTO;
-
 import static edu.northeastern.truthtree.AppConst.CITIES_FILE_PATH;
 import static edu.northeastern.truthtree.AppConst.COUNTIES_FILE_PATH;
 import static edu.northeastern.truthtree.AppConst.POPULATION_ID;
@@ -28,11 +7,33 @@ import static edu.northeastern.truthtree.AppConst.POPULATION_RANGE_URL;
 import static edu.northeastern.truthtree.AppConst.POPULATION_URL;
 import static edu.northeastern.truthtree.AppConst.STATES_FILE_PATH;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import edu.northeastern.truthtree.adapter.BaseAdapter;
+import edu.northeastern.truthtree.adapter.utilities.JSONUtil;
+import edu.northeastern.truthtree.assembler.LocationAssembler;
+import edu.northeastern.truthtree.dto.LocationDTO;
+import edu.northeastern.truthtree.dto.PageDTO;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import org.json.simple.JSONArray;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
+import org.springframework.web.util.UriComponentsBuilder;
+
 /**
  * Represents the Basic Info Adapter used to communicate with the database API.
  */
 @Component
 public class BasicInfoDBAdapter extends BaseAdapter implements IBasicInfoAdapter {
+
+  @Value("${databaseUrl}")
+  private String db_endpoint;
+
   private static Map<Long, Object> stateData = new HashMap<>();
   private static Map<Long, Object> citiesData = new HashMap<>();
   private static Map<Long, Object> countiesData = new HashMap<>();
@@ -77,7 +78,7 @@ public class BasicInfoDBAdapter extends BaseAdapter implements IBasicInfoAdapter
 
   private Long getLocationPopulation(String locationId, String year) {
     Map response = (Map) this.restTemplate
-            .getForObject(String.format(POPULATION_URL, locationId), Map.class)
+            .getForObject(String.format(db_endpoint + POPULATION_URL, locationId), Map.class)
             .get("data");
 
     List<Map> populationsByYear = (List) response.get("data");
@@ -182,7 +183,7 @@ public class BasicInfoDBAdapter extends BaseAdapter implements IBasicInfoAdapter
                                  Map<Long, Object> basicInfoMap, int typeCode)
           throws IOException {
     String url = UriComponentsBuilder
-            .fromHttpUrl(POPULATION_RANGE_URL)
+            .fromHttpUrl(db_endpoint + POPULATION_RANGE_URL)
             .queryParam("attributeId", POPULATION_ID)
             .queryParam("year", 2016)
             .queryParam("from", startValue)

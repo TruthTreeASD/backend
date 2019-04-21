@@ -2,13 +2,11 @@ package edu.northeastern.truthtree.controller.basicInfo;
 
 import static edu.northeastern.truthtree.AppConst.POPULATION_RANGE;
 
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestParam;
-
-import java.io.IOException;
-
 import edu.northeastern.truthtree.dto.LocationDTO;
 import edu.northeastern.truthtree.dto.PageDTO;
+import java.io.IOException;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * Represents the Basic Info interface used to implement the REST controller.

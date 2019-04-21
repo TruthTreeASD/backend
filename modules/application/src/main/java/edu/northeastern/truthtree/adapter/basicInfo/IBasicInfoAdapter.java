@@ -1,11 +1,10 @@
 package edu.northeastern.truthtree.adapter.basicInfo;
 
+import edu.northeastern.truthtree.dto.LocationDTO;
+import edu.northeastern.truthtree.dto.PageDTO;
 import java.io.IOException;
 import java.util.Map;
 import java.util.Optional;
-
-import edu.northeastern.truthtree.dto.LocationDTO;
-import edu.northeastern.truthtree.dto.PageDTO;
 
 /**
  * Represents the interface for the Basic Info Adapter.

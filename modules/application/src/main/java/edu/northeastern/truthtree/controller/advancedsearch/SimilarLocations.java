@@ -1,21 +1,17 @@
 package edu.northeastern.truthtree.controller.advancedsearch;
 
-import edu.northeastern.truthtree.enums.LocationType;
+import edu.northeastern.truthtree.dto.CommonAttributeDTO;
+import edu.northeastern.truthtree.dto.LocationDTO;
 import edu.northeastern.truthtree.enums.NormalizationType;
+import edu.northeastern.truthtree.service.advancedsearch.ISimilarLocationsService;
+import java.util.List;
+import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
-
-import javax.servlet.http.HttpServletResponse;
-
-import edu.northeastern.truthtree.dto.CommonAttributeDTO;
-import edu.northeastern.truthtree.dto.LocationDTO;
-import edu.northeastern.truthtree.service.advancedsearch.ISimilarLocationsService;
 
 @RestController
 @CrossOrigin(value = "*", maxAge = 3600)

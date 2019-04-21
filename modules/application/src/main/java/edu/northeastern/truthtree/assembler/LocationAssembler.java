@@ -1,19 +1,14 @@
 package edu.northeastern.truthtree.assembler;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-
-import org.json.simple.JSONArray;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
-import java.io.IOException;
+import edu.northeastern.truthtree.dto.LocationDTO;
+import edu.northeastern.truthtree.dto.PageDTO;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-
-import edu.northeastern.truthtree.dto.LocationDTO;
-import edu.northeastern.truthtree.dto.PageDTO;
-import springfox.documentation.spring.web.json.Json;
+import org.json.simple.JSONArray;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 
 @Component

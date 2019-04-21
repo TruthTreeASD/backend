@@ -2,8 +2,6 @@ package edu.northeastern.truthtree.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 
-import io.swagger.models.auth.In;
-
 /**
  * Created by steven on 2019/3/21.
  */

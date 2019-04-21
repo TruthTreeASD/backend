@@ -1,16 +1,14 @@
 package edu.northeastern.truthtree.service.attributes;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
-import java.util.ArrayList;
-import java.util.List;
-
 import edu.northeastern.truthtree.AppConst;
 import edu.northeastern.truthtree.adapter.attributes.IAttributesAdapter;
 import edu.northeastern.truthtree.common.normalization.INormalizationStrategy;
 import edu.northeastern.truthtree.common.normalization.NormalizationStrategyFactory;
 import edu.northeastern.truthtree.enums.NormalizationType;
+import java.util.ArrayList;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 @Component
 public class AttributesService implements IAttributesService {

@@ -1,7 +1,5 @@
 package edu.northeastern.truthtree.enums;
 
-import java.util.List;
-
 /**
  * Represents types of sorting available for stories.
  */

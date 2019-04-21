@@ -1,8 +1,7 @@
 package edu.northeastern.truthtree.service.attributes;
 
-import java.util.List;
-
 import edu.northeastern.truthtree.enums.NormalizationType;
+import java.util.List;
 
 public interface IAttributesService {
   /**
