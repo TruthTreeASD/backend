@@ -18,7 +18,7 @@ import org.springframework.web.client.RestTemplate;
 public class ApplicationConfig {
 
   @Value("${elasticsearchUrl}")
-  private String elasticsearch_endpoint;
+  private String elasticsearchEndpoint;
 
   @Bean
   public RestTemplate restTemplate() {
@@ -28,6 +28,6 @@ public class ApplicationConfig {
   @Bean
   public RestHighLevelClient restHighLevelClient() {
     return new RestHighLevelClient(RestClient
-            .builder(new HttpHost(elasticsearch_endpoint, 443, "https")));
+            .builder(new HttpHost(elasticsearchEndpoint, 443, "https")));
   }
 }

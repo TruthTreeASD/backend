@@ -8,11 +8,11 @@ import org.springframework.stereotype.Component;
 public class LoginService implements ILoginService {
 
   @Value("${passwordHash}")
-  private String password_hash;
+  private String passwordHash;
 
   @Override
   public Boolean authenticateUser(String password) {
-    return BCrypt.checkpw(password, password_hash);
+    return BCrypt.checkpw(password, passwordHash);
   }
 
 }
