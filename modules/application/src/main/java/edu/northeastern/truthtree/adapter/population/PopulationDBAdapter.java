@@ -14,11 +14,11 @@ import org.springframework.web.util.UriComponentsBuilder;
 public class PopulationDBAdapter implements IPopulationAdapter {
 
   @Value("${databaseUrl}")
-  private String db_endpoint;
+  private String dbEndpoint;
 
   @Override
   public Object getPopulation(Integer locationId, Integer year) {
-    UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(db_endpoint + ATTRIBUTES_URL3);
+    UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(dbEndpoint + ATTRIBUTES_URL3);
     int POPULATION_ATTRIBUTE_NUMBER = 1;
 
     builder.queryParam("attributes", POPULATION_ATTRIBUTE_NUMBER);

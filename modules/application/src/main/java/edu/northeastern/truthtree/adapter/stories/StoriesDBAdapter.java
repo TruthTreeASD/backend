@@ -27,7 +27,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 public class StoriesDBAdapter implements IStoriesAdapter {
 
   @Value("${databaseUrl}")
-  private String db_endpoint;
+  private String dbEndpoint;
 
   private StoriesAssembler assembler;
 
@@ -45,7 +45,7 @@ public class StoriesDBAdapter implements IStoriesAdapter {
     } catch (JsonProcessingException e) {
       e.printStackTrace();
     }
-    URLUtil.postJSONFromURL(db_endpoint + STORIES_URL_POST, jsonString);
+    URLUtil.postJSONFromURL(dbEndpoint + STORIES_URL_POST, jsonString);
     return storyDTO;
   }
 
@@ -86,7 +86,7 @@ public class StoriesDBAdapter implements IStoriesAdapter {
     } else {
       uriParams.put("status", storyStatus.name());
     }
-    UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(db_endpoint + STORIES_URL_GET);
+    UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(dbEndpoint + STORIES_URL_GET);
     builder.queryParam("order", sortBy);
     builder.queryParam("orderBy", fieldName);
     if (pageSize == null) {
@@ -109,7 +109,7 @@ public class StoriesDBAdapter implements IStoriesAdapter {
     Map<String, String> uriParams = new HashMap<String, String>();
     uriParams.put("status", status.name());
     uriParams.put("id", id);
-    UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(db_endpoint + STORIES_URL_CHANGE_STATUS);
+    UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(dbEndpoint + STORIES_URL_CHANGE_STATUS);
     String url = builder.buildAndExpand(uriParams).toUriString();
     URLUtil.putJSONFromURL(url);
   }
@@ -120,7 +120,7 @@ public class StoriesDBAdapter implements IStoriesAdapter {
     uriParams.put("id", storyDTO.getId());
     uriParams.put("voteType", type.name());
 
-    UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(db_endpoint + STORIES_URL_UPDATE_VOTES);
+    UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(dbEndpoint + STORIES_URL_UPDATE_VOTES);
     String url = builder.buildAndExpand(uriParams).toUriString();
 
     URLUtil.putJSONFromURL(url);
@@ -136,7 +136,7 @@ public class StoriesDBAdapter implements IStoriesAdapter {
   public void deleteStory(String id) {
     Map<String, String> uriParams = new HashMap<String, String>();
     uriParams.put("id", id);
-    UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(db_endpoint + STORIES_URL_DELETE);
+    UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(dbEndpoint + STORIES_URL_DELETE);
     String url = builder.buildAndExpand(uriParams).toUriString();
     URLUtil.deleteJSONFromURL(url);
   }
@@ -145,7 +145,7 @@ public class StoriesDBAdapter implements IStoriesAdapter {
   public StoryPaginationResponseDTO search(String keyword, Integer pageSize, Integer pageNumber, OrderType orderType) {
     Map<String, String> uriParams = new HashMap<String, String>();
     uriParams.put("keyword", keyword);
-    UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(db_endpoint + STORIES_URL_SEARCH);
+    UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(dbEndpoint + STORIES_URL_SEARCH);
     builder.queryParam("pageSize", pageSize);
     builder.queryParam("currentPage", pageNumber);
     builder.queryParam("orderType", orderType);

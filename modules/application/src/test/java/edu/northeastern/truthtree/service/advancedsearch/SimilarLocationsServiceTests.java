@@ -1,4 +1,4 @@
-package edu.northeastern.truthtree.service.attributes;
+package edu.northeastern.truthtree.service.advancedsearch;
 
 import static org.junit.Assert.assertEquals;
 
@@ -68,5 +68,30 @@ public class SimilarLocationsServiceTests {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @Test(expected = Exception.class)
+    public void testGetSimilarLocationsWithNullYear() throws Exception {
+        List<Integer> attributes = new ArrayList<>();
+        attributes.add(1);
+        List<Integer> yearRange = new ArrayList<>();
+        List<LocationDTO> actualResponse = similarLocationsAdapter
+                .getSimilarLocations(220000000, 0, attributes,
+                        NormalizationType.BY_REVENUE, yearRange, null);
+        assertEquals(actualResponse, similarLocationsService.getSimilarLocations(220000000, 0,
+                attributes, NormalizationType.BY_REVENUE, yearRange, null));
+    }
+
+    @Test(expected = Exception.class)
+    public void testGetSimilarLocationsWithSingleAttributSingleYear() throws Exception {
+        List<Integer> attributes = new ArrayList<>();
+        attributes.add(1);
+        List<Integer> yearRange = new ArrayList<>();
+        yearRange.add(2014);
+        List<LocationDTO> actualResponse = similarLocationsAdapter
+                .getSimilarLocations(220000000, 0, attributes,
+                        NormalizationType.BY_REVENUE, yearRange, null);
+        assertEquals(actualResponse, similarLocationsService.getSimilarLocations(220000000, 0,
+                attributes, NormalizationType.BY_REVENUE, yearRange, null));
     }
 }

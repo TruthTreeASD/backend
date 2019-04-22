@@ -21,7 +21,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 public class AttributesDBAdapter implements IAttributesAdapter {
 
   @Value("${databaseUrl}")
-  private String db_endpoint;
+  private String dbEndpoint;
 
   @Override
   public JSONArray getAttributes() {
@@ -30,7 +30,7 @@ public class AttributesDBAdapter implements IAttributesAdapter {
 
   @Override
   public Object getAttributes(List<Integer> attributes) {
-    UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(db_endpoint + ATTRIBUTES_URL1);
+    UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(dbEndpoint + ATTRIBUTES_URL1);
     for (Integer attributeId : attributes) {
       builder.queryParam("attributes", attributeId);
     }
@@ -40,7 +40,7 @@ public class AttributesDBAdapter implements IAttributesAdapter {
 
   @Override
   public Object getAttributesWithLocations(List<Integer> attributes, List<Integer> locations) {
-    UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(db_endpoint + ATTRIBUTES_URL2);
+    UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(dbEndpoint + ATTRIBUTES_URL2);
     for (Integer attributeId : attributes) {
       builder.queryParam("attributes", attributeId);
     }
@@ -54,7 +54,7 @@ public class AttributesDBAdapter implements IAttributesAdapter {
   @Override
   public Object getAttributesWithLocationsYearList(List<Integer> attributes,
       List<Integer> locations, List<Integer> yearList) {
-    UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(db_endpoint + ATTRIBUTES_URL3);
+    UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(dbEndpoint + ATTRIBUTES_URL3);
     for (Integer attributeId : attributes) {
       builder.queryParam("attributes", attributeId);
     }
@@ -71,7 +71,7 @@ public class AttributesDBAdapter implements IAttributesAdapter {
   @Override
   public Object getAttributesWithLocationsYearRange(List<Integer> attributes,
       List<Integer> locations, List<Integer> yearRange) {
-    UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(db_endpoint + ATTRIBUTES_URL4);
+    UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(dbEndpoint + ATTRIBUTES_URL4);
     for (Integer attributeId : attributes) {
       builder.queryParam("attributes", attributeId);
     }
@@ -88,7 +88,7 @@ public class AttributesDBAdapter implements IAttributesAdapter {
   @Override
   public List<Integer> getAttributeIdWithCollectionProperty(List<Integer> collections,
       List<Integer> properties) {
-    UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(db_endpoint + ATTRIBUTES_URL5);
+    UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(dbEndpoint + ATTRIBUTES_URL5);
     for (Integer collectionId : collections) {
       builder.queryParam("collection_ids", collectionId);
     }

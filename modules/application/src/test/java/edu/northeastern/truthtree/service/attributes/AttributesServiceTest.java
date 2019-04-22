@@ -15,6 +15,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class AttributesServiceTest {
+
   private static IAttributesService attributesService;
   private static Map<Integer, Double> grossValuesForAllYears;
 
@@ -163,4 +164,5 @@ public class AttributesServiceTest {
     grossValuesForAllYears.put(1970, 748.0);
     grossValuesForAllYears.put(1967, 406.0);
   }
+
 }

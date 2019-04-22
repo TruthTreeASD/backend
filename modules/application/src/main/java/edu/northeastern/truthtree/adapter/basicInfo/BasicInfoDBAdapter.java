@@ -32,7 +32,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 public class BasicInfoDBAdapter extends BaseAdapter implements IBasicInfoAdapter {
 
   @Value("${databaseUrl}")
-  private String db_endpoint;
+  private String dbEndpoint;
 
   private static Map<Long, Object> stateData = new HashMap<>();
   private static Map<Long, Object> citiesData = new HashMap<>();
@@ -78,7 +78,7 @@ public class BasicInfoDBAdapter extends BaseAdapter implements IBasicInfoAdapter
 
   private Long getLocationPopulation(String locationId, String year) {
     Map response = (Map) this.restTemplate
-            .getForObject(String.format(db_endpoint + POPULATION_URL, locationId), Map.class)
+            .getForObject(String.format(dbEndpoint + POPULATION_URL, locationId), Map.class)
             .get("data");
 
     List<Map> populationsByYear = (List) response.get("data");
@@ -183,7 +183,7 @@ public class BasicInfoDBAdapter extends BaseAdapter implements IBasicInfoAdapter
                                  Map<Long, Object> basicInfoMap, int typeCode)
           throws IOException {
     String url = UriComponentsBuilder
-            .fromHttpUrl(db_endpoint + POPULATION_RANGE_URL)
+            .fromHttpUrl(dbEndpoint + POPULATION_RANGE_URL)
             .queryParam("attributeId", POPULATION_ID)
             .queryParam("year", 2016)
             .queryParam("from", startValue)

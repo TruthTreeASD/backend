@@ -11,6 +11,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class CommonAttributesAssembler {
 
+    /**
+     * Initializing Jackson Object Mapper
+     */
     private ObjectMapper mapper;
 
     @Autowired
@@ -18,6 +21,12 @@ public class CommonAttributesAssembler {
         this.mapper = mapper;
     }
 
+    /**
+     * Given a JSON Response as String
+     * @param jsonStr
+     * @return a {@link CommonAttributeDTO}
+     * using Jackson Object Mapper
+     */
     public CommonAttributeDTO getJSONStringToDTO(String jsonStr) {
         CommonAttributeDTO commonAttributeDTO = new CommonAttributeDTO();
         try {
@@ -28,6 +37,12 @@ public class CommonAttributesAssembler {
         return commonAttributeDTO;
     }
 
+    /**
+     * Given a JSON Response as String
+     * @param jsonStr
+     * @return a {@link List<CommonAttributeDTO>}
+     * using Jackson Object Mapper
+     */
     public List<CommonAttributeDTO> getJSONStringToDTOList(String jsonStr) {
         List<CommonAttributeDTO> commonAttributeDTOWrapperListDTO = new ArrayList<>();
         try {

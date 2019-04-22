@@ -15,17 +15,17 @@ import org.springframework.web.util.UriComponentsBuilder;
 public class CollectionsDBAdapter implements ICollectionsAdapter {
 
   @Value("${databaseUrl}")
-  private String db_endpoint;
+  private String dbEndpoint;
 
   @Override
   public Object getCollections() {
-    JSONArray response = URLUtil.readJSONFromURL(db_endpoint + COLLECTIONS_URL);
+    JSONArray response = URLUtil.readJSONFromURL(dbEndpoint + COLLECTIONS_URL);
     return joltTransform(response.get(0), COLLECTIONS_SPEC_PATH);
   }
 
   @Override
   public Object getCollectionsByLocationId(Integer locationId) {
-    UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(db_endpoint + COLLECTIONS_URL);
+    UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(dbEndpoint + COLLECTIONS_URL);
     builder.queryParam("id", locationId);
 
     JSONArray response = readJSONFromURL(builder.toUriString());

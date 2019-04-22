@@ -13,7 +13,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 public class TimeRangeDBAdapter implements ITimeRangeAdapter {
 
   @Value("${databaseUrl}")
-  private String db_endpoint;
+  private String dbEndpoint;
 
   /**
    * Returns the time-range response value
@@ -24,7 +24,7 @@ public class TimeRangeDBAdapter implements ITimeRangeAdapter {
    */
   @Override
   public Object getTimeRange(String level, List<Integer> attributes) {
-    UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(db_endpoint + TIME_RANGE_URL);
+    UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(dbEndpoint + TIME_RANGE_URL);
     builder.queryParam("level", level);
     for(Integer attributeId : attributes) {
       builder.queryParam("attributes", attributeId);

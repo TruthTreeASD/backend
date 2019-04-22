@@ -14,6 +14,10 @@ import org.springframework.stereotype.Component;
 @Component
 @SuppressWarnings("unchecked")
 public class LocationAssembler {
+
+  /**
+   * Initializing Jackson Object Mapper
+   */
   private ObjectMapper mapper;
 
   @Autowired
@@ -21,6 +25,12 @@ public class LocationAssembler {
     this.mapper = mapper;
   }
 
+  /**
+   * Given a JSON Response as JSONArray
+   * @param array
+   * @return a {@link List<LocationDTO>}
+   * using Jackson Object Mapper
+   */
   public List<LocationDTO> jsonArrayToLocationList(JSONArray array) {
     return (List) array
             .stream()
@@ -38,6 +48,11 @@ public class LocationAssembler {
             .collect(Collectors.toList());
   }
 
+  /**
+   * Given a {@link List<LocationDTO>}
+   * @param locations
+   * @return a {@link PageDTO<LocationDTO>}
+   */
   public PageDTO<LocationDTO> locationListToPage(List<LocationDTO> locations) {
     return new PageDTO.Builder()
             .withCurrentPage(1)
@@ -47,6 +62,12 @@ public class LocationAssembler {
             .build();
   }
 
+  /**
+   * Given two params
+   * @param dataMap
+   * @param basicInfoMap
+   * @return a {@link PageDTO<LocationDTO>}
+   */
   public PageDTO<LocationDTO> mapToLocationPage(Map<String, Object> dataMap,
                                                  Map<Long, Object> basicInfoMap) {
     List<Map<String, Object>> populationMaps = (List) dataMap.get("data");
@@ -62,6 +83,13 @@ public class LocationAssembler {
             .build();
   }
 
+  /**
+   * Given a population map
+   * and a basicInfo map
+   * @param populationMap
+   * @param basicInfoMap
+   * @return a {@link LocationDTO}
+   */
   private LocationDTO mapToLocationDTO(Map<String, Object> populationMap,
                                        Map<Long, Object> basicInfoMap) {
     long locationId =  ((Number) populationMap.get("location_id")).longValue();
