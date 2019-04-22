@@ -33,6 +33,11 @@ public class SimilarLocationsDBAdapter implements ISimilarLocationsAdapter {
     this.assembler = assembler;
   }
 
+  /**
+   * Returns the list of common attributes
+   * for States, Cities and Counties
+   * @return {@link List<CommonAttributeDTO>}
+   */
   @Override
   public List<CommonAttributeDTO> getSupportedAttributes() {
     UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(COMMON_ATTRIBUTES_URL);
@@ -40,6 +45,18 @@ public class SimilarLocationsDBAdapter implements ISimilarLocationsAdapter {
     return assembler.getJSONStringToCommonAttributeDTOList(response);
   }
 
+  /**
+   * Returns the similar location(s)
+   * based on given params
+   * @param id - a location Id
+   * @param placeType - a state(0), a city(1) or a county (2)
+   * @param attributes - a list of single or multiple attribute Ids
+   * @param normalizationType - {@link NormalizationType - Population or Revenue}
+   * @param year - a single year or year range
+   * @param count - by default, 10
+   * @return {@link List<LocationDTO>}
+   * @throws Exception
+   */
   @Override
   public List<LocationDTO> getSimilarLocations(int id,
                                                int placeType,
@@ -97,6 +114,13 @@ public class SimilarLocationsDBAdapter implements ISimilarLocationsAdapter {
     return assembler.getJSONStringToSimilarPlacesDTOList(response);
   }
 
+  /**
+   * Converts into a {@link List<LocationDTO>}
+   * with lat/long values for each {@link LocationDTO}
+   * for given param
+   * @param locationDTOList
+   * @return {@link List<LocationDTO>}
+   */
   @Override
   public List<LocationDTO> getLocations(List<LocationDTO> locationDTOList) {
     List<LocationDTO> locationsResponse = new ArrayList<>();

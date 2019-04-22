@@ -1,10 +1,9 @@
-package edu.northeastern.truthtree.service.attributes;
+package edu.northeastern.truthtree.service.basicinfo;
 
-import edu.northeastern.truthtree.adapter.basicInfo.IBasicInfoAdapter;
+import edu.northeastern.truthtree.adapter.basicInfo.BasicInfoDBAdapter;
 import edu.northeastern.truthtree.dto.LocationDTO;
 import edu.northeastern.truthtree.dto.PageDTO;
 import edu.northeastern.truthtree.service.basicInfo.BasicInfoService;
-import edu.northeastern.truthtree.service.basicInfo.IBasicInfoService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,12 +16,12 @@ import static edu.northeastern.truthtree.TestConstants.*;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(MockitoJUnitRunner.class)
-public class BasicInfoTests {
+public class BasicInfoServiceTests {
 
     @Mock
-    private IBasicInfoAdapter basicInfoAdapter;
+    private BasicInfoDBAdapter basicInfoAdapter;
 
-    private IBasicInfoService basicInfoService;
+    private BasicInfoService basicInfoService;
 
     @Before
     public void setup() {
