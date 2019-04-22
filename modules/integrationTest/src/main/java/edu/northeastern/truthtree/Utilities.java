@@ -1,7 +1,6 @@
 package edu.northeastern.truthtree;
 
 import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -14,6 +13,7 @@ import org.json.simple.parser.ParseException;
 import org.springframework.core.io.ClassPathResource;
 
 public class Utilities {
+
   /**
    * Reads the content form a web address and converts it into a JSONArray.
    *

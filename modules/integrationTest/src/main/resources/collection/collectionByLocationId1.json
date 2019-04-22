@@ -1,4 +1,5 @@
-[{
+[
+  {
     "name": "All Other Non-insurance Funds Cash and Securities",
     "collection_id": 0,
     "attributes": [
@@ -1512,4 +1513,5 @@
         "property_id": 170
       }
     ]
-  }]
+  }
+]

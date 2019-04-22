@@ -1,22 +1,21 @@
 package edu.northeastern.truthtree.service.attributes;
 
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
+import edu.northeastern.truthtree.AppConst;
+import edu.northeastern.truthtree.adapter.AttributesMockAdapter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import edu.northeastern.truthtree.AppConst;
-import edu.northeastern.truthtree.adapter.AttributesMockAdapter;
-
-import static org.junit.Assert.assertEquals;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
 public class AttributesServiceTest {
+
   private static IAttributesService attributesService;
   private static Map<Integer, Double> grossValuesForAllYears;
 
@@ -165,4 +164,5 @@ public class AttributesServiceTest {
     grossValuesForAllYears.put(1970, 748.0);
     grossValuesForAllYears.put(1967, 406.0);
   }
+
 }

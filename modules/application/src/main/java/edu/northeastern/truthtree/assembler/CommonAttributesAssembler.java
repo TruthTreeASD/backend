@@ -3,15 +3,17 @@ package edu.northeastern.truthtree.assembler;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
 import edu.northeastern.truthtree.dto.CommonAttributeDTO;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
 import java.util.ArrayList;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 @Component
 public class CommonAttributesAssembler {
 
+    /**
+     * Initializing Jackson Object Mapper
+     */
     private ObjectMapper mapper;
 
     @Autowired
@@ -19,6 +21,12 @@ public class CommonAttributesAssembler {
         this.mapper = mapper;
     }
 
+    /**
+     * Given a JSON Response as String
+     * @param jsonStr
+     * @return a {@link CommonAttributeDTO}
+     * using Jackson Object Mapper
+     */
     public CommonAttributeDTO getJSONStringToDTO(String jsonStr) {
         CommonAttributeDTO commonAttributeDTO = new CommonAttributeDTO();
         try {
@@ -29,6 +37,12 @@ public class CommonAttributesAssembler {
         return commonAttributeDTO;
     }
 
+    /**
+     * Given a JSON Response as String
+     * @param jsonStr
+     * @return a {@link List<CommonAttributeDTO>}
+     * using Jackson Object Mapper
+     */
     public List<CommonAttributeDTO> getJSONStringToDTOList(String jsonStr) {
         List<CommonAttributeDTO> commonAttributeDTOWrapperListDTO = new ArrayList<>();
         try {

@@ -1,15 +1,13 @@
 package edu.northeastern.truthtree.adapter;
 
-import org.json.simple.JSONArray;
-
-import java.util.List;
-
-import edu.northeastern.truthtree.adapter.attributes.IAttributesAdapter;
-import edu.northeastern.truthtree.adapter.utilities.JSONUtil;
-
 import static edu.northeastern.truthtree.TestConstants.ALL_YEARS_GROSS_VALUE;
 import static edu.northeastern.truthtree.TestConstants.YEAR_LIST_GROSS_VALUE;
 import static edu.northeastern.truthtree.TestConstants.YEAR_RANGE_GROSS_VALUE;
+
+import edu.northeastern.truthtree.adapter.attributes.IAttributesAdapter;
+import edu.northeastern.truthtree.adapter.utilities.JSONUtil;
+import java.util.List;
+import org.json.simple.JSONArray;
 
 public class AttributesMockAdapter implements IAttributesAdapter {
   @Override

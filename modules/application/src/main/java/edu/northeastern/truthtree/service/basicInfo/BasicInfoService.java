@@ -1,16 +1,14 @@
 package edu.northeastern.truthtree.service.basicInfo;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
-import java.io.IOException;
-import java.util.Map;
-import java.util.Optional;
-
 import edu.northeastern.truthtree.ErrorMessages;
 import edu.northeastern.truthtree.adapter.basicInfo.IBasicInfoAdapter;
 import edu.northeastern.truthtree.dto.LocationDTO;
 import edu.northeastern.truthtree.dto.PageDTO;
+import java.io.IOException;
+import java.util.Map;
+import java.util.Optional;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 /**
  * Represents the Basic Info Service.

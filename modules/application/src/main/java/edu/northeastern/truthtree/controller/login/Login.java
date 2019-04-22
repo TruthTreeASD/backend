@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-@CrossOrigin(origins = "*", maxAge = 3600)
+@CrossOrigin(origins = "*", maxAge = 3600, allowCredentials = "true")
 @RestController
 public class Login implements ILogin {
 
@@ -24,7 +24,7 @@ public class Login implements ILogin {
 
   @RequestMapping(value = "/api/login", method = RequestMethod.POST)
   public void authenticateUser(@RequestBody String password, HttpServletRequest httpServletRequest,
-      HttpServletResponse httpServletResponse) {
+                               HttpServletResponse httpServletResponse) {
     Boolean authenticateUser = service.authenticateUser(password);
     HttpSession httpSession = httpServletRequest.getSession();
     if (authenticateUser) {

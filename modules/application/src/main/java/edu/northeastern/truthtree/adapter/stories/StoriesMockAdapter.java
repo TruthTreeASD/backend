@@ -1,15 +1,13 @@
 package edu.northeastern.truthtree.adapter.stories;
 
-import edu.northeastern.truthtree.dto.StoryPaginationResponseDTO;
-import org.springframework.stereotype.Component;
-
-import java.util.ArrayList;
-import java.util.List;
-
 import edu.northeastern.truthtree.dto.StoryDTO;
+import edu.northeastern.truthtree.dto.StoryPaginationResponseDTO;
 import edu.northeastern.truthtree.enums.OrderType;
 import edu.northeastern.truthtree.enums.StoryStatus;
 import edu.northeastern.truthtree.enums.VoteType;
+import java.util.ArrayList;
+import java.util.List;
+import org.springframework.stereotype.Component;
 
 @Component("storiesMockAdapter")
 public class StoriesMockAdapter implements IStoriesAdapter {

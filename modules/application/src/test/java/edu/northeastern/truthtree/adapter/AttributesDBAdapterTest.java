@@ -1,16 +1,14 @@
 package edu.northeastern.truthtree.adapter;
 
 
+import static org.junit.Assert.assertEquals;
+
+import edu.northeastern.truthtree.adapter.attributes.AttributesDBAdapter;
+import java.util.Arrays;
+import java.util.List;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
-
-import java.util.Arrays;
-import java.util.List;
-
-import edu.northeastern.truthtree.adapter.attributes.AttributesDBAdapter;
-
-import static org.junit.Assert.assertEquals;
 
 public class AttributesDBAdapterTest {
 

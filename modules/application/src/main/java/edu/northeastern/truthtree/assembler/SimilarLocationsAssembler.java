@@ -2,23 +2,23 @@ package edu.northeastern.truthtree.assembler;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
-
 import edu.northeastern.truthtree.dto.CommonAttributeDTO;
 import edu.northeastern.truthtree.dto.LocationDBResponseDTO;
 import edu.northeastern.truthtree.dto.LocationDTO;
 import edu.northeastern.truthtree.dto.LocationDTOWrapper;
 import edu.northeastern.truthtree.dto.SimilarPlacesDTO;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 @Component
 public class SimilarLocationsAssembler {
 
+  /**
+   * Initializing Jackson Object Mapper
+   */
   private ObjectMapper mapper;
 
   @Autowired
@@ -26,6 +26,12 @@ public class SimilarLocationsAssembler {
     this.mapper = mapper;
   }
 
+  /**
+   * Given a JSON Response as String
+   * @param jsonStr
+   * @return a {@link LocationDTO}
+   * using Jackson Object Mapper
+   */
   public LocationDTO getJSONStringToLocationDTO(String jsonStr) {
     LocationDTO dto = null;
     try {
@@ -43,6 +49,12 @@ public class SimilarLocationsAssembler {
     return dto;
   }
 
+  /**
+   * Given JSON Response as String
+   * @param jsonStr
+   * @return a {@link List<CommonAttributeDTO>}
+   * using Jackson Object Mapper
+   */
   public List<CommonAttributeDTO> getJSONStringToCommonAttributeDTOList(String jsonStr) {
     List<CommonAttributeDTO> commonAttributeDTOList = new ArrayList<>();
     try {
@@ -56,6 +68,12 @@ public class SimilarLocationsAssembler {
     return commonAttributeDTOList;
   }
 
+  /**
+   * Given JSON Response as String
+   * @param jsonStr
+   * @return a {@link List<LocationDTO>}
+   * using Jackson Object Mapper
+   */
   public List<LocationDTO> getJSONStringToSimilarPlacesDTOList(String jsonStr) {
     List<SimilarPlacesDTO> similarPlacesDTOList = null;
     List<LocationDTO> locationDTOList = null;

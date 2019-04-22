@@ -5,7 +5,9 @@ import static edu.northeastern.truthtree.AppConst.POPULATION_RANGE;
 import edu.northeastern.truthtree.dto.LocationDTO;
 import edu.northeastern.truthtree.dto.PageDTO;
 import edu.northeastern.truthtree.service.basicInfo.IBasicInfoService;
-
+import java.io.IOException;
+import java.util.Map;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,10 +19,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.io.IOException;
-import java.util.Map;
-import java.util.Optional;
 
 /**
  * Represents the Basic Info methods used create a REST controller.

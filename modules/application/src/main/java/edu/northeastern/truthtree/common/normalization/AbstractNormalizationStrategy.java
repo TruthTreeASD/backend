@@ -1,12 +1,11 @@
 package edu.northeastern.truthtree.common.normalization;
 
+import edu.northeastern.truthtree.AppConst;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-
-import edu.northeastern.truthtree.AppConst;
 
 /**
  * Represents abstract class for handling Normalization implementation common between different
