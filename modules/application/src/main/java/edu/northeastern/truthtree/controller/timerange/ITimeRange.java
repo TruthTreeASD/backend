@@ -1,8 +1,7 @@
 package edu.northeastern.truthtree.controller.timerange;
 
-import org.springframework.http.ResponseEntity;
-
 import java.util.List;
+import org.springframework.http.ResponseEntity;
 
 public interface ITimeRange {
 

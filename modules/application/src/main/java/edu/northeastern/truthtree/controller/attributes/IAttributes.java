@@ -1,10 +1,9 @@
 package edu.northeastern.truthtree.controller.attributes;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestParam;
-
-import java.util.List;
 
 import edu.northeastern.truthtree.enums.NormalizationType;
+import java.util.List;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestParam;
 
 public interface IAttributes {
   /**

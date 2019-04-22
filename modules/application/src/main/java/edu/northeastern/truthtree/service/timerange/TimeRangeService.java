@@ -1,11 +1,9 @@
 package edu.northeastern.truthtree.service.timerange;
 
 import edu.northeastern.truthtree.adapter.timerange.ITimeRangeAdapter;
-import org.json.simple.JSONArray;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-import java.util.List;
 
 @Component
 public class TimeRangeService implements ITimeRangeService {

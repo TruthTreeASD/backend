@@ -1,13 +1,10 @@
 package edu.northeastern.truthtree.controller.advancedsearch;
 
-import java.util.List;
-
-import javax.servlet.http.HttpServletResponse;
-
 import edu.northeastern.truthtree.dto.CommonAttributeDTO;
 import edu.northeastern.truthtree.dto.LocationDTO;
-import edu.northeastern.truthtree.enums.LocationType;
 import edu.northeastern.truthtree.enums.NormalizationType;
+import java.util.List;
+import javax.servlet.http.HttpServletResponse;
 
 public interface ISimilarLocations {
 

@@ -3,8 +3,6 @@ package edu.northeastern.truthtree.adapter.timerange;
 import static edu.northeastern.truthtree.AppConst.TIME_RANGE_FILE_PATH;
 
 import edu.northeastern.truthtree.adapter.utilities.JSONUtil;
-import org.json.simple.JSONArray;
-
 import java.util.List;
 
 public class TimeRangeMockAdapter implements ITimeRangeAdapter {

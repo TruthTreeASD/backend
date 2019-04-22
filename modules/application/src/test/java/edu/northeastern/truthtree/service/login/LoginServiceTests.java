@@ -1,23 +1,21 @@
 package edu.northeastern.truthtree.service.login;
 
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.exceptions.misusing.NotAMockException;
-import org.mockito.junit.MockitoJUnitRunner;
-
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
-@RunWith(MockitoJUnitRunner.class)
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.exceptions.misusing.NotAMockException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+@RunWith(SpringJUnit4ClassRunner.class)
+@SpringBootTest
 public class LoginServiceTests {
 
+    @Autowired
     private LoginService loginService;
-
-    @Before
-    public void setup() {
-        loginService = new LoginService();
-    }
 
     @Test(expected = NotAMockException.class)
     public void testAuthenticateUser() {

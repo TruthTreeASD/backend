@@ -1,73 +1,58 @@
 package edu.northeastern.truthtree;
 
+import org.springframework.stereotype.Component;
+
+
 /**
  * Represents the constants used throughout the application.
  */
+@Component
 public class AppConst {
 
-  //App Constants
-  private static final String DATABASE_URL = "http://54.153.74.217:8080";
-  //  private static final String RESOURCES_PATH = "modules/application/src/main/resources";
-  private static final String RESOURCES_PATH = "";
-
-  // Elastic Search endpoint
-  public static final String ES_URL =
-          "search-gov-fin-es-3y3ydkxijtitmqim7xxyhtczeq.us-west-1.es.amazonaws.com";
-  //login hash
-  public static final String PASSWORD_HASH = "$2a$10$bxqqs1qQ9CKptVf4IuxVGeN4yOkBAumtYNRL7mwXjVF6AoM7fbFle";
-  //  private static final String ML_ENDPOINT = "https://rest-ml.herokuapp.com";
-//private static final String ML_ENDPOINT = "http://ec2-54-185-142-173.us-west-2.compute.amazonaws.com";
-  public static final String ML_ENDPOINT = "http://ec2-34-220-69-18.us-west-2.compute.amazonaws.com";
-
   //Attribute Adapter Constants
-  public static final String ATTRIBUTES_FILE_PATH = RESOURCES_PATH + "/Attributes.json";
-  public static final String ATTRIBUTES_MOCK_SPEC_PATH =
-          RESOURCES_PATH + "/AttributesMockSpec.json";
+  public static final String ATTRIBUTES_FILE_PATH = "/Attributes.json";
+  public static final String ATTRIBUTES_MOCK_SPEC_PATH = "/AttributesMockSpec.json";
 
-  public static final String ATTRIBUTES_SPEC_PATH = RESOURCES_PATH + "/AttributesSpec.json";
-  public static final String ATTRIBUTE_ID_SPEC_PATH = RESOURCES_PATH + "/AttributeIdSpec.json";
-  public static final String Attributes_URL1 = DATABASE_URL + "/api/attributes/attributeIds";
-  public static final String Attributes_URL2 = DATABASE_URL + "/api/attributes/attributeIds&states";
-  public static final String Attributes_URL3 =
-          DATABASE_URL + "/api/attributes/attributeIds&states&yearList";
-  public static final String Attributes_URL4 =
-          DATABASE_URL + "/api/attributes/attributeIds&states&yearRange";
-  public static final String Attributes_URL5 = DATABASE_URL + "/api/queryAttriIdByCombineation";
+  public static final String ATTRIBUTES_SPEC_PATH = "/AttributesSpec.json";
+  public static final String ATTRIBUTE_ID_SPEC_PATH = "/AttributeIdSpec.json";
+  public static final String ATTRIBUTES_URL1 = "/api/attributes/attributeIds";
+  public static final String ATTRIBUTES_URL2 = "/api/attributes/attributeIds&states";
+  public static final String ATTRIBUTES_URL3 = "/api/attributes/attributeIds&states&yearList";
+  public static final String ATTRIBUTES_URL4 = "/api/attributes/attributeIds&states&yearRange";
+  public static final String ATTRIBUTES_URL5 = "/api/queryAttriIdByCombineation";
 
 
   // Basic Info Constants
-  public static final String STATES_URL = DATABASE_URL + "/api/location/state";
-  public static final String STATES_SPEC_FILE_PATH = RESOURCES_PATH + "/StatesSpec.json";
+  public static final String STATES_URL = "/api/location/state";
+  public static final String STATES_SPEC_FILE_PATH = "/StatesSpec.json";
 
-  public static final String COUNTIES_URL = DATABASE_URL + "/api/location/county";
-  public static final String COUNTIES_SPEC_FILE_PATH = RESOURCES_PATH + "/CountiesSpec.json";
+  public static final String COUNTIES_URL = "/api/location/county";
+  public static final String COUNTIES_SPEC_FILE_PATH = "/CountiesSpec.json";
 
-  public static final String CITIES_URL = DATABASE_URL + "/api/location/city";
-  public static final String CITIES_SPEC_FILE_PATH = RESOURCES_PATH + "/CitiesSpec.json";
+  public static final String CITIES_URL = "/api/location/city";
+  public static final String CITIES_SPEC_FILE_PATH = "/CitiesSpec.json";
 
-  public static final String STATES_FILE_PATH = RESOURCES_PATH + "/States.json";
-  public static final String CITIES_FILE_PATH = RESOURCES_PATH + "/Cities.json";
-  public static final String COUNTIES_FILE_PATH = RESOURCES_PATH + "/Counties.json";
+  public static final String STATES_FILE_PATH = "/States.json";
+  public static final String CITIES_FILE_PATH = "/Cities.json";
+  public static final String COUNTIES_FILE_PATH = "/Counties.json";
 
   public static final String POPULATION_RANGE = "populationRange";
   public static final String POPULATION_KEY = "population";
-  public static final String POPULATION_URL = DATABASE_URL
-          + "/api/findValue?attributeId=1&locationId=%s";
-  public static final String POPULATION_RANGE_URL = DATABASE_URL
-          + "/api/findValue";
+  public static final String POPULATION_URL = "/api/findValue?attributeId=1&locationId=%s";
+  public static final String POPULATION_RANGE_URL = "/api/findValue";
 
   // Collections
-  public static final String COLLECTIONS_URL = DATABASE_URL + "/api/collections";
-  public static final String COLLECTIONS_SPEC_PATH = RESOURCES_PATH + "/CollectionsSpec.json";
-  public static final String COLLECTIONS_FILE_PATH = RESOURCES_PATH + "/Collections.json";
+  public static final String COLLECTIONS_URL = "/api/collections";
+  public static final String COLLECTIONS_SPEC_PATH = "/CollectionsSpec.json";
+  public static final String COLLECTIONS_FILE_PATH = "/Collections.json";
 
 
   // Time Range
-  public static final String TIME_RANGE_URL = DATABASE_URL + "/api/time_range";
-  public static final String TIME_RANGE_FILE_PATH = RESOURCES_PATH + "/TimeRange.json";
+  public static final String TIME_RANGE_URL = "/api/time_range";
+  public static final String TIME_RANGE_FILE_PATH = "/TimeRange.json";
 
   // Population
-  public static final String POPULATION_SPEC_PATH = RESOURCES_PATH + "/PopulationSpec.json";
+  public static final String POPULATION_SPEC_PATH = "/PopulationSpec.json";
 
   //Attribute, Normalization constants
   public static final int TOTAL_REVENUE_ID = 4;
@@ -84,17 +69,17 @@ public class AppConst {
   public static final String PER_CAPITA = "per_capita";
 
   //Stories APIs
-  public static final String STORIES_URL_POST = DATABASE_URL + "/api/stories/story";
-  public static final String STORIES_URL_GET = DATABASE_URL + "/api/stories/story/{status}/page";
-  public static final String STORIES_URL_SEARCH = DATABASE_URL + "/api/stories/story/search/page/{keyword}";
+  public static final String STORIES_URL_POST = "/api/stories/story";
+  public static final String STORIES_URL_GET = "/api/stories/story/{status}/page";
+  public static final String STORIES_URL_SEARCH = "/api/stories/story/search/page/{keyword}";
 
   // Similar State, City and County constants
-  public static final String COMMON_ATTRIBUTES_URL = ML_ENDPOINT + "/api/similar/supported";
-  public static final String COMMON_ATTRIBUTES_PATH = RESOURCES_PATH + "/CommonAttributes.json";
-  public static final String SIMILAR_PLACES_URL = ML_ENDPOINT + "/api/similar/";
-  public static final String LOCATION_BY_ID_URL = DATABASE_URL + "/api/location/queryById";
+  public static final String COMMON_ATTRIBUTES_URL = "/api/similar/supported";
+  public static final String COMMON_ATTRIBUTES_PATH = "/CommonAttributes.json";
+  public static final String SIMILAR_PLACES_URL = "/api/similar/";
+  public static final String LOCATION_BY_ID_URL = "/api/location/queryById";
 
-  public static final String STORIES_URL_CHANGE_STATUS = DATABASE_URL + "/api/stories/story/{status}/{id}";
-  public static final String STORIES_URL_UPDATE_VOTES = DATABASE_URL + "/api/stories/story/vote/{id}/{voteType}";
-  public static final String STORIES_URL_DELETE = DATABASE_URL + "/api/stories/story/{id}";
+  public static final String STORIES_URL_CHANGE_STATUS = "/api/stories/story/{status}/{id}";
+  public static final String STORIES_URL_UPDATE_VOTES = "/api/stories/story/vote/{id}/{voteType}";
+  public static final String STORIES_URL_DELETE = "/api/stories/story/{id}";
 }

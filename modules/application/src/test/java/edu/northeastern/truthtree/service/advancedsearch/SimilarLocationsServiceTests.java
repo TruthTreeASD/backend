@@ -1,21 +1,19 @@
 package edu.northeastern.truthtree.service.advancedsearch;
 
+import static org.junit.Assert.assertEquals;
+
 import edu.northeastern.truthtree.adapter.advancedsearch.SimilarLocationsDBAdapter;
 import edu.northeastern.truthtree.dto.CommonAttributeDTO;
 import edu.northeastern.truthtree.dto.LocationDTO;
 import edu.northeastern.truthtree.enums.NormalizationType;
 import edu.northeastern.truthtree.service.advancedsearch.SimilarLocationsService;
-import org.json.simple.JSONArray;
+import java.util.ArrayList;
+import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import static org.junit.Assert.assertEquals;
 
 @RunWith(MockitoJUnitRunner.class)
 public class SimilarLocationsServiceTests {

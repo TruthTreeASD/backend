@@ -1,17 +1,15 @@
 package edu.northeastern.truthtree.service.advancedsearch;
 
-import edu.northeastern.truthtree.enums.NormalizationType;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Component;
-
-import java.util.List;
+import static edu.northeastern.truthtree.ErrorMessages.SIMILAR_LOCATIONS_ERROR;
 
 import edu.northeastern.truthtree.adapter.advancedsearch.ISimilarLocationsAdapter;
 import edu.northeastern.truthtree.dto.CommonAttributeDTO;
 import edu.northeastern.truthtree.dto.LocationDTO;
-
-import static edu.northeastern.truthtree.ErrorMessages.SIMILAR_LOCATIONS_ERROR;
+import edu.northeastern.truthtree.enums.NormalizationType;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
 @Component
 public class SimilarLocationsService implements ISimilarLocationsService {

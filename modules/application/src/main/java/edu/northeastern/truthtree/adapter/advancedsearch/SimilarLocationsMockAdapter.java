@@ -1,12 +1,10 @@
 package edu.northeastern.truthtree.adapter.advancedsearch;
 
-import edu.northeastern.truthtree.enums.NormalizationType;
-import org.springframework.stereotype.Component;
-
-import java.util.List;
-
 import edu.northeastern.truthtree.dto.CommonAttributeDTO;
 import edu.northeastern.truthtree.dto.LocationDTO;
+import edu.northeastern.truthtree.enums.NormalizationType;
+import java.util.List;
+import org.springframework.stereotype.Component;
 
 @Component("similarLocationsMockAdapter")
 public class SimilarLocationsMockAdapter implements ISimilarLocationsAdapter {
