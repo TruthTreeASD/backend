@@ -115,7 +115,7 @@ public class ApplicationConfig {
   @Bean
   public RestHighLevelClient restHighLevelClient() {
     return new RestHighLevelClient(RestClient
-            .builder(new HttpHost(ES_URL, 443, "https")));
+        .builder(new HttpHost(ES_URL, 443, "https")));
   }
 
 }
